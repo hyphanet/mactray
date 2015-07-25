@@ -21,6 +21,8 @@ responsibility of the launchd agent at ~/Library/LaunchAgents/com.freenet.startu
 
 ### Changelog
 
+* 1.3.1.1
+    * No code changes, this build exists to sync up the release numbers in git
 * 1.3.1
     * Fixed start/stop functionality
     * Added initial FCP support
