@@ -18,6 +18,8 @@
 
 #import "NSBundle+LoginItem.h"
 
+#import "FNHelpers.h"
+
 @interface FNAppDelegate ()
     
 @end
@@ -34,6 +36,16 @@
     [defaults registerDefaults:defaultsPlistDict];
  
     
+    NSURL *nodeURL = [FNHelpers findNodeInstallation];
+    if (nodeURL) {
+        NSString *nodePath = [nodeURL.path stringByStandardizingPath];
+        [defaults setObject:nodePath forKey:FNNodeInstallationDirectoryKey];
+    }
+    else {
+        // no freenet installation found, warn the user for now, bring up file
+        // selection window soon
+        [FNHelpers displayNodeMissingAlert];
+    }
     nodeController = [[FNNodeController alloc] init];
 
     /* 
