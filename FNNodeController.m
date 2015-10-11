@@ -15,6 +15,8 @@
 
 #import "FNFCPWrapper.h"
 
+#import "FNHelpers.h"
+
 @interface FNNodeController()
 @property FNFCPWrapper *fcpWrapper;
 @end
@@ -37,19 +39,16 @@
 
 - (void)checkNodeStatus {
 
-    //get users preferred location of node files and put it in a string
-    NSString *nodeFilesLocation = (NSString*)[[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath];
-    //make a new string to store the absolute path of the anchor file
-    NSString *anchorFile = [NSString stringWithFormat:@"%@%@", nodeFilesLocation, @"/Freenet.anchor"];
-    //NSLog(@"%@", anchorFile);
     // start a continuous loop to set the status indicator, this whole method (checkNodeStatus) should be started from a separate thread so it doesn't block main app
     while (1) {
         @autoreleasepool {
-            //file manager for reading anchor file
-            NSFileManager *fileManager;
-            fileManager = [NSFileManager defaultManager];
+            NSString *storedNodePath = [[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath];
+            NSURL *nodeLocation = [NSURL URLWithString:storedNodePath];
+            
+            NSURL *anchorFile = [nodeLocation URLByAppendingPathComponent:FNNodeAnchorFilePathname];
+            
             //if the anchor file exists, the node should be running.
-            if([fileManager isReadableFileAtPath:anchorFile]) {
+             if ([[NSFileManager defaultManager] fileExistsAtPath:anchorFile.path]) {
             /* 
                 If we find the anchor file we we send an FNNodeStateRunningNotification 
                 event and save the node state here.
@@ -77,62 +76,28 @@
 }
 
 - (void)startFreenet {
-    //get users preferred location of node files and put it in a string
-    NSString *nodeFilesLocation = (NSString*)[[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath];
-    //make a new string to store the absolute path to the run script
-    NSString *runScript = [NSString stringWithFormat:@"%@%@", nodeFilesLocation, @"/run.sh start"];
-	
-    //make a new string to store the absolute path of the anchor file
-    NSString *anchorFile = [NSString stringWithFormat:@"%@%@", nodeFilesLocation, @"/Freenet.anchor"];
-    //NSLog(@"%@", anchorFile);
+    NSString *storedNodePath = [[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath];
+    NSURL *nodeLocation = [NSURL URLWithString:storedNodePath];
+    NSURL *runScript = [nodeLocation URLByAppendingPathComponent:FNNodeRunscriptPathname];
     
-    //load arguments into an array for use later by run.sh script
-    NSArray * startArguments = [NSArray arrayWithObjects:@"-c",runScript,nil];
-	
-    //file manager for reading anchor file
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    
-    if([fileManager isReadableFileAtPath:anchorFile]) {
-        // user wants to start freenet, but anchor file is already there. Either node crashed or node file location is wrong.
-        NSAlert *alert = [[NSAlert alloc] init];
-        [alert addButtonWithTitle:@"OK"];
-        [alert setMessageText:@"Error"];
-        [alert setInformativeText:@"Your node is already running!"];
-        [alert setAlertStyle:NSWarningAlertStyle];
-        [alert runModal];
+    if ([FNHelpers validateNodeInstallationAtURL:nodeLocation]) {
+        [NSTask launchedTaskWithLaunchPath:runScript.path arguments:@[@"start"]];       
     }
     else {
-        //nstask to start freenet
-        [NSTask launchedTaskWithLaunchPath:@"/bin/sh" arguments:startArguments];
+        [FNHelpers displayNodeMissingAlert];
     }
-	
 }
 
 - (void)stopFreenet {
-    //get users preferred location of node files and put it in a string	
-    NSString *nodeFilesLocation = (NSString*)[[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath];
-    //make a new string to store the absolute path of the anchor file
-    NSString *anchorFile = [NSString stringWithFormat:@"%@%@", nodeFilesLocation, @"/Freenet.anchor"];
-    //NSLog(@"%@", anchorFile);
-    //make a new string to store the absolute path to the stop script
-    NSString *stopScript = [NSString stringWithFormat:@"%@%@", nodeFilesLocation, @"/run.sh stop"];
-    //load arguments into an array for use later by run.sh script
-    NSArray *stopArguments = [NSArray arrayWithObjects:@"-c", stopScript, nil];
-    //file manager for reading anchor file
-    NSFileManager *fileManager;
-    fileManager = [NSFileManager defaultManager];
-    if([fileManager isReadableFileAtPath:anchorFile]) {
-        // since we found the anchor file and the user wants to stop freenet, we set an NSTask to delete the file, which should cause the node to stop
-        [NSTask launchedTaskWithLaunchPath:@"/bin/sh" arguments:stopArguments];
-    
-    } else {
-        //if user wants to stop freenet but anchor file doesn't exist, either node isn't running or files aren't where they should be. Either way we can't do anything but throw an error box up on the screen
-        NSAlert *alert = [[NSAlert alloc] init];
-        [alert addButtonWithTitle:@"OK"];
-        [alert setMessageText:@"Error"];
-        [alert setInformativeText:@"Your freenet node was not running!"];
-        [alert setAlertStyle:NSWarningAlertStyle];
-        [alert runModal];
+    NSString *storedNodePath = [[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath];
+    NSURL *nodeLocation = [NSURL URLWithString:storedNodePath];
+    NSURL *runScript = [nodeLocation URLByAppendingPathComponent:FNNodeRunscriptPathname];
+
+    if ([FNHelpers validateNodeInstallationAtURL:nodeLocation]) {
+         [NSTask launchedTaskWithLaunchPath:runScript.path arguments:@[@"stop"]];      
+    }
+    else {
+        [FNHelpers displayNodeMissingAlert];
     }
 }
 

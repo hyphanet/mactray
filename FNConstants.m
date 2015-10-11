@@ -18,7 +18,7 @@
 NSString *const FNWebDomain = @"freenetproject.org";
 NSString *const FNNodeInstallationPathname = @"Freenet";
 NSString *const FNNodeRunscriptPathname = @"run.sh";
-
+NSString *const FNNodeAnchorFilePathname = @"Freenet.anchor";
 
 NSTimeInterval const FNNodeCheckTimeInterval = 1;
 
