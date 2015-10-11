@@ -22,6 +22,7 @@
 		AA433BD1109CD2B400EDBB73 /* gpl.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA433BCF109CD2B400EDBB73 /* gpl.txt */; };
 		AA5677051ABD345D00BBC0D3 /* FNConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5677041ABD345D00BBC0D3 /* FNConstants.m */; };
 		AA5D45CD110DF9BC00A81617 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA5D45CC110DF9BC00A81617 /* defaults.plist */; };
+		AA8C5F2A1BCAEF3100220952 /* FNConfigParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F291BCAEF3100220952 /* FNConfigParser.m */; settings = {ASSET_TAGS = (); }; };
 		AADFE52D103A4251007808C8 /* main.xib in Resources */ = {isa = PBXBuildFile; fileRef = AADFE52C103A4251007808C8 /* main.xib */; };
 		AAEF3AEE1AD6313800A4B475 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AAEF3AED1AD6313800A4B475 /* README.md */; };
 /* End PBXBuildFile section */
@@ -67,6 +68,8 @@
 		AA5677041ABD345D00BBC0D3 /* FNConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNConstants.m; sourceTree = "<group>"; };
 		AA5D45CC110DF9BC00A81617 /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaults.plist; sourceTree = "<group>"; };
 		AA86025C0FCA62AC00AE7291 /* FreenetTray_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreenetTray_Prefix.pch; sourceTree = "<group>"; };
+		AA8C5F281BCAEF3100220952 /* FNConfigParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNConfigParser.h; sourceTree = "<group>"; };
+		AA8C5F291BCAEF3100220952 /* FNConfigParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNConfigParser.m; sourceTree = "<group>"; };
 		AADFE52C103A4251007808C8 /* main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = main.xib; sourceTree = "<group>"; };
 		AAEF3AED1AD6313800A4B475 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,6 +91,8 @@
 			children = (
 				AA3C129A1ABD425100413379 /* FNAppDelegate.h */,
 				AA3C129B1ABD425100413379 /* FNAppDelegate.m */,
+				AA8C5F281BCAEF3100220952 /* FNConfigParser.h */,
+				AA8C5F291BCAEF3100220952 /* FNConfigParser.m */,
 				AA02AAD80FC8D74F00499DB3 /* FNNodeController.h */,
 				AA02AAD90FC8D74F00499DB3 /* FNNodeController.m */,
 				AA3C129D1ABE16BD00413379 /* FNDropdownMenuController.h */,
@@ -275,6 +280,7 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				AA5677051ABD345D00BBC0D3 /* FNConstants.m in Sources */,
 				AA3C12A51ABE32B100413379 /* TrayIcon.m in Sources */,
+				AA8C5F2A1BCAEF3100220952 /* FNConfigParser.m in Sources */,
 				AA3C12A01ABE16BD00413379 /* FNDropdownMenuController.m in Sources */,
 				AA3C129C1ABD425100413379 /* FNAppDelegate.m in Sources */,
 				AA1D48CF1B697F1700CAC97E /* FNHelpers.m in Sources */,
