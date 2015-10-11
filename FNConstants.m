@@ -16,6 +16,9 @@
 #pragma mark - General constants
 
 NSString *const FNWebDomain = @"freenetproject.org";
+NSString *const FNNodeInstallationPathname = @"Freenet";
+NSString *const FNNodeRunscriptPathname = @"run.sh";
+
 
 NSTimeInterval const FNNodeCheckTimeInterval = 1;
 

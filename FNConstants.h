@@ -16,6 +16,8 @@
 #pragma mark - General constants
 
 FOUNDATION_EXPORT NSString *const FNWebDomain;
+FOUNDATION_EXPORT NSString *const FNNodeInstallationPathname;
+FOUNDATION_EXPORT NSString *const FNNodeRunscriptPathname;
 
 FOUNDATION_EXPORT NSTimeInterval const FNNodeCheckTimeInterval;
 
