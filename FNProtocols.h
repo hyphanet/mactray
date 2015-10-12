@@ -14,6 +14,7 @@
 
 @protocol FNNodeStateProtocol <NSObject>
 @required
+-(void)nodeStateUnknown:(NSNotification*)notification;
 -(void)nodeStateRunning:(NSNotification*)notification;
 -(void)nodeStateNotRunning:(NSNotification*)notification;
 @end
@@ -26,6 +27,7 @@
 
 @protocol FNFCPWrapperDelegate <NSObject>
 @required
+-(void)didDisconnect;
 -(void)didReceiveNodeHello:(NSDictionary *)nodeHello;
 -(void)didReceiveNodeStats:(NSDictionary *)nodeStats;
 @end

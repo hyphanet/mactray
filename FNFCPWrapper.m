@@ -129,6 +129,7 @@ typedef NS_ENUM(NSInteger, FCPConnectionState) {
 
 -(void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
     self.connectionState = FCPConnectionStateDisconnected;
+    [self.delegate didDisconnect];
 }
 
 -(void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {

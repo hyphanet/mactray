@@ -154,6 +154,13 @@
 
 #pragma mark - FNFCPWrapperDelegate methods
 
+-(void)didDisconnect {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeFCPDisconnectedNotification object:nil];
+    });
+
+}
+
 -(void)didReceiveNodeHello:(NSDictionary *)nodeHello {
     //NSLog(@"Node hello: %@", nodeHello);
 }

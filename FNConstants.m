@@ -44,7 +44,10 @@ NSString *const FNNodeFirstLaunchKey = @"firstlaunch";
 
 #pragma mark - Custom NSNotifications
 
+NSString *const FNNodeStateUnknownNotification = @"FNNodeStateUnknownNotification";
 NSString *const FNNodeStateRunningNotification    = @"FNNodeStateRunningNotification";
 NSString *const FNNodeStateNotRunningNotification = @"FNNodeStateNotRunningNotification";
 
 NSString *const FNNodeStatsReceivedNotification = @"FNNodeStatsReceivedNotification";
+
+NSString *const FNNodeFCPDisconnectedNotification = @"FNNodeFCPDisconnectedNotification";
