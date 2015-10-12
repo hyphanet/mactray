@@ -23,6 +23,8 @@
 		AA5677051ABD345D00BBC0D3 /* FNConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5677041ABD345D00BBC0D3 /* FNConstants.m */; };
 		AA5D45CD110DF9BC00A81617 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA5D45CC110DF9BC00A81617 /* defaults.plist */; };
 		AA8C5F2A1BCAEF3100220952 /* FNConfigParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F291BCAEF3100220952 /* FNConfigParser.m */; settings = {ASSET_TAGS = (); }; };
+		AA8C5F2E1BCB013800220952 /* FNSettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F2C1BCB013800220952 /* FNSettingsWindowController.m */; settings = {ASSET_TAGS = (); }; };
+		AA8C5F2F1BCB013800220952 /* FNSettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */; settings = {ASSET_TAGS = (); }; };
 		AADFE52D103A4251007808C8 /* main.xib in Resources */ = {isa = PBXBuildFile; fileRef = AADFE52C103A4251007808C8 /* main.xib */; };
 		AAEF3AEE1AD6313800A4B475 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AAEF3AED1AD6313800A4B475 /* README.md */; };
 /* End PBXBuildFile section */
@@ -70,6 +72,9 @@
 		AA86025C0FCA62AC00AE7291 /* FreenetTray_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreenetTray_Prefix.pch; sourceTree = "<group>"; };
 		AA8C5F281BCAEF3100220952 /* FNConfigParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNConfigParser.h; sourceTree = "<group>"; };
 		AA8C5F291BCAEF3100220952 /* FNConfigParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNConfigParser.m; sourceTree = "<group>"; };
+		AA8C5F2B1BCB013800220952 /* FNSettingsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNSettingsWindowController.h; path = "Settings Window/FNSettingsWindowController.h"; sourceTree = "<group>"; };
+		AA8C5F2C1BCB013800220952 /* FNSettingsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNSettingsWindowController.m; path = "Settings Window/FNSettingsWindowController.m"; sourceTree = "<group>"; };
+		AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FNSettingsWindow.xib; path = "Settings Window/FNSettingsWindow.xib"; sourceTree = "<group>"; };
 		AADFE52C103A4251007808C8 /* main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = main.xib; sourceTree = "<group>"; };
 		AAEF3AED1AD6313800A4B475 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -102,6 +107,7 @@
 				AA3C12A71ABE7B4300413379 /* FNFCPWrapper.m */,
 				AA1D48CD1B697F1700CAC97E /* FNHelpers.h */,
 				AA1D48CE1B697F1700CAC97E /* FNHelpers.m */,
+				AA8C5F301BCB013E00220952 /* Settings Window */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -173,6 +179,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AA8C5F301BCB013E00220952 /* Settings Window */ = {
+			isa = PBXGroup;
+			children = (
+				AA8C5F2B1BCB013800220952 /* FNSettingsWindowController.h */,
+				AA8C5F2C1BCB013800220952 /* FNSettingsWindowController.m */,
+				AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */,
+			);
+			name = "Settings Window";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -226,6 +242,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA8C5F2F1BCB013800220952 /* FNSettingsWindow.xib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				AA3C12A11ABE16BD00413379 /* FNDropdownMenu.xib in Resources */,
 				AA2A8B9C0FE3819300C585C8 /* freenet.icns in Resources */,
@@ -285,6 +302,7 @@
 				AA3C129C1ABD425100413379 /* FNAppDelegate.m in Sources */,
 				AA1D48CF1B697F1700CAC97E /* FNHelpers.m in Sources */,
 				AA02AADA0FC8D74F00499DB3 /* FNNodeController.m in Sources */,
+				AA8C5F2E1BCB013800220952 /* FNSettingsWindowController.m in Sources */,
 				AA3C12A81ABE7B4300413379 /* FNFCPWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

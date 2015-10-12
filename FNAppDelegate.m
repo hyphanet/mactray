@@ -15,6 +15,7 @@
 
 #import "FNNodeController.h"
 #import "FNDropdownMenuController.h"
+#import "FNSettingsWindowController.h"
 
 #import "NSBundle+LoginItem.h"
 
@@ -39,6 +40,10 @@
 
     dropdownMenuController = [[FNDropdownMenuController alloc] init];
     dropdownMenuController.nodeController = nodeController;
+    
+    settingsWindowController = [[FNSettingsWindowController alloc] initWithWindowNibName:@"FNSettingsWindow"];
+    settingsWindowController.nodeController = nodeController;
+    [settingsWindowController loadWindow];
     
     NSURL *nodeURL = [FNHelpers findNodeInstallation];
     if (nodeURL) {

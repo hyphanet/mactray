@@ -14,10 +14,12 @@
 @import Cocoa;
 @class FNNodeController;
 @class FNDropdownMenuController;
+@class FNSettingsWindowController;
 
 @interface FNAppDelegate : NSObject <NSApplicationDelegate> {
     FNNodeController *nodeController;
     FNDropdownMenuController *dropdownMenuController;
+    FNSettingsWindowController *settingsWindowController;
 }
 @end
 

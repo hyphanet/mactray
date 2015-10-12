@@ -52,6 +52,12 @@ FOUNDATION_EXPORT NSString *const FNNodeStatsReceivedNotification;
 
 FOUNDATION_EXPORT NSString *const FNNodeFCPDisconnectedNotification;
 
+#pragma mark - Global Actions
+
+FOUNDATION_EXPORT NSString *const FNNodeShowSettingsWindow;
+FOUNDATION_EXPORT NSString *const FNNodeShowNodeFinderInSettingsWindow;
+
+
 #pragma mark - Node state
 
 typedef NS_ENUM(NSInteger, FNNodeState) {

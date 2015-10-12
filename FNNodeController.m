@@ -44,7 +44,10 @@
 
 -(NSURL *)nodeLocation {
     NSString *storedNodePath = [[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath];
-    NSURL *storedInstallationURL = [NSURL fileURLWithPath:storedNodePath];
+    NSURL *storedInstallationURL = nil;
+    if (storedNodePath != nil) {
+        [NSURL fileURLWithPath:storedNodePath];
+    }
     return storedInstallationURL;
 }
 
@@ -61,13 +64,16 @@
     // start a continuous loop to set the status indicator, this whole method (checkNodeStatus) should be started from a separate thread so it doesn't block main app
     while (1) {
         @autoreleasepool {
-            NSString *storedNodePath = [[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath];
-            NSURL *nodeLocation = [NSURL URLWithString:storedNodePath];
             
-            NSURL *anchorFile = [nodeLocation URLByAppendingPathComponent:FNNodeAnchorFilePathname];
-            
+            NSURL *anchorFile = [self.nodeLocation URLByAppendingPathComponent:FNNodeAnchorFilePathname];
+            if (![FNHelpers validateNodeInstallationAtURL:self.nodeLocation]) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.currentNodeState = FNNodeStateUnknown;
+                    [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeStateUnknownNotification object:nil];
+                });
+            }
             //if the anchor file exists, the node should be running.
-             if ([[NSFileManager defaultManager] fileExistsAtPath:anchorFile.path]) {
+            else if ([[NSFileManager defaultManager] fileExistsAtPath:anchorFile.path]) {
             /* 
                 If we find the anchor file we we send an FNNodeStateRunningNotification 
                 event and save the node state here.
@@ -75,8 +81,10 @@
                 This can be a false positive, the node may be stopped even if 
                 this file exists, but normally it should be accurate.
             */
-            self.currentNodeState = FNNodeStateRunning;
-                [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeStateRunningNotification object:nil];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.currentNodeState = FNNodeStateRunning;
+                    [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeStateRunningNotification object:nil];
+                });
             }
             else {
                 /* 
@@ -86,8 +94,10 @@
                     This should be 100% accurate, the node won't run without that 
                     anchor file being present
                 */
-            self.currentNodeState = FNNodeStateNotRunning;
-                [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeStateNotRunningNotification object:nil];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    self.currentNodeState = FNNodeStateNotRunning;
+                    [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeStateNotRunningNotification object:nil];
+                });
             }
         }
         [NSThread sleepForTimeInterval:FNNodeCheckTimeInterval]; 
@@ -166,7 +176,9 @@
 }
 
 -(void)didReceiveNodeStats:(NSDictionary *)nodeStats {
-    [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeStatsReceivedNotification object:nodeStats];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeStatsReceivedNotification object:nodeStats];
+    });
 }
 
 #pragma mark - FNFCPWrapperDataSource methods

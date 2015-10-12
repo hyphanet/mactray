@@ -34,6 +34,11 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="UFs-K9-Db6"/>
+                <menuItem title="Settings" keyEquivalent="s" id="Ppa-6x-BP2">
+                    <connections>
+                        <action selector="showSettingsWindow:" target="-2" id="WUb-Cl-aUt"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="About" keyEquivalent="a" id="ZYj-54-W6V">
                     <connections>
                         <action selector="showAboutPanel:" target="-2" id="htk-nh-A3v"/>

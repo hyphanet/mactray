@@ -51,3 +51,10 @@ NSString *const FNNodeStateNotRunningNotification = @"FNNodeStateNotRunningNotif
 NSString *const FNNodeStatsReceivedNotification = @"FNNodeStatsReceivedNotification";
 
 NSString *const FNNodeFCPDisconnectedNotification = @"FNNodeFCPDisconnectedNotification";
+
+
+#pragma mark - Global Actions
+
+NSString *const FNNodeShowSettingsWindow = @"FNNodeShowSettingsWindow";
+NSString *const FNNodeShowNodeFinderInSettingsWindow = @"FNNodeShowNodeFinderInSettingsWindow";
+

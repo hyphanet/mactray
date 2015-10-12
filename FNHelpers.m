@@ -22,7 +22,7 @@
     NSURL *applicationsURL = [[fileManager URLsForDirectory:NSAllApplicationsDirectory inDomains:NSSystemDomainMask] firstObject];
     
     // existing or user-defined location
-    NSURL *customInstallationURL = [NSURL URLWithString:[[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath]];
+    NSURL *customInstallationURL = [NSURL fileURLWithPath:[[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath]];
     
     // new default ~/Library/Application Support/Freenet
     NSURL *defaultInstallationURL = [applicationSupportURL URLByAppendingPathComponent:FNNodeInstallationPathname isDirectory:YES]; 
@@ -55,12 +55,12 @@
     // no installation found, tell the user to pick a location
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         dispatch_async(dispatch_get_main_queue(), ^{
-            NSAlert *alert = [NSAlert alertWithMessageText:@"Error" 
-                                            defaultButton:@"OK" 
-                                            alternateButton:nil 
-                                            otherButton:nil 
-                                informativeTextWithFormat:@"A Freenet installation could not be found."];
-            [alert runModal];  
+            NSDictionary *errorInfo = @{ NSLocalizedDescriptionKey : NSLocalizedString(@"A Freenet installation could not be found.", @"String informing the user that no Freenet installation could be found") };
+    
+            NSError *error = [NSError errorWithDomain:@"org.freenetproject" code:0x1000 userInfo:errorInfo];
+            NSAlert *alert = [NSAlert alertWithError:error];
+            [alert runModal];
+            [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeShowNodeFinderInSettingsWindow object:nil];
         });
     });  
 }
