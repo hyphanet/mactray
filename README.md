@@ -4,23 +4,28 @@
 
 This is a tray (menu bar) app for Freenet for OS X. 
 
-The tray item changes color based on whether or not the freenet node is running. 
+#### Features
 
-It uses the Freenet.anchor file to detect node status, so it must know where the 
-node files are located for this to work. Paths for the node url and the location 
-of node files are static but can be changed after first run in 
-~/Library/Preferences/com.freenet.tray.plist.
+* Tray icon shows whether or not Freenet is running
+* Dropdown menu for starting and stopping Freenet properly
+* Easy access to the downloads folder
 
-The tray app can start and stop freenet by using the run.sh script distributed
-with Freenet.
+### Screenshots
 
-On first launch if the program has never been run before, it will install a 
-loginitem to start the tray app when the user logs in. NOTE: The tray app does
-NOT automatically start Freenet on its own, as of 2015-03 that is still the
-responsibility of the launchd agent at ~/Library/LaunchAgents/com.freenet.startup.plist
+##### Menu Bar
+
+![Menu Bar](screenshots/menubar.jpg "FreenetTray menu dropdown")
+
+##### Settings
+
+![Settings](screenshots/settings.jpg "FreenetTray settings")
 
 ### Changelog
 
+* 1.4
+    * Automatically finds node installation, doesn't depend on installer anymore
+    * Settings window with node status and location override
+    * Menu option to open downloads folder
 * 1.3.1.1
     * No code changes, this build exists to sync up the release numbers in git
 * 1.3.1
