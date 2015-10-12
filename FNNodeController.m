@@ -154,8 +154,14 @@
             self.fproxyLocation = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@:%@", fproxyBindTo, fproxyPort]];
         }
         
-        self.downloadsFolder = [NSURL fileURLWithPath:self.freenetConfig[FNNodeFreenetConfigDownloadsDirKey] isDirectory:YES];
-        
+        BOOL isDirectory;
+        if ([[NSFileManager defaultManager] fileExistsAtPath:self.freenetConfig[FNNodeFreenetConfigDownloadsDirKey] isDirectory:&isDirectory]&& isDirectory) {
+            self.downloadsFolder = [NSURL fileURLWithPath:self.freenetConfig[FNNodeFreenetConfigDownloadsDirKey] isDirectory:YES];
+        }
+        else {
+            // path is probably relative to the node files
+            self.downloadsFolder = [self.nodeLocation URLByAppendingPathComponent:self.freenetConfig[FNNodeFreenetConfigDownloadsDirKey]];
+        }
     }
     else {
         [FNHelpers displayNodeMissingAlert];
