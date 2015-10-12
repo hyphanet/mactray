@@ -15,12 +15,14 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <menu id="Utt-EH-yKf" userLabel="Dropdown Menu">
             <items>
-                <menuItem title="Start Freenet" keyEquivalent="s" id="UpL-Lb-jBl" userLabel="Start/Stop Freenet">
+                <menuItem title="Start Freenet" id="UpL-Lb-jBl" userLabel="Start/Stop Freenet">
+                    <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="toggleNodeState:" target="-2" id="P3U-Yd-byf"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Open Web Interface" keyEquivalent="w" id="BHr-Vz-MCm" userLabel="Open Web Interface">
+                <menuItem title="Open Web Interface" id="BHr-Vz-MCm" userLabel="Open Web Interface">
+                    <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="openWebInterface:" target="-2" id="1oV-Q1-1yU"/>
                     </connections>
