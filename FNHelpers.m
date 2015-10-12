@@ -19,7 +19,7 @@
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *applicationSupportURL = [[fileManager URLsForDirectory:NSApplicationSupportDirectory inDomains:NSUserDomainMask] firstObject];
-    NSURL *applicationsURL = [[fileManager URLsForDirectory:NSAllApplicationsDirectory inDomains:NSUserDomainMask] firstObject];
+    NSURL *applicationsURL = [[fileManager URLsForDirectory:NSAllApplicationsDirectory inDomains:NSSystemDomainMask] firstObject];
     
     // existing or user-defined location
     NSURL *customInstallationURL = [NSURL URLWithString:[[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath]];
