@@ -98,6 +98,9 @@
     [NSApp orderFrontStandardAboutPanel:sender];
 }
 
+-(IBAction)showDownlodsFolder:(id)sender {
+    [[NSWorkspace sharedWorkspace] selectFile:nil inFileViewerRootedAtPath:self.nodeController.downloadsFolder.path];
+}
 
 #pragma mark - FNNodeStateProtocol methods
 
