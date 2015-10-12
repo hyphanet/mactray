@@ -55,7 +55,10 @@ typedef NS_ENUM(NSInteger, FCPConnectionState) {
             switch (self.connectionState) {
                 case FCPConnectionStateDisconnected: {
                     NSURL *nodeFCPURL = [self.dataSource nodeFCPURL];
-                    if (!nodeFCPURL) continue;
+                    if (!nodeFCPURL) {
+                        [NSThread sleepForTimeInterval:1];
+                        continue;
+                    }
                     NSError *fcpConnectionError;
                     [self.nodeSocket connectToHost:nodeFCPURL.host onPort:nodeFCPURL.port.integerValue withTimeout:5 error:&fcpConnectionError];
                     if (fcpConnectionError) {
