@@ -17,11 +17,14 @@
 
 #import "FNHelpers.h"
 
+#import "FNConfigParser.h"
+
 @interface FNNodeController()
 @property FNFCPWrapper *fcpWrapper;
 @end
 
 @implementation FNNodeController
+@dynamic nodeLocation;
  
 - (instancetype)init {
     self = [super init];
@@ -36,6 +39,22 @@
     }
     return self;
 }
+
+#pragma mark - Dynamic properties
+
+-(NSURL *)nodeLocation {
+    NSString *storedNodePath = [[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath];
+    NSURL *storedInstallationURL = [NSURL fileURLWithPath:storedNodePath];
+    return storedInstallationURL;
+}
+
+-(void)setNodeLocation:(NSURL *)nodeLocation {
+    NSString *nodePath = [nodeLocation.path stringByStandardizingPath];
+    [[NSUserDefaults standardUserDefaults] setObject:nodePath forKey:FNNodeInstallationDirectoryKey];
+    [self configureNode];
+}
+
+#pragma mark - Node handling
 
 - (void)checkNodeStatus {
 
@@ -101,6 +120,38 @@
     }
 }
 
+#pragma mark - Configuration handlers
+
+-(void)configureNode {
+    if ([FNHelpers validateNodeInstallationAtURL:self.nodeLocation]) {
+        NSURL *wrapperConfigFile = [self.nodeLocation URLByAppendingPathComponent:FNNodeWrapperConfigFilePathname];
+        self.wrapperConfig = [FNConfigParser dictionaryFromWrapperConfigFile:wrapperConfigFile];
+        
+        NSURL *freenetConfigFile = [self.nodeLocation URLByAppendingPathComponent:FNNodeFreenetConfigFilePathname];    
+        self.freenetConfig = [FNConfigParser dictionaryFromWrapperConfigFile:freenetConfigFile];
+        
+        NSArray *fcpBindings = [self.freenetConfig[FNNodeFreenetConfigFCPBindAddressesKey] componentsSeparatedByString:@","];
+        if (fcpBindings.count > 0) {
+            NSString *fcpBindTo = fcpBindings[0]; // first one should be ipv4
+            NSString *fcpPort = self.freenetConfig[FNNodeFreenetConfigFCPPortKey];
+            self.fcpLocation = [NSURL URLWithString:[NSString stringWithFormat:@"tcp://%@:%@", fcpBindTo, fcpPort]];
+        }
+        
+        NSArray *fproxyBindings = [self.freenetConfig[FNNodeFreenetConfigFProxyBindAddressesKey] componentsSeparatedByString:@","];
+        if (fproxyBindings.count > 0) {
+            NSString *fproxyBindTo = fproxyBindings[0]; // first one should be ipv4
+            NSString *fproxyPort = self.freenetConfig[FNNodeFreenetConfigFProxyPortKey];
+            self.fproxyLocation = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@:%@", fproxyBindTo, fproxyPort]];
+        }
+        
+        self.downloadsFolder = [NSURL fileURLWithPath:self.freenetConfig[FNNodeFreenetConfigDownloadsDirKey] isDirectory:YES];
+        
+    }
+    else {
+        [FNHelpers displayNodeMissingAlert];
+    }
+}
+
 #pragma mark - FNFCPWrapperDelegate methods
 
 -(void)didReceiveNodeHello:(NSDictionary *)nodeHello {
@@ -114,8 +165,7 @@
 #pragma mark - FNFCPWrapperDataSource methods
 
 -(NSURL *)nodeFCPURL {
-    NSString *nodeFCPURLString = [[NSUserDefaults standardUserDefaults] valueForKey:FNNodeFCPURLKey];
-    return [NSURL URLWithString:nodeFCPURLString];
+    return self.fcpLocation;
 }
 
 @end

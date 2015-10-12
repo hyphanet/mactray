@@ -35,18 +35,23 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];    
     [defaults registerDefaults:defaultsPlistDict];
  
+    nodeController = [[FNNodeController alloc] init];
+
+    dropdownMenuController = [[FNDropdownMenuController alloc] init];
+    dropdownMenuController.nodeController = nodeController;
     
     NSURL *nodeURL = [FNHelpers findNodeInstallation];
     if (nodeURL) {
         NSString *nodePath = [nodeURL.path stringByStandardizingPath];
         [defaults setObject:nodePath forKey:FNNodeInstallationDirectoryKey];
+        nodeController.nodeLocation = nodeURL;
     }
     else {
         // no freenet installation found, warn the user for now, bring up file
         // selection window soon
         [FNHelpers displayNodeMissingAlert];
     }
-    nodeController = [[FNNodeController alloc] init];
+    
 
     /* 
         Check for first launch key, if it isn't there this is first launch and 
@@ -61,8 +66,6 @@
         */
         [[NSBundle mainBundle] addToLoginItems];
     }
-    dropdownMenuController = [[FNDropdownMenuController alloc] init];
-    dropdownMenuController.nodeController = nodeController;
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {

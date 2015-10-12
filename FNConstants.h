@@ -24,6 +24,15 @@ FOUNDATION_EXPORT NSString *const FNNodeFreenetConfigFilePathname;
 
 FOUNDATION_EXPORT NSTimeInterval const FNNodeCheckTimeInterval;
 
+#pragma mark - Node configuration keys
+
+FOUNDATION_EXPORT NSString *const FNNodeFreenetConfigFCPBindAddressesKey;
+FOUNDATION_EXPORT NSString *const FNNodeFreenetConfigFCPPortKey;
+FOUNDATION_EXPORT NSString *const FNNodeFreenetConfigFProxyBindAddressesKey;
+FOUNDATION_EXPORT NSString *const FNNodeFreenetConfigFProxyPortKey;
+
+FOUNDATION_EXPORT NSString *const FNNodeFreenetConfigDownloadsDirKey;
+
 #pragma mark - NSUserDefaults keys
 
 FOUNDATION_EXPORT NSString *const FNStartAtLaunchKey;

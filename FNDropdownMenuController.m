@@ -86,9 +86,11 @@
 }
 
 -(IBAction)openWebInterface:(id)sender {
-    NSString *nodeURL = [[NSUserDefaults standardUserDefaults] valueForKey:FNNodeFProxyURLKey];
-    // Open the fproxy page in users default browser
-    [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:nodeURL]];
+    NSURL *fproxyLocation = self.nodeController.fproxyLocation;
+    if (fproxyLocation) {
+        // Open the fproxy page in users default browser
+        [[NSWorkspace sharedWorkspace] openURL:fproxyLocation];
+    }
 }
 
 -(IBAction)showAboutPanel:(id)sender {

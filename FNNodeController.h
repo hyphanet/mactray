@@ -20,4 +20,14 @@
 - (void)stopFreenet;
 - (void)checkNodeStatus;
 
+- (void)configureNode;
+
+@property NSDictionary *wrapperConfig;
+@property NSDictionary *freenetConfig;
+
+@property NSURL *nodeLocation;
+@property NSURL *fcpLocation;
+@property NSURL *fproxyLocation;
+@property NSURL *downloadsFolder;
+
 @end

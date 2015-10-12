@@ -4,9 +4,5 @@
 <dict>
 	<key>firstlaunch</key>
 	<true/>
-	<key>nodefcpurl</key>
-	<string>tcp://127.0.0.1:9481</string>
-	<key>nodeurl</key>
-	<string>http://127.0.0.1:8888</string>
 </dict>
 </plist>

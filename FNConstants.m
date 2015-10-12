@@ -24,6 +24,15 @@ NSString *const FNNodeFreenetConfigFilePathname = @"freenet.ini";
 
 NSTimeInterval const FNNodeCheckTimeInterval = 1;
 
+#pragma mark - Node configuration keys
+
+NSString *const FNNodeFreenetConfigFCPBindAddressesKey = @"fcp.bindTo";
+NSString *const FNNodeFreenetConfigFCPPortKey = @"fcp.port";
+NSString *const FNNodeFreenetConfigFProxyBindAddressesKey = @"fproxy.bindTo";
+NSString *const FNNodeFreenetConfigFProxyPortKey = @"fproxy.port";
+
+NSString *const FNNodeFreenetConfigDownloadsDirKey = @"node.downloadsDir";
+
 #pragma mark - NSUserDefaults keys
 
 NSString *const FNStartAtLaunchKey = @"startatlaunch";
