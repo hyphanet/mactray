@@ -46,7 +46,7 @@
     NSString *storedNodePath = [[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath];
     NSURL *storedInstallationURL = nil;
     if (storedNodePath != nil) {
-        [NSURL fileURLWithPath:storedNodePath];
+        storedInstallationURL = [NSURL fileURLWithPath:storedNodePath];
     }
     return storedInstallationURL;
 }
