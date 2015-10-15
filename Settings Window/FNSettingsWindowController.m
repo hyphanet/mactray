@@ -133,6 +133,9 @@
 
 -(void)didReceiveNodeHello:(NSNotification*)notification {
     NSDictionary *nodeHello = notification.object;
+    NSString *build = nodeHello[@"Build"];
+    self.nodeBuildField.stringValue = build;
+    self.fcpStatusView.image = [NSImage imageNamed:NSImageNameStatusPartiallyAvailable];
 }
 
 -(void)didReceiveNodeStats:(NSNotification*)notification {
@@ -145,6 +148,7 @@
 -(void)didDisconnect {
     NSAssert([NSThread currentThread] == [NSThread mainThread], @"NOT RUNNING ON MAIN THREAD");
     self.fcpStatusView.image = [NSImage imageNamed:NSImageNameStatusUnavailable];
+    self.nodeBuildField.stringValue = @"";
 }
 
 @end

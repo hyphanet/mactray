@@ -25,6 +25,9 @@
 @property IBOutlet NSImageView *webInterfaceStatusView;
 @property IBOutlet NSImageView *fcpStatusView;
 
+@property IBOutlet NSTextField *nodeBuildField;
+
+
 @property IBOutlet NSPathControl *nodePathDisplay;
 
 

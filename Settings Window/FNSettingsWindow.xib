@@ -9,6 +9,7 @@
         <customObject id="-2" userLabel="File's Owner" customClass="FNSettingsWindowController">
             <connections>
                 <outlet property="fcpStatusView" destination="RHv-zj-Iec" id="Yhb-pU-Yzf"/>
+                <outlet property="nodeBuildField" destination="VlZ-nH-wLT" id="URN-B2-qgZ"/>
                 <outlet property="nodeRunningStatusView" destination="ozh-jT-Mol" id="Pgg-AS-NQt"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -84,6 +85,24 @@
                                     <animations/>
                                     <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSStatusPartiallyAvailable" id="x1H-hw-xif"/>
                                 </imageView>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jIG-JZ-dpa">
+                                    <rect key="frame" x="205" y="67" width="38" height="17"/>
+                                    <animations/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Build:" id="mb8-58-B4t">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
+                                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VlZ-nH-wLT">
+                                    <rect key="frame" x="247" y="67" width="84" height="17"/>
+                                    <animations/>
+                                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" placeholderString="N/A" id="yYV-ge-5yY">
+                                        <font key="font" metaFont="system"/>
+                                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                    </textFieldCell>
+                                </textField>
                             </subviews>
                             <animations/>
                         </view>
