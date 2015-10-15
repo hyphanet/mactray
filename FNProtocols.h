@@ -22,6 +22,7 @@
 
 @protocol FNNodeStatsProtocol <NSObject>
 @required
+-(void)didReceiveNodeHello:(NSNotification*)notification;
 -(void)didReceiveNodeStats:(NSNotification*)notification;
 @end
 

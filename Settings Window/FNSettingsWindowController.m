@@ -35,7 +35,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showSettingsWindow:) name:FNNodeShowSettingsWindow object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nodeStateRunning:) name:FNNodeStateRunningNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nodeStateNotRunning:) name:FNNodeStateNotRunningNotification object:nil];
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNodeHello:) name:FNNodeHelloReceivedNotification object:nil];    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNodeStats:) name:FNNodeStatsReceivedNotification object:nil];
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didDisconnect) name:FNNodeFCPDisconnectedNotification object:nil];   
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showNodeFinderPanel:) name:FNNodeShowNodeFinderInSettingsWindow object:nil];
@@ -130,6 +130,10 @@
 }
 
 #pragma mark - FNNodeStatsProtocol methods
+
+-(void)didReceiveNodeHello:(NSNotification*)notification {
+    NSDictionary *nodeHello = notification.object;
+}
 
 -(void)didReceiveNodeStats:(NSNotification*)notification {
     NSAssert([NSThread currentThread] == [NSThread mainThread], @"NOT RUNNING ON MAIN THREAD");

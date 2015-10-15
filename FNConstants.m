@@ -48,6 +48,8 @@ NSString *const FNNodeStateUnknownNotification = @"FNNodeStateUnknownNotificatio
 NSString *const FNNodeStateRunningNotification    = @"FNNodeStateRunningNotification";
 NSString *const FNNodeStateNotRunningNotification = @"FNNodeStateNotRunningNotification";
 
+NSString *const FNNodeHelloReceivedNotification = @"FNNodeHelloReceivedNotification";
+
 NSString *const FNNodeStatsReceivedNotification = @"FNNodeStatsReceivedNotification";
 
 NSString *const FNNodeFCPDisconnectedNotification = @"FNNodeFCPDisconnectedNotification";

@@ -48,6 +48,8 @@ FOUNDATION_EXPORT NSString *const FNNodeStateUnknownNotification;
 FOUNDATION_EXPORT NSString *const FNNodeStateRunningNotification;
 FOUNDATION_EXPORT NSString *const FNNodeStateNotRunningNotification;
 
+FOUNDATION_EXPORT NSString *const FNNodeHelloReceivedNotification;
+
 FOUNDATION_EXPORT NSString *const FNNodeStatsReceivedNotification;
 
 FOUNDATION_EXPORT NSString *const FNNodeFCPDisconnectedNotification;

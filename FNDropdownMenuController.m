@@ -49,7 +49,7 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nodeStateNotRunning:) name:FNNodeStateNotRunningNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNodeStats:) name:FNNodeStatsReceivedNotification object:nil];
-
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNodeHello:) name:FNNodeHelloReceivedNotification object:nil];
     
 }
 
@@ -123,6 +123,10 @@
 }
 
 #pragma mark - FNNodeStatsProtocol methods
+
+-(void)didReceiveNodeHello:(NSNotification*)notification {
+
+}
 
 -(void)didReceiveNodeStats:(NSNotification*)notification {
     //NSDictionary *nodeStats = notification.object;

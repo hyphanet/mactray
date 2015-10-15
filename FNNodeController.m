@@ -179,6 +179,9 @@
 
 -(void)didReceiveNodeHello:(NSDictionary *)nodeHello {
     //NSLog(@"Node hello: %@", nodeHello);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeHelloReceivedNotification object:nodeHello];
+    });
 }
 
 -(void)didReceiveNodeStats:(NSDictionary *)nodeStats {
