@@ -65,6 +65,7 @@
     }
     else {
         [[NSBundle mainBundle] removeFromLoginItems];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:FNStartAtLaunchKey];
     }
 }
 
