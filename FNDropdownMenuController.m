@@ -17,6 +17,8 @@
 
 #import "TrayIcon.h"
 
+#import <DCOAboutWindow/DCOAboutWindowController.h>
+
 @interface FNDropdownMenuController ()
 -(void)setMenuBarImage:(NSImage *)image;
 @end
@@ -100,8 +102,7 @@
 }
 
 -(IBAction)showAboutPanel:(id)sender {
-    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
-    [NSApp orderFrontStandardAboutPanel:sender];
+    [self.aboutWindow showWindow:nil];
 }
 
 -(IBAction)showSettingsWindow:(id)sender {

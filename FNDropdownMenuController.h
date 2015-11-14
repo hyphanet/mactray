@@ -13,12 +13,15 @@
 
 @import Cocoa;
 @class FNNodeController;
+@class DCOAboutWindowController;
 
 @interface FNDropdownMenuController : NSObject <FNNodeStateProtocol, FNNodeStatsProtocol>
 
 @property FNNodeController *nodeController;
 
 @property NSStatusItem *statusItem;
+
+@property DCOAboutWindowController *aboutWindow;
 
 @property NSMenu *dropdownMenu;
 @property IBOutlet NSMenuItem *toggleNodeStateMenuItem;

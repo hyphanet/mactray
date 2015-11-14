@@ -21,6 +21,7 @@
 
 #import "FNHelpers.h"
 
+#import <DCOAboutWindow/DCOAboutWindowController.h>
 @interface FNAppDelegate ()
     
 @end
@@ -36,10 +37,20 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];    
     [defaults registerDefaults:defaultsPlistDict];
  
+    DCOAboutWindowController *aboutWindow = [[DCOAboutWindowController alloc] init];
+    aboutWindow.useTextViewForAcknowledgments = YES;
+    NSString *websiteURLPath = [NSString stringWithFormat:@"https://%@", FNWebDomain];
+    aboutWindow.appWebsiteURL = [NSURL URLWithString:websiteURLPath];
+    [aboutWindow window];
+    NSButton *visitWebsiteButton = [aboutWindow valueForKeyPath:@"self.visitWebsiteButton"];
+    visitWebsiteButton.title = NSLocalizedString(@"Visit the Freenet Website", @"Caption on the 'Visit the %@ Website' button in the about window");
+    
+    
     nodeController = [[FNNodeController alloc] init];
 
     dropdownMenuController = [[FNDropdownMenuController alloc] init];
     dropdownMenuController.nodeController = nodeController;
+    dropdownMenuController.aboutWindow = aboutWindow;
     
     settingsWindowController = [[FNSettingsWindowController alloc] initWithWindowNibName:@"FNSettingsWindow"];
     settingsWindowController.nodeController = nodeController;
