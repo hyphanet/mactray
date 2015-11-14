@@ -33,6 +33,7 @@
 
 -(void)awakeFromNib {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showSettingsWindow:) name:FNNodeShowSettingsWindow object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nodeStateUnknown:) name:FNNodeStateUnknownNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nodeStateRunning:) name:FNNodeStateRunningNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nodeStateNotRunning:) name:FNNodeStateNotRunningNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNodeHello:) name:FNNodeHelloReceivedNotification object:nil];    
@@ -112,19 +113,23 @@
 
 -(void)nodeStateUnknown:(NSNotification*)notification {
     NSAssert([NSThread currentThread] == [NSThread mainThread], @"NOT RUNNING ON MAIN THREAD");
-
+    [self willChangeValueForKey:@"validNodeFound"];
+    [self didChangeValueForKey:@"validNodeFound"];
     self.nodeRunningStatusView.image = [NSImage imageNamed:NSImageNameStatusPartiallyAvailable];
 }
 
 -(void)nodeStateRunning:(NSNotification*)notification {
     NSAssert([NSThread currentThread] == [NSThread mainThread], @"NOT RUNNING ON MAIN THREAD");
+    [self willChangeValueForKey:@"validNodeFound"];
+    [self didChangeValueForKey:@"validNodeFound"];
     self.nodeRunningStatusView.image = [NSImage imageNamed:NSImageNameStatusAvailable];
 }
 
 -(void)nodeStateNotRunning:(NSNotification*)notification {
     NSAssert([NSThread currentThread] == [NSThread mainThread], @"NOT RUNNING ON MAIN THREAD");
+    [self willChangeValueForKey:@"validNodeFound"];
+    [self didChangeValueForKey:@"validNodeFound"];
     self.nodeRunningStatusView.image = [NSImage imageNamed:NSImageNameStatusUnavailable];
-
 }
 
 #pragma mark - FNNodeStatsProtocol methods
