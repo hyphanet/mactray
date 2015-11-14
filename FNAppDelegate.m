@@ -56,7 +56,7 @@
     
     settingsWindowController = [[FNSettingsWindowController alloc] initWithWindowNibName:@"FNSettingsWindow"];
     settingsWindowController.nodeController = nodeController;
-    [settingsWindowController loadWindow];
+    [settingsWindowController window];
     
     NSURL *nodeURL = [FNHelpers findNodeInstallation];
     if (nodeURL) {

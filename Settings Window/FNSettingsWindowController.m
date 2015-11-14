@@ -27,7 +27,6 @@
 @dynamic loginItem;
 
 - (void)windowDidLoad {
-    [super windowDidLoad];
 
 }
 
