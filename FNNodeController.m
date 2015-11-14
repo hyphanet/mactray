@@ -173,12 +173,17 @@
         }
         
         BOOL isDirectory;
-        if ([[NSFileManager defaultManager] fileExistsAtPath:self.freenetConfig[FNNodeFreenetConfigDownloadsDirKey] isDirectory:&isDirectory]&& isDirectory) {
-            self.downloadsFolder = [NSURL fileURLWithPath:self.freenetConfig[FNNodeFreenetConfigDownloadsDirKey] isDirectory:YES];
+        NSString *downloadsPath = self.freenetConfig[FNNodeFreenetConfigDownloadsDirKey];
+        if ([[NSFileManager defaultManager] fileExistsAtPath:downloadsPath isDirectory:&isDirectory] && isDirectory) {
+            self.downloadsFolder = [NSURL fileURLWithPath:downloadsPath isDirectory:YES];
+        }
+        else if (downloadsPath != nil) {
+            // node.downloadsDir isn't a full path, so probably relative to the node files
+            self.downloadsFolder = [self.nodeLocation URLByAppendingPathComponent:downloadsPath isDirectory:YES];
         }
         else {
-            // path is probably relative to the node files
-            self.downloadsFolder = [self.nodeLocation URLByAppendingPathComponent:self.freenetConfig[FNNodeFreenetConfigDownloadsDirKey]];
+            // last resort, freenet.ini doesn't have a node.downloadsDir key, use a sane temporary default
+            self.downloadsFolder = [self.nodeLocation URLByAppendingPathComponent:@"downloads" isDirectory:YES];
         }
     }
     else {
