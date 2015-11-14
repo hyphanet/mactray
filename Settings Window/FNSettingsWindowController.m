@@ -69,14 +69,12 @@
 
 -(BOOL)validNodeFound {
     BOOL valid = [FNHelpers validateNodeInstallationAtURL:self.nodeController.nodeLocation];
-    NSLog(@"Valid: %hhd", valid);
     return valid;
 }
 
 #pragma mark - Interface actions
 
 -(IBAction)selectNodeLocation:(id)sender {
-    NSLog(@"Showing node finder");
     NSOpenPanel *openpanel = [NSOpenPanel openPanel];
 
     [openpanel setDelegate:self];

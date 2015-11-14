@@ -130,7 +130,6 @@
 
 -(void)didReceiveNodeStats:(NSNotification*)notification {
     //NSDictionary *nodeStats = notification.object;
-    //NSLog(@"Node stats: %@", nodeStats);
 }
 
 

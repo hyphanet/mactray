@@ -24,7 +24,6 @@
     NSError *error;
     NSString *wrapperContents = [NSString stringWithContentsOfFile:wrapperFile.path encoding:NSUTF8StringEncoding error:&error];
     if (error) {
-        NSLog(@"Error decoding wrapper file: %@", error.localizedDescription);
         return nil;
     }
     return [FNConfigParser parseKeyValueString:wrapperContents];
@@ -34,7 +33,6 @@
     NSError *error;
     NSString *configContents = [NSString stringWithContentsOfFile:configFile.path encoding:NSUTF8StringEncoding error:&error];
     if (error) {
-        NSLog(@"Error decoding config file: %@", error.localizedDescription);
         return nil;
     }
     return [FNConfigParser parseKeyValueString:configContents];
@@ -45,13 +43,12 @@
     NSString *regex = @"\\s*(.+?)\\s*=\\s*(.+)";
     [string enumerateLinesUsingBlock:^(NSString * _Nonnull line, BOOL * _Nonnull stop) {
         if ([line isMatchedByRegex:@"^\\s*$"]) {
-            //NSLog(@"FNConfigParser found whitespace line");
+            // whitespace line
         }
         else if ([line isMatchedByRegex:@"^#"]) {
-            //NSLog(@"FNConfigParser found comment line");
+            // comment line
         }
         else if ([line isMatchedByRegex:regex]) {
-            //NSLog(@"FNConfigParser line correctly formed: %@", line);
             NSString *key;
             NSString *value;
             NSArray *captureArray = [line arrayOfCaptureComponentsMatchedByRegex:regex];
@@ -63,12 +60,6 @@
                     config[key] = value;
                 }
             }
-            else {
-                //NSLog(@"FNConfigParser found nothing to capture, bypassing line: %@",line);
-            }
-        }
-        else {
-            NSLog(@"FNConfigParser line incorrectly formed: %@", line);
         }
     }];
     return config;

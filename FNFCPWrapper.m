@@ -62,7 +62,7 @@ typedef NS_ENUM(NSInteger, FCPConnectionState) {
                     NSError *fcpConnectionError;
                     [self.nodeSocket connectToHost:nodeFCPURL.host onPort:nodeFCPURL.port.integerValue withTimeout:5 error:&fcpConnectionError];
                     if (fcpConnectionError) {
-                        NSLog(@"FCP connection error: %@", fcpConnectionError.localizedDescription);
+                        // don't need to do anything about this here
                     }
                     break;
                 }
@@ -159,11 +159,11 @@ typedef NS_ENUM(NSInteger, FCPConnectionState) {
 }
 
 -(void)socket:(GCDAsyncSocket *)sock didReadPartialDataOfLength:(NSUInteger)partialLength tag:(long)tag {
-    //NSLog(@"Socket read data of length: %ld", partialLength);
+
 }
 
 -(void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag  {
-    //NSLog(@"Socket wrote data for tag %ld", tag);
+
 }
 
 
