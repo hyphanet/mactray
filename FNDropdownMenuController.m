@@ -75,7 +75,7 @@
             break;
         }
         case FNNodeStateUnknown: {
-            
+            [self.nodeController startFreenet];
             break;
         }
         default: {
