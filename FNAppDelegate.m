@@ -21,6 +21,7 @@
 
 #import "FNHelpers.h"
 
+#import <PFMoveApplication.h>
 #import <DCOAboutWindow/DCOAboutWindowController.h>
 @interface FNAppDelegate ()
     
@@ -29,6 +30,7 @@
 @implementation FNAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    PFMoveToApplicationsFolderIfNecessary();
     
     // load factory defaults for node location variables, sourced from defaults.plist
     NSString *defaultsPlist = [[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"];
