@@ -19,8 +19,11 @@
 
 #import "FNConfigParser.h"
 
+#import "MHWDirectoryWatcher.h"
+
 @interface FNNodeController()
 @property FNFCPWrapper *fcpWrapper;
+@property MHWDirectoryWatcher *configWatcher;
 @end
 
 @implementation FNNodeController
@@ -52,9 +55,20 @@
 }
 
 -(void)setNodeLocation:(NSURL *)nodeLocation {
+    [self.configWatcher stopWatching];
+    
     NSString *nodePath = [nodeLocation.path stringByStandardizingPath];
-    [[NSUserDefaults standardUserDefaults] setObject:nodePath forKey:FNNodeInstallationDirectoryKey];
-    [self configureNode];
+    if (nodePath != nil) {
+        [[NSUserDefaults standardUserDefaults] setObject:nodePath forKey:FNNodeInstallationDirectoryKey];
+        self.configWatcher = [MHWDirectoryWatcher directoryWatcherAtPath:nodePath callback:^{
+            [self readFreenetConfig];
+        }];
+        [self.configWatcher startWatching];
+    }
+    else {
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:FNNodeInstallationDirectoryKey];
+    }
+    [self readFreenetConfig];
 }
 
 #pragma mark - Node handling
@@ -136,7 +150,7 @@
 
 #pragma mark - Configuration handlers
 
--(void)configureNode {
+-(void)readFreenetConfig {
     if ([FNHelpers validateNodeInstallationAtURL:self.nodeLocation]) {
         NSURL *wrapperConfigFile = [self.nodeLocation URLByAppendingPathComponent:FNNodeWrapperConfigFilePathname];
         self.wrapperConfig = [FNConfigParser dictionaryFromWrapperConfigFile:wrapperConfigFile];

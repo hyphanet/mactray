@@ -20,8 +20,6 @@
 - (void)stopFreenet;
 - (void)checkNodeStatus;
 
-- (void)configureNode;
-
 @property NSDictionary *wrapperConfig;
 @property NSDictionary *freenetConfig;
 
