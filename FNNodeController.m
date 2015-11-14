@@ -106,10 +106,12 @@
 
 - (void)startFreenet {
     NSString *storedNodePath = [[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath];
-    NSURL *nodeLocation = [NSURL URLWithString:storedNodePath];
-    NSURL *runScript = [nodeLocation URLByAppendingPathComponent:FNNodeRunscriptPathname];
-    
+    NSURL *nodeLocation;
+    if (storedNodePath != nil) {
+        nodeLocation = [NSURL fileURLWithPath:storedNodePath];
+    }
     if ([FNHelpers validateNodeInstallationAtURL:nodeLocation]) {
+        NSURL *runScript = [nodeLocation URLByAppendingPathComponent:FNNodeRunscriptPathname];
         [NSTask launchedTaskWithLaunchPath:runScript.path arguments:@[@"start"]];       
     }
     else {
@@ -119,11 +121,13 @@
 
 - (void)stopFreenet {
     NSString *storedNodePath = [[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath];
-    NSURL *nodeLocation = [NSURL URLWithString:storedNodePath];
-    NSURL *runScript = [nodeLocation URLByAppendingPathComponent:FNNodeRunscriptPathname];
-
+    NSURL *nodeLocation;
+    if (storedNodePath != nil) {
+        nodeLocation = [NSURL fileURLWithPath:storedNodePath];
+    }
     if ([FNHelpers validateNodeInstallationAtURL:nodeLocation]) {
-         [NSTask launchedTaskWithLaunchPath:runScript.path arguments:@[@"stop"]];      
+        NSURL *runScript = [nodeLocation URLByAppendingPathComponent:FNNodeRunscriptPathname];
+        [NSTask launchedTaskWithLaunchPath:runScript.path arguments:@[@"stop"]];       
     }
     else {
         [FNHelpers displayNodeMissingAlert];

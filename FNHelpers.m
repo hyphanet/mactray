@@ -22,8 +22,11 @@
     NSURL *applicationsURL = [[fileManager URLsForDirectory:NSAllApplicationsDirectory inDomains:NSSystemDomainMask] firstObject];
     
     // existing or user-defined location
-    NSURL *customInstallationURL = [NSURL fileURLWithPath:[[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath]];
-    
+    NSString *customPath = [[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath];
+    NSURL *customInstallationURL;
+    if (customPath != nil) {
+        customInstallationURL = [NSURL fileURLWithPath:customPath];
+    }
     // new default ~/Library/Application Support/Freenet
     NSURL *defaultInstallationURL = [applicationSupportURL URLByAppendingPathComponent:FNNodeInstallationPathname isDirectory:YES]; 
     
