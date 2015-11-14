@@ -186,9 +186,6 @@
             self.downloadsFolder = [self.nodeLocation URLByAppendingPathComponent:@"downloads" isDirectory:YES];
         }
     }
-    else {
-        [FNHelpers displayNodeMissingAlert];
-    }
 }
 
 #pragma mark - FNFCPWrapperDelegate methods
