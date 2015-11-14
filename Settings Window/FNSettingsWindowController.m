@@ -39,7 +39,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didReceiveNodeStats:) name:FNNodeStatsReceivedNotification object:nil];
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(didDisconnect) name:FNNodeFCPDisconnectedNotification object:nil];   
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showNodeFinderPanel:) name:FNNodeShowNodeFinderInSettingsWindow object:nil];
-    self.nodePathDisplay.URL = self.nodeController.nodeLocation;
 }
 
 #pragma mark - Notification handlers 

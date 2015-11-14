@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="8191" systemVersion="15A282b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="8191"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
         <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
@@ -10,6 +10,7 @@
             <connections>
                 <outlet property="fcpStatusView" destination="RHv-zj-Iec" id="Yhb-pU-Yzf"/>
                 <outlet property="nodeBuildField" destination="VlZ-nH-wLT" id="URN-B2-qgZ"/>
+                <outlet property="nodePathDisplay" destination="Wig-6Q-h6f" id="Ek7-Y7-t6c"/>
                 <outlet property="nodeRunningStatusView" destination="ozh-jT-Mol" id="Pgg-AS-NQt"/>
                 <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
             </connections>
@@ -21,34 +22,19 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="398" height="315"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
-            <view key="contentView" id="se5-gp-TjO">
+            <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="398" height="315"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nf3-Bh-Mxb">
-                        <rect key="frame" x="49" y="275" width="191" height="18"/>
+                        <rect key="frame" x="44" y="279" width="185" height="18"/>
                         <animations/>
-                        <buttonCell key="cell" type="check" title="Show tray icon when I log in" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="LpL-CZ-4IY">
+                        <buttonCell key="cell" type="check" title="Start tray app when I log in" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="LpL-CZ-4IY">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <binding destination="-2" name="value" keyPath="self.loginItem" id="xWN-mF-Y96"/>
-                        </connections>
-                    </button>
-                    <button hidden="YES" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mxV-EL-AaY">
-                        <rect key="frame" x="49" y="245" width="182" height="18"/>
-                        <animations/>
-                        <buttonCell key="cell" type="check" title="Start Freenet when I log in" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="9kj-pP-3mQ">
-                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
-                            <font key="font" metaFont="system"/>
-                        </buttonCell>
-                        <connections>
-                            <binding destination="W3z-tc-WcL" name="value" keyPath="values.startatlaunch" id="nmO-Xd-85C">
-                                <dictionary key="options">
-                                    <integer key="NSNullPlaceholder" value="0"/>
-                                </dictionary>
-                            </binding>
                         </connections>
                     </button>
                     <box fixedFrame="YES" title="Freenet Node Status" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="ob6-zL-REv">
@@ -115,12 +101,7 @@
                         <animations/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSCaution" id="TkO-iT-kYD"/>
                         <connections>
-                            <binding destination="-2" name="hidden" keyPath="self.validNodeFound" id="eji-Us-jBr">
-                                <dictionary key="options">
-                                    <integer key="NSNotApplicablePlaceholder" value="0"/>
-                                    <integer key="NSNullPlaceholder" value="0"/>
-                                </dictionary>
-                            </binding>
+                            <binding destination="-2" name="hidden" keyPath="self.validNodeFound" id="lIv-Xm-LlV"/>
                         </connections>
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G72-uc-efh">
@@ -132,35 +113,59 @@
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="-2" name="hidden" keyPath="self.validNodeFound" id="NOS-FS-otQ">
-                                <dictionary key="options">
-                                    <integer key="NSNotApplicablePlaceholder" value="0"/>
-                                    <integer key="NSNullPlaceholder" value="0"/>
-                                </dictionary>
-                            </binding>
+                            <binding destination="-2" name="hidden" keyPath="self.validNodeFound" id="p4l-0x-QUr"/>
                         </connections>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o5C-kA-Haf">
-                        <rect key="frame" x="14" y="13" width="148" height="32"/>
+                        <rect key="frame" x="14" y="13" width="136" height="32"/>
                         <animations/>
-                        <buttonCell key="cell" type="push" title="Select Installation" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8M7-Tl-FUW">
+                        <buttonCell key="cell" type="push" title="Find Installation" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8M7-Tl-FUW">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
                             <action selector="selectNodeLocation:" target="-2" id="SVy-2c-bwC"/>
+                            <binding destination="-2" name="enabled" keyPath="self.validNodeFound" id="kgg-NQ-6yJ">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
                         </connections>
                     </button>
                     <pathControl verticalHuggingPriority="750" fixedFrame="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wig-6Q-h6f">
-                        <rect key="frame" x="20" y="59" width="358" height="22"/>
+                        <rect key="frame" x="20" y="59" width="358" height="15"/>
                         <animations/>
                         <pathCell key="cell" truncatesLastVisibleLine="YES" selectable="YES" refusesFirstResponder="YES" alignment="left" placeholderString="" id="zjN-6C-oqi">
                             <font key="font" metaFont="system"/>
                         </pathCell>
                         <connections>
                             <binding destination="-2" name="value" keyPath="self.nodeController.nodeLocation" id="XIR-O8-PU2"/>
+                            <binding destination="-2" name="hidden" keyPath="self.validNodeFound" id="ddR-bA-a60">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                </dictionary>
+                            </binding>
                         </connections>
                     </pathControl>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mxV-EL-AaY">
+                        <rect key="frame" x="44" y="245" width="186" height="18"/>
+                        <animations/>
+                        <buttonCell key="cell" type="check" title="Start Freenet automatically" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="9kj-pP-3mQ">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="-2" name="enabled" keyPath="self.loginItem" id="Nbm-bH-EJw"/>
+                            <binding destination="W3z-tc-WcL" name="value" keyPath="values.startatlaunch" id="27S-eX-9r9">
+                                <dictionary key="options">
+                                    <integer key="NSMultipleValuesPlaceholder" value="0"/>
+                                    <integer key="NSNoSelectionPlaceholder" value="0"/>
+                                    <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                    <integer key="NSNullPlaceholder" value="0"/>
+                                </dictionary>
+                            </binding>
+                        </connections>
+                    </button>
                 </subviews>
                 <animations/>
             </view>
