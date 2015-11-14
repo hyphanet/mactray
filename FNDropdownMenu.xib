@@ -8,6 +8,8 @@
         <customObject id="-2" userLabel="File's Owner" customClass="FNDropdownMenuController">
             <connections>
                 <outlet property="dropdownMenu" destination="Utt-EH-yKf" id="aQo-sY-rsY"/>
+                <outlet property="openDownloadsMenuItem" destination="9Jt-C5-mIM" id="DPe-68-Rbv"/>
+                <outlet property="openWebInterfaceMenuItem" destination="BHr-Vz-MCm" id="8Cl-mf-DHM"/>
                 <outlet property="toggleNodeStateMenuItem" destination="UpL-Lb-jBl" id="0Y4-z9-mPM"/>
             </connections>
         </customObject>

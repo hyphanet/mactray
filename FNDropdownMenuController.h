@@ -21,7 +21,9 @@
 @property NSStatusItem *statusItem;
 
 @property NSMenu *dropdownMenu;
-@property NSMenuItem *toggleNodeStateMenuItem;
+@property IBOutlet NSMenuItem *toggleNodeStateMenuItem;
+@property IBOutlet NSMenuItem *openWebInterfaceMenuItem;
+@property IBOutlet NSMenuItem *openDownloadsMenuItem;
 
 
 -(IBAction)toggleNodeState:(id)sender;

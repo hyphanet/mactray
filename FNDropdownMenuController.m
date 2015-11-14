@@ -62,6 +62,12 @@
     [self.statusItem setImage:image];
 }
 
+-(void)enableMenuItems:(BOOL)enabled {
+    self.toggleNodeStateMenuItem.enabled = enabled;
+    self.openDownloadsMenuItem.enabled = enabled;
+    self.openWebInterfaceMenuItem.enabled = enabled;
+}
+
 #pragma mark - IBActions
 
 -(IBAction)toggleNodeState:(id)sender {
@@ -110,15 +116,21 @@
 
 #pragma mark - FNNodeStateProtocol methods
 
+-(void)nodeStateUnknown:(NSNotification*)notification {
+    [self enableMenuItems:NO];
+}
+
 -(void)nodeStateRunning:(NSNotification*)notification {
     self.toggleNodeStateMenuItem.title = NSLocalizedString(@"Stop Freenet", @"Menu title for stopping freenet");
     [self setMenuBarImage:[TrayIcon imageOfRunningIcon]];
+    [self enableMenuItems:YES];
 
 }
 
 -(void)nodeStateNotRunning:(NSNotification*)notification {
     self.toggleNodeStateMenuItem.title = NSLocalizedString(@"Start Freenet", @"Menu title for starting freenet");
     [self setMenuBarImage:[TrayIcon imageOfNotRunningIcon]];
+    [self enableMenuItems:YES];
 
 }
 
