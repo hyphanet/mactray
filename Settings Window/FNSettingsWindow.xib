@@ -27,7 +27,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nf3-Bh-Mxb">
-                        <rect key="frame" x="44" y="279" width="185" height="18"/>
+                        <rect key="frame" x="44" y="279" width="336" height="18"/>
                         <animations/>
                         <buttonCell key="cell" type="check" title="Start tray app when I log in" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="LpL-CZ-4IY">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -105,9 +105,9 @@
                         </connections>
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G72-uc-efh">
-                        <rect key="frame" x="44" y="62" width="137" height="17"/>
+                        <rect key="frame" x="44" y="62" width="336" height="17"/>
                         <animations/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="right" title="Installation Not Found" id="s3Z-Gq-qbd">
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Installation Not Found" id="s3Z-Gq-qbd">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -148,7 +148,7 @@
                         </connections>
                     </pathControl>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mxV-EL-AaY">
-                        <rect key="frame" x="44" y="245" width="186" height="18"/>
+                        <rect key="frame" x="44" y="245" width="336" height="18"/>
                         <animations/>
                         <buttonCell key="cell" type="check" title="Start Freenet automatically" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="9kj-pP-3mQ">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
