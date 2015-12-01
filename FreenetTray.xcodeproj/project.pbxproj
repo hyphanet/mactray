@@ -358,6 +358,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "${inherited} @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = org.freenetproject.mactray;
 				PRODUCT_NAME = FreenetTray;
 				SDKROOT = macosx;
 			};
@@ -387,6 +388,7 @@
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "${inherited} @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = org.freenetproject.mactray;
 				PRODUCT_NAME = FreenetTray;
 				SDKROOT = macosx;
 			};
