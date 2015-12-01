@@ -25,6 +25,7 @@
 		AA8C5F2A1BCAEF3100220952 /* FNConfigParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F291BCAEF3100220952 /* FNConfigParser.m */; settings = {ASSET_TAGS = (); }; };
 		AA8C5F2E1BCB013800220952 /* FNSettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F2C1BCB013800220952 /* FNSettingsWindowController.m */; settings = {ASSET_TAGS = (); }; };
 		AA8C5F2F1BCB013800220952 /* FNSettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */; settings = {ASSET_TAGS = (); }; };
+		AA5E172C1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg in Resources */ = {isa = PBXBuildFile; fileRef = AA5E172B1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg */; };
 		AADFE52D103A4251007808C8 /* main.xib in Resources */ = {isa = PBXBuildFile; fileRef = AADFE52C103A4251007808C8 /* main.xib */; };
 		AAEF3AEE1AD6313800A4B475 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AAEF3AED1AD6313800A4B475 /* README.md */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		AA5677031ABD345D00BBC0D3 /* FNConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNConstants.h; sourceTree = "<group>"; };
 		AA5677041ABD345D00BBC0D3 /* FNConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNConstants.m; sourceTree = "<group>"; };
 		AA5D45CC110DF9BC00A81617 /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaults.plist; sourceTree = "<group>"; };
+		AA5E172B1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jre-8u66-macosx-x64.dmg"; sourceTree = "<group>"; };
 		AA86025C0FCA62AC00AE7291 /* FreenetTray_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreenetTray_Prefix.pch; sourceTree = "<group>"; };
 		AA8C5F281BCAEF3100220952 /* FNConfigParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNConfigParser.h; sourceTree = "<group>"; };
 		AA8C5F291BCAEF3100220952 /* FNConfigParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNConfigParser.m; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 		29B97314FDCFA39411CA2CEA /* Freenet Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AAF723EB1BD0D14E003BA438 /* Bundled Packages */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -187,6 +190,14 @@
 				AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */,
 			);
 			name = "Settings Window";
+			sourceTree = "<group>";
+		};
+		AAF723EB1BD0D14E003BA438 /* Bundled Packages */ = {
+			isa = PBXGroup;
+			children = (
+				AA5E172B1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg */,
+			);
+			path = "Bundled Packages";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +258,7 @@
 				AA3C12A11ABE16BD00413379 /* FNDropdownMenu.xib in Resources */,
 				AA2A8B9C0FE3819300C585C8 /* freenet.icns in Resources */,
 				AADFE52D103A4251007808C8 /* main.xib in Resources */,
+				AA5E172C1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg in Resources */,
 				AAEF3AEE1AD6313800A4B475 /* README.md in Resources */,
 				AA433BD0109CD2B400EDBB73 /* LICENSE in Resources */,
 				AA433BD1109CD2B400EDBB73 /* gpl.txt in Resources */,
