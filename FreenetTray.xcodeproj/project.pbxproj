@@ -21,10 +21,10 @@
 		AA433BD1109CD2B400EDBB73 /* gpl.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA433BCF109CD2B400EDBB73 /* gpl.txt */; };
 		AA5677051ABD345D00BBC0D3 /* FNConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5677041ABD345D00BBC0D3 /* FNConstants.m */; };
 		AA5D45CD110DF9BC00A81617 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA5D45CC110DF9BC00A81617 /* defaults.plist */; };
-		AA8C5F2A1BCAEF3100220952 /* FNConfigParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F291BCAEF3100220952 /* FNConfigParser.m */; settings = {ASSET_TAGS = (); }; };
-		AA8C5F2E1BCB013800220952 /* FNSettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F2C1BCB013800220952 /* FNSettingsWindowController.m */; settings = {ASSET_TAGS = (); }; };
-		AA8C5F2F1BCB013800220952 /* FNSettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */; settings = {ASSET_TAGS = (); }; };
 		AA5E172C1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg in Resources */ = {isa = PBXBuildFile; fileRef = AA5E172B1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg */; };
+		AA8C5F2A1BCAEF3100220952 /* FNConfigParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F291BCAEF3100220952 /* FNConfigParser.m */; };
+		AA8C5F2E1BCB013800220952 /* FNSettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F2C1BCB013800220952 /* FNSettingsWindowController.m */; };
+		AA8C5F2F1BCB013800220952 /* FNSettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */; };
 		AADFE52D103A4251007808C8 /* main.xib in Resources */ = {isa = PBXBuildFile; fileRef = AADFE52C103A4251007808C8 /* main.xib */; };
 		AAE306F31BF920EE00C4EC1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE306F21BF920EE00C4EC1D /* Images.xcassets */; };
 		AAEF3AEE1AD6313800A4B475 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AAEF3AED1AD6313800A4B475 /* README.md */; };
