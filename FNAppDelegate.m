@@ -38,7 +38,21 @@
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];    
     [defaults registerDefaults:defaultsPlistDict];
- 
+    
+     /* 
+        Check for first launch key, if it isn't there this is first launch and 
+        we need to setup autostart/loginitem
+    */
+    if([defaults boolForKey:FNNodeFirstLaunchKey]) {
+        [defaults setBool:NO forKey:FNNodeFirstLaunchKey];
+        [defaults synchronize];
+        /* 
+            Since this is the first launch, we add a login item for the user. If 
+            they delete that login item it wont be added again.
+        */
+        [[NSBundle mainBundle] addToLoginItems];
+    }
+            
     DCOAboutWindowController *aboutWindow = [[DCOAboutWindowController alloc] init];
     aboutWindow.useTextViewForAcknowledgments = YES;
     NSString *websiteURLPath = [NSString stringWithFormat:@"https://%@", FNWebDomain];
@@ -68,21 +82,6 @@
         // no freenet installation found, warn the user for now, bring up file
         // selection window soon
         [FNHelpers displayNodeMissingAlert];
-    }
-    
-
-    /* 
-        Check for first launch key, if it isn't there this is first launch and 
-        we need to setup autostart/loginitem
-    */
-    if([defaults boolForKey:FNNodeFirstLaunchKey]) {
-        [defaults setBool:NO forKey:FNNodeFirstLaunchKey];
-        [defaults synchronize];
-        /* 
-            Since this is the first launch, we add a login item for the user. If 
-            they delete that login item it wont be added again.
-        */
-        [[NSBundle mainBundle] addToLoginItems];
     }
 }
 
