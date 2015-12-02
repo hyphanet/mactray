@@ -24,6 +24,8 @@ NSString *const FNNodeFreenetConfigFilePathname = @"freenet.ini";
 
 NSTimeInterval const FNNodeCheckTimeInterval = 1;
 
+NSString *const FNPastebinDomain = @"pastebin.com";
+
 #pragma mark - Node configuration keys
 
 NSString *const FNNodeFreenetConfigFCPBindAddressesKey = @"fcp.bindTo";
@@ -54,9 +56,21 @@ NSString *const FNNodeStatsReceivedNotification = @"FNNodeStatsReceivedNotificat
 
 NSString *const FNNodeFCPDisconnectedNotification = @"FNNodeFCPDisconnectedNotification";
 
+NSString *const FNInstallFinishedNotification = @"FNInstallFinishedNotification";
+NSString *const FNInstallFailedNotification = @"FNInstallFailedNotification";
+
 
 #pragma mark - Global Actions
 
 NSString *const FNNodeShowSettingsWindow = @"FNNodeShowSettingsWindow";
 NSString *const FNNodeShowNodeFinderInSettingsWindow = @"FNNodeShowNodeFinderInSettingsWindow";
+NSString *const FNNodeShowInstallerWindow = @"FNNodeShowInstallerWindow";
+
+#pragma mark - Installer
+
+NSString *const FNInstallDefaultLocation = @"~/Library/Application Support/Freenet";
+NSInteger const FNInstallDefaultFProxyPort = 8888;
+NSInteger const FNInstallDefaultFCPPort = 9481;
+
+
 
