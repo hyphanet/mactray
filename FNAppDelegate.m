@@ -88,8 +88,7 @@
         }
     }
     else {
-        // no freenet installation found, warn the user for now, bring up file
-        // selection window soon
+        // no freenet installation found, ask the user what to do
         [FNHelpers displayNodeMissingAlert];
     }
 }

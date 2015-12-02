@@ -101,15 +101,14 @@
                     [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeStateUnknownNotification object:nil];
                 });
             }
-            //if the anchor file exists, the node should be running.
             else if ([[NSFileManager defaultManager] fileExistsAtPath:anchorFile.path]) {
-            /* 
-                If we find the anchor file we we send an FNNodeStateRunningNotification 
-                event and save the node state here.
-                
-                This can be a false positive, the node may be stopped even if 
-                this file exists, but normally it should be accurate.
-            */
+                /* 
+                    If we find the anchor file we we send an FNNodeStateRunningNotification 
+                    event and save the node state here.
+                    
+                    This can be a false positive, the node may be stopped even if 
+                    this file exists, but normally it should be accurate.
+                */
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.currentNodeState = FNNodeStateRunning;
                     [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeStateRunningNotification object:nil];
