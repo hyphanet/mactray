@@ -55,8 +55,8 @@ See the Acknowledgements file for license and copyright information
 
 Before doing anything, ensure you have the following things on the build machine:
 
-* A 64-bit Intel Mac running OS X 10.9+
-* Xcode 6.x+ installed (must have the OS X 10.10 SDK)
+* A 64-bit Intel Mac running OS X 10.10+
+* Xcode 7.x+ installed (must have the OS X 10.11 SDK)
 
 DO NOT open FreenetTray.xcodeproj directly! The application requires CocoaPods, 
 which will build the 3rd party library dependencies for you and generate an Xcode 
@@ -67,13 +67,13 @@ workspace for you to use.
 First, open a terminal and change directory to the source code location:
 
 ```sh
-$ cd /path/to/java_installer/res/mac/FreenetTray/src
+$ cd /path/to/mactray/
 ```
 
 You will then need to install CocoaPods:
 
 ```sh
-$ sudo gem install cocoapods
+$ gem install cocoapods
 ```
 
 Now allow CocoaPods to download and build the required 3rd party libraries:
@@ -102,6 +102,6 @@ $ open FreenetTray.xcworkspace
 
 Now you can build and run the application, or archive it for distribution.
 
-When built against the OS X 10.10 SDK, the built application should be fully 
-compatible with 64-bit Intel Macs running OS X 10.7 - OS X 10.10.
+When built against the OS X 10.11 SDK, the built application should be fully 
+compatible with 64-bit Intel Macs running OS X 10.8 - OS X 10.11.
 
