@@ -25,6 +25,13 @@
 		AA8C5F2A1BCAEF3100220952 /* FNConfigParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F291BCAEF3100220952 /* FNConfigParser.m */; };
 		AA8C5F2E1BCB013800220952 /* FNSettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F2C1BCB013800220952 /* FNSettingsWindowController.m */; };
 		AA8C5F2F1BCB013800220952 /* FNSettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */; };
+		AA94E6D71BD07FEE0092A66E /* installer_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AA94E6D61BD07FEE0092A66E /* installer_background.png */; };
+		AAC093D71BED28C10065481F /* FNInstallerDestinationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC093C41BED28C10065481F /* FNInstallerDestinationView.xib */; };
+		AAC093D81BED28C10065481F /* FNInstallerDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC093C61BED28C10065481F /* FNInstallerDestinationViewController.m */; };
+		AAC093D91BED28C10065481F /* FNInstallerProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC093C71BED28C10065481F /* FNInstallerProgressView.xib */; };
+		AAC093DA1BED28C10065481F /* FNInstallerProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC093C91BED28C10065481F /* FNInstallerProgressViewController.m */; };
+		AAC093DF1BED28C10065481F /* FNInstallerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC093D11BED28C10065481F /* FNInstallerWindow.xib */; };
+		AAC093E01BED28C10065481F /* FNInstallerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC093D31BED28C10065481F /* FNInstallerWindowController.m */; };
 		AAD6891D1BD17CF500942738 /* Bundled Node in Resources */ = {isa = PBXBuildFile; fileRef = AAD6891C1BD17CF500942738 /* Bundled Node */; };
 		AADFE52D103A4251007808C8 /* main.xib in Resources */ = {isa = PBXBuildFile; fileRef = AADFE52C103A4251007808C8 /* main.xib */; };
 		AAE306F31BF920EE00C4EC1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE306F21BF920EE00C4EC1D /* Images.xcassets */; };
@@ -77,6 +84,16 @@
 		AA8C5F2B1BCB013800220952 /* FNSettingsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNSettingsWindowController.h; path = "Settings Window/FNSettingsWindowController.h"; sourceTree = "<group>"; };
 		AA8C5F2C1BCB013800220952 /* FNSettingsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNSettingsWindowController.m; path = "Settings Window/FNSettingsWindowController.m"; sourceTree = "<group>"; };
 		AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FNSettingsWindow.xib; path = "Settings Window/FNSettingsWindow.xib"; sourceTree = "<group>"; };
+		AA94E6D61BD07FEE0092A66E /* installer_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = installer_background.png; sourceTree = "<group>"; };
+		AAC093C41BED28C10065481F /* FNInstallerDestinationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FNInstallerDestinationView.xib; sourceTree = "<group>"; };
+		AAC093C51BED28C10065481F /* FNInstallerDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNInstallerDestinationViewController.h; sourceTree = "<group>"; };
+		AAC093C61BED28C10065481F /* FNInstallerDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNInstallerDestinationViewController.m; sourceTree = "<group>"; };
+		AAC093C71BED28C10065481F /* FNInstallerProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FNInstallerProgressView.xib; sourceTree = "<group>"; };
+		AAC093C81BED28C10065481F /* FNInstallerProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNInstallerProgressViewController.h; sourceTree = "<group>"; };
+		AAC093C91BED28C10065481F /* FNInstallerProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNInstallerProgressViewController.m; sourceTree = "<group>"; };
+		AAC093D11BED28C10065481F /* FNInstallerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FNInstallerWindow.xib; sourceTree = "<group>"; };
+		AAC093D21BED28C10065481F /* FNInstallerWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNInstallerWindowController.h; sourceTree = "<group>"; };
+		AAC093D31BED28C10065481F /* FNInstallerWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNInstallerWindowController.m; sourceTree = "<group>"; };
 		AAD6891C1BD17CF500942738 /* Bundled Node */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Bundled Node"; sourceTree = "<group>"; };
 		AADFE52C103A4251007808C8 /* main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = main.xib; sourceTree = "<group>"; };
 		AAE306F21BF920EE00C4EC1D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FreenetTray/Images.xcassets; sourceTree = "<group>"; };
@@ -111,6 +128,7 @@
 				AA3C12A71ABE7B4300413379 /* FNFCPWrapper.m */,
 				AA1D48CD1B697F1700CAC97E /* FNHelpers.h */,
 				AA1D48CE1B697F1700CAC97E /* FNHelpers.m */,
+				AAC093C01BED28C00065481F /* Installer */,
 				AA8C5F301BCB013E00220952 /* Settings Window */,
 			);
 			name = Classes;
@@ -166,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				AAE306F21BF920EE00C4EC1D /* Images.xcassets */,
+				AA94E6D61BD07FEE0092A66E /* installer_background.png */,
 				AA5D45CC110DF9BC00A81617 /* defaults.plist */,
 				AA433BCE109CD2B400EDBB73 /* LICENSE */,
 				AAEF3AED1AD6313800A4B475 /* README.md */,
@@ -193,6 +212,22 @@
 				AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */,
 			);
 			name = "Settings Window";
+			sourceTree = "<group>";
+		};
+		AAC093C01BED28C00065481F /* Installer */ = {
+			isa = PBXGroup;
+			children = (
+				AAC093C41BED28C10065481F /* FNInstallerDestinationView.xib */,
+				AAC093C51BED28C10065481F /* FNInstallerDestinationViewController.h */,
+				AAC093C61BED28C10065481F /* FNInstallerDestinationViewController.m */,
+				AAC093C71BED28C10065481F /* FNInstallerProgressView.xib */,
+				AAC093C81BED28C10065481F /* FNInstallerProgressViewController.h */,
+				AAC093C91BED28C10065481F /* FNInstallerProgressViewController.m */,
+				AAC093D11BED28C10065481F /* FNInstallerWindow.xib */,
+				AAC093D21BED28C10065481F /* FNInstallerWindowController.h */,
+				AAC093D31BED28C10065481F /* FNInstallerWindowController.m */,
+			);
+			path = Installer;
 			sourceTree = "<group>";
 		};
 		AAF723EB1BD0D14E003BA438 /* Bundled Packages */ = {
@@ -256,9 +291,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC093D71BED28C10065481F /* FNInstallerDestinationView.xib in Resources */,
+				AAC093DF1BED28C10065481F /* FNInstallerWindow.xib in Resources */,
 				AA8C5F2F1BCB013800220952 /* FNSettingsWindow.xib in Resources */,
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				AA3C12A11ABE16BD00413379 /* FNDropdownMenu.xib in Resources */,
+				AA94E6D71BD07FEE0092A66E /* installer_background.png in Resources */,
 				AAE306F31BF920EE00C4EC1D /* Images.xcassets in Resources */,
 				AADFE52D103A4251007808C8 /* main.xib in Resources */,
 				AA5E172C1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg in Resources */,
@@ -267,6 +305,7 @@
 				AA433BD0109CD2B400EDBB73 /* LICENSE in Resources */,
 				AA433BD1109CD2B400EDBB73 /* gpl.txt in Resources */,
 				AA5D45CD110DF9BC00A81617 /* defaults.plist in Resources */,
+				AAC093D91BED28C10065481F /* FNInstallerProgressView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAC093D81BED28C10065481F /* FNInstallerDestinationViewController.m in Sources */,
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				AA5677051ABD345D00BBC0D3 /* FNConstants.m in Sources */,
 				AA3C12A51ABE32B100413379 /* TrayIcon.m in Sources */,
@@ -318,6 +358,8 @@
 				AA3C129C1ABD425100413379 /* FNAppDelegate.m in Sources */,
 				AA1D48CF1B697F1700CAC97E /* FNHelpers.m in Sources */,
 				AA02AADA0FC8D74F00499DB3 /* FNNodeController.m in Sources */,
+				AAC093E01BED28C10065481F /* FNInstallerWindowController.m in Sources */,
+				AAC093DA1BED28C10065481F /* FNInstallerProgressViewController.m in Sources */,
 				AA8C5F2E1BCB013800220952 /* FNSettingsWindowController.m in Sources */,
 				AA3C12A81ABE7B4300413379 /* FNFCPWrapper.m in Sources */,
 			);

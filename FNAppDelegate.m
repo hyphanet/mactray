@@ -21,6 +21,8 @@
 
 #import "FNHelpers.h"
 
+#import "FNInstallerWindowController.h"
+
 #import <PFMoveApplication.h>
 #import <DCOAboutWindow/DCOAboutWindowController.h>
 @interface FNAppDelegate ()
@@ -71,6 +73,10 @@
     settingsWindowController = [[FNSettingsWindowController alloc] initWithWindowNibName:@"FNSettingsWindow"];
     settingsWindowController.nodeController = nodeController;
     [settingsWindowController window];
+    
+    installerWindowController = [[FNInstallerWindowController alloc] initWithWindowNibName:@"FNInstallerWindow"];
+    installerWindowController.nodeController = nodeController;
+    [installerWindowController window];
     
     NSURL *nodeURL = [FNHelpers findNodeInstallation];
     if (nodeURL) {

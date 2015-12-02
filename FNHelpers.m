@@ -55,17 +55,30 @@
 }
 
 +(void)displayNodeMissingAlert {
-    // no installation found, tell the user to pick a location
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSDictionary *errorInfo = @{ NSLocalizedDescriptionKey : NSLocalizedString(@"A Freenet installation could not be found.", @"String informing the user that no Freenet installation could be found") };
-    
-            NSError *error = [NSError errorWithDomain:@"org.freenetproject" code:0x1000 userInfo:errorInfo];
-            NSAlert *alert = [NSAlert alertWithError:error];
-            [alert runModal];
+    // no installation found, tell the user to pick a location or start the installer
+    dispatch_async(dispatch_get_main_queue(), ^{        
+        NSAlert *alert = [[NSAlert alloc] init];
+        alert.messageText = NSLocalizedString(@"A Freenet installation could not be found.", @"String informing the user that no Freenet installation could be found");
+        alert.informativeText = NSLocalizedString(@"Would you like to install Freenet now, or locate an existing Freenet installation?", @"String asking the user whether they would like to install freenet or locate an existing installation");
+        [alert addButtonWithTitle:NSLocalizedString(@"Install Freenet", @"Install Freenet")];
+
+        [alert addButtonWithTitle:NSLocalizedString(@"Find Installation", @"Find installation")];
+        [alert addButtonWithTitle:NSLocalizedString(@"Quit", @"Quit")];
+        
+        NSInteger button = [alert runModal];
+        if (button == NSAlertFirstButtonReturn) {
+            // display installer
+            [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeShowInstallerWindow object:nil];
+        }
+        else if (button == NSAlertSecondButtonReturn) {
+            // display node finder panel
             [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeShowNodeFinderInSettingsWindow object:nil];
-        });
-    });  
+        }
+        else if (button == NSAlertThirdButtonReturn) {
+            // display node finder panel
+            [NSApp terminate:self];
+        }
+    }); 
 }
 
 @end

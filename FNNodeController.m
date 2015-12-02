@@ -39,8 +39,23 @@
         [self.fcpWrapper nodeStateLoop];
         // spawn a thread to keep the node status indicator updated in realtime. The method called here cannot be run again while this thread is running
         [NSThread detachNewThreadSelector:@selector(checkNodeStatus) toTarget:self withObject:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(installFinished:) name:FNInstallFinishedNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(installFailed:) name:FNInstallFailedNotification object:nil];        
+        
     }
     return self;
+}
+
+#pragma mark - Install delegate
+
+-(void)installFinished:(NSNotification *)notification {
+    NSURL *newInstallation = notification.object;
+    self.nodeLocation = newInstallation;
+    [self startFreenet];
+}
+
+-(void)installFailed:(NSNotification *)notification {
+    self.nodeLocation = nil;
 }
 
 #pragma mark - Dynamic properties

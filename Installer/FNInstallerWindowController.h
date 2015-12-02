@@ -13,15 +13,10 @@
 
 @import Cocoa;
 @class FNNodeController;
-@class FNDropdownMenuController;
-@class FNSettingsWindowController;
-@class FNInstallerWindowController;
 
-@interface FNAppDelegate : NSObject <NSApplicationDelegate> {
-    FNNodeController *nodeController;
-    FNDropdownMenuController *dropdownMenuController;
-    FNSettingsWindowController *settingsWindowController;
-    FNInstallerWindowController *installerWindowController;
-}
+@interface FNInstallerWindowController : NSWindowController <NSWindowDelegate, NSPageControllerDelegate, FNInstallerDelegate, FNInstallerDataSource>
+@property IBOutlet NSButton *backButton;
+@property IBOutlet NSButton *nextButton;
+
+@property FNNodeController *nodeController;
 @end
-
