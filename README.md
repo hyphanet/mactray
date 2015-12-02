@@ -20,6 +20,16 @@ This is a tray (menu bar) app for Freenet for OS X.
 
 ![Settings](screenshots/settings.jpg "FreenetTray settings")
 
+##### Installer
+
+![Installer Prompt](screenshots/installer_step1.jpg "Freenet Installer prompt")
+
+![Installer Location Window](screenshots/installer_step2.jpg "Freenet Installer Location Window")
+
+![Installer In Progress](screenshots/installer_step3.jpg "Freenet Installer In Progress")
+
+![Installer Finished](screenshots/installer_step4.jpg "Freenet Installer Finished")
+
 ### Changelog
 
 * 1.4
