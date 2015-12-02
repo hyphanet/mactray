@@ -83,6 +83,9 @@
         NSString *nodePath = [nodeURL.path stringByStandardizingPath];
         [defaults setObject:nodePath forKey:FNNodeInstallationDirectoryKey];
         nodeController.nodeLocation = nodeURL;
+        if ([defaults boolForKey:FNStartAtLaunchKey]) {
+            [nodeController startFreenet];
+        }
     }
     else {
         // no freenet installation found, warn the user for now, bring up file
