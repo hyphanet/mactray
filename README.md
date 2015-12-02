@@ -49,7 +49,7 @@ This is a tray (menu bar) app for Freenet for OS X.
     
 ### Licensing
  
-Read the LICENSE file included with this source code.
+See the Acknowledgements file for license and copyright information
 
 ### Build instructions
 

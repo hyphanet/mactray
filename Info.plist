@@ -25,7 +25,7 @@
 	<key>LSUIElement</key>
 	<true/>
 	<key>NSHumanReadableCopyright</key>
-	<string>See the LICENSE file inside the app bundle or included with the source code for details</string>
+	<string>See the Acknowledgements file included with this app for license and copyright information</string>
 	<key>NSMainNibFile</key>
 	<string>main</string>
 	<key>NSPrincipalClass</key>

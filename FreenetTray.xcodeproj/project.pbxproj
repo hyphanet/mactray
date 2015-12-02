@@ -17,7 +17,6 @@
 		AA3C12A11ABE16BD00413379 /* FNDropdownMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3C129F1ABE16BD00413379 /* FNDropdownMenu.xib */; };
 		AA3C12A51ABE32B100413379 /* TrayIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3C12A41ABE32B100413379 /* TrayIcon.m */; };
 		AA3C12A81ABE7B4300413379 /* FNFCPWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3C12A71ABE7B4300413379 /* FNFCPWrapper.m */; };
-		AA433BD0109CD2B400EDBB73 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = AA433BCE109CD2B400EDBB73 /* LICENSE */; };
 		AA433BD1109CD2B400EDBB73 /* gpl.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA433BCF109CD2B400EDBB73 /* gpl.txt */; };
 		AA5677051ABD345D00BBC0D3 /* FNConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5677041ABD345D00BBC0D3 /* FNConstants.m */; };
 		AA5D45CD110DF9BC00A81617 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA5D45CC110DF9BC00A81617 /* defaults.plist */; };
@@ -74,7 +73,6 @@
 		AA3C12A41ABE32B100413379 /* TrayIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrayIcon.m; sourceTree = "<group>"; };
 		AA3C12A61ABE7B4300413379 /* FNFCPWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNFCPWrapper.h; sourceTree = "<group>"; };
 		AA3C12A71ABE7B4300413379 /* FNFCPWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNFCPWrapper.m; sourceTree = "<group>"; };
-		AA433BCE109CD2B400EDBB73 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		AA433BCF109CD2B400EDBB73 /* gpl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gpl.txt; sourceTree = "<group>"; };
 		AA5677031ABD345D00BBC0D3 /* FNConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNConstants.h; sourceTree = "<group>"; };
 		AA5677041ABD345D00BBC0D3 /* FNConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNConstants.m; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 				AAE306EF1BF6DEC900C4EC1D /* Credits.rtf */,
 				AA94E6D61BD07FEE0092A66E /* installer_background.png */,
 				AA5D45CC110DF9BC00A81617 /* defaults.plist */,
-				AA433BCE109CD2B400EDBB73 /* LICENSE */,
 				AAEF3AED1AD6313800A4B475 /* README.md */,
 				AA433BCF109CD2B400EDBB73 /* gpl.txt */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -310,7 +307,6 @@
 				AA5E172C1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg in Resources */,
 				AAD6891D1BD17CF500942738 /* Bundled Node in Resources */,
 				AAEF3AEE1AD6313800A4B475 /* README.md in Resources */,
-				AA433BD0109CD2B400EDBB73 /* LICENSE in Resources */,
 				AAE306F01BF6DEC900C4EC1D /* Acknowledgments.rtf in Resources */,
 				AA433BD1109CD2B400EDBB73 /* gpl.txt in Resources */,
 				AA5D45CD110DF9BC00A81617 /* defaults.plist in Resources */,

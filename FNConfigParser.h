@@ -6,7 +6,7 @@
     
     3rd party libraries may be distributed under an alternate Open Source license.
     
-    See the LICENSE file included with this code for details.
+    See the Acknowledgements file included with this code for details.
     
 */
 
