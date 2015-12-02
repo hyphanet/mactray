@@ -37,3 +37,15 @@
 @required
 -(NSURL *)nodeFCPURL;
 @end
+
+@protocol FNInstallerDelegate <NSObject>
+@required
+-(void)userDidSelectInstallLocation:(NSURL *)installURL;
+-(void)installerDidFinishAtLocation:(NSURL *)installURL;
+-(void)installerDidFailWithLog:(NSString *)log;
+@end
+
+@protocol FNInstallerDataSource <NSObject>
+@required
+
+@end
