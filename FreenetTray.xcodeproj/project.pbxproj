@@ -25,6 +25,7 @@
 		AA8C5F2A1BCAEF3100220952 /* FNConfigParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F291BCAEF3100220952 /* FNConfigParser.m */; };
 		AA8C5F2E1BCB013800220952 /* FNSettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F2C1BCB013800220952 /* FNSettingsWindowController.m */; };
 		AA8C5F2F1BCB013800220952 /* FNSettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */; };
+		AAD6891D1BD17CF500942738 /* Bundled Node in Resources */ = {isa = PBXBuildFile; fileRef = AAD6891C1BD17CF500942738 /* Bundled Node */; };
 		AADFE52D103A4251007808C8 /* main.xib in Resources */ = {isa = PBXBuildFile; fileRef = AADFE52C103A4251007808C8 /* main.xib */; };
 		AAE306F31BF920EE00C4EC1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE306F21BF920EE00C4EC1D /* Images.xcassets */; };
 		AAEF3AEE1AD6313800A4B475 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AAEF3AED1AD6313800A4B475 /* README.md */; };
@@ -76,6 +77,7 @@
 		AA8C5F2B1BCB013800220952 /* FNSettingsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNSettingsWindowController.h; path = "Settings Window/FNSettingsWindowController.h"; sourceTree = "<group>"; };
 		AA8C5F2C1BCB013800220952 /* FNSettingsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNSettingsWindowController.m; path = "Settings Window/FNSettingsWindowController.m"; sourceTree = "<group>"; };
 		AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FNSettingsWindow.xib; path = "Settings Window/FNSettingsWindow.xib"; sourceTree = "<group>"; };
+		AAD6891C1BD17CF500942738 /* Bundled Node */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Bundled Node"; sourceTree = "<group>"; };
 		AADFE52C103A4251007808C8 /* main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = main.xib; sourceTree = "<group>"; };
 		AAE306F21BF920EE00C4EC1D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FreenetTray/Images.xcassets; sourceTree = "<group>"; };
 		AAEF3AED1AD6313800A4B475 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -134,6 +136,7 @@
 		29B97314FDCFA39411CA2CEA /* Freenet Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AAD6891C1BD17CF500942738 /* Bundled Node */,
 				AAF723EB1BD0D14E003BA438 /* Bundled Packages */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -259,6 +262,7 @@
 				AAE306F31BF920EE00C4EC1D /* Images.xcassets in Resources */,
 				AADFE52D103A4251007808C8 /* main.xib in Resources */,
 				AA5E172C1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg in Resources */,
+				AAD6891D1BD17CF500942738 /* Bundled Node in Resources */,
 				AAEF3AEE1AD6313800A4B475 /* README.md in Resources */,
 				AA433BD0109CD2B400EDBB73 /* LICENSE in Resources */,
 				AA433BD1109CD2B400EDBB73 /* gpl.txt in Resources */,
