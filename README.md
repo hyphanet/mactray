@@ -32,6 +32,12 @@ This is a tray (menu bar) app for Freenet for OS X.
 
 ### Changelog
 
+* 2.0.0
+    * Built-in Freenet installer
+    * Bundled Java installer
+        * Oracle Java 8u66
+    * Display node and FCP status in settings window
+    * Display current installed Freenet build in settings window
 * 1.4
     * Automatically finds node installation, doesn't depend on installer anymore
     * Settings window with node status and location override
