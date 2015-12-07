@@ -136,7 +136,9 @@
 -(void)didReceiveNodeHello:(NSNotification*)notification {
     NSDictionary *nodeHello = notification.object;
     NSString *build = nodeHello[@"Build"];
-    self.nodeBuildField.stringValue = build;
+    if (build) {
+        self.nodeBuildField.stringValue = build;
+    }
     self.fcpStatusView.image = [NSImage imageNamed:NSImageNameStatusPartiallyAvailable];
 }
 
