@@ -2,13 +2,13 @@
 
 ### About
 
-This is a tray (menu bar) app for Freenet for OS X. 
+A menu bar app for Freenet for OS X. 
 
-#### Features
-
-* Tray icon shows whether or not Freenet is running
-* Dropdown menu for starting and stopping Freenet properly
-* Easy access to the downloads folder
+* Menu bar icon shows whether or not Freenet is running
+* Automatically starts Freenet at login
+* Allows users to start and stop Freenet manually
+* Provides easy access to the downloads folder
+* Built-in Freenet installer with bundled Java package
 
 ### Screenshots
 
@@ -89,7 +89,7 @@ $ cd /path/to/mactray/
 You will then need to install CocoaPods:
 
 ```sh
-$ gem install cocoapods
+$ sudo gem install cocoapods
 ```
 
 Now allow CocoaPods to download and build the required 3rd party libraries:
