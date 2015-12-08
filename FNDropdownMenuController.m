@@ -102,6 +102,7 @@
 }
 
 -(IBAction)showAboutPanel:(id)sender {
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
     [self.aboutWindow showWindow:nil];
 }
 
