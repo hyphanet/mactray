@@ -25,6 +25,7 @@
 		AA8C5F2E1BCB013800220952 /* FNSettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F2C1BCB013800220952 /* FNSettingsWindowController.m */; };
 		AA8C5F2F1BCB013800220952 /* FNSettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */; };
 		AA94E6D71BD07FEE0092A66E /* installer_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AA94E6D61BD07FEE0092A66E /* installer_background.png */; };
+		AA9BE2EE1C1B774000345C77 /* verify.py in Resources */ = {isa = PBXBuildFile; fileRef = AA9BE2ED1C1B774000345C77 /* verify.py */; };
 		AAC093D71BED28C10065481F /* FNInstallerDestinationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC093C41BED28C10065481F /* FNInstallerDestinationView.xib */; };
 		AAC093D81BED28C10065481F /* FNInstallerDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC093C61BED28C10065481F /* FNInstallerDestinationViewController.m */; };
 		AAC093D91BED28C10065481F /* FNInstallerProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC093C71BED28C10065481F /* FNInstallerProgressView.xib */; };
@@ -85,6 +86,7 @@
 		AA8C5F2C1BCB013800220952 /* FNSettingsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNSettingsWindowController.m; path = "Settings Window/FNSettingsWindowController.m"; sourceTree = "<group>"; };
 		AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FNSettingsWindow.xib; path = "Settings Window/FNSettingsWindow.xib"; sourceTree = "<group>"; };
 		AA94E6D61BD07FEE0092A66E /* installer_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = installer_background.png; sourceTree = "<group>"; };
+		AA9BE2ED1C1B774000345C77 /* verify.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = verify.py; sourceTree = "<group>"; };
 		AAC093C41BED28C10065481F /* FNInstallerDestinationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FNInstallerDestinationView.xib; sourceTree = "<group>"; };
 		AAC093C51BED28C10065481F /* FNInstallerDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNInstallerDestinationViewController.h; sourceTree = "<group>"; };
 		AAC093C61BED28C10065481F /* FNInstallerDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNInstallerDestinationViewController.m; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AA9BE2ED1C1B774000345C77 /* verify.py */,
 				AAE306F21BF920EE00C4EC1D /* Images.xcassets */,
 				AAE306EE1BF6DEC900C4EC1D /* Acknowledgments.rtf */,
 				AAE306EF1BF6DEC900C4EC1D /* Credits.rtf */,
@@ -296,6 +299,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAE306F11BF6DEC900C4EC1D /* Credits.rtf in Resources */,
+				AA9BE2EE1C1B774000345C77 /* verify.py in Resources */,
 				AAC093D71BED28C10065481F /* FNInstallerDestinationView.xib in Resources */,
 				AAC093DF1BED28C10065481F /* FNInstallerWindow.xib in Resources */,
 				AA8C5F2F1BCB013800220952 /* FNSettingsWindow.xib in Resources */,
