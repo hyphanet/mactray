@@ -36,7 +36,8 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="UFs-K9-Db6"/>
-                <menuItem title="Settings" keyEquivalent="s" id="Ppa-6x-BP2">
+                <menuItem title="Settings" id="Ppa-6x-BP2">
+                    <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="showSettingsWindow:" target="-2" id="WUb-Cl-aUt"/>
                     </connections>
@@ -47,12 +48,14 @@
                         <action selector="uninstallFreenet:" target="-2" id="Mwe-fB-X9O"/>
                     </connections>
                 </menuItem>
-                <menuItem title="About" keyEquivalent="a" id="ZYj-54-W6V">
+                <menuItem title="About" id="ZYj-54-W6V">
+                    <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="showAboutPanel:" target="-2" id="htk-nh-A3v"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Quit" keyEquivalent="q" id="CHy-oK-4Q4">
+                <menuItem title="Quit" id="CHy-oK-4Q4">
+                    <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="terminate:" target="-1" id="U04-bI-4G0"/>
                     </connections>
