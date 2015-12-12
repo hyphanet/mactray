@@ -32,14 +32,14 @@ def compare_section_shasums(segment_name, first, second):
             print("OK: %s,%s" % (segment_name, key))
     return failure
 
-def check_path_exists(path):
+def assert_path_exists(path):
     if not os.path.exists(path):
         print("File %s not found" % path)
         exit(1)
 
 def verify_files(first, second):
-    check_path_exists(first)
-    check_path_exists(second)
+    assert_path_exists(first)
+    assert_path_exists(second)
     
     first_data_sections_sha = check_sections(segment_name=DATA_SEGMENT, sections=DATA_SECTIONS, path=first_path)
     second_data_sections_sha = check_sections(segment_name=DATA_SEGMENT, sections=DATA_SECTIONS, path=second_path)
