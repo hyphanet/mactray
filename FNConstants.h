@@ -44,6 +44,9 @@ FOUNDATION_EXPORT NSString *const FNNodeFCPURLKey;
 FOUNDATION_EXPORT NSString *const FNNodeInstallationDirectoryKey;
 FOUNDATION_EXPORT NSString *const FNNodeFirstLaunchKey;
 
+FOUNDATION_EXPORT NSString *const FNBrowserPreferenceKey;
+
+
 #pragma mark - Custom NSNotifications
 
 FOUNDATION_EXPORT NSString *const FNNodeStateUnknownNotification;

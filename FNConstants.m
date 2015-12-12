@@ -44,6 +44,8 @@ NSString *const FNNodeFCPURLKey = @"nodefcpurl";
 NSString *const FNNodeInstallationDirectoryKey = @"nodepath";
 NSString *const FNNodeFirstLaunchKey = @"firstlaunch";
 
+NSString *const FNBrowserPreferenceKey = @"FNBrowserPreferenceKey";
+
 #pragma mark - Custom NSNotifications
 
 NSString *const FNNodeStateUnknownNotification = @"FNNodeStateUnknownNotification";
