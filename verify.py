@@ -29,7 +29,7 @@ def compare_section_shasums(segment_name, first, second):
             failure = True
             print("WARNING: %s,%s DOES NOT MATCH!!!" % (segment_name, key))
         else:
-            print("%s,%s OK" % (segment_name, key))
+            print("OK: %s,%s" % (segment_name, key))
     return failure
 
 def check_path_exists(path):
