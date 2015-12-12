@@ -10,15 +10,17 @@
     
 */
 
-@import Foundation;
-@class FNBrowser;
+#import <Foundation/Foundation.h>
+
+@interface FNBrowser : NSObject
+
+@property NSURL *url;
+@property NSString *executablePath;
+@property NSString *name;
+@property NSImage *icon;
 
 
-@interface FNHelpers : NSObject
++(instancetype)browserWithFileURL:(NSURL *)url;
 
-+(NSURL *)findNodeInstallation;
-+(BOOL)validateNodeInstallationAtURL:(NSURL *)nodeURL;
-+(void)displayNodeMissingAlert;
-+(NSArray<FNBrowser *> *)installedWebBrowsers;
-
+-(instancetype)initWithApplication:(NSURL *)url;
 @end

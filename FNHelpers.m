@@ -11,6 +11,7 @@
 */
 
 #import "FNHelpers.h"
+#import "FNBrowser.h"
 
 @implementation FNHelpers
 
@@ -79,6 +80,23 @@
             [NSApp terminate:self];
         }
     }); 
+}
+
++(NSArray<FNBrowser *> *)installedWebBrowsers {
+    NSURL *url = [NSURL URLWithString:@"https://"];
+    LSRolesMask roles = kLSRolesViewer;
+    CFArrayRef urls = LSCopyApplicationURLsForURL((__bridge CFURLRef)url, roles);
+    NSArray *appUrls = CFBridgingRelease(urls);
+
+    // Extract the app names and sort them for prettiness.
+    NSMutableArray *appNames = [NSMutableArray arrayWithCapacity: appUrls.count];
+
+    for (NSURL *url in appUrls) {
+        FNBrowser *browser = [FNBrowser browserWithFileURL:url];
+        [appNames addObject: browser];
+    }
+    //[appNames sortUsingSelector: @selector(compare:)];
+    return appNames.copy;
 }
 
 @end

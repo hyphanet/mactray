@@ -11,6 +11,7 @@
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		A1A3C3A91102ABFD5B3FEB2A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 515E91EAE63300E20C3F8F20 /* libPods.a */; };
 		AA02AADA0FC8D74F00499DB3 /* FNNodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA02AAD90FC8D74F00499DB3 /* FNNodeController.m */; };
+		AA1052F61C19D73F00B991E5 /* FNBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1052F51C19D73F00B991E5 /* FNBrowser.m */; };
 		AA1D48CF1B697F1700CAC97E /* FNHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1D48CE1B697F1700CAC97E /* FNHelpers.m */; };
 		AA3C129C1ABD425100413379 /* FNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3C129B1ABD425100413379 /* FNAppDelegate.m */; };
 		AA3C12A01ABE16BD00413379 /* FNDropdownMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3C129E1ABE16BD00413379 /* FNDropdownMenuController.m */; };
@@ -62,6 +63,8 @@
 		8D1107320486CEB800E47090 /* FreenetTray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreenetTray.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA02AAD80FC8D74F00499DB3 /* FNNodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNNodeController.h; sourceTree = "<group>"; };
 		AA02AAD90FC8D74F00499DB3 /* FNNodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNNodeController.m; sourceTree = "<group>"; };
+		AA1052F41C19D73F00B991E5 /* FNBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNBrowser.h; sourceTree = "<group>"; };
+		AA1052F51C19D73F00B991E5 /* FNBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNBrowser.m; sourceTree = "<group>"; };
 		AA1D48CD1B697F1700CAC97E /* FNHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNHelpers.h; sourceTree = "<group>"; };
 		AA1D48CE1B697F1700CAC97E /* FNHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNHelpers.m; sourceTree = "<group>"; };
 		AA3C129A1ABD425100413379 /* FNAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNAppDelegate.h; sourceTree = "<group>"; };
@@ -132,6 +135,8 @@
 				AA3C12A71ABE7B4300413379 /* FNFCPWrapper.m */,
 				AA1D48CD1B697F1700CAC97E /* FNHelpers.h */,
 				AA1D48CE1B697F1700CAC97E /* FNHelpers.m */,
+				AA1052F41C19D73F00B991E5 /* FNBrowser.h */,
+				AA1052F51C19D73F00B991E5 /* FNBrowser.m */,
 				AAC093C01BED28C00065481F /* Installer */,
 				AA8C5F301BCB013E00220952 /* Settings Window */,
 			);
@@ -376,6 +381,7 @@
 				AAC093D81BED28C10065481F /* FNInstallerDestinationViewController.m in Sources */,
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				AA5677051ABD345D00BBC0D3 /* FNConstants.m in Sources */,
+				AA1052F61C19D73F00B991E5 /* FNBrowser.m in Sources */,
 				AA3C12A51ABE32B100413379 /* TrayIcon.m in Sources */,
 				AA8C5F2A1BCAEF3100220952 /* FNConfigParser.m in Sources */,
 				AA3C12A01ABE16BD00413379 /* FNDropdownMenuController.m in Sources */,
