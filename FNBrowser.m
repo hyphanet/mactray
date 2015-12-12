@@ -40,4 +40,17 @@
     return [NSString stringWithFormat:@"<%@>: %@", self.name, self.executablePath];
 }
 
+-(NSString *)privateBrowsingFlag {
+    if ([self.name isEqualToString:@"Firefox"]) {
+        return @"--private";
+    }
+    else if ([self.name isEqualToString:@"Chrome"]) {
+        return @"--incognito";
+    }
+    else if ([self.name isEqualToString:@"Opera"]) {
+        return @"--newprivatetab";
+    }    
+    return @"";
+}
+
 @end

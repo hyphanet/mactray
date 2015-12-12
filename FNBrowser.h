@@ -18,6 +18,7 @@
 @property NSString *executablePath;
 @property NSString *name;
 @property NSImage *icon;
+@property (readonly) NSString *privateBrowsingFlag;
 
 
 +(instancetype)browserWithFileURL:(NSURL *)url;
