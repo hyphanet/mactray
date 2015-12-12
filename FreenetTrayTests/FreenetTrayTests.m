@@ -12,6 +12,7 @@
 
 #import <XCTest/XCTest.h>
 
+#import "FNConstants.h"
 #import "FNHelpers.h"
 #import "FNBrowser.h"
 
@@ -20,6 +21,16 @@
 @end
 
 @implementation FreenetTrayTests
+
++(void)setUp {
+    // load factory defaults for node location variables, sourced from defaults.plist
+    NSString *defaultsPlist = [[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"];
+    NSLog(@"Defaults plist: %@", defaultsPlist);
+    NSDictionary *defaultsPlistDict = [NSDictionary dictionaryWithContentsOfFile:defaultsPlist];
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];    
+    [defaults registerDefaults:defaultsPlistDict];
+}
 
 - (void)setUp {
     [super setUp];
@@ -46,6 +57,13 @@
         NSLog(@"Found: %@", [browser debugDescription]);
     }
 
+}
+
+-(void)test_userSelectedBrowser {
+    NSString *userSelectedBrowser = [[NSUserDefaults standardUserDefaults] objectForKey:FNBrowserPreferenceKey];
+    NSLog(@"userSelectedBrowser: %@", userSelectedBrowser);
+    XCTAssertTrue([userSelectedBrowser isEqualToString:@"Safari"]);
+    
 }
 
 
