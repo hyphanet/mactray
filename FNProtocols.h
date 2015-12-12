@@ -41,7 +41,8 @@
 @protocol FNInstallerDelegate <NSObject>
 @required
 -(void)userDidSelectInstallLocation:(NSURL *)installURL;
--(void)installerDidFinishAtLocation:(NSURL *)installURL;
+-(void)installerDidCopyFiles;
+-(void)installerDidFinish;
 -(void)installerDidFailWithLog:(NSString *)log;
 @end
 

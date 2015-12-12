@@ -35,6 +35,8 @@
 #pragma mark - Step 1: Entry point
 
 -(void)installNodeAtFileURL:(NSURL *)installLocation {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(nodeConfigured:) name:FNNodeConfiguredNotification object:nil];
+
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         // wait until java is properly installed before continuing, but
         // don't repeatedly prompt the user to install it
@@ -62,6 +64,7 @@
 #pragma mark - Step 2: Copy files
 
 -(void)copyNodeToFileURL:(NSURL *)installLocation {
+    [self updateProgress:FNInstallerProgressCopyingFiles];
     [self appendToInstallLog:@"Starting installation"];
     NSURL *bundledNode = [[NSBundle mainBundle] URLForResource:@"Bundled Node" withExtension:nil];
     NSFileManager *fileManager = [[NSFileManager alloc] init];  
@@ -82,16 +85,16 @@
         return;
     }
     [self appendToInstallLog:@"Copy finished"];
-    [self updateProgress:FNInstallerProgressCopyFiles];
+    [self updateProgress:FNInstallerProgressCopiedFiles];
 }
 
 #pragma mark -
 #pragma mark - Step 3: Set up node and find available ports
 
 -(void)setupNodeAtFileURL:(NSURL *)installLocation {
+    [self updateProgress:FNInstallerProgressSetupPorts];
     [self appendToInstallLog:@"Running setup script"];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [self updateProgress:FNInstallerProgressSetupPorts];
         
         NSPipe *pipe = [[NSPipe alloc] init];
         NSFileHandle *stdOutHandle = [pipe fileHandleForReading];
@@ -123,11 +126,9 @@
                 [self.stateDelegate installerDidFailWithLog:self.installLog.string];
                 return;
             }
-            [self updateProgress:FNInstallerProgressFinished];
-            [self appendToInstallLog:@"Installation finished"];
-            [self.stateDelegate installerDidFinishAtLocation:installLocation];
+            [self updateProgress:FNInstallerProgressStartingNode];
             [self appendToInstallLog:@"Installer environment: %@", env.description];
-            NSLog(@"Install log: %@", self.installLog.string);
+            [self.stateDelegate installerDidCopyFiles];
         });
     });
 
@@ -233,38 +234,77 @@
 
 -(void)updateProgress:(enum FNInstallerProgress)progress {
     dispatch_async(dispatch_get_main_queue(), ^{
-        switch (progress) {
-            case FNInstallerProgressUnknown:
-                break;
-            case FNInstallerProgressJavaInstalling:
-                self.javaInstallationStatus.icon = NIKFontAwesomeIconClockO;
-                self.javaInstallationStatus.hidden = NO;
-                self.javaInstallationTitle.hidden = NO;
-                break;
-            case FNInstallerProgressJavaFound:
-                self.javaInstallationStatus.icon = NIKFontAwesomeIconCheckCircle;
-                self.javaInstallationStatus.hidden = NO;
-                self.javaInstallationTitle.hidden = NO;
-                break;
-            case FNInstallerProgressCopyFiles:
-                self.fileCopyStatus.icon = NIKFontAwesomeIconCheckCircle;
-                self.fileCopyStatus.hidden = NO;
-                self.fileCopyTitle.hidden = NO;
-                break;
-            case FNInstallerProgressSetupPorts:
-                self.portsStatus.icon = NIKFontAwesomeIconCheckCircle;
-                self.portsStatus.hidden = NO;
-                self.portsTitle.hidden = NO;
-                break;
-            case FNInstallerProgressFinished:
-                self.finishedStatus.icon = NIKFontAwesomeIconCheckCircle;
-                self.finishedStatus.hidden = NO;
-                self.finishedTitle.hidden = NO;
-                break;
-            default:
-                break;
+        if (progress >= FNInstallerProgressFinished) {
+            self.finishedStatus.icon = NIKFontAwesomeIconCheckCircle;
+            self.finishedStatus.hidden = NO;
+            self.finishedTitle.hidden = NO;        
+        }
+
+        if (progress >= FNInstallerProgressStartingNode) {
+            self.startNodeStatus.icon = NIKFontAwesomeIconClockO;
+            self.startNodeStatus.hidden = NO;
+            self.startNodeTitle.hidden = NO;        
+        }
+        
+        if (progress >= FNInstallerProgressStartedNode) {
+            self.startNodeStatus.icon = NIKFontAwesomeIconCheckCircle;
+            self.startNodeStatus.hidden = NO;
+            self.startNodeTitle.hidden = NO;        
+        }
+        
+        if (progress >= FNInstallerProgressSetupPorts) {
+            self.portsStatus.icon = NIKFontAwesomeIconCheckCircle;
+            self.portsStatus.hidden = NO;
+            self.portsTitle.hidden = NO;      
+        }
+        
+        if (progress >= FNInstallerProgressCopyingFiles) {
+            self.fileCopyStatus.icon = NIKFontAwesomeIconClockO;
+            self.fileCopyStatus.hidden = NO;
+            self.fileCopyTitle.hidden = NO;     
+        }
+        
+        if (progress >= FNInstallerProgressCopiedFiles) {
+            self.fileCopyStatus.icon = NIKFontAwesomeIconCheckCircle;
+            self.fileCopyStatus.hidden = NO;
+            self.fileCopyTitle.hidden = NO;     
+        }
+        
+        if (progress >= FNInstallerProgressJavaInstalling) {
+            self.javaInstallationStatus.icon = NIKFontAwesomeIconClockO;
+            self.javaInstallationStatus.hidden = NO;
+            self.javaInstallationTitle.hidden = NO;   
+        }
+        if (progress >= FNInstallerProgressJavaFound) {
+            self.javaInstallationStatus.icon = NIKFontAwesomeIconCheckCircle;
+            self.javaInstallationStatus.hidden = NO;
+            self.javaInstallationTitle.hidden = NO;    
         }
     });
+}
+
+#pragma mark - FNNodeStateProtocol methods
+
+-(void)nodeStateUnknown:(NSNotification*)notification {
+
+}
+
+-(void)nodeStateRunning:(NSNotification*)notification {
+    NSAssert([NSThread currentThread] == [NSThread mainThread], @"NOT RUNNING ON MAIN THREAD");
+    
+}
+
+-(void)nodeStateNotRunning:(NSNotification*)notification {
+
+}
+
+-(void)nodeConfigured:(NSNotification *)notification {
+    NSAssert([NSThread currentThread] == [NSThread mainThread], @"NOT RUNNING ON MAIN THREAD");
+    [self updateProgress:FNInstallerProgressStartedNode];
+    [self updateProgress:FNInstallerProgressFinished];
+    [self appendToInstallLog:@"Installation finished"];
+    [self.stateDelegate installerDidFinish];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

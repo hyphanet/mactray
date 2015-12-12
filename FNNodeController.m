@@ -41,7 +41,8 @@
         [NSThread detachNewThreadSelector:@selector(checkNodeStatus) toTarget:self withObject:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(installFinished:) name:FNInstallFinishedNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(installFailed:) name:FNInstallFailedNotification object:nil];        
-        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(installStartNode:) name:FNInstallStartNodeNotification object:nil];
+                
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uninstallFreenet:) name:FNNodeUninstall object:nil]; 
     }
     return self;
@@ -129,13 +130,17 @@
 #pragma mark - Install delegate
 
 -(void)installFinished:(NSNotification *)notification {
-    NSURL *newInstallation = notification.object;
-    self.nodeLocation = newInstallation;
-    [self startFreenet];
+
 }
 
 -(void)installFailed:(NSNotification *)notification {
     self.nodeLocation = nil;
+}
+
+-(void)installStartNode:(NSNotification *)notification {
+    NSURL *newInstallation = notification.object;
+    self.nodeLocation = newInstallation;
+    [self startFreenet];
 }
 
 #pragma mark - Dynamic properties
@@ -264,6 +269,7 @@
             NSString *fproxyBindTo = fproxyBindings[0]; // first one should be ipv4
             NSString *fproxyPort = self.freenetConfig[FNNodeFreenetConfigFProxyPortKey];
             self.fproxyLocation = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@:%@", fproxyBindTo, fproxyPort]];
+            [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeConfiguredNotification object:nil];
         }
         
         BOOL isDirectory;

@@ -25,6 +25,9 @@
 @property IBOutlet NSTextField *portsTitle;
 @property IBOutlet NIKFontAwesomeImageView *portsStatus;
 
+@property IBOutlet NSTextField *startNodeTitle;
+@property IBOutlet NIKFontAwesomeImageView *startNodeStatus;
+
 @property IBOutlet NSTextField *finishedTitle;
 @property IBOutlet NIKFontAwesomeImageView *finishedStatus;
 

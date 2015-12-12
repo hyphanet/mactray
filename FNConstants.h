@@ -56,8 +56,13 @@ FOUNDATION_EXPORT NSString *const FNNodeStatsReceivedNotification;
 
 FOUNDATION_EXPORT NSString *const FNNodeFCPDisconnectedNotification;
 
+FOUNDATION_EXPORT NSString *const FNNodeConfiguredNotification;
+
 FOUNDATION_EXPORT NSString *const FNInstallFinishedNotification;
 FOUNDATION_EXPORT NSString *const FNInstallFailedNotification;
+FOUNDATION_EXPORT NSString *const FNInstallStartNodeNotification;
+
+
 
 
 #pragma mark - Global Actions
@@ -91,10 +96,13 @@ typedef NS_ENUM(NSInteger, FNInstallerPage) {
 };
 
 typedef NS_ENUM(NSInteger, FNInstallerProgress) {
-    FNInstallerProgressUnknown           = -1,
-    FNInstallerProgressJavaInstalling    =  0,
-    FNInstallerProgressJavaFound         =  1,
-    FNInstallerProgressCopyFiles         =  2,
-    FNInstallerProgressSetupPorts        =  3,
-    FNInstallerProgressFinished          =  4
+    FNInstallerProgressUnknown,
+    FNInstallerProgressJavaInstalling,
+    FNInstallerProgressJavaFound,
+    FNInstallerProgressCopyingFiles,    
+    FNInstallerProgressCopiedFiles,
+    FNInstallerProgressSetupPorts,
+    FNInstallerProgressStartingNode,
+    FNInstallerProgressStartedNode,
+    FNInstallerProgressFinished
 };

@@ -108,11 +108,17 @@
     [self configureMainWindow];
 }
 
--(void)installerDidFinishAtLocation:(NSURL *)installURL {
+-(void)installerDidCopyFiles {
+    self.installationFinished = NO;
+    self.installationInProgress = NO;
+    [self configureMainWindow];
+    [[NSNotificationCenter defaultCenter] postNotificationName:FNInstallStartNodeNotification object:self.selectedInstallLocation];
+}
+
+-(void)installerDidFinish {
     self.installationFinished = YES;
     self.installationInProgress = NO;
     [self configureMainWindow];
-    [[NSNotificationCenter defaultCenter] postNotificationName:FNInstallFinishedNotification object:installURL];
 }
 
 -(void)installerDidFailWithLog:(NSString *)log {

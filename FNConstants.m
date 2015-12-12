@@ -56,9 +56,11 @@ NSString *const FNNodeStatsReceivedNotification = @"FNNodeStatsReceivedNotificat
 
 NSString *const FNNodeFCPDisconnectedNotification = @"FNNodeFCPDisconnectedNotification";
 
+NSString *const FNNodeConfiguredNotification = @"FNNodeConfiguredNotification";
+
 NSString *const FNInstallFinishedNotification = @"FNInstallFinishedNotification";
 NSString *const FNInstallFailedNotification = @"FNInstallFailedNotification";
-
+NSString *const FNInstallStartNodeNotification = @"FNInstallStartNodeNotification";
 
 #pragma mark - Global Actions
 

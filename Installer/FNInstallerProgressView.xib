@@ -10,12 +10,14 @@
             <connections>
                 <outlet property="fileCopyStatus" destination="57l-8B-WxW" id="fKg-Oj-cov"/>
                 <outlet property="fileCopyTitle" destination="6dy-wR-EJS" id="KCm-2g-Sad"/>
-                <outlet property="finishedStatus" destination="gSx-sB-O2x" id="WKq-jl-vAH"/>
-                <outlet property="finishedTitle" destination="bhy-1K-wNe" id="YaE-6S-aiL"/>
+                <outlet property="finishedStatus" destination="pIX-vV-EW5" id="kbe-kV-IMJ"/>
+                <outlet property="finishedTitle" destination="ziN-HG-Bnt" id="Lqr-sD-PWI"/>
                 <outlet property="javaInstallationStatus" destination="OB0-za-RXI" id="Lej-qc-7B3"/>
                 <outlet property="javaInstallationTitle" destination="pqY-dX-n1S" id="HJs-lU-GmX"/>
                 <outlet property="portsStatus" destination="3mN-3s-lrL" id="jkJ-AI-YsV"/>
                 <outlet property="portsTitle" destination="gde-V4-T93" id="nBD-3E-2vH"/>
+                <outlet property="startNodeStatus" destination="gSx-sB-O2x" id="kU2-Ob-oRZ"/>
+                <outlet property="startNodeTitle" destination="bhy-1K-wNe" id="a6j-mf-PD1"/>
                 <outlet property="view" destination="njg-Ho-2iZ" id="65A-er-jh7"/>
             </connections>
         </customObject>
@@ -108,10 +110,30 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pIX-vV-EW5" customClass="NIKFontAwesomeImageView">
+                                <rect key="frame" x="31" y="65" width="17" height="17"/>
+                                <animations/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="xKm-VJ-fa1"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="iconHex" value="f10c"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="edgeInsetTop">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bhy-1K-wNe">
                                 <rect key="frame" x="54" y="104" width="530" height="17"/>
                                 <animations/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Finished, please click continue" id="ToQ-oU-rUc">
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Starting Node..." id="ToQ-oU-rUc">
+                                    <font key="font" metaFont="systemBold"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ziN-HG-Bnt">
+                                <rect key="frame" x="54" y="65" width="530" height="17"/>
+                                <animations/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Finished, please click continue" id="RGl-Cl-cH4">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -133,19 +155,25 @@
                         <constraint firstItem="OB0-za-RXI" firstAttribute="top" secondItem="TJB-rn-K6R" secondAttribute="top" constant="47" id="0Eg-dB-iJs"/>
                         <constraint firstItem="3mN-3s-lrL" firstAttribute="top" secondItem="57l-8B-WxW" secondAttribute="bottom" constant="22" id="0XE-8b-OcP"/>
                         <constraint firstItem="57l-8B-WxW" firstAttribute="top" secondItem="6dy-wR-EJS" secondAttribute="top" id="55J-Td-mVQ"/>
+                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="top" secondItem="pIX-vV-EW5" secondAttribute="top" id="5Ba-OI-4JC"/>
                         <constraint firstItem="3mN-3s-lrL" firstAttribute="bottom" secondItem="gde-V4-T93" secondAttribute="bottom" id="7dK-xH-GGD"/>
                         <constraint firstItem="pqY-dX-n1S" firstAttribute="leading" secondItem="OB0-za-RXI" secondAttribute="trailing" constant="8" symbolic="YES" id="C5c-i5-7OJ"/>
+                        <constraint firstItem="pIX-vV-EW5" firstAttribute="bottom" secondItem="ziN-HG-Bnt" secondAttribute="bottom" id="Ch3-k8-esB"/>
                         <constraint firstAttribute="trailing" secondItem="pqY-dX-n1S" secondAttribute="trailing" id="ETj-Z3-3X3"/>
                         <constraint firstItem="OB0-za-RXI" firstAttribute="leading" secondItem="TJB-rn-K6R" secondAttribute="leading" constant="29" id="FeX-mK-ijE"/>
                         <constraint firstItem="57l-8B-WxW" firstAttribute="bottom" secondItem="6dy-wR-EJS" secondAttribute="bottom" id="Fp9-ek-mlf"/>
                         <constraint firstItem="6dy-wR-EJS" firstAttribute="leading" secondItem="pqY-dX-n1S" secondAttribute="leading" id="Gia-e5-t1Y"/>
+                        <constraint firstItem="pIX-vV-EW5" firstAttribute="top" secondItem="gSx-sB-O2x" secondAttribute="bottom" constant="22" id="NBr-hp-Mum"/>
                         <constraint firstItem="6dy-wR-EJS" firstAttribute="trailing" secondItem="gde-V4-T93" secondAttribute="trailing" id="Nzf-4J-Lb4"/>
+                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="trailing" secondItem="bhy-1K-wNe" secondAttribute="trailing" id="OGJ-za-leA"/>
                         <constraint firstItem="57l-8B-WxW" firstAttribute="top" secondItem="OB0-za-RXI" secondAttribute="bottom" constant="21" id="Oft-Wa-NTH"/>
                         <constraint firstItem="gde-V4-T93" firstAttribute="leading" secondItem="6dy-wR-EJS" secondAttribute="leading" id="QHH-5c-yeC"/>
+                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="leading" secondItem="pIX-vV-EW5" secondAttribute="trailing" constant="8" symbolic="YES" id="S1g-xt-0cm"/>
                         <constraint firstItem="gSx-sB-O2x" firstAttribute="leading" secondItem="3mN-3s-lrL" secondAttribute="leading" id="UFf-b8-N3o"/>
                         <constraint firstItem="gSx-sB-O2x" firstAttribute="top" secondItem="3mN-3s-lrL" secondAttribute="bottom" constant="23" id="Vah-6q-j2h"/>
                         <constraint firstItem="3mN-3s-lrL" firstAttribute="top" secondItem="gde-V4-T93" secondAttribute="top" id="WKF-hn-q7l"/>
                         <constraint firstItem="bhy-1K-wNe" firstAttribute="leading" secondItem="gSx-sB-O2x" secondAttribute="trailing" constant="8" symbolic="YES" id="XKl-uK-D7X"/>
+                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="leading" secondItem="bhy-1K-wNe" secondAttribute="leading" id="Zor-su-DRu"/>
                         <constraint firstItem="OB0-za-RXI" firstAttribute="bottom" secondItem="pqY-dX-n1S" secondAttribute="bottom" id="c6b-b9-z67"/>
                         <constraint firstItem="6dy-wR-EJS" firstAttribute="trailing" secondItem="pqY-dX-n1S" secondAttribute="trailing" id="ciz-6O-qPo"/>
                         <constraint firstItem="bhy-1K-wNe" firstAttribute="bottom" secondItem="gSx-sB-O2x" secondAttribute="bottom" id="czA-H6-w3F"/>
@@ -156,13 +184,13 @@
                         <constraint firstItem="pqY-dX-n1S" firstAttribute="top" secondItem="OB0-za-RXI" secondAttribute="top" id="klu-OM-FfJ"/>
                         <constraint firstItem="gde-V4-T93" firstAttribute="trailing" secondItem="bhy-1K-wNe" secondAttribute="trailing" id="pTX-yd-7Fm"/>
                         <constraint firstAttribute="bottom" secondItem="gSx-sB-O2x" secondAttribute="bottom" constant="101" id="q6K-cy-jN7"/>
+                        <constraint firstItem="pIX-vV-EW5" firstAttribute="leading" secondItem="gSx-sB-O2x" secondAttribute="leading" id="xrl-jx-UT2"/>
                         <constraint firstItem="gde-V4-T93" firstAttribute="leading" secondItem="bhy-1K-wNe" secondAttribute="leading" id="yFI-9s-tkV"/>
                         <constraint firstItem="6dy-wR-EJS" firstAttribute="leading" secondItem="57l-8B-WxW" secondAttribute="trailing" constant="8" symbolic="YES" id="yZA-j3-q8O"/>
                     </constraints>
                     <animations/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    <font key="titleFont" metaFont="smallSystem"/>
                 </box>
             </subviews>
             <constraints>
