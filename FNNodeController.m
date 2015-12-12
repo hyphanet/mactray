@@ -109,7 +109,10 @@
                 }
             });
             return;
-        }    
+        }
+        [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:[[NSBundle mainBundle] bundleIdentifier]];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+
         dispatch_async(dispatch_get_main_queue(), ^{        
             NSAlert *alert = [[NSAlert alloc] init];
             alert.messageText = NSLocalizedString(@"Freenet Uninstalled", @"String title of Uninstall success alert window");
