@@ -39,7 +39,18 @@
 		AAE306F11BF6DEC900C4EC1D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AAE306EF1BF6DEC900C4EC1D /* Credits.rtf */; };
 		AAE306F31BF920EE00C4EC1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE306F21BF920EE00C4EC1D /* Images.xcassets */; };
 		AAEF3AEE1AD6313800A4B475 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AAEF3AED1AD6313800A4B475 /* README.md */; };
+		AAF73D871C174ABF0006D1E1 /* FreenetTrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF73D861C174ABF0006D1E1 /* FreenetTrayTests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AAF73D891C174ABF0006D1E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D1107260486CEB800E47090;
+			remoteInfo = FreenetTray;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		AA1E62C00FE21D5E000CEF5F /* CopyFiles */ = {
@@ -105,6 +116,9 @@
 		AAE306EF1BF6DEC900C4EC1D /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		AAE306F21BF920EE00C4EC1D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FreenetTray/Images.xcassets; sourceTree = "<group>"; };
 		AAEF3AED1AD6313800A4B475 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AAF73D841C174ABF0006D1E1 /* FreenetTrayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreenetTrayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAF73D861C174ABF0006D1E1 /* FreenetTrayTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FreenetTrayTests.m; sourceTree = "<group>"; };
+		AAF73D881C174ABF0006D1E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +127,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1A3C3A91102ABFD5B3FEB2A /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAF73D811C174ABF0006D1E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* FreenetTray.app */,
+				AAF73D841C174ABF0006D1E1 /* FreenetTrayTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,6 +190,7 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				AAF73D851C174ABF0006D1E1 /* FreenetTrayTests */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				25742505801476B5AF06045D /* Pods */,
@@ -249,6 +272,15 @@
 			path = "Bundled Packages";
 			sourceTree = "<group>";
 		};
+		AAF73D851C174ABF0006D1E1 /* FreenetTrayTests */ = {
+			isa = PBXGroup;
+			children = (
+				AAF73D861C174ABF0006D1E1 /* FreenetTrayTests.m */,
+				AAF73D881C174ABF0006D1E1 /* Info.plist */,
+			);
+			path = FreenetTrayTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -274,6 +306,24 @@
 			productReference = 8D1107320486CEB800E47090 /* FreenetTray.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AAF73D831C174ABF0006D1E1 /* FreenetTrayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AAF73D8D1C174ABF0006D1E1 /* Build configuration list for PBXNativeTarget "FreenetTrayTests" */;
+			buildPhases = (
+				AAF73D801C174ABF0006D1E1 /* Sources */,
+				AAF73D811C174ABF0006D1E1 /* Frameworks */,
+				AAF73D821C174ABF0006D1E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AAF73D8A1C174ABF0006D1E1 /* PBXTargetDependency */,
+			);
+			name = FreenetTrayTests;
+			productName = FreenetTrayTests;
+			productReference = AAF73D841C174ABF0006D1E1 /* FreenetTrayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -281,6 +331,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0710;
+				TargetAttributes = {
+					AAF73D831C174ABF0006D1E1 = {
+						CreatedOnToolsVersion = 7.1.1;
+						TestTargetID = 8D1107260486CEB800E47090;
+					};
+				};
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "FreenetTray" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -294,6 +350,7 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* FreenetTray */,
+				AAF73D831C174ABF0006D1E1 /* FreenetTrayTests */,
 			);
 		};
 /* End PBXProject section */
@@ -320,6 +377,13 @@
 				AA433BD1109CD2B400EDBB73 /* gpl.txt in Resources */,
 				AA5D45CD110DF9BC00A81617 /* defaults.plist in Resources */,
 				AAC093D91BED28C10065481F /* FNInstallerProgressView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAF73D821C174ABF0006D1E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,7 +459,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AAF73D801C174ABF0006D1E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AAF73D871C174ABF0006D1E1 /* FreenetTrayTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AAF73D8A1C174ABF0006D1E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D1107260486CEB800E47090 /* FreenetTray */;
+			targetProxy = AAF73D891C174ABF0006D1E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
@@ -409,6 +489,61 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AAF73D8B1C174ABF0006D1E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = FreenetTrayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = org.freenetproject.FreenetTrayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FreenetTray.app/Contents/MacOS/FreenetTray";
+			};
+			name = Debug;
+		};
+		AAF73D8C1C174ABF0006D1E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = FreenetTrayTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = org.freenetproject.FreenetTrayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FreenetTray.app/Contents/MacOS/FreenetTray";
+			};
+			name = Release;
+		};
 		C01FCF4B08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7F21DDF0A3951D9AB1FAFC42 /* Pods.debug.xcconfig */;
@@ -428,6 +563,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FreenetTray_Prefix.pch;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
@@ -456,6 +592,7 @@
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = FreenetTray_Prefix.pch;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Info.plist;
@@ -550,6 +687,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AAF73D8D1C174ABF0006D1E1 /* Build configuration list for PBXNativeTarget "FreenetTrayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AAF73D8B1C174ABF0006D1E1 /* Debug */,
+				AAF73D8C1C174ABF0006D1E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "FreenetTray" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
