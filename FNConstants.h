@@ -65,6 +65,8 @@ FOUNDATION_EXPORT NSString *const FNInstallFailedNotification;
 FOUNDATION_EXPORT NSString *const FNNodeShowSettingsWindow;
 FOUNDATION_EXPORT NSString *const FNNodeShowNodeFinderInSettingsWindow;
 FOUNDATION_EXPORT NSString *const FNNodeShowInstallerWindow;
+FOUNDATION_EXPORT NSString *const FNNodeUninstall;
+
 
 #pragma mark - Installer
 

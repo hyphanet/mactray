@@ -82,6 +82,26 @@
     }); 
 }
 
++(void)displayUninstallAlert {
+    // ask the user if they really do want to uninstall Freenet
+    dispatch_async(dispatch_get_main_queue(), ^{        
+        NSAlert *alert = [[NSAlert alloc] init];
+        alert.messageText = NSLocalizedString(@"Uninstall Freenet", @"String title of Uninstall alert window");
+        alert.informativeText = NSLocalizedString(@"Uninstalling Freenet is immediate and irreversible, are you sure you want to uninstall Freenet now?", @"String asking the user whether they would like to uninstall freenet");
+        [alert addButtonWithTitle:NSLocalizedString(@"Uninstall Freenet", @"Uninstall Freenet button")];
+        [alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"Cancel button")];
+        
+        NSInteger button = [alert runModal];
+        if (button == NSAlertFirstButtonReturn) {
+            // start uninstallation
+            [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeUninstall object:nil];
+        }
+        else if (button == NSAlertSecondButtonReturn) {
+            // user canceled, don't do anything
+        }
+    }); 
+}
+
 +(NSArray<FNBrowser *> *)installedWebBrowsers {
     NSURL *url = [NSURL URLWithString:@"https://"];
     LSRolesMask roles = kLSRolesViewer;

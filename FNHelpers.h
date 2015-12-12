@@ -19,6 +19,7 @@
 +(NSURL *)findNodeInstallation;
 +(BOOL)validateNodeInstallationAtURL:(NSURL *)nodeURL;
 +(void)displayNodeMissingAlert;
++(void)displayUninstallAlert;
 +(NSArray<FNBrowser *> *)installedWebBrowsers;
 
 @end

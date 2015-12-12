@@ -65,6 +65,7 @@ NSString *const FNInstallFailedNotification = @"FNInstallFailedNotification";
 NSString *const FNNodeShowSettingsWindow = @"FNNodeShowSettingsWindow";
 NSString *const FNNodeShowNodeFinderInSettingsWindow = @"FNNodeShowNodeFinderInSettingsWindow";
 NSString *const FNNodeShowInstallerWindow = @"FNNodeShowInstallerWindow";
+NSString *const FNNodeUninstall = @"FNNodeUninstall";
 
 #pragma mark - Installer
 

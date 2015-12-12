@@ -19,6 +19,8 @@
 
 #import <DCOAboutWindow/DCOAboutWindowController.h>
 
+#import "FNHelpers.h"
+
 @interface FNDropdownMenuController ()
 -(void)setMenuBarImage:(NSImage *)image;
 @end
@@ -114,6 +116,10 @@
 
 -(IBAction)showDownlodsFolder:(id)sender {
     [[NSWorkspace sharedWorkspace] selectFile:nil inFileViewerRootedAtPath:self.nodeController.downloadsFolder.path];
+}
+
+-(IBAction)uninstallFreenet:(id)sender {
+    [FNHelpers displayUninstallAlert];
 }
 
 #pragma mark - FNNodeStateProtocol methods

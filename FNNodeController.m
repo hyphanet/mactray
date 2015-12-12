@@ -42,8 +42,83 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(installFinished:) name:FNInstallFinishedNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(installFailed:) name:FNInstallFailedNotification object:nil];        
         
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uninstallFreenet:) name:FNNodeUninstall object:nil]; 
     }
     return self;
+}
+
+#pragma mark - Uninstaller
+
+-(void)uninstallFreenet:(NSNotification *)notification {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        if (![FNHelpers validateNodeInstallationAtURL:self.nodeLocation]) {
+            // warn user that the configured node path is not valid and refuse to delete anything
+            dispatch_async(dispatch_get_main_queue(), ^{        
+                NSAlert *alert = [[NSAlert alloc] init];
+                alert.messageText = NSLocalizedString(@"Uninstalling FreenetTray failed", @"String title of Uninstall failure alert window");
+                alert.informativeText = NSLocalizedString(@"No Freenet installation was found, please delete the files manually if needed", @"String informing the user that no Freenet installation was found and that they must delete the files manually if needed");
+                [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button")];
+                NSInteger button = [alert runModal];
+                if (button == NSAlertFirstButtonReturn) {
+                    [[NSWorkspace sharedWorkspace] openURL:[[NSBundle mainBundle] bundleURL]];
+                    [NSApp terminate:self];
+                }
+            });
+            return;
+        }
+        
+        while (self.currentNodeState == FNNodeStateRunning) {
+            [self stopFreenet];
+            [NSThread sleepForTimeInterval:1];
+        }
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        NSError *nodeRemovalError;
+        if (![fileManager removeItemAtURL:self.nodeLocation error:&nodeRemovalError]) {
+            NSLog(@"Uninstall error: %@", nodeRemovalError);
+            // warn user that uninstall did not go smoothly
+            dispatch_async(dispatch_get_main_queue(), ^{        
+                NSAlert *alert = [[NSAlert alloc] init];
+                alert.messageText = NSLocalizedString(@"Uninstalling Freenet failed", @"String title of Uninstall failure alert window");
+                alert.informativeText = NSLocalizedString(@"Uninstalling Freenet failed with the following error: %@", @"String informing the user that Freenet node uninstallation failed");
+                [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button")];
+                
+                NSInteger button = [alert runModal];
+                if (button == NSAlertFirstButtonReturn) {
+                    [[NSWorkspace sharedWorkspace] openURL:self.nodeLocation];
+                    [NSApp terminate:self];
+                }
+            });
+            return;
+        }
+        NSError *appRemovalError;
+        if (![fileManager removeItemAtURL:[[NSBundle mainBundle] bundleURL] error:&appRemovalError]) {
+            NSLog(@"App uninstall error: %@", appRemovalError);
+            // warn user that uninstall did not go smoothly
+            dispatch_async(dispatch_get_main_queue(), ^{        
+                NSAlert *alert = [[NSAlert alloc] init];
+                alert.messageText = NSLocalizedString(@"Uninstalling FreenetTray failed", @"String title of Uninstall failure alert window");
+                alert.informativeText = NSLocalizedString(@"Uninstalling FreenetTray failed with the following error: %@", @"String informing the user that FreenetTray uninstallation failed");
+                [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button")];
+                NSInteger button = [alert runModal];
+                if (button == NSAlertFirstButtonReturn) {
+                    [[NSWorkspace sharedWorkspace] openURL:[[NSBundle mainBundle] bundleURL]];
+                    [NSApp terminate:self];
+                }
+            });
+            return;
+        }    
+        dispatch_async(dispatch_get_main_queue(), ^{        
+            NSAlert *alert = [[NSAlert alloc] init];
+            alert.messageText = NSLocalizedString(@"Freenet Uninstalled", @"String title of Uninstall success alert window");
+            alert.informativeText = NSLocalizedString(@"Freenet has been completely uninstalled", @"String informing the user that Freenet uninstallation succeeded");
+            [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button")];
+            NSInteger button = [alert runModal];
+            if (button == NSAlertFirstButtonReturn) {
+                [NSApp terminate:self];
+            }
+        });    
+    });
 }
 
 #pragma mark - Install delegate
