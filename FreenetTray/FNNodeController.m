@@ -57,7 +57,7 @@
             // warn user that the configured node path is not valid and refuse to delete anything
             dispatch_async(dispatch_get_main_queue(), ^{        
                 NSAlert *alert = [[NSAlert alloc] init];
-                alert.messageText = NSLocalizedString(@"Uninstalling Freenet failed", @"String title of uninstall failure alert window");
+                alert.messageText = NSLocalizedString(@"Uninstalling Freenet failed", @"Title of window");
                 alert.informativeText = NSLocalizedString(@"No Freenet installation was found, please delete the files manually if needed", @"String informing the user that no Freenet installation was found and that they must delete the files manually if needed");
                 [alert addButtonWithTitle:NSLocalizedString(@"OK", @"Button title")];
                 NSInteger button = [alert runModal];
@@ -80,7 +80,7 @@
             // warn user that uninstall did not go smoothly
             dispatch_async(dispatch_get_main_queue(), ^{        
                 NSAlert *alert = [[NSAlert alloc] init];
-                alert.messageText = NSLocalizedString(@"Uninstalling Freenet failed", @"String title of uninstall failure alert window");
+                alert.messageText = NSLocalizedString(@"Uninstalling Freenet failed", @"Title of window");
                 alert.informativeText = nodeRemovalError.localizedDescription;
                 [alert addButtonWithTitle:NSLocalizedString(@"OK", @"Button title")];
                 
@@ -98,7 +98,7 @@
             // warn user that uninstall did not go smoothly
             dispatch_async(dispatch_get_main_queue(), ^{        
                 NSAlert *alert = [[NSAlert alloc] init];
-                alert.messageText = NSLocalizedString(@"Uninstalling Freenet failed", @"String title of uninstall failure alert window");
+                alert.messageText = NSLocalizedString(@"Uninstalling Freenet failed", @"Title of window");
                 alert.informativeText = appRemovalError.localizedDescription;
                 [alert addButtonWithTitle:NSLocalizedString(@"OK", @"Button title")];
                 NSInteger button = [alert runModal];
@@ -114,9 +114,9 @@
 
         dispatch_async(dispatch_get_main_queue(), ^{        
             NSAlert *alert = [[NSAlert alloc] init];
-            alert.messageText = NSLocalizedString(@"Freenet Uninstalled", @"String title of Uninstall success alert window");
+            alert.messageText = NSLocalizedString(@"Freenet Uninstalled", @"Title of window");
             alert.informativeText = NSLocalizedString(@"Freenet has been completely uninstalled", @"String informing the user that Freenet uninstallation succeeded");
-            [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button")];
+            [alert addButtonWithTitle:NSLocalizedString(@"OK", @"Button title")];
             NSInteger button = [alert runModal];
             if (button == NSAlertFirstButtonReturn) {
                 [NSApp terminate:self];

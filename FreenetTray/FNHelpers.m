@@ -86,7 +86,7 @@
     // ask the user if they really do want to uninstall Freenet
     dispatch_async(dispatch_get_main_queue(), ^{        
         NSAlert *alert = [[NSAlert alloc] init];
-        alert.messageText = NSLocalizedString(@"Uninstall Freenet", @"String title of Uninstall alert window");
+        alert.messageText = NSLocalizedString(@"Uninstall Freenet Now?", @"Title of window");
         alert.informativeText = NSLocalizedString(@"Uninstalling Freenet is immediate and irreversible, are you sure you want to uninstall Freenet now?", @"String asking the user whether they would like to uninstall freenet");
         [alert addButtonWithTitle:NSLocalizedString(@"Uninstall Freenet", @"Button title")];
         [alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"Button title")];
