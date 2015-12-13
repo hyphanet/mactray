@@ -81,7 +81,7 @@
     [openpanel setCanChooseFiles:NO];
     [openpanel setAllowsMultipleSelection:NO];
     [openpanel setCanChooseDirectories:YES];
-    NSString *panelTitle = NSLocalizedString(@"Find your Freenet installation", @"Title for window");
+    NSString *panelTitle = NSLocalizedString(@"Find your Freenet installation", @"Title of window");
     [openpanel setTitle:panelTitle];
  
     NSString *promptString = NSLocalizedString(@"Select Freenet installation", @"Button title");

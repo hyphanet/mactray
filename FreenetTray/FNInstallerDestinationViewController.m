@@ -46,7 +46,7 @@
     [panel setAllowsMultipleSelection:NO];
     [panel setCanChooseDirectories:YES];
     [panel setCanCreateDirectories:YES];
-    NSString *panelTitle = NSLocalizedString(@"Select a location to install Freenet", @"Title for the install destination window");
+    NSString *panelTitle = NSLocalizedString(@"Select a location to install Freenet", @"Title of window");
     [panel setTitle:panelTitle];
  
     NSString *promptString = NSLocalizedString(@"Install here", @"Button title");
