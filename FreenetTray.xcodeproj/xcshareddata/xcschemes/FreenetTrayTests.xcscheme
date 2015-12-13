@@ -79,6 +79,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "AAF73D831C174ABF0006D1E1"
+            BuildableName = "FreenetTrayTests.xctest"
+            BlueprintName = "FreenetTrayTests"
+            ReferencedContainer = "container:FreenetTray.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
