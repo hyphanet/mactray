@@ -32,6 +32,14 @@
                         <buttonCell key="cell" type="check" title="Start tray app when I log in" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="LpL-CZ-4IY">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
+                            <attributedString key="userComments">
+                                <fragment content="Option title">
+                                    <attributes>
+                                        <font key="NSFont" metaFont="smallSystem"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                         </buttonCell>
                         <connections>
                             <binding destination="-2" name="value" keyPath="self.loginItem" id="xWN-mF-Y96"/>
@@ -50,6 +58,14 @@
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        <attributedString key="userComments">
+                                            <fragment content="Status title">
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EjI-J3-s97">
@@ -59,6 +75,14 @@
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        <attributedString key="userComments">
+                                            <fragment content="Status title">
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                     </textFieldCell>
                                 </textField>
                                 <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ozh-jT-Mol">
@@ -78,6 +102,14 @@
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        <attributedString key="userComments">
+                                            <fragment content="Status title">
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                     </textFieldCell>
                                 </textField>
                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VlZ-nH-wLT">
@@ -87,6 +119,14 @@
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        <attributedString key="userComments">
+                                            <fragment content="Abbreviated string meaning &quot;not available&quot;">
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                     </textFieldCell>
                                 </textField>
                             </subviews>
@@ -95,6 +135,14 @@
                         <animations/>
                         <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                         <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <attributedString key="userComments">
+                            <fragment content="Box title">
+                                <attributes>
+                                    <font key="NSFont" metaFont="smallSystem"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
                     </box>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Swj-A4-fXn">
                         <rect key="frame" x="26" y="62" width="17" height="17"/>
@@ -111,6 +159,14 @@
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            <attributedString key="userComments">
+                                <fragment content="Warning message">
+                                    <attributes>
+                                        <font key="NSFont" metaFont="smallSystem"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                         </textFieldCell>
                         <connections>
                             <binding destination="-2" name="hidden" keyPath="self.validNodeFound" id="p4l-0x-QUr"/>
@@ -122,6 +178,14 @@
                         <buttonCell key="cell" type="push" title="Find Installation" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="8M7-Tl-FUW">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <attributedString key="userComments">
+                                <fragment content="Button title">
+                                    <attributes>
+                                        <font key="NSFont" metaFont="smallSystem"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                         </buttonCell>
                         <connections>
                             <action selector="selectNodeLocation:" target="-2" id="SVy-2c-bwC"/>
@@ -137,6 +201,14 @@
                         <animations/>
                         <pathCell key="cell" truncatesLastVisibleLine="YES" selectable="YES" refusesFirstResponder="YES" alignment="left" placeholderString="" id="zjN-6C-oqi">
                             <font key="font" metaFont="system"/>
+                            <attributedString key="userComments">
+                                <fragment content="Status title">
+                                    <attributes>
+                                        <font key="NSFont" metaFont="smallSystem"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                         </pathCell>
                         <connections>
                             <binding destination="-2" name="value" keyPath="self.nodeController.nodeLocation" id="XIR-O8-PU2"/>
@@ -153,6 +225,14 @@
                         <buttonCell key="cell" type="check" title="Start Freenet automatically" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="9kj-pP-3mQ">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
+                            <attributedString key="userComments">
+                                <fragment content="Option title">
+                                    <attributes>
+                                        <font key="NSFont" metaFont="smallSystem"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                         </buttonCell>
                         <connections>
                             <binding destination="-2" name="enabled" keyPath="self.loginItem" id="Nbm-bH-EJw"/>
@@ -169,6 +249,53 @@
                 </subviews>
                 <animations/>
             </view>
+            <attributedString key="userComments">
+                <fragment content="Window title">
+                    <attributes>
+                        <font key="NSFont" size="11" name="HelveticaNeue"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                            <tabStops>
+                                <textTab alignment="left" location="28">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="56">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="84">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="112">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="140">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="168">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="196">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="224">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="252">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="280">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="308">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="336">
+                                    <options/>
+                                </textTab>
+                            </tabStops>
+                        </paragraphStyle>
+                    </attributes>
+                </fragment>
+            </attributedString>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>

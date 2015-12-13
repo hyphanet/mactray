@@ -32,6 +32,14 @@
                         <buttonCell key="cell" type="push" title="Continue" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="28s-Ha-tdi">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <attributedString key="userComments">
+                                <fragment content="Button title">
+                                    <attributes>
+                                        <font key="NSFont" metaFont="smallSystem"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                         </buttonCell>
                         <connections>
                             <action selector="next:" target="-2" id="YFA-eG-PMd"/>
@@ -43,6 +51,14 @@
                         <buttonCell key="cell" type="push" title="Go Back" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RQg-ip-faV">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
+                            <attributedString key="userComments">
+                                <fragment content="Button title">
+                                    <attributes>
+                                        <font key="NSFont" metaFont="smallSystem"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
                         </buttonCell>
                         <connections>
                             <action selector="previous:" target="-2" id="Kwa-Op-Nui"/>
@@ -93,12 +109,59 @@
                 </constraints>
                 <animations/>
             </view>
+            <attributedString key="userComments">
+                <fragment content="Window title">
+                    <attributes>
+                        <font key="NSFont" size="11" name="HelveticaNeue"/>
+                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                            <tabStops>
+                                <textTab alignment="left" location="28">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="56">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="84">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="112">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="140">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="168">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="196">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="224">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="252">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="280">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="308">
+                                    <options/>
+                                </textTab>
+                                <textTab alignment="left" location="336">
+                                    <options/>
+                                </textTab>
+                            </tabStops>
+                        </paragraphStyle>
+                    </attributes>
+                </fragment>
+            </attributedString>
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
             <point key="canvasLocation" x="232" y="360"/>
         </window>
-        <pagecontroller title="Install" transitionStyle="horizontalStrip" id="et5-sg-juY" userLabel="Installation Page Controller">
+        <pagecontroller transitionStyle="horizontalStrip" id="et5-sg-juY" userLabel="Installation Page Controller">
             <connections>
                 <outlet property="view" destination="afp-l7-WFd" id="9gH-pX-fER"/>
             </connections>
