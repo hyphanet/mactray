@@ -61,7 +61,7 @@
     aboutWindow.appWebsiteURL = [NSURL URLWithString:websiteURLPath];
     [aboutWindow window];
     NSButton *visitWebsiteButton = [aboutWindow valueForKeyPath:@"self.visitWebsiteButton"];
-    visitWebsiteButton.title = NSLocalizedString(@"Visit the Freenet Website", @"Caption on the 'Visit the %@ Website' button in the about window");
+    visitWebsiteButton.title = NSLocalizedString(@"Visit the Freenet Website", @"Button title");
     
     
     nodeController = [[FNNodeController alloc] init];

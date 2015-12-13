@@ -61,10 +61,10 @@
         NSAlert *alert = [[NSAlert alloc] init];
         alert.messageText = NSLocalizedString(@"A Freenet installation could not be found.", @"String informing the user that no Freenet installation could be found");
         alert.informativeText = NSLocalizedString(@"Would you like to install Freenet now, or locate an existing Freenet installation?", @"String asking the user whether they would like to install freenet or locate an existing installation");
-        [alert addButtonWithTitle:NSLocalizedString(@"Install Freenet", @"Install Freenet")];
+        [alert addButtonWithTitle:NSLocalizedString(@"Install Freenet", @"Button title")];
 
-        [alert addButtonWithTitle:NSLocalizedString(@"Find Installation", @"Find installation")];
-        [alert addButtonWithTitle:NSLocalizedString(@"Quit", @"Quit")];
+        [alert addButtonWithTitle:NSLocalizedString(@"Find Installation", @"Button title")];
+        [alert addButtonWithTitle:NSLocalizedString(@"Quit", nil)];
         
         NSInteger button = [alert runModal];
         if (button == NSAlertFirstButtonReturn) {
@@ -88,8 +88,8 @@
         NSAlert *alert = [[NSAlert alloc] init];
         alert.messageText = NSLocalizedString(@"Uninstall Freenet", @"String title of Uninstall alert window");
         alert.informativeText = NSLocalizedString(@"Uninstalling Freenet is immediate and irreversible, are you sure you want to uninstall Freenet now?", @"String asking the user whether they would like to uninstall freenet");
-        [alert addButtonWithTitle:NSLocalizedString(@"Uninstall Freenet", @"Uninstall Freenet button")];
-        [alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"Cancel button")];
+        [alert addButtonWithTitle:NSLocalizedString(@"Uninstall Freenet", @"Button title")];
+        [alert addButtonWithTitle:NSLocalizedString(@"Cancel", @"Button title")];
         
         NSInteger button = [alert runModal];
         if (button == NSAlertFirstButtonReturn) {

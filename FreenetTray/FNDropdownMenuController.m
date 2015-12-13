@@ -45,7 +45,7 @@
     // menu loaded from FNDropdownMenu.xib
     self.statusItem.menu = self.dropdownMenu;
 
-    self.statusItem.toolTip = NSLocalizedString(@"Freenet", @"Freenet Application Name");
+    self.statusItem.toolTip = NSLocalizedString(@"Freenet", @"Application Name");
 
     [self setMenuBarImage:[TrayIcon imageOfNotRunningIcon]];
     
@@ -129,14 +129,14 @@
 }
 
 -(void)nodeStateRunning:(NSNotification*)notification {
-    self.toggleNodeStateMenuItem.title = NSLocalizedString(@"Stop Freenet", @"Menu title for stopping freenet");
+    self.toggleNodeStateMenuItem.title = NSLocalizedString(@"Stop Freenet", @"Button title");
     [self setMenuBarImage:[TrayIcon imageOfRunningIcon]];
     [self enableMenuItems:YES];
 
 }
 
 -(void)nodeStateNotRunning:(NSNotification*)notification {
-    self.toggleNodeStateMenuItem.title = NSLocalizedString(@"Start Freenet", @"Menu title for starting freenet");
+    self.toggleNodeStateMenuItem.title = NSLocalizedString(@"Start Freenet", @"Button title");
     [self setMenuBarImage:[TrayIcon imageOfNotRunningIcon]];
     [self enableMenuItems:YES];
 

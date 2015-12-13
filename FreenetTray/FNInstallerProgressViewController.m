@@ -161,8 +161,8 @@
         installJavaAlert.messageText = NSLocalizedString(@"Java not found", @"String informing the user that Java was not found");
         installJavaAlert.informativeText = NSLocalizedString(@"Freenet requires Java, would you like to install it now?", @"String asking the user if they would like to install Java");
         
-        [installJavaAlert addButtonWithTitle:NSLocalizedString(@"Install Java", @"Install Java button title")];
-        [installJavaAlert addButtonWithTitle:NSLocalizedString(@"Quit", @"Quit button title")];
+        [installJavaAlert addButtonWithTitle:NSLocalizedString(@"Install Java", @"Button title")];
+        [installJavaAlert addButtonWithTitle:NSLocalizedString(@"Quit", nil)];
         
         NSInteger button = [installJavaAlert runModal];
         

@@ -57,9 +57,9 @@
             // warn user that the configured node path is not valid and refuse to delete anything
             dispatch_async(dispatch_get_main_queue(), ^{        
                 NSAlert *alert = [[NSAlert alloc] init];
-                alert.messageText = NSLocalizedString(@"Uninstalling FreenetTray failed", @"String title of Uninstall failure alert window");
+                alert.messageText = NSLocalizedString(@"Uninstalling Freenet failed", @"String title of uninstall failure alert window");
                 alert.informativeText = NSLocalizedString(@"No Freenet installation was found, please delete the files manually if needed", @"String informing the user that no Freenet installation was found and that they must delete the files manually if needed");
-                [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button")];
+                [alert addButtonWithTitle:NSLocalizedString(@"OK", @"Button title")];
                 NSInteger button = [alert runModal];
                 if (button == NSAlertFirstButtonReturn) {
                     [[NSWorkspace sharedWorkspace] openURL:[[NSBundle mainBundle] bundleURL]];
@@ -80,10 +80,9 @@
             // warn user that uninstall did not go smoothly
             dispatch_async(dispatch_get_main_queue(), ^{        
                 NSAlert *alert = [[NSAlert alloc] init];
-                alert.messageText = NSLocalizedString(@"Uninstalling Freenet failed", @"String title of Uninstall failure alert window");
-                NSString *format = NSLocalizedString(@"Uninstalling Freenet failed with the following error:\n\n %@", @"String informing the user that Freenet node uninstallation failed");
-                alert.informativeText = [NSString stringWithFormat:format, nodeRemovalError.localizedDescription];
-                [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button")];
+                alert.messageText = NSLocalizedString(@"Uninstalling Freenet failed", @"String title of uninstall failure alert window");
+                alert.informativeText = nodeRemovalError.localizedDescription;
+                [alert addButtonWithTitle:NSLocalizedString(@"OK", @"Button title")];
                 
                 NSInteger button = [alert runModal];
                 if (button == NSAlertFirstButtonReturn) {
@@ -99,10 +98,9 @@
             // warn user that uninstall did not go smoothly
             dispatch_async(dispatch_get_main_queue(), ^{        
                 NSAlert *alert = [[NSAlert alloc] init];
-                alert.messageText = NSLocalizedString(@"Uninstalling FreenetTray failed", @"String title of Uninstall failure alert window");
-                NSString *format = NSLocalizedString(@"Uninstalling FreenetTray failed with the following error:\n\n %@", @"String informing the user that FreenetTray uninstallation failed");
-                alert.informativeText = [NSString stringWithFormat:format, appRemovalError.localizedDescription];
-                [alert addButtonWithTitle:NSLocalizedString(@"OK", @"OK button")];
+                alert.messageText = NSLocalizedString(@"Uninstalling Freenet failed", @"String title of Uninstall failure alert window");
+                alert.informativeText = appRemovalError.localizedDescription;
+                [alert addButtonWithTitle:NSLocalizedString(@"OK", @"Button title")];
                 NSInteger button = [alert runModal];
                 if (button == NSAlertFirstButtonReturn) {
                     [[NSWorkspace sharedWorkspace] openURL:[[NSBundle mainBundle] bundleURL]];

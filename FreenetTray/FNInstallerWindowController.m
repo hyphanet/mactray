@@ -135,8 +135,8 @@
     NSAlert *installFailedAlert = [[NSAlert alloc] init];
     installFailedAlert.messageText = NSLocalizedString(@"Installation failed", @"String informing the user that the installation failed");
     installFailedAlert.informativeText = NSLocalizedString(@"The installation log has been copied to your clipboard", @"String informing the user that the installation log is in their clipboard");
-    [installFailedAlert addButtonWithTitle:NSLocalizedString(@"Open pastebin.com", @"Open pastebin.com button title")];
-    [installFailedAlert addButtonWithTitle:NSLocalizedString(@"Quit", @"Quit button title")];
+    [installFailedAlert addButtonWithTitle:NSLocalizedString(@"Open pastebin.com", @"Button title")];
+    [installFailedAlert addButtonWithTitle:NSLocalizedString(@"Quit", nil)];
     NSInteger button = [installFailedAlert runModal];
     if (button == NSAlertFirstButtonReturn) {
         // open pastebin.com in a browser, then quit
@@ -198,8 +198,8 @@
         NSAlert *installInProgressAlert = [[NSAlert alloc] init];
         installInProgressAlert.messageText = NSLocalizedString(@"Installation in progress", @"String informing the user that an installation is in progress");
         installInProgressAlert.informativeText = NSLocalizedString(@"Are you sure you want to cancel?", @"String asking the user if they want to cancel the installation");
-        [installInProgressAlert addButtonWithTitle:NSLocalizedString(@"Yes", @"Yes button title")];
-        [installInProgressAlert addButtonWithTitle:NSLocalizedString(@"No", @"No button title")];
+        [installInProgressAlert addButtonWithTitle:NSLocalizedString(@"Yes", @"Button title")];
+        [installInProgressAlert addButtonWithTitle:NSLocalizedString(@"No", @"Button title")];
         NSInteger button = [installInProgressAlert runModal];
         if (button == NSAlertFirstButtonReturn) {
             [NSApp terminate:self];
