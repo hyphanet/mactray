@@ -98,7 +98,7 @@
             // warn user that uninstall did not go smoothly
             dispatch_async(dispatch_get_main_queue(), ^{        
                 NSAlert *alert = [[NSAlert alloc] init];
-                alert.messageText = NSLocalizedString(@"Uninstalling Freenet failed", @"String title of Uninstall failure alert window");
+                alert.messageText = NSLocalizedString(@"Uninstalling Freenet failed", @"String title of uninstall failure alert window");
                 alert.informativeText = appRemovalError.localizedDescription;
                 [alert addButtonWithTitle:NSLocalizedString(@"OK", @"Button title")];
                 NSInteger button = [alert runModal];
