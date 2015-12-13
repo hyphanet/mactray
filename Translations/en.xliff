@@ -7,31 +7,31 @@
     <body>
       <trans-unit id="9Jt-C5-mIM.title">
         <source>Open Downloads</source>
-        <note>Class = "NSMenuItem"; title = "Open Downloads"; ObjectID = "9Jt-C5-mIM";</note>
+        <note>Class = "NSMenuItem"; title = "Open Downloads"; ObjectID = "9Jt-C5-mIM"; Note = "Menu item title";</note>
       </trans-unit>
       <trans-unit id="BHr-Vz-MCm.title">
         <source>Open Web Interface</source>
-        <note>Class = "NSMenuItem"; title = "Open Web Interface"; ObjectID = "BHr-Vz-MCm";</note>
+        <note>Class = "NSMenuItem"; title = "Open Web Interface"; ObjectID = "BHr-Vz-MCm"; Note = "Menu item title";</note>
       </trans-unit>
       <trans-unit id="CHy-oK-4Q4.title">
         <source>Quit</source>
-        <note>Class = "NSMenuItem"; title = "Quit"; ObjectID = "CHy-oK-4Q4";</note>
+        <note>Class = "NSMenuItem"; title = "Quit"; ObjectID = "CHy-oK-4Q4"; Note = "Menu item title";</note>
       </trans-unit>
       <trans-unit id="Ppa-6x-BP2.title">
         <source>Settings</source>
-        <note>Class = "NSMenuItem"; title = "Settings"; ObjectID = "Ppa-6x-BP2";</note>
+        <note>Class = "NSMenuItem"; title = "Settings"; ObjectID = "Ppa-6x-BP2"; Note = "Menu item title";</note>
       </trans-unit>
       <trans-unit id="Qjd-CJ-2Gt.title">
         <source>Uninstall Freenet</source>
-        <note>Class = "NSMenuItem"; title = "Uninstall Freenet"; ObjectID = "Qjd-CJ-2Gt";</note>
+        <note>Class = "NSMenuItem"; title = "Uninstall Freenet"; ObjectID = "Qjd-CJ-2Gt"; Note = "Menu item title";</note>
       </trans-unit>
       <trans-unit id="UpL-Lb-jBl.title">
         <source>Start Freenet</source>
-        <note>Class = "NSMenuItem"; title = "Start Freenet"; ObjectID = "UpL-Lb-jBl";</note>
+        <note>Class = "NSMenuItem"; title = "Start Freenet"; ObjectID = "UpL-Lb-jBl"; Note = "Menu item title";</note>
       </trans-unit>
       <trans-unit id="ZYj-54-W6V.title">
         <source>About</source>
-        <note>Class = "NSMenuItem"; title = "About"; ObjectID = "ZYj-54-W6V";</note>
+        <note>Class = "NSMenuItem"; title = "About"; ObjectID = "ZYj-54-W6V"; Note = "Menu item title";</note>
       </trans-unit>
     </body>
   </file>
@@ -42,11 +42,11 @@
     <body>
       <trans-unit id="Yd7-Xj-YrX.title">
         <source>Change Install Location</source>
-        <note>Class = "NSButtonCell"; title = "Change Install Location"; ObjectID = "Yd7-Xj-YrX";</note>
+        <note>Class = "NSButtonCell"; title = "Change Install Location"; ObjectID = "Yd7-Xj-YrX"; Note = "Button title";</note>
       </trans-unit>
       <trans-unit id="voQ-z0-pMI.title">
         <source>Where do you want to install Freenet?</source>
-        <note>Class = "NSTextFieldCell"; title = "Where do you want to install Freenet?"; ObjectID = "voQ-z0-pMI";</note>
+        <note>Class = "NSTextFieldCell"; title = "Where do you want to install Freenet?"; ObjectID = "voQ-z0-pMI"; Note = "Window title";</note>
       </trans-unit>
     </body>
   </file>
@@ -57,7 +57,7 @@
     <body>
       <trans-unit id="95e-76-m1K.title">
         <source>Installing Freenet</source>
-        <note>Class = "NSTextFieldCell"; title = "Installing Freenet"; ObjectID = "95e-76-m1K";</note>
+        <note>Class = "NSTextFieldCell"; title = "Installing Freenet"; ObjectID = "95e-76-m1K"; Note = "Window title";</note>
       </trans-unit>
       <trans-unit id="Hga-mV-cuv.title">
         <source>Installing Java</source>
@@ -88,19 +88,15 @@
     <body>
       <trans-unit id="28s-Ha-tdi.title">
         <source>Continue</source>
-        <note>Class = "NSButtonCell"; title = "Continue"; ObjectID = "28s-Ha-tdi";</note>
+        <note>Class = "NSButtonCell"; title = "Continue"; ObjectID = "28s-Ha-tdi"; Note = "Button title";</note>
       </trans-unit>
       <trans-unit id="F0z-JX-Cv5.title">
         <source>Install Freenet</source>
-        <note>Class = "NSWindow"; title = "Install Freenet"; ObjectID = "F0z-JX-Cv5";</note>
+        <note>Class = "NSWindow"; title = "Install Freenet"; ObjectID = "F0z-JX-Cv5"; Note = "Window title";</note>
       </trans-unit>
       <trans-unit id="RQg-ip-faV.title">
         <source>Go Back</source>
-        <note>Class = "NSButtonCell"; title = "Go Back"; ObjectID = "RQg-ip-faV";</note>
-      </trans-unit>
-      <trans-unit id="et5-sg-juY.title">
-        <source>Install</source>
-        <note>Class = "NSPageController"; title = "Install"; ObjectID = "et5-sg-juY";</note>
+        <note>Class = "NSButtonCell"; title = "Go Back"; ObjectID = "RQg-ip-faV"; Note = "Button title";</note>
       </trans-unit>
     </body>
   </file>
@@ -111,43 +107,43 @@
     <body>
       <trans-unit id="8M7-Tl-FUW.title">
         <source>Find Installation</source>
-        <note>Class = "NSButtonCell"; title = "Find Installation"; ObjectID = "8M7-Tl-FUW";</note>
+        <note>Class = "NSButtonCell"; title = "Find Installation"; ObjectID = "8M7-Tl-FUW"; Note = "Button title";</note>
       </trans-unit>
       <trans-unit id="9kj-pP-3mQ.title">
         <source>Start Freenet automatically</source>
-        <note>Class = "NSButtonCell"; title = "Start Freenet automatically"; ObjectID = "9kj-pP-3mQ";</note>
+        <note>Class = "NSButtonCell"; title = "Start Freenet automatically"; ObjectID = "9kj-pP-3mQ"; Note = "Option title";</note>
       </trans-unit>
       <trans-unit id="ERq-8v-P2V.title">
         <source>FCP Available:</source>
-        <note>Class = "NSTextFieldCell"; title = "FCP Available:"; ObjectID = "ERq-8v-P2V";</note>
+        <note>Class = "NSTextFieldCell"; title = "FCP Available:"; ObjectID = "ERq-8v-P2V"; Note = "Status title";</note>
       </trans-unit>
       <trans-unit id="F0z-JX-Cv5.title">
         <source>Freenet Settings</source>
-        <note>Class = "NSWindow"; title = "Freenet Settings"; ObjectID = "F0z-JX-Cv5";</note>
+        <note>Class = "NSWindow"; title = "Freenet Settings"; ObjectID = "F0z-JX-Cv5"; Note = "Window title";</note>
       </trans-unit>
       <trans-unit id="LpL-CZ-4IY.title">
         <source>Start tray app when I log in</source>
-        <note>Class = "NSButtonCell"; title = "Start tray app when I log in"; ObjectID = "LpL-CZ-4IY";</note>
+        <note>Class = "NSButtonCell"; title = "Start tray app when I log in"; ObjectID = "LpL-CZ-4IY"; Note = "Option title";</note>
       </trans-unit>
       <trans-unit id="cBb-Zz-MzQ.title">
         <source>Node Running:</source>
-        <note>Class = "NSTextFieldCell"; title = "Node Running:"; ObjectID = "cBb-Zz-MzQ";</note>
+        <note>Class = "NSTextFieldCell"; title = "Node Running:"; ObjectID = "cBb-Zz-MzQ"; Note = "Status title";</note>
       </trans-unit>
       <trans-unit id="mb8-58-B4t.title">
         <source>Build:</source>
-        <note>Class = "NSTextFieldCell"; title = "Build:"; ObjectID = "mb8-58-B4t";</note>
+        <note>Class = "NSTextFieldCell"; title = "Build:"; ObjectID = "mb8-58-B4t"; Note = "Status title";</note>
       </trans-unit>
       <trans-unit id="ob6-zL-REv.title">
         <source>Freenet Node Status</source>
-        <note>Class = "NSBox"; title = "Freenet Node Status"; ObjectID = "ob6-zL-REv";</note>
+        <note>Class = "NSBox"; title = "Freenet Node Status"; ObjectID = "ob6-zL-REv"; Note = "Box title";</note>
       </trans-unit>
       <trans-unit id="s3Z-Gq-qbd.title">
         <source>Installation Not Found</source>
-        <note>Class = "NSTextFieldCell"; title = "Installation Not Found"; ObjectID = "s3Z-Gq-qbd";</note>
+        <note>Class = "NSTextFieldCell"; title = "Installation Not Found"; ObjectID = "s3Z-Gq-qbd"; Note = "Warning message";</note>
       </trans-unit>
       <trans-unit id="yYV-ge-5yY.placeholderString">
         <source>N/A</source>
-        <note>Class = "NSTextFieldCell"; placeholderString = "N/A"; ObjectID = "yYV-ge-5yY";</note>
+        <note>Class = "NSTextFieldCell"; placeholderString = "N/A"; ObjectID = "yYV-ge-5yY"; Note = "Abbreviated string meaning \"not available\"";</note>
       </trans-unit>
     </body>
   </file>
