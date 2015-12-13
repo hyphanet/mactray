@@ -7,34 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
-		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		A1A3C3A91102ABFD5B3FEB2A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 515E91EAE63300E20C3F8F20 /* libPods.a */; };
-		AA02AADA0FC8D74F00499DB3 /* FNNodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA02AAD90FC8D74F00499DB3 /* FNNodeController.m */; };
-		AA1052F61C19D73F00B991E5 /* FNBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1052F51C19D73F00B991E5 /* FNBrowser.m */; };
-		AA1D48CF1B697F1700CAC97E /* FNHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = AA1D48CE1B697F1700CAC97E /* FNHelpers.m */; };
-		AA3C129C1ABD425100413379 /* FNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3C129B1ABD425100413379 /* FNAppDelegate.m */; };
-		AA3C12A01ABE16BD00413379 /* FNDropdownMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3C129E1ABE16BD00413379 /* FNDropdownMenuController.m */; };
-		AA3C12A11ABE16BD00413379 /* FNDropdownMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA3C129F1ABE16BD00413379 /* FNDropdownMenu.xib */; };
-		AA3C12A51ABE32B100413379 /* TrayIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3C12A41ABE32B100413379 /* TrayIcon.m */; };
-		AA3C12A81ABE7B4300413379 /* FNFCPWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA3C12A71ABE7B4300413379 /* FNFCPWrapper.m */; };
 		AA433BD1109CD2B400EDBB73 /* gpl.txt in Resources */ = {isa = PBXBuildFile; fileRef = AA433BCF109CD2B400EDBB73 /* gpl.txt */; };
-		AA5677051ABD345D00BBC0D3 /* FNConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AA5677041ABD345D00BBC0D3 /* FNConstants.m */; };
-		AA5D45CD110DF9BC00A81617 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA5D45CC110DF9BC00A81617 /* defaults.plist */; };
 		AA5E172C1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg in Resources */ = {isa = PBXBuildFile; fileRef = AA5E172B1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg */; };
-		AA8C5F2A1BCAEF3100220952 /* FNConfigParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F291BCAEF3100220952 /* FNConfigParser.m */; };
-		AA8C5F2E1BCB013800220952 /* FNSettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA8C5F2C1BCB013800220952 /* FNSettingsWindowController.m */; };
-		AA8C5F2F1BCB013800220952 /* FNSettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */; };
-		AA94E6D71BD07FEE0092A66E /* installer_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AA94E6D61BD07FEE0092A66E /* installer_background.png */; };
+		AA621C931C1CF0DA00A1C4A5 /* FNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C791C1CF0DA00A1C4A5 /* FNAppDelegate.m */; };
+		AA621C941C1CF0DA00A1C4A5 /* FNBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C7B1C1CF0DA00A1C4A5 /* FNBrowser.m */; };
+		AA621C951C1CF0DA00A1C4A5 /* FNConfigParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C7D1C1CF0DA00A1C4A5 /* FNConfigParser.m */; };
+		AA621C961C1CF0DA00A1C4A5 /* FNDropdownMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621C7E1C1CF0DA00A1C4A5 /* FNDropdownMenu.xib */; };
+		AA621C971C1CF0DA00A1C4A5 /* FNDropdownMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C801C1CF0DA00A1C4A5 /* FNDropdownMenuController.m */; };
+		AA621C981C1CF0DA00A1C4A5 /* FNFCPWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C821C1CF0DA00A1C4A5 /* FNFCPWrapper.m */; };
+		AA621C991C1CF0DA00A1C4A5 /* FNHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C841C1CF0DA00A1C4A5 /* FNHelpers.m */; };
+		AA621C9A1C1CF0DA00A1C4A5 /* FNInstallerDestinationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621C851C1CF0DA00A1C4A5 /* FNInstallerDestinationView.xib */; };
+		AA621C9B1C1CF0DA00A1C4A5 /* FNInstallerDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C871C1CF0DA00A1C4A5 /* FNInstallerDestinationViewController.m */; };
+		AA621C9C1C1CF0DA00A1C4A5 /* FNInstallerProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621C881C1CF0DA00A1C4A5 /* FNInstallerProgressView.xib */; };
+		AA621C9D1C1CF0DA00A1C4A5 /* FNInstallerProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C8A1C1CF0DA00A1C4A5 /* FNInstallerProgressViewController.m */; };
+		AA621C9E1C1CF0DA00A1C4A5 /* FNInstallerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621C8B1C1CF0DA00A1C4A5 /* FNInstallerWindow.xib */; };
+		AA621C9F1C1CF0DA00A1C4A5 /* FNInstallerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C8D1C1CF0DA00A1C4A5 /* FNInstallerWindowController.m */; };
+		AA621CA01C1CF0DA00A1C4A5 /* FNNodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C8F1C1CF0DA00A1C4A5 /* FNNodeController.m */; };
+		AA621CA11C1CF0DA00A1C4A5 /* FNSettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621C901C1CF0DA00A1C4A5 /* FNSettingsWindow.xib */; };
+		AA621CA21C1CF0DA00A1C4A5 /* FNSettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C921C1CF0DA00A1C4A5 /* FNSettingsWindowController.m */; };
+		AA621CAA1C1CF10800A1C4A5 /* FNConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621CA41C1CF10800A1C4A5 /* FNConstants.m */; };
+		AA621CAB1C1CF10800A1C4A5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621CA71C1CF10800A1C4A5 /* main.m */; };
+		AA621CAC1C1CF10800A1C4A5 /* TrayIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621CA91C1CF10800A1C4A5 /* TrayIcon.m */; };
+		AA621CB01C1CF12B00A1C4A5 /* installer_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AA621CAE1C1CF12B00A1C4A5 /* installer_background.png */; };
+		AA621CB21C1CF13900A1C4A5 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA621CB11C1CF13900A1C4A5 /* defaults.plist */; };
+		AA621CB41C1CF14500A1C4A5 /* main.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621CB31C1CF14500A1C4A5 /* main.xib */; };
 		AA9BE2EE1C1B774000345C77 /* verify.py in Resources */ = {isa = PBXBuildFile; fileRef = AA9BE2ED1C1B774000345C77 /* verify.py */; };
-		AAC093D71BED28C10065481F /* FNInstallerDestinationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC093C41BED28C10065481F /* FNInstallerDestinationView.xib */; };
-		AAC093D81BED28C10065481F /* FNInstallerDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC093C61BED28C10065481F /* FNInstallerDestinationViewController.m */; };
-		AAC093D91BED28C10065481F /* FNInstallerProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC093C71BED28C10065481F /* FNInstallerProgressView.xib */; };
-		AAC093DA1BED28C10065481F /* FNInstallerProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC093C91BED28C10065481F /* FNInstallerProgressViewController.m */; };
-		AAC093DF1BED28C10065481F /* FNInstallerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAC093D11BED28C10065481F /* FNInstallerWindow.xib */; };
-		AAC093E01BED28C10065481F /* FNInstallerWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC093D31BED28C10065481F /* FNInstallerWindowController.m */; };
 		AAD6891D1BD17CF500942738 /* Bundled Node in Resources */ = {isa = PBXBuildFile; fileRef = AAD6891C1BD17CF500942738 /* Bundled Node */; };
-		AADFE52D103A4251007808C8 /* main.xib in Resources */ = {isa = PBXBuildFile; fileRef = AADFE52C103A4251007808C8 /* main.xib */; };
 		AAE306F01BF6DEC900C4EC1D /* Acknowledgments.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AAE306EE1BF6DEC900C4EC1D /* Acknowledgments.rtf */; };
 		AAE306F11BF6DEC900C4EC1D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AAE306EF1BF6DEC900C4EC1D /* Credits.rtf */; };
 		AAE306F31BF920EE00C4EC1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE306F21BF920EE00C4EC1D /* Images.xcassets */; };
@@ -66,53 +65,53 @@
 
 /* Begin PBXFileReference section */
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		515E91EAE63300E20C3F8F20 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7668840DB50BE74D5B133229 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7F21DDF0A3951D9AB1FAFC42 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* FreenetTray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreenetTray.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA02AAD80FC8D74F00499DB3 /* FNNodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNNodeController.h; sourceTree = "<group>"; };
-		AA02AAD90FC8D74F00499DB3 /* FNNodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNNodeController.m; sourceTree = "<group>"; };
-		AA1052F41C19D73F00B991E5 /* FNBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNBrowser.h; sourceTree = "<group>"; };
-		AA1052F51C19D73F00B991E5 /* FNBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNBrowser.m; sourceTree = "<group>"; };
-		AA1D48CD1B697F1700CAC97E /* FNHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNHelpers.h; sourceTree = "<group>"; };
-		AA1D48CE1B697F1700CAC97E /* FNHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNHelpers.m; sourceTree = "<group>"; };
-		AA3C129A1ABD425100413379 /* FNAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNAppDelegate.h; sourceTree = "<group>"; };
-		AA3C129B1ABD425100413379 /* FNAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNAppDelegate.m; sourceTree = "<group>"; };
-		AA3C129D1ABE16BD00413379 /* FNDropdownMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNDropdownMenuController.h; sourceTree = "<group>"; };
-		AA3C129E1ABE16BD00413379 /* FNDropdownMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNDropdownMenuController.m; sourceTree = "<group>"; };
-		AA3C129F1ABE16BD00413379 /* FNDropdownMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FNDropdownMenu.xib; sourceTree = "<group>"; };
-		AA3C12A21ABE1DD100413379 /* FNProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNProtocols.h; sourceTree = "<group>"; };
-		AA3C12A31ABE32B100413379 /* TrayIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrayIcon.h; sourceTree = "<group>"; };
-		AA3C12A41ABE32B100413379 /* TrayIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrayIcon.m; sourceTree = "<group>"; };
-		AA3C12A61ABE7B4300413379 /* FNFCPWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNFCPWrapper.h; sourceTree = "<group>"; };
-		AA3C12A71ABE7B4300413379 /* FNFCPWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNFCPWrapper.m; sourceTree = "<group>"; };
 		AA433BCF109CD2B400EDBB73 /* gpl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gpl.txt; sourceTree = "<group>"; };
-		AA5677031ABD345D00BBC0D3 /* FNConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNConstants.h; sourceTree = "<group>"; };
-		AA5677041ABD345D00BBC0D3 /* FNConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNConstants.m; sourceTree = "<group>"; };
-		AA5D45CC110DF9BC00A81617 /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = defaults.plist; sourceTree = "<group>"; };
 		AA5E172B1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jre-8u66-macosx-x64.dmg"; sourceTree = "<group>"; };
 		AA621C391C1BC46E00A1C4A5 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
-		AA86025C0FCA62AC00AE7291 /* FreenetTray_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FreenetTray_Prefix.pch; sourceTree = "<group>"; };
-		AA8C5F281BCAEF3100220952 /* FNConfigParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNConfigParser.h; sourceTree = "<group>"; };
-		AA8C5F291BCAEF3100220952 /* FNConfigParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNConfigParser.m; sourceTree = "<group>"; };
-		AA8C5F2B1BCB013800220952 /* FNSettingsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNSettingsWindowController.h; path = "Settings Window/FNSettingsWindowController.h"; sourceTree = "<group>"; };
-		AA8C5F2C1BCB013800220952 /* FNSettingsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNSettingsWindowController.m; path = "Settings Window/FNSettingsWindowController.m"; sourceTree = "<group>"; };
-		AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FNSettingsWindow.xib; path = "Settings Window/FNSettingsWindow.xib"; sourceTree = "<group>"; };
-		AA94E6D61BD07FEE0092A66E /* installer_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = installer_background.png; sourceTree = "<group>"; };
+		AA621C781C1CF0DA00A1C4A5 /* FNAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNAppDelegate.h; path = FreenetTray/FNAppDelegate.h; sourceTree = "<group>"; };
+		AA621C791C1CF0DA00A1C4A5 /* FNAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNAppDelegate.m; path = FreenetTray/FNAppDelegate.m; sourceTree = "<group>"; };
+		AA621C7A1C1CF0DA00A1C4A5 /* FNBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNBrowser.h; path = FreenetTray/FNBrowser.h; sourceTree = "<group>"; };
+		AA621C7B1C1CF0DA00A1C4A5 /* FNBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNBrowser.m; path = FreenetTray/FNBrowser.m; sourceTree = "<group>"; };
+		AA621C7C1C1CF0DA00A1C4A5 /* FNConfigParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNConfigParser.h; path = FreenetTray/FNConfigParser.h; sourceTree = "<group>"; };
+		AA621C7D1C1CF0DA00A1C4A5 /* FNConfigParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNConfigParser.m; path = FreenetTray/FNConfigParser.m; sourceTree = "<group>"; };
+		AA621C7E1C1CF0DA00A1C4A5 /* FNDropdownMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FNDropdownMenu.xib; path = FreenetTray/FNDropdownMenu.xib; sourceTree = "<group>"; };
+		AA621C7F1C1CF0DA00A1C4A5 /* FNDropdownMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNDropdownMenuController.h; path = FreenetTray/FNDropdownMenuController.h; sourceTree = "<group>"; };
+		AA621C801C1CF0DA00A1C4A5 /* FNDropdownMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNDropdownMenuController.m; path = FreenetTray/FNDropdownMenuController.m; sourceTree = "<group>"; };
+		AA621C811C1CF0DA00A1C4A5 /* FNFCPWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNFCPWrapper.h; path = FreenetTray/FNFCPWrapper.h; sourceTree = "<group>"; };
+		AA621C821C1CF0DA00A1C4A5 /* FNFCPWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNFCPWrapper.m; path = FreenetTray/FNFCPWrapper.m; sourceTree = "<group>"; };
+		AA621C831C1CF0DA00A1C4A5 /* FNHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNHelpers.h; path = FreenetTray/FNHelpers.h; sourceTree = "<group>"; };
+		AA621C841C1CF0DA00A1C4A5 /* FNHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNHelpers.m; path = FreenetTray/FNHelpers.m; sourceTree = "<group>"; };
+		AA621C851C1CF0DA00A1C4A5 /* FNInstallerDestinationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FNInstallerDestinationView.xib; path = FreenetTray/FNInstallerDestinationView.xib; sourceTree = "<group>"; };
+		AA621C861C1CF0DA00A1C4A5 /* FNInstallerDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNInstallerDestinationViewController.h; path = FreenetTray/FNInstallerDestinationViewController.h; sourceTree = "<group>"; };
+		AA621C871C1CF0DA00A1C4A5 /* FNInstallerDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNInstallerDestinationViewController.m; path = FreenetTray/FNInstallerDestinationViewController.m; sourceTree = "<group>"; };
+		AA621C881C1CF0DA00A1C4A5 /* FNInstallerProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FNInstallerProgressView.xib; path = FreenetTray/FNInstallerProgressView.xib; sourceTree = "<group>"; };
+		AA621C891C1CF0DA00A1C4A5 /* FNInstallerProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNInstallerProgressViewController.h; path = FreenetTray/FNInstallerProgressViewController.h; sourceTree = "<group>"; };
+		AA621C8A1C1CF0DA00A1C4A5 /* FNInstallerProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNInstallerProgressViewController.m; path = FreenetTray/FNInstallerProgressViewController.m; sourceTree = "<group>"; };
+		AA621C8B1C1CF0DA00A1C4A5 /* FNInstallerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FNInstallerWindow.xib; path = FreenetTray/FNInstallerWindow.xib; sourceTree = "<group>"; };
+		AA621C8C1C1CF0DA00A1C4A5 /* FNInstallerWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNInstallerWindowController.h; path = FreenetTray/FNInstallerWindowController.h; sourceTree = "<group>"; };
+		AA621C8D1C1CF0DA00A1C4A5 /* FNInstallerWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNInstallerWindowController.m; path = FreenetTray/FNInstallerWindowController.m; sourceTree = "<group>"; };
+		AA621C8E1C1CF0DA00A1C4A5 /* FNNodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNNodeController.h; path = FreenetTray/FNNodeController.h; sourceTree = "<group>"; };
+		AA621C8F1C1CF0DA00A1C4A5 /* FNNodeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNNodeController.m; path = FreenetTray/FNNodeController.m; sourceTree = "<group>"; };
+		AA621C901C1CF0DA00A1C4A5 /* FNSettingsWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FNSettingsWindow.xib; path = FreenetTray/FNSettingsWindow.xib; sourceTree = "<group>"; };
+		AA621C911C1CF0DA00A1C4A5 /* FNSettingsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNSettingsWindowController.h; path = FreenetTray/FNSettingsWindowController.h; sourceTree = "<group>"; };
+		AA621C921C1CF0DA00A1C4A5 /* FNSettingsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNSettingsWindowController.m; path = FreenetTray/FNSettingsWindowController.m; sourceTree = "<group>"; };
+		AA621CA31C1CF10800A1C4A5 /* FNConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNConstants.h; path = FreenetTray/FNConstants.h; sourceTree = "<group>"; };
+		AA621CA41C1CF10800A1C4A5 /* FNConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNConstants.m; path = FreenetTray/FNConstants.m; sourceTree = "<group>"; };
+		AA621CA51C1CF10800A1C4A5 /* FNProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNProtocols.h; path = FreenetTray/FNProtocols.h; sourceTree = "<group>"; };
+		AA621CA61C1CF10800A1C4A5 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = FreenetTray/Prefix.pch; sourceTree = "<group>"; };
+		AA621CA71C1CF10800A1C4A5 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = FreenetTray/main.m; sourceTree = "<group>"; };
+		AA621CA81C1CF10800A1C4A5 /* TrayIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrayIcon.h; path = FreenetTray/TrayIcon.h; sourceTree = "<group>"; };
+		AA621CA91C1CF10800A1C4A5 /* TrayIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrayIcon.m; path = FreenetTray/TrayIcon.m; sourceTree = "<group>"; };
+		AA621CAE1C1CF12B00A1C4A5 /* installer_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = installer_background.png; path = FreenetTray/installer_background.png; sourceTree = "<group>"; };
+		AA621CB11C1CF13900A1C4A5 /* defaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = defaults.plist; path = FreenetTray/defaults.plist; sourceTree = "<group>"; };
+		AA621CB31C1CF14500A1C4A5 /* main.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = main.xib; path = FreenetTray/main.xib; sourceTree = "<group>"; };
+		AA621CB71C1CF28900A1C4A5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FreenetTray/Info.plist; sourceTree = "<group>"; };
 		AA9BE2ED1C1B774000345C77 /* verify.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = verify.py; sourceTree = "<group>"; };
-		AAC093C41BED28C10065481F /* FNInstallerDestinationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FNInstallerDestinationView.xib; sourceTree = "<group>"; };
-		AAC093C51BED28C10065481F /* FNInstallerDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNInstallerDestinationViewController.h; sourceTree = "<group>"; };
-		AAC093C61BED28C10065481F /* FNInstallerDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNInstallerDestinationViewController.m; sourceTree = "<group>"; };
-		AAC093C71BED28C10065481F /* FNInstallerProgressView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FNInstallerProgressView.xib; sourceTree = "<group>"; };
-		AAC093C81BED28C10065481F /* FNInstallerProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNInstallerProgressViewController.h; sourceTree = "<group>"; };
-		AAC093C91BED28C10065481F /* FNInstallerProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNInstallerProgressViewController.m; sourceTree = "<group>"; };
-		AAC093D11BED28C10065481F /* FNInstallerWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FNInstallerWindow.xib; sourceTree = "<group>"; };
-		AAC093D21BED28C10065481F /* FNInstallerWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FNInstallerWindowController.h; sourceTree = "<group>"; };
-		AAC093D31BED28C10065481F /* FNInstallerWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FNInstallerWindowController.m; sourceTree = "<group>"; };
 		AAD6891C1BD17CF500942738 /* Bundled Node */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Bundled Node"; sourceTree = "<group>"; };
-		AADFE52C103A4251007808C8 /* main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = main.xib; sourceTree = "<group>"; };
 		AAE306EE1BF6DEC900C4EC1D /* Acknowledgments.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Acknowledgments.rtf; sourceTree = "<group>"; };
 		AAE306EF1BF6DEC900C4EC1D /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		AAE306F21BF920EE00C4EC1D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FreenetTray/Images.xcassets; sourceTree = "<group>"; };
@@ -144,23 +143,33 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				AA3C129A1ABD425100413379 /* FNAppDelegate.h */,
-				AA3C129B1ABD425100413379 /* FNAppDelegate.m */,
-				AA8C5F281BCAEF3100220952 /* FNConfigParser.h */,
-				AA8C5F291BCAEF3100220952 /* FNConfigParser.m */,
-				AA02AAD80FC8D74F00499DB3 /* FNNodeController.h */,
-				AA02AAD90FC8D74F00499DB3 /* FNNodeController.m */,
-				AA3C129D1ABE16BD00413379 /* FNDropdownMenuController.h */,
-				AA3C129E1ABE16BD00413379 /* FNDropdownMenuController.m */,
-				AA3C129F1ABE16BD00413379 /* FNDropdownMenu.xib */,
-				AA3C12A61ABE7B4300413379 /* FNFCPWrapper.h */,
-				AA3C12A71ABE7B4300413379 /* FNFCPWrapper.m */,
-				AA1D48CD1B697F1700CAC97E /* FNHelpers.h */,
-				AA1D48CE1B697F1700CAC97E /* FNHelpers.m */,
-				AA1052F41C19D73F00B991E5 /* FNBrowser.h */,
-				AA1052F51C19D73F00B991E5 /* FNBrowser.m */,
-				AAC093C01BED28C00065481F /* Installer */,
-				AA8C5F301BCB013E00220952 /* Settings Window */,
+				AA621C781C1CF0DA00A1C4A5 /* FNAppDelegate.h */,
+				AA621C791C1CF0DA00A1C4A5 /* FNAppDelegate.m */,
+				AA621C7A1C1CF0DA00A1C4A5 /* FNBrowser.h */,
+				AA621C7B1C1CF0DA00A1C4A5 /* FNBrowser.m */,
+				AA621C7C1C1CF0DA00A1C4A5 /* FNConfigParser.h */,
+				AA621C7D1C1CF0DA00A1C4A5 /* FNConfigParser.m */,
+				AA621C7E1C1CF0DA00A1C4A5 /* FNDropdownMenu.xib */,
+				AA621C7F1C1CF0DA00A1C4A5 /* FNDropdownMenuController.h */,
+				AA621C801C1CF0DA00A1C4A5 /* FNDropdownMenuController.m */,
+				AA621C811C1CF0DA00A1C4A5 /* FNFCPWrapper.h */,
+				AA621C821C1CF0DA00A1C4A5 /* FNFCPWrapper.m */,
+				AA621C831C1CF0DA00A1C4A5 /* FNHelpers.h */,
+				AA621C841C1CF0DA00A1C4A5 /* FNHelpers.m */,
+				AA621C851C1CF0DA00A1C4A5 /* FNInstallerDestinationView.xib */,
+				AA621C861C1CF0DA00A1C4A5 /* FNInstallerDestinationViewController.h */,
+				AA621C871C1CF0DA00A1C4A5 /* FNInstallerDestinationViewController.m */,
+				AA621C881C1CF0DA00A1C4A5 /* FNInstallerProgressView.xib */,
+				AA621C891C1CF0DA00A1C4A5 /* FNInstallerProgressViewController.h */,
+				AA621C8A1C1CF0DA00A1C4A5 /* FNInstallerProgressViewController.m */,
+				AA621C8B1C1CF0DA00A1C4A5 /* FNInstallerWindow.xib */,
+				AA621C8C1C1CF0DA00A1C4A5 /* FNInstallerWindowController.h */,
+				AA621C8D1C1CF0DA00A1C4A5 /* FNInstallerWindowController.m */,
+				AA621C8E1C1CF0DA00A1C4A5 /* FNNodeController.h */,
+				AA621C8F1C1CF0DA00A1C4A5 /* FNNodeController.m */,
+				AA621C901C1CF0DA00A1C4A5 /* FNSettingsWindow.xib */,
+				AA621C911C1CF0DA00A1C4A5 /* FNSettingsWindowController.h */,
+				AA621C921C1CF0DA00A1C4A5 /* FNSettingsWindowController.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -203,13 +212,14 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				AA3C12A31ABE32B100413379 /* TrayIcon.h */,
-				AA3C12A41ABE32B100413379 /* TrayIcon.m */,
-				AA5677031ABD345D00BBC0D3 /* FNConstants.h */,
-				AA5677041ABD345D00BBC0D3 /* FNConstants.m */,
-				AA3C12A21ABE1DD100413379 /* FNProtocols.h */,
-				AA86025C0FCA62AC00AE7291 /* FreenetTray_Prefix.pch */,
-				29B97316FDCFA39411CA2CEA /* main.m */,
+				AA621CA31C1CF10800A1C4A5 /* FNConstants.h */,
+				AA621CA41C1CF10800A1C4A5 /* FNConstants.m */,
+				AA621CA51C1CF10800A1C4A5 /* FNProtocols.h */,
+				AA621CA71C1CF10800A1C4A5 /* main.m */,
+				AA621CB31C1CF14500A1C4A5 /* main.xib */,
+				AA621CA61C1CF10800A1C4A5 /* Prefix.pch */,
+				AA621CA81C1CF10800A1C4A5 /* TrayIcon.h */,
+				AA621CA91C1CF10800A1C4A5 /* TrayIcon.m */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -217,17 +227,16 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AA9BE2ED1C1B774000345C77 /* verify.py */,
-				AAE306F21BF920EE00C4EC1D /* Images.xcassets */,
 				AAE306EE1BF6DEC900C4EC1D /* Acknowledgments.rtf */,
 				AAE306EF1BF6DEC900C4EC1D /* Credits.rtf */,
-				AA94E6D61BD07FEE0092A66E /* installer_background.png */,
-				AA5D45CC110DF9BC00A81617 /* defaults.plist */,
-				AAEF3AED1AD6313800A4B475 /* README.md */,
+				AA621CB11C1CF13900A1C4A5 /* defaults.plist */,
 				AA433BCF109CD2B400EDBB73 /* gpl.txt */,
-				8D1107310486CEB800E47090 /* Info.plist */,
+				AAE306F21BF920EE00C4EC1D /* Images.xcassets */,
+				AA621CB71C1CF28900A1C4A5 /* Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				AADFE52C103A4251007808C8 /* main.xib */,
+				AA621CAE1C1CF12B00A1C4A5 /* installer_background.png */,
+				AAEF3AED1AD6313800A4B475 /* README.md */,
+				AA9BE2ED1C1B774000345C77 /* verify.py */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -238,32 +247,6 @@
 				515E91EAE63300E20C3F8F20 /* libPods.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		AA8C5F301BCB013E00220952 /* Settings Window */ = {
-			isa = PBXGroup;
-			children = (
-				AA8C5F2B1BCB013800220952 /* FNSettingsWindowController.h */,
-				AA8C5F2C1BCB013800220952 /* FNSettingsWindowController.m */,
-				AA8C5F2D1BCB013800220952 /* FNSettingsWindow.xib */,
-			);
-			name = "Settings Window";
-			sourceTree = "<group>";
-		};
-		AAC093C01BED28C00065481F /* Installer */ = {
-			isa = PBXGroup;
-			children = (
-				AAC093C41BED28C10065481F /* FNInstallerDestinationView.xib */,
-				AAC093C51BED28C10065481F /* FNInstallerDestinationViewController.h */,
-				AAC093C61BED28C10065481F /* FNInstallerDestinationViewController.m */,
-				AAC093C71BED28C10065481F /* FNInstallerProgressView.xib */,
-				AAC093C81BED28C10065481F /* FNInstallerProgressViewController.h */,
-				AAC093C91BED28C10065481F /* FNInstallerProgressViewController.m */,
-				AAC093D11BED28C10065481F /* FNInstallerWindow.xib */,
-				AAC093D21BED28C10065481F /* FNInstallerWindowController.h */,
-				AAC093D31BED28C10065481F /* FNInstallerWindowController.m */,
-			);
-			path = Installer;
 			sourceTree = "<group>";
 		};
 		AAF723EB1BD0D14E003BA438 /* Bundled Packages */ = {
@@ -362,23 +345,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA621C9E1C1CF0DA00A1C4A5 /* FNInstallerWindow.xib in Resources */,
 				AAE306F11BF6DEC900C4EC1D /* Credits.rtf in Resources */,
 				AA9BE2EE1C1B774000345C77 /* verify.py in Resources */,
-				AAC093D71BED28C10065481F /* FNInstallerDestinationView.xib in Resources */,
-				AAC093DF1BED28C10065481F /* FNInstallerWindow.xib in Resources */,
-				AA8C5F2F1BCB013800220952 /* FNSettingsWindow.xib in Resources */,
-				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				AA3C12A11ABE16BD00413379 /* FNDropdownMenu.xib in Resources */,
-				AA94E6D71BD07FEE0092A66E /* installer_background.png in Resources */,
+				AA621CB21C1CF13900A1C4A5 /* defaults.plist in Resources */,
 				AAE306F31BF920EE00C4EC1D /* Images.xcassets in Resources */,
-				AADFE52D103A4251007808C8 /* main.xib in Resources */,
+				AA621CB41C1CF14500A1C4A5 /* main.xib in Resources */,
+				AA621C9A1C1CF0DA00A1C4A5 /* FNInstallerDestinationView.xib in Resources */,
+				AA621C9C1C1CF0DA00A1C4A5 /* FNInstallerProgressView.xib in Resources */,
+				AA621CB01C1CF12B00A1C4A5 /* installer_background.png in Resources */,
 				AA5E172C1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg in Resources */,
 				AAD6891D1BD17CF500942738 /* Bundled Node in Resources */,
 				AAEF3AEE1AD6313800A4B475 /* README.md in Resources */,
 				AAE306F01BF6DEC900C4EC1D /* Acknowledgments.rtf in Resources */,
+				AA621CA11C1CF0DA00A1C4A5 /* FNSettingsWindow.xib in Resources */,
 				AA433BD1109CD2B400EDBB73 /* gpl.txt in Resources */,
-				AA5D45CD110DF9BC00A81617 /* defaults.plist in Resources */,
-				AAC093D91BED28C10065481F /* FNInstallerProgressView.xib in Resources */,
+				AA621C961C1CF0DA00A1C4A5 /* FNDropdownMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,20 +426,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAC093D81BED28C10065481F /* FNInstallerDestinationViewController.m in Sources */,
-				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				AA5677051ABD345D00BBC0D3 /* FNConstants.m in Sources */,
-				AA1052F61C19D73F00B991E5 /* FNBrowser.m in Sources */,
-				AA3C12A51ABE32B100413379 /* TrayIcon.m in Sources */,
-				AA8C5F2A1BCAEF3100220952 /* FNConfigParser.m in Sources */,
-				AA3C12A01ABE16BD00413379 /* FNDropdownMenuController.m in Sources */,
-				AA3C129C1ABD425100413379 /* FNAppDelegate.m in Sources */,
-				AA1D48CF1B697F1700CAC97E /* FNHelpers.m in Sources */,
-				AA02AADA0FC8D74F00499DB3 /* FNNodeController.m in Sources */,
-				AAC093E01BED28C10065481F /* FNInstallerWindowController.m in Sources */,
-				AAC093DA1BED28C10065481F /* FNInstallerProgressViewController.m in Sources */,
-				AA8C5F2E1BCB013800220952 /* FNSettingsWindowController.m in Sources */,
-				AA3C12A81ABE7B4300413379 /* FNFCPWrapper.m in Sources */,
+				AA621C9B1C1CF0DA00A1C4A5 /* FNInstallerDestinationViewController.m in Sources */,
+				AA621C951C1CF0DA00A1C4A5 /* FNConfigParser.m in Sources */,
+				AA621CA21C1CF0DA00A1C4A5 /* FNSettingsWindowController.m in Sources */,
+				AA621C9F1C1CF0DA00A1C4A5 /* FNInstallerWindowController.m in Sources */,
+				AA621CAC1C1CF10800A1C4A5 /* TrayIcon.m in Sources */,
+				AA621C941C1CF0DA00A1C4A5 /* FNBrowser.m in Sources */,
+				AA621C971C1CF0DA00A1C4A5 /* FNDropdownMenuController.m in Sources */,
+				AA621CAB1C1CF10800A1C4A5 /* main.m in Sources */,
+				AA621CAA1C1CF10800A1C4A5 /* FNConstants.m in Sources */,
+				AA621C931C1CF0DA00A1C4A5 /* FNAppDelegate.m in Sources */,
+				AA621C9D1C1CF0DA00A1C4A5 /* FNInstallerProgressViewController.m in Sources */,
+				AA621CA01C1CF0DA00A1C4A5 /* FNNodeController.m in Sources */,
+				AA621C991C1CF0DA00A1C4A5 /* FNHelpers.m in Sources */,
+				AA621C981C1CF0DA00A1C4A5 /* FNFCPWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,10 +546,10 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = FreenetTray_Prefix.pch;
+				GCC_PREFIX_HEADER = FreenetTray/Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = FreenetTray/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "${inherited} @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
@@ -593,11 +575,11 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = s;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = FreenetTray_Prefix.pch;
+				GCC_PREFIX_HEADER = FreenetTray/Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "$(inherited)";
-				INFOPLIST_FILE = Info.plist;
+				INFOPLIST_FILE = FreenetTray/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "${inherited} @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.8;
