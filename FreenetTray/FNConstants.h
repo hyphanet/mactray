@@ -26,6 +26,10 @@ FOUNDATION_EXPORT NSTimeInterval const FNNodeCheckTimeInterval;
 
 FOUNDATION_EXPORT NSString *const FNPastebinDomain;
 
+#pragma mark - Deprecated keys
+
+FOUNDATION_EXPORT NSString *const FNNodeLaunchAgentPathname;
+
 #pragma mark - Node configuration keys
 
 FOUNDATION_EXPORT NSString *const FNNodeFreenetConfigFCPBindAddressesKey;

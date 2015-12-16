@@ -26,6 +26,10 @@ NSTimeInterval const FNNodeCheckTimeInterval = 1;
 
 NSString *const FNPastebinDomain = @"pastebin.com";
 
+#pragma mark - Deprecated functionality keys
+
+NSString *const FNNodeLaunchAgentPathname = @"com.freenet.startup.plist";
+
 #pragma mark - Node configuration keys
 
 NSString *const FNNodeFreenetConfigFCPBindAddressesKey = @"fcp.bindTo";

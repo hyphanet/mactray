@@ -119,4 +119,23 @@
     return appNames.copy;
 }
 
+#pragma mark -
+#pragma mark - Migrations
+
++(BOOL)migrateLaunchAgent:(NSError **)error {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *libraryDirectory = [[fileManager URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] firstObject];
+    NSURL *launchAgentsDirectory = [libraryDirectory URLByAppendingPathComponent:@"LaunchAgents" isDirectory:YES];
+    
+    NSURL *launchAgent = [launchAgentsDirectory URLByAppendingPathComponent:FNNodeLaunchAgentPathname];
+    if ([fileManager fileExistsAtPath:launchAgent.path isDirectory:nil]) {
+        NSError *removeError;
+        if (![fileManager removeItemAtURL:launchAgent error:&removeError]) {
+            *error = removeError;
+            return NO;
+        }
+    }
+    return YES;
+}
+
 @end

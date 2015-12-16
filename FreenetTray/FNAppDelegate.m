@@ -34,6 +34,12 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
     PFMoveToApplicationsFolderIfNecessary();
     
+    // migrations should go here if at all possible
+    NSError *migrationError;
+    if (![FNHelpers migrateLaunchAgent:&migrationError]) {
+        NSLog(@"Error during migration: %@", migrationError.localizedDescription);
+    }
+    
     // load factory defaults for node location variables, sourced from defaults.plist
     NSString *defaultsPlist = [[NSBundle mainBundle] pathForResource:@"defaults" ofType:@"plist"];
     NSDictionary *defaultsPlistDict = [NSDictionary dictionaryWithContentsOfFile:defaultsPlist];

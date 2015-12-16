@@ -22,4 +22,6 @@
 +(void)displayUninstallAlert;
 +(NSArray<FNBrowser *> *)installedWebBrowsers;
 
++(BOOL)migrateLaunchAgent:(NSError **)error;
+
 @end
