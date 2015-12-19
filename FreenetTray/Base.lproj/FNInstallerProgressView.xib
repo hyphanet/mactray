@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <development version="6200" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9531"/>
+        <capability name="box content view" minToolsVersion="7.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="FNInstallerProgressViewController">
@@ -29,7 +29,6 @@
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="V9k-J0-MT6">
                     <rect key="frame" x="16" y="274" width="586" height="17"/>
-                    <animations/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Installing Freenet" id="95e-76-m1K">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -38,46 +37,7 @@
                             <fragment content="Window title">
                                 <attributes>
                                     <font key="NSFont" size="11" name="HelveticaNeue"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
-                                        <tabStops>
-                                            <textTab alignment="left" location="28">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="56">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="84">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="112">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="140">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="168">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="196">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="224">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="252">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="280">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="308">
-                                                <options/>
-                                            </textTab>
-                                            <textTab alignment="left" location="336">
-                                                <options/>
-                                            </textTab>
-                                        </tabStops>
-                                    </paragraphStyle>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
                                 </attributes>
                             </fragment>
                         </attributedString>
@@ -85,7 +45,7 @@
                 </textField>
                 <box autoresizesSubviews="NO" borderType="line" translatesAutoresizingMaskIntoConstraints="NO" id="TJB-rn-K6R">
                     <rect key="frame" x="17" y="-4" width="586" height="286"/>
-                    <view key="contentView">
+                    <view key="contentView" id="6GZ-Gl-C4m">
                         <rect key="frame" x="1" y="1" width="584" height="270"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -94,7 +54,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="526" id="n0w-iL-WU3"/>
                                 </constraints>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Installing Java" id="Hga-mV-cuv">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -106,7 +65,6 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="17" id="1cH-fZ-5h2"/>
                                 </constraints>
-                                <animations/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="dHD-Qk-E44"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="iconHex" value="f10c"/>
@@ -117,7 +75,6 @@
                             </imageView>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="57l-8B-WxW" customClass="NIKFontAwesomeImageView">
                                 <rect key="frame" x="31" y="183" width="17" height="17"/>
-                                <animations/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="ozu-kN-NgY"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="iconHex" value="f10c"/>
@@ -128,7 +85,6 @@
                             </imageView>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6dy-wR-EJS">
                                 <rect key="frame" x="54" y="183" width="530" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Copying Files" id="pT7-X7-u4Z">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -137,7 +93,6 @@
                             </textField>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3mN-3s-lrL" customClass="NIKFontAwesomeImageView">
                                 <rect key="frame" x="31" y="144" width="17" height="17"/>
-                                <animations/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="mdx-h7-q95"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="iconHex" value="f10c"/>
@@ -148,7 +103,6 @@
                             </imageView>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gSx-sB-O2x" customClass="NIKFontAwesomeImageView">
                                 <rect key="frame" x="31" y="104" width="17" height="17"/>
-                                <animations/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="z1j-xN-hhf"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="iconHex" value="f10c"/>
@@ -159,7 +113,6 @@
                             </imageView>
                             <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pIX-vV-EW5" customClass="NIKFontAwesomeImageView">
                                 <rect key="frame" x="31" y="65" width="17" height="17"/>
-                                <animations/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="xKm-VJ-fa1"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="iconHex" value="f10c"/>
@@ -170,7 +123,6 @@
                             </imageView>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="bhy-1K-wNe">
                                 <rect key="frame" x="54" y="104" width="530" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Starting Node..." id="ToQ-oU-rUc">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -179,7 +131,6 @@
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ziN-HG-Bnt">
                                 <rect key="frame" x="54" y="65" width="530" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Finished, please click continue" id="RGl-Cl-cH4">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -188,7 +139,6 @@
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gde-V4-T93">
                                 <rect key="frame" x="54" y="144" width="530" height="17"/>
-                                <animations/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Setting Up Ports" id="cov-1I-ShA">
                                     <font key="font" metaFont="systemBold"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -196,46 +146,44 @@
                                 </textFieldCell>
                             </textField>
                         </subviews>
-                        <animations/>
                     </view>
                     <constraints>
-                        <constraint firstItem="OB0-za-RXI" firstAttribute="top" secondItem="TJB-rn-K6R" secondAttribute="top" constant="47" id="0Eg-dB-iJs"/>
-                        <constraint firstItem="3mN-3s-lrL" firstAttribute="top" secondItem="57l-8B-WxW" secondAttribute="bottom" constant="22" id="0XE-8b-OcP"/>
-                        <constraint firstItem="57l-8B-WxW" firstAttribute="top" secondItem="6dy-wR-EJS" secondAttribute="top" id="55J-Td-mVQ"/>
-                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="top" secondItem="pIX-vV-EW5" secondAttribute="top" id="5Ba-OI-4JC"/>
-                        <constraint firstItem="3mN-3s-lrL" firstAttribute="bottom" secondItem="gde-V4-T93" secondAttribute="bottom" id="7dK-xH-GGD"/>
-                        <constraint firstItem="pqY-dX-n1S" firstAttribute="leading" secondItem="OB0-za-RXI" secondAttribute="trailing" constant="8" symbolic="YES" id="C5c-i5-7OJ"/>
-                        <constraint firstItem="pIX-vV-EW5" firstAttribute="bottom" secondItem="ziN-HG-Bnt" secondAttribute="bottom" id="Ch3-k8-esB"/>
-                        <constraint firstAttribute="trailing" secondItem="pqY-dX-n1S" secondAttribute="trailing" id="ETj-Z3-3X3"/>
-                        <constraint firstItem="OB0-za-RXI" firstAttribute="leading" secondItem="TJB-rn-K6R" secondAttribute="leading" constant="29" id="FeX-mK-ijE"/>
-                        <constraint firstItem="57l-8B-WxW" firstAttribute="bottom" secondItem="6dy-wR-EJS" secondAttribute="bottom" id="Fp9-ek-mlf"/>
-                        <constraint firstItem="6dy-wR-EJS" firstAttribute="leading" secondItem="pqY-dX-n1S" secondAttribute="leading" id="Gia-e5-t1Y"/>
-                        <constraint firstItem="pIX-vV-EW5" firstAttribute="top" secondItem="gSx-sB-O2x" secondAttribute="bottom" constant="22" id="NBr-hp-Mum"/>
-                        <constraint firstItem="6dy-wR-EJS" firstAttribute="trailing" secondItem="gde-V4-T93" secondAttribute="trailing" id="Nzf-4J-Lb4"/>
-                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="trailing" secondItem="bhy-1K-wNe" secondAttribute="trailing" id="OGJ-za-leA"/>
-                        <constraint firstItem="57l-8B-WxW" firstAttribute="top" secondItem="OB0-za-RXI" secondAttribute="bottom" constant="21" id="Oft-Wa-NTH"/>
-                        <constraint firstItem="gde-V4-T93" firstAttribute="leading" secondItem="6dy-wR-EJS" secondAttribute="leading" id="QHH-5c-yeC"/>
-                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="leading" secondItem="pIX-vV-EW5" secondAttribute="trailing" constant="8" symbolic="YES" id="S1g-xt-0cm"/>
-                        <constraint firstItem="gSx-sB-O2x" firstAttribute="leading" secondItem="3mN-3s-lrL" secondAttribute="leading" id="UFf-b8-N3o"/>
-                        <constraint firstItem="gSx-sB-O2x" firstAttribute="top" secondItem="3mN-3s-lrL" secondAttribute="bottom" constant="23" id="Vah-6q-j2h"/>
-                        <constraint firstItem="3mN-3s-lrL" firstAttribute="top" secondItem="gde-V4-T93" secondAttribute="top" id="WKF-hn-q7l"/>
-                        <constraint firstItem="bhy-1K-wNe" firstAttribute="leading" secondItem="gSx-sB-O2x" secondAttribute="trailing" constant="8" symbolic="YES" id="XKl-uK-D7X"/>
-                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="leading" secondItem="bhy-1K-wNe" secondAttribute="leading" id="Zor-su-DRu"/>
-                        <constraint firstItem="OB0-za-RXI" firstAttribute="bottom" secondItem="pqY-dX-n1S" secondAttribute="bottom" id="c6b-b9-z67"/>
-                        <constraint firstItem="6dy-wR-EJS" firstAttribute="trailing" secondItem="pqY-dX-n1S" secondAttribute="trailing" id="ciz-6O-qPo"/>
-                        <constraint firstItem="bhy-1K-wNe" firstAttribute="bottom" secondItem="gSx-sB-O2x" secondAttribute="bottom" id="czA-H6-w3F"/>
-                        <constraint firstItem="57l-8B-WxW" firstAttribute="leading" secondItem="OB0-za-RXI" secondAttribute="leading" id="ebf-nV-bkg"/>
-                        <constraint firstItem="gde-V4-T93" firstAttribute="leading" secondItem="3mN-3s-lrL" secondAttribute="trailing" constant="8" symbolic="YES" id="fyl-cn-5HS"/>
-                        <constraint firstItem="57l-8B-WxW" firstAttribute="leading" secondItem="3mN-3s-lrL" secondAttribute="leading" id="hpc-gQ-p8p"/>
-                        <constraint firstItem="gSx-sB-O2x" firstAttribute="top" secondItem="bhy-1K-wNe" secondAttribute="top" id="jtc-kU-LSR"/>
-                        <constraint firstItem="pqY-dX-n1S" firstAttribute="top" secondItem="OB0-za-RXI" secondAttribute="top" id="klu-OM-FfJ"/>
-                        <constraint firstItem="gde-V4-T93" firstAttribute="trailing" secondItem="bhy-1K-wNe" secondAttribute="trailing" id="pTX-yd-7Fm"/>
-                        <constraint firstAttribute="bottom" secondItem="gSx-sB-O2x" secondAttribute="bottom" constant="101" id="q6K-cy-jN7"/>
-                        <constraint firstItem="pIX-vV-EW5" firstAttribute="leading" secondItem="gSx-sB-O2x" secondAttribute="leading" id="xrl-jx-UT2"/>
-                        <constraint firstItem="gde-V4-T93" firstAttribute="leading" secondItem="bhy-1K-wNe" secondAttribute="leading" id="yFI-9s-tkV"/>
-                        <constraint firstItem="6dy-wR-EJS" firstAttribute="leading" secondItem="57l-8B-WxW" secondAttribute="trailing" constant="8" symbolic="YES" id="yZA-j3-q8O"/>
+                        <constraint firstItem="pIX-vV-EW5" firstAttribute="leading" secondItem="gSx-sB-O2x" secondAttribute="leading" id="2Ze-GJ-c6m"/>
+                        <constraint firstItem="gde-V4-T93" firstAttribute="trailing" secondItem="bhy-1K-wNe" secondAttribute="trailing" id="404-5P-ouC"/>
+                        <constraint firstAttribute="bottom" secondItem="gSx-sB-O2x" secondAttribute="bottom" constant="101" id="5Vv-1h-VAL"/>
+                        <constraint firstAttribute="trailing" secondItem="pqY-dX-n1S" secondAttribute="trailing" id="9dW-V6-Vjp"/>
+                        <constraint firstItem="pIX-vV-EW5" firstAttribute="bottom" secondItem="ziN-HG-Bnt" secondAttribute="bottom" id="A3u-nj-CKn"/>
+                        <constraint firstItem="57l-8B-WxW" firstAttribute="top" secondItem="6dy-wR-EJS" secondAttribute="top" id="Aup-eG-3Ce"/>
+                        <constraint firstItem="6dy-wR-EJS" firstAttribute="trailing" secondItem="gde-V4-T93" secondAttribute="trailing" id="CvA-Lj-o2e"/>
+                        <constraint firstItem="3mN-3s-lrL" firstAttribute="top" secondItem="gde-V4-T93" secondAttribute="top" id="FBI-Ou-wFN"/>
+                        <constraint firstItem="pqY-dX-n1S" firstAttribute="leading" secondItem="OB0-za-RXI" secondAttribute="trailing" constant="8" symbolic="YES" id="GMd-NH-szb"/>
+                        <constraint firstItem="57l-8B-WxW" firstAttribute="leading" secondItem="OB0-za-RXI" secondAttribute="leading" id="Hjm-8V-c4g"/>
+                        <constraint firstItem="OB0-za-RXI" firstAttribute="leading" secondItem="TJB-rn-K6R" secondAttribute="leading" constant="29" id="JlB-EP-gWu"/>
+                        <constraint firstItem="pIX-vV-EW5" firstAttribute="top" secondItem="gSx-sB-O2x" secondAttribute="bottom" constant="22" id="Ok7-gb-WR5"/>
+                        <constraint firstItem="gde-V4-T93" firstAttribute="leading" secondItem="3mN-3s-lrL" secondAttribute="trailing" constant="8" symbolic="YES" id="PRY-hx-NHh"/>
+                        <constraint firstItem="57l-8B-WxW" firstAttribute="top" secondItem="OB0-za-RXI" secondAttribute="bottom" constant="21" id="QGH-nY-GBu"/>
+                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="trailing" secondItem="bhy-1K-wNe" secondAttribute="trailing" id="R1Z-cM-729"/>
+                        <constraint firstItem="57l-8B-WxW" firstAttribute="leading" secondItem="3mN-3s-lrL" secondAttribute="leading" id="WzX-GO-KKH"/>
+                        <constraint firstItem="bhy-1K-wNe" firstAttribute="leading" secondItem="gSx-sB-O2x" secondAttribute="trailing" constant="8" symbolic="YES" id="Xmr-1c-Q47"/>
+                        <constraint firstItem="6dy-wR-EJS" firstAttribute="leading" secondItem="pqY-dX-n1S" secondAttribute="leading" id="ZfJ-Tz-BdI"/>
+                        <constraint firstItem="gde-V4-T93" firstAttribute="leading" secondItem="bhy-1K-wNe" secondAttribute="leading" id="axa-2Y-E6V"/>
+                        <constraint firstItem="3mN-3s-lrL" firstAttribute="bottom" secondItem="gde-V4-T93" secondAttribute="bottom" id="b9X-9K-yE8"/>
+                        <constraint firstItem="gSx-sB-O2x" firstAttribute="top" secondItem="3mN-3s-lrL" secondAttribute="bottom" constant="23" id="cnU-oz-0IM"/>
+                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="top" secondItem="pIX-vV-EW5" secondAttribute="top" id="dVS-cn-e8Q"/>
+                        <constraint firstItem="57l-8B-WxW" firstAttribute="bottom" secondItem="6dy-wR-EJS" secondAttribute="bottom" id="dzn-Xl-2YP"/>
+                        <constraint firstItem="OB0-za-RXI" firstAttribute="top" secondItem="TJB-rn-K6R" secondAttribute="top" constant="47" id="ev8-5u-VdZ"/>
+                        <constraint firstItem="6dy-wR-EJS" firstAttribute="leading" secondItem="57l-8B-WxW" secondAttribute="trailing" constant="8" symbolic="YES" id="fuV-0W-2E7"/>
+                        <constraint firstItem="OB0-za-RXI" firstAttribute="bottom" secondItem="pqY-dX-n1S" secondAttribute="bottom" id="la3-Ol-qg5"/>
+                        <constraint firstItem="pqY-dX-n1S" firstAttribute="top" secondItem="OB0-za-RXI" secondAttribute="top" id="lla-dT-sDZ"/>
+                        <constraint firstItem="gde-V4-T93" firstAttribute="leading" secondItem="6dy-wR-EJS" secondAttribute="leading" id="mTI-XX-DIQ"/>
+                        <constraint firstItem="gSx-sB-O2x" firstAttribute="top" secondItem="bhy-1K-wNe" secondAttribute="top" id="p1O-EW-SDc"/>
+                        <constraint firstItem="gSx-sB-O2x" firstAttribute="leading" secondItem="3mN-3s-lrL" secondAttribute="leading" id="qqk-gE-LNo"/>
+                        <constraint firstItem="bhy-1K-wNe" firstAttribute="bottom" secondItem="gSx-sB-O2x" secondAttribute="bottom" id="s1I-40-dZ4"/>
+                        <constraint firstItem="3mN-3s-lrL" firstAttribute="top" secondItem="57l-8B-WxW" secondAttribute="bottom" constant="22" id="t5g-b3-1ne"/>
+                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="leading" secondItem="bhy-1K-wNe" secondAttribute="leading" id="v8D-j5-fRz"/>
+                        <constraint firstItem="6dy-wR-EJS" firstAttribute="trailing" secondItem="pqY-dX-n1S" secondAttribute="trailing" id="y3J-Oz-uao"/>
+                        <constraint firstItem="ziN-HG-Bnt" firstAttribute="leading" secondItem="pIX-vV-EW5" secondAttribute="trailing" constant="8" symbolic="YES" id="zkD-ww-rwJ"/>
                     </constraints>
-                    <animations/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
                     <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </box>
@@ -247,7 +195,6 @@
                 <constraint firstItem="TJB-rn-K6R" firstAttribute="top" secondItem="njg-Ho-2iZ" secondAttribute="top" constant="20" symbolic="YES" id="G9s-aA-rO2"/>
                 <constraint firstItem="TJB-rn-K6R" firstAttribute="leading" secondItem="njg-Ho-2iZ" secondAttribute="leading" constant="20" symbolic="YES" id="Z4c-kf-5MO"/>
             </constraints>
-            <animations/>
         </customView>
     </objects>
 </document>
