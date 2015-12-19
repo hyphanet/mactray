@@ -13,7 +13,6 @@
 @import Cocoa;
 
 @interface FNInstallerDestinationViewController : NSViewController <NSOpenSavePanelDelegate>
-@property IBOutlet NSTextView *textView;
 @property id<FNInstallerDelegate> stateDelegate;
 @property IBOutlet NSPathControl *installPathIndicator;
 

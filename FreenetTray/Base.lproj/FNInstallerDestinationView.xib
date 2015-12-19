@@ -9,7 +9,6 @@
         <customObject id="-2" userLabel="File's Owner" customClass="FNInstallerDestinationViewController">
             <connections>
                 <outlet property="installPathIndicator" destination="sRB-6Y-xoY" id="mBy-Qr-dbb"/>
-                <outlet property="textView" destination="hWs-Il-cEZ" id="kCF-iU-4j6"/>
                 <outlet property="view" destination="aNl-RT-p8W" id="hAJ-WD-D5I"/>
             </connections>
         </customObject>
@@ -109,60 +108,29 @@
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                 </pathCell>
                             </pathControl>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" hasVerticalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYV-w1-oM5">
-                                <rect key="frame" x="18" y="91" width="548" height="169"/>
-                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="EPQ-Wg-bDK">
-                                    <rect key="frame" x="0.0" y="0.0" width="548" height="169"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <textView editable="NO" selectable="NO" importsGraphics="NO" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" usesFontPanel="YES" verticallyResizable="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" smartInsertDelete="YES" id="hWs-Il-cEZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="548" height="169"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                            <animations/>
-                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
-                                            <size key="minSize" width="548" height="169"/>
-                                            <size key="maxSize" width="584" height="10000000"/>
-                                            <attributedString key="textStorage">
-                                                <fragment content="The default location is recommended for most users">
-                                                    <attributes>
-                                                        <font key="NSFont" metaFont="system" size="14"/>
-                                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO"/>
-                                                    </attributes>
-                                                </fragment>
-                                            </attributedString>
-                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                            <size key="minSize" width="548" height="169"/>
-                                            <size key="maxSize" width="584" height="10000000"/>
-                                        </textView>
-                                    </subviews>
-                                    <animations/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </clipView>
-                                <animations/>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="YsA-hE-Axg">
-                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="FGs-dd-dt6">
-                                    <rect key="frame" x="-100" y="-100" width="16" height="179"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <animations/>
-                                </scroller>
-                            </scrollView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8va-aW-Mki">
+                                <rect key="frame" x="16" y="91" width="552" height="169"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="169" id="whk-ba-ujF"/>
+                                </constraints>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="The default location is recommended for most users" id="AJD-SM-aWC">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                         <animations/>
                     </view>
                     <constraints>
                         <constraint firstItem="nGe-5Y-yAU" firstAttribute="leading" secondItem="I5m-6g-e3K" secondAttribute="leading" constant="18" id="5Ya-EE-9Fh"/>
+                        <constraint firstItem="8va-aW-Mki" firstAttribute="leading" secondItem="I5m-6g-e3K" secondAttribute="leading" constant="16" id="7Zl-xf-hug"/>
                         <constraint firstAttribute="bottom" secondItem="nGe-5Y-yAU" secondAttribute="bottom" constant="17" id="A8V-br-85N"/>
-                        <constraint firstItem="sRB-6Y-xoY" firstAttribute="trailing" secondItem="OYV-w1-oM5" secondAttribute="trailing" id="E9Y-N8-tRL"/>
-                        <constraint firstItem="OYV-w1-oM5" firstAttribute="top" secondItem="I5m-6g-e3K" secondAttribute="top" constant="25" id="Iev-8s-F5w"/>
+                        <constraint firstItem="8va-aW-Mki" firstAttribute="trailing" secondItem="sRB-6Y-xoY" secondAttribute="trailing" id="DcU-3d-Wjg"/>
                         <constraint firstItem="sRB-6Y-xoY" firstAttribute="leading" secondItem="nGe-5Y-yAU" secondAttribute="leading" id="PfX-Nj-sIX"/>
+                        <constraint firstItem="sRB-6Y-xoY" firstAttribute="top" secondItem="8va-aW-Mki" secondAttribute="bottom" constant="8" symbolic="YES" id="ZhD-Rz-BeN"/>
                         <constraint firstItem="nGe-5Y-yAU" firstAttribute="top" secondItem="sRB-6Y-xoY" secondAttribute="bottom" constant="20" symbolic="YES" id="fHo-ko-wvq"/>
                         <constraint firstAttribute="trailing" secondItem="sRB-6Y-xoY" secondAttribute="trailing" constant="16" id="nXo-y7-d86"/>
-                        <constraint firstItem="sRB-6Y-xoY" firstAttribute="top" secondItem="OYV-w1-oM5" secondAttribute="bottom" constant="8" symbolic="YES" id="uP9-Qm-YNe"/>
-                        <constraint firstItem="OYV-w1-oM5" firstAttribute="leading" secondItem="I5m-6g-e3K" secondAttribute="leading" constant="16" id="v6B-fr-Edz"/>
                     </constraints>
                     <animations/>
                     <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
