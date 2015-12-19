@@ -1,0 +1,108 @@
+/* String informing the user that no Freenet installation could be found */
+"A Freenet installation could not be found." = "未能找到已安装的 Freenet。";
+
+/* String asking the user if they want to cancel the installation */
+"Are you sure you want to cancel?" = "您确定要取消？";
+
+/* Button title */
+"Cancel" = "取消";
+
+/* String informing the user that they do not have permission to write to the selected directory */
+"Cannot install to this directory, write permission denied" = "无法安装到此目录，写入权限被拒绝";
+
+/* String informing the user that the selected directory is not empty */
+"Directory is not empty" = "目录非空";
+
+/* Button title */
+"Find Installation" = "查找安装位置";
+
+/* Title of window */
+"Find your Freenet installation" = "查找您的 Freenet 安装位置";
+
+/* Application Name */
+"Freenet" = "Freenet";
+
+/* Title of window */
+"Freenet Uninstalled" = "Freenet 已卸载";
+
+/* String informing the user that Freenet uninstallation succeeded */
+"Freenet has been completely uninstalled" = "Freenet 已完全卸载";
+
+/* String informing the user that the selected location is an existing Freenet installation */
+"Freenet is already installed here" = "Freenet 已在这里安装";
+
+/* String asking the user if they would like to install Java */
+"Freenet requires Java, would you like to install it now?" = "Freenet 需要 Java，您想立即安装它吗？";
+
+/* Button title */
+"Install Freenet" = "安装 Freenet";
+
+/* Button title */
+"Install Java" = "安装 Java";
+
+/* Button title */
+"Install here" = "安装到这里";
+
+/* String informing the user that the installation failed */
+"Installation failed" = "安装失败";
+
+/* String informing the user that an installation is in progress */
+"Installation in progress" = "安装正在进行";
+
+/* String informing the user that Java was not found */
+"Java not found" = "Java 未找到";
+
+/* Button title */
+"No" = "否";
+
+/* String informing the user that no Freenet installation was found and that they must delete the files manually if needed */
+"No Freenet installation was found, please delete the files manually if needed" = "没有找到已安装的 Freenet，请手动删除文件（如果需要）";
+
+/* String informing the user that the selected location is not a Freenet installation */
+"Not a valid Freenet installation" = "无有效的已安装的 Freenet";
+
+/* Button title */
+"OK" = "确定";
+
+/* Button title */
+"Open pastebin.com" = "打开 pastebin.com";
+
+/* No comment provided by engineer. */
+"Quit" = "退出";
+
+/* Button title */
+"Select Freenet installation" = "选择 Freenet 安装位置";
+
+/* Title of window */
+"Select a location to install Freenet" = "选择要安装 Freenet 的位置";
+
+/* Button title */
+"Start Freenet" = "启动 Freenet";
+
+/* Button title */
+"Stop Freenet" = "停止 Freenet";
+
+/* String informing the user that the installation log is in their clipboard */
+"The installation log has been copied to your clipboard" = "安装日志已复制到您的剪贴板";
+
+/* Button title */
+"Uninstall Freenet" = "卸载 Freenet";
+
+/* Title of window */
+"Uninstall Freenet Now?" = "立即卸载 Freenet？";
+
+/* Title of window */
+"Uninstalling Freenet failed" = "卸载 Freenet 失败";
+
+/* String asking the user whether they would like to uninstall freenet */
+"Uninstalling Freenet is immediate and irreversible, are you sure you want to uninstall Freenet now?" = "卸载 Freenet 是即时并且不可逆的，您确定要继续卸载 Freenet？";
+
+/* Button title */
+"Visit the Freenet Website" = "访问 Freenet 网站";
+
+/* String asking the user whether they would like to install freenet or locate an existing installation */
+"Would you like to install Freenet now, or locate an existing Freenet installation?" = "您是否要立即安装 Freenet，或者定位现有的 Freenet 安装？";
+
+/* Button title */
+"Yes" = "是";
+
