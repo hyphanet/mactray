@@ -1,0 +1,109 @@
+/* String informing the user that no Freenet installation could be found */
+"A Freenet installation could not be found." = "Uma instalação Freenet não pôde ser encontrado.";
+
+/* String asking the user if they want to cancel the installation */
+"Are you sure you want to cancel?" = "Quer mesmo cancelar?";
+
+/* Button title */
+"Cancel" = "Cancelar";
+
+/* String informing the user that they do not have permission to write to the selected directory */
+"Cannot install to this directory, write permission denied" = "Não é possível instalar nesse diretório, permissão de escrita negada";
+
+/* String informing the user that the selected directory is not empty */
+"Directory is not empty" = "O diretório não está vazio";
+
+/* Button title */
+"Find Installation" = "Procurar instalação";
+
+/* Title of window */
+"Find your Freenet installation" = "Encontre sua instalação Freenet
+";
+
+/* Application Name */
+"Freenet" = "Freenet";
+
+/* Title of window */
+"Freenet Uninstalled" = "Freenet foi desinstalado";
+
+/* String informing the user that Freenet uninstallation succeeded */
+"Freenet has been completely uninstalled" = "Freenet foi completamente desinstalado";
+
+/* String informing the user that the selected location is an existing Freenet installation */
+"Freenet is already installed here" = "Freenet já está instalado aqui";
+
+/* String asking the user if they would like to install Java */
+"Freenet requires Java, would you like to install it now?" = "Freenet requer o Java, gostaria de instalá-lo agora?";
+
+/* Button title */
+"Install Freenet" = "Instalar Freenet";
+
+/* Button title */
+"Install Java" = "Instalar Java";
+
+/* Button title */
+"Install here" = "Instalar aqui";
+
+/* String informing the user that the installation failed */
+"Installation failed" = "A instalação falhou";
+
+/* String informing the user that an installation is in progress */
+"Installation in progress" = "Instalação em andamento";
+
+/* String informing the user that Java was not found */
+"Java not found" = "Java não encontrado";
+
+/* Button title */
+"No" = "Não";
+
+/* String informing the user that no Freenet installation was found and that they must delete the files manually if needed */
+"No Freenet installation was found, please delete the files manually if needed" = "Nenhuma instalação Freenet foi encontrada, por favor, apague os arquivos manualmente, se necessário";
+
+/* String informing the user that the selected location is not a Freenet installation */
+"Not a valid Freenet installation" = "Instalação Freenet Não válida";
+
+/* Button title */
+"OK" = "OK";
+
+/* Button title */
+"Open pastebin.com" = "Abrir o pastebin.com";
+
+/* No comment provided by engineer. */
+"Quit" = "Sair";
+
+/* Button title */
+"Select Freenet installation" = "Selecionar instalação do Freenet";
+
+/* Title of window */
+"Select a location to install Freenet" = "Selecionar um local para instalar Freenet";
+
+/* Button title */
+"Start Freenet" = "Iniciar Freenet";
+
+/* Button title */
+"Stop Freenet" = "Parar Freenet";
+
+/* String informing the user that the installation log is in their clipboard */
+"The installation log has been copied to your clipboard" = "O log da instalação foi copiado para a área de transferência";
+
+/* Button title */
+"Uninstall Freenet" = "Desinstalar Freenet";
+
+/* Title of window */
+"Uninstall Freenet Now?" = "Desinstalar Freenet agora?";
+
+/* Title of window */
+"Uninstalling Freenet failed" = "Desinstalação de Freenet falhou";
+
+/* String asking the user whether they would like to uninstall freenet */
+"Uninstalling Freenet is immediate and irreversible, are you sure you want to uninstall Freenet now?" = "A desinstalação do Freenet é imediata e irreversível, você tem certeza que deseja desinstalar Freenet agora?";
+
+/* Button title */
+"Visit the Freenet Website" = "Visitar o site da Freenet";
+
+/* String asking the user whether they would like to install freenet or locate an existing installation */
+"Would you like to install Freenet now, or locate an existing Freenet installation?" = "Você gostaria de instalar Freenet agora, ou localizar uma instalação Freenet existente?";
+
+/* Button title */
+"Yes" = "Sim";
+

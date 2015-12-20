@@ -81,6 +81,14 @@
 		AA55DB9D1C25CDE000581EEB /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = "zh-CN.lproj/FNInstallerWindow.strings"; sourceTree = "<group>"; };
 		AA55DBA11C25CDE000581EEB /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = "zh-CN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		AA55DBA61C25CDE100581EEB /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = "zh-CN.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		AA55DBA81C25E6CE00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/FNDropdownMenu.strings"; sourceTree = "<group>"; };
+		AA55DBA91C25E6CE00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/FNInstallerProgressView.strings"; sourceTree = "<group>"; };
+		AA55DBAA1C25E6CE00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/FNInstallerDestinationView.strings"; sourceTree = "<group>"; };
+		AA55DBAB1C25E6CE00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/FNSettingsWindow.strings"; sourceTree = "<group>"; };
+		AA55DBAC1C25E6CE00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		AA55DBAD1C25E6CE00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/FNInstallerWindow.strings"; sourceTree = "<group>"; };
+		AA55DBAE1C25E6CF00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		AA55DBAF1C25E6CF00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		AA5E172B1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jre-8u66-macosx-x64.dmg"; sourceTree = "<group>"; };
 		AA621C391C1BC46E00A1C4A5 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		AA621C781C1CF0DA00A1C4A5 /* FNAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNAppDelegate.h; path = FreenetTray/FNAppDelegate.h; sourceTree = "<group>"; };
@@ -492,6 +500,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				AA55DB9B1C25CDDF00581EEB /* zh-CN */,
+				AA55DBAC1C25E6CE00581EEB /* pt-BR */,
 			);
 			name = InfoPlist.strings;
 			path = FreenetTray;
@@ -501,6 +510,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				AA55DBA11C25CDE000581EEB /* zh-CN */,
+				AA55DBAE1C25E6CF00581EEB /* pt-BR */,
 			);
 			name = Localizable.strings;
 			path = FreenetTray;
@@ -510,6 +520,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				AA55DBA61C25CDE100581EEB /* zh-CN */,
+				AA55DBAF1C25E6CF00581EEB /* pt-BR */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -519,6 +530,7 @@
 			children = (
 				AA621D431C1CFB5A00A1C4A5 /* Base */,
 				AA55DB941C25CDDE00581EEB /* zh-CN */,
+				AA55DBA81C25E6CE00581EEB /* pt-BR */,
 			);
 			name = FNDropdownMenu.xib;
 			path = FreenetTray;
@@ -529,6 +541,7 @@
 			children = (
 				AA621D441C1CFB5B00A1C4A5 /* Base */,
 				AA55DB961C25CDDF00581EEB /* zh-CN */,
+				AA55DBAA1C25E6CE00581EEB /* pt-BR */,
 			);
 			name = FNInstallerDestinationView.xib;
 			path = FreenetTray;
@@ -539,6 +552,7 @@
 			children = (
 				AA621D451C1CFB5B00A1C4A5 /* Base */,
 				AA55DB951C25CDDE00581EEB /* zh-CN */,
+				AA55DBA91C25E6CE00581EEB /* pt-BR */,
 			);
 			name = FNInstallerProgressView.xib;
 			path = FreenetTray;
@@ -549,6 +563,7 @@
 			children = (
 				AA621D461C1CFB5B00A1C4A5 /* Base */,
 				AA55DB9D1C25CDE000581EEB /* zh-CN */,
+				AA55DBAD1C25E6CE00581EEB /* pt-BR */,
 			);
 			name = FNInstallerWindow.xib;
 			path = FreenetTray;
@@ -559,6 +574,7 @@
 			children = (
 				AA621D471C1CFB5B00A1C4A5 /* Base */,
 				AA55DB971C25CDDF00581EEB /* zh-CN */,
+				AA55DBAB1C25E6CE00581EEB /* pt-BR */,
 			);
 			name = FNSettingsWindow.xib;
 			path = FreenetTray;

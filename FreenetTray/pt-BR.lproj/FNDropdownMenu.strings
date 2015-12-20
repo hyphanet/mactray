@@ -1,0 +1,21 @@
+/* Class = "NSMenuItem"; title = "Open Downloads"; ObjectID = "9Jt-C5-mIM"; Note = "Menu item title"; */
+"9Jt-C5-mIM.title" = "Abrir Downloads";
+
+/* Class = "NSMenuItem"; title = "Open Web Interface"; ObjectID = "BHr-Vz-MCm"; Note = "Menu item title"; */
+"BHr-Vz-MCm.title" = "Abrir Interface Web";
+
+/* Class = "NSMenuItem"; title = "Quit"; ObjectID = "CHy-oK-4Q4"; Note = "Menu item title"; */
+"CHy-oK-4Q4.title" = "Sair";
+
+/* Class = "NSMenuItem"; title = "Settings"; ObjectID = "Ppa-6x-BP2"; Note = "Menu item title"; */
+"Ppa-6x-BP2.title" = "Configurações";
+
+/* Class = "NSMenuItem"; title = "Uninstall Freenet"; ObjectID = "Qjd-CJ-2Gt"; Note = "Menu item title"; */
+"Qjd-CJ-2Gt.title" = "Desinstalar Freenet";
+
+/* Class = "NSMenuItem"; title = "Start Freenet"; ObjectID = "UpL-Lb-jBl"; Note = "Menu item title"; */
+"UpL-Lb-jBl.title" = "Iniciar Freenet";
+
+/* Class = "NSMenuItem"; title = "About"; ObjectID = "ZYj-54-W6V"; Note = "Menu item title"; */
+"ZYj-54-W6V.title" = "Sobre";
+
