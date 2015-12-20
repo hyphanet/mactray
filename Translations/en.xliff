@@ -2,7 +2,7 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
   <file original="FreenetTray/Base.lproj/FNDropdownMenu.xib" source-language="en" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.1.1" build-num="7B1005"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2" build-num="7C68"/>
     </header>
     <body>
       <trans-unit id="9Jt-C5-mIM.title">
@@ -37,9 +37,13 @@
   </file>
   <file original="FreenetTray/Base.lproj/FNInstallerDestinationView.xib" source-language="en" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.1.1" build-num="7B1005"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2" build-num="7C68"/>
     </header>
     <body>
+      <trans-unit id="AJD-SM-aWC.title">
+        <source>The default location is recommended for most users</source>
+        <note>Class = "NSTextFieldCell"; title = "The default location is recommended for most users"; ObjectID = "AJD-SM-aWC";</note>
+      </trans-unit>
       <trans-unit id="Yd7-Xj-YrX.title">
         <source>Change Install Location</source>
         <note>Class = "NSButtonCell"; title = "Change Install Location"; ObjectID = "Yd7-Xj-YrX"; Note = "Button title";</note>
@@ -52,7 +56,7 @@
   </file>
   <file original="FreenetTray/Base.lproj/FNInstallerProgressView.xib" source-language="en" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.1.1" build-num="7B1005"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2" build-num="7C68"/>
     </header>
     <body>
       <trans-unit id="95e-76-m1K.title">
@@ -83,7 +87,7 @@
   </file>
   <file original="FreenetTray/Base.lproj/FNInstallerWindow.xib" source-language="en" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.1.1" build-num="7B1005"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2" build-num="7C68"/>
     </header>
     <body>
       <trans-unit id="28s-Ha-tdi.title">
@@ -102,7 +106,7 @@
   </file>
   <file original="FreenetTray/Base.lproj/FNSettingsWindow.xib" source-language="en" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.1.1" build-num="7B1005"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2" build-num="7C68"/>
     </header>
     <body>
       <trans-unit id="8M7-Tl-FUW.title">
@@ -149,7 +153,7 @@
   </file>
   <file original="FreenetTray/Info.plist" source-language="en" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.1.1" build-num="7B1005"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2" build-num="7C68"/>
     </header>
     <body>
       <trans-unit id="CFBundleDisplayName">
@@ -159,7 +163,7 @@
         <source>FreenetTray</source>
       </trans-unit>
       <trans-unit id="CFBundleShortVersionString">
-        <source>2.0.0</source>
+        <source>2.0.1-pre3</source>
       </trans-unit>
       <trans-unit id="NSHumanReadableCopyright">
         <source>See the Acknowledgements file included with this app for license and copyright information</source>
@@ -168,7 +172,7 @@
   </file>
   <file original="FreenetTray/Localizable.strings" source-language="en" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.1.1" build-num="7B1005"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2" build-num="7C68"/>
     </header>
     <body>
       <trans-unit id="A Freenet installation could not be found.">
@@ -319,7 +323,7 @@
   </file>
   <file original="FreenetTrayTests/Info.plist" source-language="en" datatype="plaintext">
     <header>
-      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.1.1" build-num="7B1005"/>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="7.2" build-num="7C68"/>
     </header>
     <body>
       <trans-unit id="CFBundleName">
