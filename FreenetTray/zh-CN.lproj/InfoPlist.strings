@@ -5,7 +5,7 @@
 "CFBundleName" = "FreenetTray";
 
 /* (No Commment) */
-"CFBundleShortVersionString" = "2.0.1-pre3";
+"CFBundleShortVersionString" = "2.0.1";
 
 /* (No Commment) */
 "NSHumanReadableCopyright" = "请参阅此应用包含的致谢文件，了解许可协议和版权信息";
