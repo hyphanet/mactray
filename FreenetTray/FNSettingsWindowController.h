@@ -30,5 +30,6 @@
 
 @property IBOutlet NSPathControl *nodePathDisplay;
 
+-(IBAction)uninstallFreenet:(id)sender;
 
 @end

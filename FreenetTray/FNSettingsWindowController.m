@@ -96,6 +96,10 @@
     
 }
 
+-(IBAction)uninstallFreenet:(id)sender {
+    [FNHelpers displayUninstallAlert];
+}
+
 #pragma mark - NSOpenPanelDelegate
 
 - (BOOL)panel:(id)sender validateURL:(NSURL *)url error:(NSError **)outError {

@@ -232,6 +232,25 @@
                             </binding>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aY4-Yr-hPu">
+                        <rect key="frame" x="291" y="13" width="93" height="32"/>
+                        <buttonCell key="cell" type="push" title="Uninstall" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="y1F-Ro-TAn">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <attributedString key="userComments">
+                                <fragment content="Button title">
+                                    <attributes>
+                                        <font key="NSFont" metaFont="smallSystem"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                        </buttonCell>
+                        <connections>
+                            <action selector="uninstallFreenet:" target="-2" id="3zE-zR-HTL"/>
+                            <binding destination="-2" name="enabled" keyPath="self.validNodeFound" id="YHi-0F-BaS"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <attributedString key="userComments">
