@@ -66,5 +66,23 @@
     
 }
 
+-(void)test_createGist {
+    XCTestExpectation *expectation = [self expectationWithDescription:@"test_createPaste"];
+
+    [FNHelpers createGist:@"test" withTitle:@"test" success:^(NSURL *url) {
+        XCTAssertNotNil(url);
+        NSLog(@"URL: %@", url);
+        [expectation fulfill];
+    } failure:^(NSError *error) {
+        XCTFail(@"Error: %@", error.localizedDescription);
+    }];
+    
+    [self waitForExpectationsWithTimeout:30.0 handler:^(NSError *error) {
+        if(error) {
+            XCTFail(@"test_createPaste failed with error: %@", error);
+        }
+    }];
+}
+
 
 @end

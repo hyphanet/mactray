@@ -10,6 +10,9 @@
     
 */
 
+typedef void (^FNGistSuccessBlock)(NSURL *url);
+typedef void (^FNGistFailureBlock)(NSError *error);
+
 @import Foundation;
 @class FNBrowser;
 
@@ -23,5 +26,7 @@
 +(NSArray<FNBrowser *> *)installedWebBrowsers;
 
 +(BOOL)migrateLaunchAgent:(NSError **)error;
+
++(void)createGist:(NSString *)string withTitle:(NSString *)title success:(FNGistSuccessBlock)success failure:(FNGistFailureBlock)failure;
 
 @end

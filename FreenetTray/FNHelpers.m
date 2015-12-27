@@ -12,6 +12,10 @@
 
 #import "FNHelpers.h"
 #import "FNBrowser.h"
+#import <AFNetworking/AFHTTPRequestOperationManager.h>
+#import <AFNetworking/AFURLRequestSerialization.h>
+#import <AFNetworking/AFURLResponseSerialization.h>
+
 
 @implementation FNHelpers
 
@@ -136,6 +140,38 @@
         }
     }
     return YES;
+}
+
++(void)createGist:(NSString *)string withTitle:(NSString *)title success:(FNGistSuccessBlock)success failure:(FNGistFailureBlock)failure {
+    NSURL *url = [NSURL URLWithString:@"https://api.github.com/"];
+    NSString *fileName = [NSString stringWithFormat:@"FreenetTray - %@.txt", title];
+    NSDictionary *params = @{
+        @"description": title,
+        @"public": @(YES),
+        @"files": @{
+            fileName: @{
+                @"content": string
+            }
+        }
+    };
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:url];
+    manager.requestSerializer = [AFJSONRequestSerializer serializer];
+    [manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [manager.requestSerializer setValue:@"application/vnd.github.v3+json" forHTTPHeaderField:@"Accept"];
+    [manager.requestSerializer setValue:@"FreenetTray for OS X" forHTTPHeaderField:@"User-Agent"];
+
+    manager.responseSerializer = [AFJSONResponseSerializer serializer];
+
+    [manager POST:@"/gists" parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSDictionary *response = responseObject;
+        NSString *html_url = response[@"html_url"];
+        NSURL *gist = [NSURL URLWithString:html_url];
+        success(gist);
+
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        failure(error);
+    }];
+    
 }
 
 @end
