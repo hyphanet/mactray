@@ -24,7 +24,7 @@ FOUNDATION_EXPORT NSString *const FNNodeFreenetConfigFilePathname;
 
 FOUNDATION_EXPORT NSTimeInterval const FNNodeCheckTimeInterval;
 
-FOUNDATION_EXPORT NSString *const FNPastebinDomain;
+FOUNDATION_EXPORT NSString *const FNGithubAPI;
 
 #pragma mark - Deprecated keys
 

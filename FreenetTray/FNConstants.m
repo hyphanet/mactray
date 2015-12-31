@@ -24,7 +24,7 @@ NSString *const FNNodeFreenetConfigFilePathname = @"freenet.ini";
 
 NSTimeInterval const FNNodeCheckTimeInterval = 1;
 
-NSString *const FNPastebinDomain = @"pastebin.com";
+NSString *const FNGithubAPI = @"api.github.com";
 
 #pragma mark - Deprecated functionality keys
 

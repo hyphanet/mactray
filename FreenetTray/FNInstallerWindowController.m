@@ -17,6 +17,7 @@
 
 #import "FNNodeController.h"
 
+#import "FNHelpers.h"
 
 @interface FNInstallerWindowController ()
 @property IBOutlet NSPageController *pageController;
@@ -127,22 +128,42 @@
     [self configureMainWindow];
     [[NSNotificationCenter defaultCenter] postNotificationName:FNInstallFailedNotification object:nil];
     
-    NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
-    [pasteBoard declareTypes:[NSArray arrayWithObjects:NSStringPboardType, nil] owner:nil]; 
-    [pasteBoard setString:log forType:NSStringPboardType];
-    
-    
     NSAlert *installFailedAlert = [[NSAlert alloc] init];
     installFailedAlert.messageText = NSLocalizedString(@"Installation failed", @"String informing the user that the installation failed");
-    installFailedAlert.informativeText = NSLocalizedString(@"The installation log has been copied to your clipboard", @"String informing the user that the installation log is in their clipboard");
-    [installFailedAlert addButtonWithTitle:NSLocalizedString(@"Open pastebin.com", @"Button title")];
+    installFailedAlert.informativeText = NSLocalizedString(@"The installation log can be automatically uploaded to Github. Please report this failure to the Freenet developers and provide the Github link to them.", @"String asking the user to provide the Gist link to the Freenet developers");
+    [installFailedAlert addButtonWithTitle:NSLocalizedString(@"Upload", @"Button title")];
     [installFailedAlert addButtonWithTitle:NSLocalizedString(@"Quit", nil)];
-    NSInteger button = [installFailedAlert runModal];
+   
+     NSInteger button = [installFailedAlert runModal];
+    
     if (button == NSAlertFirstButtonReturn) {
-        // open pastebin.com in a browser, then quit
-        NSString *pastebin = [NSString stringWithFormat:@"https://%@", FNPastebinDomain];
-        [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:pastebin]];
-        [NSApp terminate:self];
+        
+        // upload the gist, then open it in a browser, then quit
+        [FNHelpers createGist:log withTitle:@"Installation Log" success:^(NSURL *url) {
+            
+            NSPasteboard *pasteBoard = [NSPasteboard generalPasteboard];
+            [pasteBoard declareTypes:[NSArray arrayWithObjects:NSStringPboardType, nil] owner:nil]; 
+            [pasteBoard setString:url.path forType:NSStringPboardType];
+            
+            [[NSWorkspace sharedWorkspace] openURL:url];
+            
+            [NSApp terminate:self];
+        
+        } failure:^(NSError *error) {
+            NSString *desktop = NSSearchPathForDirectoriesInDomains(NSDesktopDirectory, NSUserDomainMask, YES)[0];
+            NSString *path = [desktop stringByAppendingPathComponent:@"FreenetTray - Installation Log.txt"];
+
+            NSData *logBuffer = [log dataUsingEncoding:NSUTF8StringEncoding];
+            [logBuffer writeToFile:path options:NSDataWritingAtomic error:nil];
+            
+            NSAlert *uploadFailedAlert = [[NSAlert alloc] init];
+            uploadFailedAlert.messageText = NSLocalizedString(@"Upload failed", @"String informing the user that the upload failed");
+            uploadFailedAlert.informativeText = NSLocalizedString(@"The installation log could not be uploaded to Github, it has been placed on your desktop instead. Please report this failure to the Freenet developers and provide the file to them.", @"String informing the user that the log upload failed");
+            NSInteger button = [uploadFailedAlert runModal];
+            
+        }];
+        
+        
     }
     else if (button == NSAlertSecondButtonReturn) {
         // display node finder panel

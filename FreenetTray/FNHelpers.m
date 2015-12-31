@@ -143,7 +143,8 @@
 }
 
 +(void)createGist:(NSString *)string withTitle:(NSString *)title success:(FNGistSuccessBlock)success failure:(FNGistFailureBlock)failure {
-    NSURL *url = [NSURL URLWithString:@"https://api.github.com/"];
+    NSString *githubAPI = [NSString stringWithFormat:@"https://%@", FNGithubAPI];
+    NSURL *url = [NSURL URLWithString:githubAPI];
     NSString *fileName = [NSString stringWithFormat:@"FreenetTray - %@.txt", title];
     NSDictionary *params = @{
         @"description": title,
