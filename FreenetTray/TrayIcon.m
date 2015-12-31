@@ -23,14 +23,12 @@ static NSImage* _imageOfHighlightedIcon = nil;
 
 #pragma mark Initialization
 
-+ (void)initialize
-{
++ (void)initialize {
 }
 
 #pragma mark Drawing Methods
 
-+ (void)drawRunningIcon
-{
++ (void)drawRunningIcon {
     //// Color Declarations
     NSColor* run = [NSColor colorWithCalibratedRed: 0.161 green: 0.322 blue: 0.765 alpha: 1];
 
@@ -64,8 +62,7 @@ static NSImage* _imageOfHighlightedIcon = nil;
     }
 }
 
-+ (void)drawNotRunningIcon
-{
++ (void)drawNotRunningIcon {
     //// Color Declarations
     NSColor* stop = [NSColor colorWithCalibratedRed: 1 green: 0 blue: 0 alpha: 1];
 
@@ -99,8 +96,7 @@ static NSImage* _imageOfHighlightedIcon = nil;
     }
 }
 
-+ (void)drawHighlightedIcon
-{
++ (void)drawHighlightedIcon {
     //// Color Declarations
     NSColor* highlight = [NSColor colorWithCalibratedRed: 1 green: 1 blue: 1 alpha: 1];
 
@@ -136,8 +132,7 @@ static NSImage* _imageOfHighlightedIcon = nil;
 
 #pragma mark Generated Images
 
-+ (NSImage*)imageOfRunningIcon
-{
++ (NSImage*)imageOfRunningIcon {
     if (_imageOfRunningIcon)
         return _imageOfRunningIcon;
 
@@ -150,8 +145,7 @@ static NSImage* _imageOfHighlightedIcon = nil;
     return _imageOfRunningIcon;
 }
 
-+ (NSImage*)imageOfNotRunningIcon
-{
++ (NSImage*)imageOfNotRunningIcon {
     if (_imageOfNotRunningIcon)
         return _imageOfNotRunningIcon;
 
@@ -164,8 +158,7 @@ static NSImage* _imageOfHighlightedIcon = nil;
     return _imageOfNotRunningIcon;
 }
 
-+ (NSImage*)imageOfHighlightedIcon
-{
++ (NSImage*)imageOfHighlightedIcon {
     if (_imageOfHighlightedIcon)
         return _imageOfHighlightedIcon;
 
