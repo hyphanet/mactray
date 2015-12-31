@@ -26,7 +26,7 @@
         self.url = url;
         NSBundle *bundle = [NSBundle bundleWithURL:self.url];
         self.executablePath = bundle.executablePath;
-		self.name = [bundle objectForInfoDictionaryKey:(NSString *)kCFBundleNameKey];
+        self.name = [bundle objectForInfoDictionaryKey:(NSString *)kCFBundleNameKey];
         self.icon = [[NSWorkspace sharedWorkspace] iconForFile:self.url.path];
     }
     return self;
