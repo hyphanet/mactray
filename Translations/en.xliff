@@ -147,7 +147,7 @@
       </trans-unit>
       <trans-unit id="yYV-ge-5yY.placeholderString">
         <source>N/A</source>
-        <note from="developer">Abbreviated string meaning "not available"</note>
+        <note from="developer">Abbreviated string meaning not available</note>
       </trans-unit>
     </body>
   </file>
