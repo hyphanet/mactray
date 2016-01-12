@@ -130,7 +130,7 @@
     
     NSAlert *installFailedAlert = [[NSAlert alloc] init];
     installFailedAlert.messageText = NSLocalizedString(@"Installation failed", @"String informing the user that the installation failed");
-    installFailedAlert.informativeText = NSLocalizedString(@"The installation log can be automatically uploaded to Github. Please report this failure to the Freenet developers and provide the Github link to them.", @"String asking the user to provide the Gist link to the Freenet developers");
+    installFailedAlert.informativeText = NSLocalizedString(@"The installation log can be automatically uploaded to GitHub. Please report this failure to the Freenet developers and provide the GitHub link to them.", @"String asking the user to provide the Gist link to the Freenet developers");
     [installFailedAlert addButtonWithTitle:NSLocalizedString(@"Upload", @"Button title")];
     [installFailedAlert addButtonWithTitle:NSLocalizedString(@"Quit", nil)];
    
@@ -158,7 +158,7 @@
             
             NSAlert *uploadFailedAlert = [[NSAlert alloc] init];
             uploadFailedAlert.messageText = NSLocalizedString(@"Upload failed", @"String informing the user that the upload failed");
-            uploadFailedAlert.informativeText = NSLocalizedString(@"The installation log could not be uploaded to Github, it has been placed on your desktop instead. Please report this failure to the Freenet developers and provide the file to them.", @"String informing the user that the log upload failed");
+            uploadFailedAlert.informativeText = NSLocalizedString(@"The installation log could not be uploaded to GitHub, it has been placed on your desktop instead. Please report this failure to the Freenet developers and provide the file to them.", @"String informing the user that the log upload failed");
             NSInteger button = [uploadFailedAlert runModal];
             
         }];
