@@ -64,8 +64,8 @@
         <note>Class = "NSTextFieldCell"; title = "Installing Java"; ObjectID = "Hga-mV-cuv";</note>
       </trans-unit>
       <trans-unit id="RGl-Cl-cH4.title">
-        <source>Finished, please click continue</source>
-        <note>Class = "NSTextFieldCell"; title = "Finished, please click continue"; ObjectID = "RGl-Cl-cH4";</note>
+        <source>Finished, please click Continue</source>
+        <note>Class = "NSTextFieldCell"; title = "Finished, please click Continue"; ObjectID = "RGl-Cl-cH4";</note>
       </trans-unit>
       <trans-unit id="ToQ-oU-rUc.title">
         <source>Starting Node...</source>
