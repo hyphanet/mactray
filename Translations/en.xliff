@@ -64,8 +64,8 @@
         <note>Class = "NSTextFieldCell"; title = "Installing Java"; ObjectID = "Hga-mV-cuv";</note>
       </trans-unit>
       <trans-unit id="RGl-Cl-cH4.title">
-        <source>Finished, please click continue</source>
-        <note>Class = "NSTextFieldCell"; title = "Finished, please click continue"; ObjectID = "RGl-Cl-cH4";</note>
+        <source>Finished, please click Continue</source>
+        <note>Class = "NSTextFieldCell"; title = "Finished, please click Continue"; ObjectID = "RGl-Cl-cH4";</note>
       </trans-unit>
       <trans-unit id="ToQ-oU-rUc.title">
         <source>Starting Node...</source>
@@ -283,20 +283,20 @@
         <source>Stop Freenet</source>
         <note>Button title</note>
       </trans-unit>
-      <trans-unit id="The installation log can be automatically uploaded to Github. Please report this failure to the Freenet developers and provide the Github link to them.">
-        <source>The installation log can be automatically uploaded to Github. Please report this failure to the Freenet developers and provide the Github link to them.</source>
+      <trans-unit id="The installation log can be automatically uploaded to GitHub. Please report this failure to the Freenet developers and provide the Github link to them.">
+        <source>The installation log can be automatically uploaded to GitHub. Please report this failure to the Freenet developers and provide the GitHub link to them.</source>
         <note>String asking the user to provide the Gist link to the Freenet developers</note>
       </trans-unit>
-      <trans-unit id="The installation log could not be uploaded to Github, it has been placed on your desktop instead. Please report this failure to the Freenet developers and provide the file to them.">
-        <source>The installation log could not be uploaded to Github, it has been placed on your desktop instead. Please report this failure to the Freenet developers and provide the file to them.</source>
+      <trans-unit id="The installation log could not be uploaded to GitHub, it has been placed on your desktop instead. Please report this failure to the Freenet developers and provide the file to them.">
+        <source>The installation log could not be uploaded to GitHub, it has been placed on your desktop instead. Please report this failure to the Freenet developers and provide the file to them.</source>
         <note>String informing the user that the log upload failed</note>
       </trans-unit>
       <trans-unit id="Uninstall Freenet">
         <source>Uninstall Freenet</source>
         <note>Button title</note>
       </trans-unit>
-      <trans-unit id="Uninstall Freenet Now?">
-        <source>Uninstall Freenet Now?</source>
+      <trans-unit id="Uninstall Freenet now?">
+        <source>Uninstall Freenet now?</source>
         <note>Title of window</note>
       </trans-unit>
       <trans-unit id="Uninstalling Freenet failed">
