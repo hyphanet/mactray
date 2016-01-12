@@ -7,27 +7,27 @@
     <body>
       <trans-unit id="9Jt-C5-mIM.title">
         <source>Open Downloads</source>
-        <note>Class = "NSMenuItem"; title = "Open Downloads"; ObjectID = "9Jt-C5-mIM"; Note = "Menu item title";</note>
+        <note from="developer">Menu item title</note>
       </trans-unit>
       <trans-unit id="BHr-Vz-MCm.title">
         <source>Open Web Interface</source>
-        <note>Class = "NSMenuItem"; title = "Open Web Interface"; ObjectID = "BHr-Vz-MCm"; Note = "Menu item title";</note>
+        <note from="developer">Menu item title</note>
       </trans-unit>
       <trans-unit id="CHy-oK-4Q4.title">
         <source>Quit</source>
-        <note>Class = "NSMenuItem"; title = "Quit"; ObjectID = "CHy-oK-4Q4"; Note = "Menu item title";</note>
+        <note from="developer">Menu item title</note>
       </trans-unit>
       <trans-unit id="Ppa-6x-BP2.title">
         <source>Settings</source>
-        <note>Class = "NSMenuItem"; title = "Settings"; ObjectID = "Ppa-6x-BP2"; Note = "Menu item title";</note>
+        <note from="developer">Menu item title</note>
       </trans-unit>
       <trans-unit id="UpL-Lb-jBl.title">
         <source>Start Freenet</source>
-        <note>Class = "NSMenuItem"; title = "Start Freenet"; ObjectID = "UpL-Lb-jBl"; Note = "Menu item title";</note>
+        <note from="developer">Menu item title</note>
       </trans-unit>
       <trans-unit id="ZYj-54-W6V.title">
         <source>About</source>
-        <note>Class = "NSMenuItem"; title = "About"; ObjectID = "ZYj-54-W6V"; Note = "Menu item title";</note>
+        <note from="developer">Menu item title</note>
       </trans-unit>
     </body>
   </file>
@@ -38,15 +38,15 @@
     <body>
       <trans-unit id="AJD-SM-aWC.title">
         <source>The default location is recommended for most users</source>
-        <note>Class = "NSTextFieldCell"; title = "The default location is recommended for most users"; ObjectID = "AJD-SM-aWC";</note>
+        <note from="developer"></note>
       </trans-unit>
       <trans-unit id="Yd7-Xj-YrX.title">
         <source>Change Install Location</source>
-        <note>Class = "NSButtonCell"; title = "Change Install Location"; ObjectID = "Yd7-Xj-YrX"; Note = "Button title";</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="voQ-z0-pMI.title">
         <source>Where do you want to install Freenet?</source>
-        <note>Class = "NSTextFieldCell"; title = "Where do you want to install Freenet?"; ObjectID = "voQ-z0-pMI"; Note = "Window title";</note>
+        <note from="developer">Window title</note>
       </trans-unit>
     </body>
   </file>
@@ -57,27 +57,27 @@
     <body>
       <trans-unit id="95e-76-m1K.title">
         <source>Installing Freenet</source>
-        <note>Class = "NSTextFieldCell"; title = "Installing Freenet"; ObjectID = "95e-76-m1K"; Note = "Window title";</note>
+        <note from="developer">Window title</note>
       </trans-unit>
       <trans-unit id="Hga-mV-cuv.title">
         <source>Installing Java</source>
-        <note>Class = "NSTextFieldCell"; title = "Installing Java"; ObjectID = "Hga-mV-cuv";</note>
+        <note from="developer"></note>
       </trans-unit>
       <trans-unit id="RGl-Cl-cH4.title">
         <source>Finished, please click Continue</source>
-        <note>Class = "NSTextFieldCell"; title = "Finished, please click Continue"; ObjectID = "RGl-Cl-cH4";</note>
+        <note from="developer"></note>
       </trans-unit>
       <trans-unit id="ToQ-oU-rUc.title">
         <source>Starting Node...</source>
-        <note>Class = "NSTextFieldCell"; title = "Starting Node..."; ObjectID = "ToQ-oU-rUc";</note>
+        <note from="developer"></note>
       </trans-unit>
       <trans-unit id="cov-1I-ShA.title">
         <source>Setting Up Ports</source>
-        <note>Class = "NSTextFieldCell"; title = "Setting Up Ports"; ObjectID = "cov-1I-ShA";</note>
+        <note from="developer"></note>
       </trans-unit>
       <trans-unit id="pT7-X7-u4Z.title">
         <source>Copying Files</source>
-        <note>Class = "NSTextFieldCell"; title = "Copying Files"; ObjectID = "pT7-X7-u4Z";</note>
+        <note from="developer"></note>
       </trans-unit>
     </body>
   </file>
@@ -88,15 +88,15 @@
     <body>
       <trans-unit id="28s-Ha-tdi.title">
         <source>Continue</source>
-        <note>Class = "NSButtonCell"; title = "Continue"; ObjectID = "28s-Ha-tdi"; Note = "Button title";</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="F0z-JX-Cv5.title">
         <source>Install Freenet</source>
-        <note>Class = "NSWindow"; title = "Install Freenet"; ObjectID = "F0z-JX-Cv5"; Note = "Window title";</note>
+        <note from="developer">Window title</note>
       </trans-unit>
       <trans-unit id="RQg-ip-faV.title">
         <source>Go Back</source>
-        <note>Class = "NSButtonCell"; title = "Go Back"; ObjectID = "RQg-ip-faV"; Note = "Button title";</note>
+        <note from="developer">Button title</note>
       </trans-unit>
     </body>
   </file>
@@ -107,47 +107,47 @@
     <body>
       <trans-unit id="8M7-Tl-FUW.title">
         <source>Find Installation</source>
-        <note>Class = "NSButtonCell"; title = "Find Installation"; ObjectID = "8M7-Tl-FUW"; Note = "Button title";</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="9kj-pP-3mQ.title">
         <source>Start Freenet automatically</source>
-        <note>Class = "NSButtonCell"; title = "Start Freenet automatically"; ObjectID = "9kj-pP-3mQ"; Note = "Option title";</note>
+        <note from="developer">Option title</note>
       </trans-unit>
       <trans-unit id="ERq-8v-P2V.title">
         <source>FCP Available:</source>
-        <note>Class = "NSTextFieldCell"; title = "FCP Available:"; ObjectID = "ERq-8v-P2V"; Note = "Status title";</note>
+        <note from="developer">Status title</note>
       </trans-unit>
       <trans-unit id="F0z-JX-Cv5.title">
         <source>Freenet Settings</source>
-        <note>Class = "NSWindow"; title = "Freenet Settings"; ObjectID = "F0z-JX-Cv5"; Note = "Window title";</note>
+        <note from="developer">Window title</note>
       </trans-unit>
       <trans-unit id="LpL-CZ-4IY.title">
         <source>Start tray app when I log in</source>
-        <note>Class = "NSButtonCell"; title = "Start tray app when I log in"; ObjectID = "LpL-CZ-4IY"; Note = "Option title";</note>
+        <note from="developer">Option title</note>
       </trans-unit>
       <trans-unit id="cBb-Zz-MzQ.title">
         <source>Node Running:</source>
-        <note>Class = "NSTextFieldCell"; title = "Node Running:"; ObjectID = "cBb-Zz-MzQ"; Note = "Status title";</note>
+        <note from="developer">Status title</note>
       </trans-unit>
       <trans-unit id="mb8-58-B4t.title">
         <source>Build:</source>
-        <note>Class = "NSTextFieldCell"; title = "Build:"; ObjectID = "mb8-58-B4t"; Note = "Status title";</note>
+        <note from="developer">Status title</note>
       </trans-unit>
       <trans-unit id="ob6-zL-REv.title">
         <source>Freenet Node Status</source>
-        <note>Class = "NSBox"; title = "Freenet Node Status"; ObjectID = "ob6-zL-REv"; Note = "Box title";</note>
+        <note from="developer">Box title</note>
       </trans-unit>
       <trans-unit id="s3Z-Gq-qbd.title">
         <source>Installation Not Found</source>
-        <note>Class = "NSTextFieldCell"; title = "Installation Not Found"; ObjectID = "s3Z-Gq-qbd"; Note = "Warning message";</note>
+        <note from="developer">Warning message</note>
       </trans-unit>
       <trans-unit id="y1F-Ro-TAn.title">
         <source>Uninstall</source>
-        <note>Class = "NSButtonCell"; title = "Uninstall"; ObjectID = "y1F-Ro-TAn"; Note = "Button title";</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="yYV-ge-5yY.placeholderString">
         <source>N/A</source>
-        <note>Class = "NSTextFieldCell"; placeholderString = "N/A"; ObjectID = "yYV-ge-5yY"; Note = "Abbreviated string meaning \"not available\"";</note>
+        <note from="developer">Abbreviated string meaning "not available"</note>
       </trans-unit>
     </body>
   </file>
@@ -177,155 +177,155 @@
     <body>
       <trans-unit id="A Freenet installation could not be found.">
         <source>A Freenet installation could not be found.</source>
-        <note>String informing the user that no Freenet installation could be found</note>
+        <note from="developer">String informing the user that no Freenet installation could be found</note>
       </trans-unit>
       <trans-unit id="Are you sure you want to cancel?">
         <source>Are you sure you want to cancel?</source>
-        <note>String asking the user if they want to cancel the installation</note>
+        <note from="developer">String asking the user if they want to cancel the installation</note>
       </trans-unit>
       <trans-unit id="Cancel">
         <source>Cancel</source>
-        <note>Button title</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="Cannot install to this directory, write permission denied">
         <source>Cannot install to this directory, write permission denied</source>
-        <note>String informing the user that they do not have permission to write to the selected directory</note>
+        <note from="developer">String informing the user that they do not have permission to write to the selected directory</note>
       </trans-unit>
       <trans-unit id="Directory is not empty">
         <source>Directory is not empty</source>
-        <note>String informing the user that the selected directory is not empty</note>
+        <note from="developer">String informing the user that the selected directory is not empty</note>
       </trans-unit>
       <trans-unit id="Find Installation">
         <source>Find Installation</source>
-        <note>Button title</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="Find your Freenet installation">
         <source>Find your Freenet installation</source>
-        <note>Title of window</note>
+        <note from="developer">Title of window</note>
       </trans-unit>
       <trans-unit id="Freenet">
         <source>Freenet</source>
-        <note>Application Name</note>
+        <note from="developer">Application Name</note>
       </trans-unit>
       <trans-unit id="Freenet Uninstalled">
         <source>Freenet Uninstalled</source>
-        <note>Title of window</note>
+        <note from="developer">Title of window</note>
       </trans-unit>
       <trans-unit id="Freenet has been completely uninstalled">
         <source>Freenet has been completely uninstalled</source>
-        <note>String informing the user that Freenet uninstallation succeeded</note>
+        <note from="developer">String informing the user that Freenet uninstallation succeeded</note>
       </trans-unit>
       <trans-unit id="Freenet is already installed here">
         <source>Freenet is already installed here</source>
-        <note>String informing the user that the selected location is an existing Freenet installation</note>
+        <note from="developer">String informing the user that the selected location is an existing Freenet installation</note>
       </trans-unit>
       <trans-unit id="Freenet requires Java, would you like to install it now?">
         <source>Freenet requires Java, would you like to install it now?</source>
-        <note>String asking the user if they would like to install Java</note>
+        <note from="developer">String asking the user if they would like to install Java</note>
       </trans-unit>
       <trans-unit id="Install Freenet">
         <source>Install Freenet</source>
-        <note>Button title</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="Install Java">
         <source>Install Java</source>
-        <note>Button title</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="Install here">
         <source>Install here</source>
-        <note>Button title</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="Installation failed">
         <source>Installation failed</source>
-        <note>String informing the user that the installation failed</note>
+        <note from="developer">String informing the user that the installation failed</note>
       </trans-unit>
       <trans-unit id="Installation in progress">
         <source>Installation in progress</source>
-        <note>String informing the user that an installation is in progress</note>
+        <note from="developer">String informing the user that an installation is in progress</note>
       </trans-unit>
       <trans-unit id="Java not found">
         <source>Java not found</source>
-        <note>String informing the user that Java was not found</note>
+        <note from="developer">String informing the user that Java was not found</note>
       </trans-unit>
       <trans-unit id="No">
         <source>No</source>
-        <note>Button title</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="No Freenet installation was found, please delete the files manually if needed">
         <source>No Freenet installation was found, please delete the files manually if needed</source>
-        <note>String informing the user that no Freenet installation was found and that they must delete the files manually if needed</note>
+        <note from="developer">String informing the user that no Freenet installation was found and that they must delete the files manually if needed</note>
       </trans-unit>
       <trans-unit id="Not a valid Freenet installation">
         <source>Not a valid Freenet installation</source>
-        <note>String informing the user that the selected location is not a Freenet installation</note>
+        <note from="developer">String informing the user that the selected location is not a Freenet installation</note>
       </trans-unit>
       <trans-unit id="OK">
         <source>OK</source>
-        <note>Button title</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="Quit">
         <source>Quit</source>
-        <note>No comment provided by engineer.</note>
+        <note from="developer">No comment provided by engineer.</note>
       </trans-unit>
       <trans-unit id="Select Freenet installation">
         <source>Select Freenet installation</source>
-        <note>Button title</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="Select a location to install Freenet">
         <source>Select a location to install Freenet</source>
-        <note>Title of window</note>
+        <note from="developer">Title of window</note>
       </trans-unit>
       <trans-unit id="Start Freenet">
         <source>Start Freenet</source>
-        <note>Button title</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="Stop Freenet">
         <source>Stop Freenet</source>
-        <note>Button title</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="The installation log can be automatically uploaded to GitHub. Please report this failure to the Freenet developers and provide the Github link to them.">
         <source>The installation log can be automatically uploaded to GitHub. Please report this failure to the Freenet developers and provide the GitHub link to them.</source>
-        <note>String asking the user to provide the Gist link to the Freenet developers</note>
+        <note from="developer">String asking the user to provide the Gist link to the Freenet developers</note>
       </trans-unit>
       <trans-unit id="The installation log could not be uploaded to GitHub, it has been placed on your desktop instead. Please report this failure to the Freenet developers and provide the file to them.">
         <source>The installation log could not be uploaded to GitHub, it has been placed on your desktop instead. Please report this failure to the Freenet developers and provide the file to them.</source>
-        <note>String informing the user that the log upload failed</note>
+        <note from="developer">String informing the user that the log upload failed</note>
       </trans-unit>
       <trans-unit id="Uninstall Freenet">
         <source>Uninstall Freenet</source>
-        <note>Button title</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="Uninstall Freenet now?">
         <source>Uninstall Freenet now?</source>
-        <note>Title of window</note>
+        <note from="developer">Title of window</note>
       </trans-unit>
       <trans-unit id="Uninstalling Freenet failed">
         <source>Uninstalling Freenet failed</source>
-        <note>Title of window</note>
+        <note from="developer">Title of window</note>
       </trans-unit>
       <trans-unit id="Uninstalling Freenet is immediate and irreversible, are you sure you want to uninstall Freenet now?">
         <source>Uninstalling Freenet is immediate and irreversible, are you sure you want to uninstall Freenet now?</source>
-        <note>String asking the user whether they would like to uninstall freenet</note>
+        <note from="developer">String asking the user whether they would like to uninstall freenet</note>
       </trans-unit>
       <trans-unit id="Upload">
         <source>Upload</source>
-        <note>Button title</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="Upload failed">
         <source>Upload failed</source>
-        <note>String informing the user that the upload failed</note>
+        <note from="developer">String informing the user that the upload failed</note>
       </trans-unit>
       <trans-unit id="Visit the Freenet Website">
         <source>Visit the Freenet Website</source>
-        <note>Button title</note>
+        <note from="developer">Button title</note>
       </trans-unit>
       <trans-unit id="Would you like to install Freenet now, or locate an existing Freenet installation?">
         <source>Would you like to install Freenet now, or locate an existing Freenet installation?</source>
-        <note>String asking the user whether they would like to install freenet or locate an existing installation</note>
+        <note from="developer">String asking the user whether they would like to install freenet or locate an existing installation</note>
       </trans-unit>
       <trans-unit id="Yes">
         <source>Yes</source>
-        <note>Button title</note>
+        <note from="developer">Button title</note>
       </trans-unit>
     </body>
   </file>
