@@ -295,8 +295,8 @@
         <source>Uninstall Freenet</source>
         <note>Button title</note>
       </trans-unit>
-      <trans-unit id="Uninstall Freenet Now?">
-        <source>Uninstall Freenet Now?</source>
+      <trans-unit id="Uninstall Freenet now?">
+        <source>Uninstall Freenet now?</source>
         <note>Title of window</note>
       </trans-unit>
       <trans-unit id="Uninstalling Freenet failed">
