@@ -72,6 +72,7 @@
 		7668840DB50BE74D5B133229 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		7F21DDF0A3951D9AB1FAFC42 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* FreenetTray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreenetTray.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA2D60691C456B8C0006DC96 /* Translations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Translations; sourceTree = "<group>"; };
 		AA433BCF109CD2B400EDBB73 /* gpl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gpl.txt; sourceTree = "<group>"; };
 		AA55DB941C25CDDE00581EEB /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = "zh-CN.lproj/FNDropdownMenu.strings"; sourceTree = "<group>"; };
 		AA55DB951C25CDDE00581EEB /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = "zh-CN.lproj/FNInstallerProgressView.strings"; sourceTree = "<group>"; };
@@ -214,6 +215,7 @@
 		29B97314FDCFA39411CA2CEA /* Freenet Controller */ = {
 			isa = PBXGroup;
 			children = (
+				AA2D60691C456B8C0006DC96 /* Translations */,
 				AA621C391C1BC46E00A1C4A5 /* .travis.yml */,
 				AAD6891C1BD17CF500942738 /* Bundled Node */,
 				AAF723EB1BD0D14E003BA438 /* Bundled Packages */,
