@@ -20,16 +20,7 @@
 
 @implementation FNConfigParser
 
-+(NSDictionary * _Nullable)dictionaryFromWrapperConfigFile:(NSURL * _Nonnull)wrapperFile {
-    NSError *error;
-    NSString *wrapperContents = [NSString stringWithContentsOfFile:wrapperFile.path encoding:NSUTF8StringEncoding error:&error];
-    if (error) {
-        return nil;
-    }
-    return [FNConfigParser parseKeyValueString:wrapperContents];
-}
-
-+(NSDictionary * _Nullable)dictionaryFromFreenetConfigFile:(NSURL * _Nonnull)configFile {
++(NSDictionary * _Nullable)dictionaryFromConfigFile:(NSURL * _Nonnull)configFile {
     NSError *error;
     NSString *configContents = [NSString stringWithContentsOfFile:configFile.path encoding:NSUTF8StringEncoding error:&error];
     if (error) {

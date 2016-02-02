@@ -14,7 +14,6 @@
 
 @interface FNConfigParser : NSObject
 
-+(NSDictionary * _Nullable)dictionaryFromWrapperConfigFile:(NSURL * _Nonnull)wrapperFile;
-+(NSDictionary * _Nullable)dictionaryFromFreenetConfigFile:(NSURL * _Nonnull)configFile;
++(NSDictionary * _Nullable)dictionaryFromConfigFile:(NSURL * _Nonnull)configFile;
 
 @end

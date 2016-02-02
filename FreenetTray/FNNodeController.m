@@ -230,10 +230,10 @@
 -(void)readFreenetConfig {
     if ([FNHelpers validateNodeInstallationAtURL:self.nodeLocation]) {
         NSURL *wrapperConfigFile = [self.nodeLocation URLByAppendingPathComponent:FNNodeWrapperConfigFilePathname];
-        self.wrapperConfig = [FNConfigParser dictionaryFromWrapperConfigFile:wrapperConfigFile];
+        self.wrapperConfig = [FNConfigParser dictionaryFromConfigFile:wrapperConfigFile];
         
         NSURL *freenetConfigFile = [self.nodeLocation URLByAppendingPathComponent:FNNodeFreenetConfigFilePathname];    
-        self.freenetConfig = [FNConfigParser dictionaryFromWrapperConfigFile:freenetConfigFile];
+        self.freenetConfig = [FNConfigParser dictionaryFromConfigFile:freenetConfigFile];
         
         NSArray *fcpBindings = [self.freenetConfig[FNNodeFreenetConfigFCPBindAddressesKey] componentsSeparatedByString:@","];
         if (fcpBindings.count > 0) {
