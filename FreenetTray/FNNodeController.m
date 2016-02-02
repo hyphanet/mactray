@@ -170,7 +170,7 @@
 }
 
 #pragma mark - Node handling
-
+#warning TODO: Remove this loop and use FCP messages to determine node state
 - (void)checkNodeStatus {
 
     // start a continuous loop to set the status indicator
