@@ -240,6 +240,12 @@
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSURL *runScript = [nodeLocation URLByAppendingPathComponent:FNNodeRunscriptPathname];
             NSTask *task = [NSTask launchedTaskWithLaunchPath:runScript.path arguments:@[@"stop"]];
+            [task waitUntilExit];
+            // once run.sh returns, we ensure the wrapper state is cleaned up
+            // this fixes issues where Freenet.anchor is still around but the wrapper crashed, so the node
+            // isn't actually running but the tray app thinks it is, preventing users from using start/stop
+            // in the dropdown menu until things go back to a sane state
+            [self cleanupAfterShutdown];
         });
     }
     else {
