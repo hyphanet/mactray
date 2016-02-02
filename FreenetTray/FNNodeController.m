@@ -245,6 +245,16 @@
     }
 }
 
+#pragma mark - Shutdown cleanup
+
+-(void)cleanupAfterShutdown {
+    NSURL *anchorFile = [self.nodeLocation URLByAppendingPathComponent:FNNodeAnchorFilePathname];
+    [[NSFileManager defaultManager] removeItemAtURL:anchorFile error:nil];
+     
+    NSURL *pidFile = [self.nodeLocation URLByAppendingPathComponent:FNNodePIDFilePathname];
+    [[NSFileManager defaultManager] removeItemAtURL:pidFile error:nil];
+}
+
 #pragma mark - Configuration handlers
 
 -(void)readFreenetConfig {
