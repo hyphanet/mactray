@@ -19,6 +19,7 @@ NSString *const FNWebDomain = @"freenetproject.org";
 NSString *const FNNodeInstallationPathname = @"Freenet";
 NSString *const FNNodeRunscriptPathname = @"run.sh";
 NSString *const FNNodeAnchorFilePathname = @"Freenet.anchor";
+NSString *const FNNodePIDFilePathname = @"Freenet.pid";
 NSString *const FNNodeWrapperConfigFilePathname = @"wrapper.conf";
 NSString *const FNNodeFreenetConfigFilePathname = @"freenet.ini";
 

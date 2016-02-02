@@ -19,6 +19,7 @@ FOUNDATION_EXPORT NSString *const FNWebDomain;
 FOUNDATION_EXPORT NSString *const FNNodeInstallationPathname;
 FOUNDATION_EXPORT NSString *const FNNodeRunscriptPathname;
 FOUNDATION_EXPORT NSString *const FNNodeAnchorFilePathname;
+FOUNDATION_EXPORT NSString *const FNNodePIDFilePathname;
 FOUNDATION_EXPORT NSString *const FNNodeWrapperConfigFilePathname;
 FOUNDATION_EXPORT NSString *const FNNodeFreenetConfigFilePathname;
 
