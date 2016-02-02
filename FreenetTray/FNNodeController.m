@@ -37,8 +37,8 @@
         self.fcpWrapper.delegate = self;
         self.fcpWrapper.dataSource = self;
         [self.fcpWrapper nodeStateLoop];
-        // spawn a thread to keep the node status indicator updated in realtime. The method called here cannot be run again while this thread is running
-        [NSThread detachNewThreadSelector:@selector(checkNodeStatus) toTarget:self withObject:nil];
+        // spawn a thread to monitor node installation. The method called here cannot be run again while this thread is running
+        [NSThread detachNewThreadSelector:@selector(checkNodeInstallation) toTarget:self withObject:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(installFinished:) name:FNInstallFinishedNotification object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(installFailed:) name:FNInstallFailedNotification object:nil];        
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(installStartNode:) name:FNInstallStartNodeNotification object:nil];
@@ -170,45 +170,14 @@
 }
 
 #pragma mark - Node handling
-#warning TODO: Remove this loop and use FCP messages to determine node state
-- (void)checkNodeStatus {
-
-    // start a continuous loop to set the status indicator
-    // this method should be started on a separate thread so it doesn't block the main thread
+- (void)checkNodeInstallation {
+    // start a continuous loop to monitor installation directory
     while (1) {
         @autoreleasepool {
-            
-            NSURL *anchorFile = [self.nodeLocation URLByAppendingPathComponent:FNNodeAnchorFilePathname];
             if (![FNHelpers validateNodeInstallationAtURL:self.nodeLocation]) {
                 dispatch_async(dispatch_get_main_queue(), ^{
                     self.currentNodeState = FNNodeStateUnknown;
                     [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeStateUnknownNotification object:nil];
-                });
-            }
-            else if ([[NSFileManager defaultManager] fileExistsAtPath:anchorFile.path]) {
-                /* 
-                    If we find the anchor file we we send an FNNodeStateRunningNotification 
-                    event and save the node state here.
-                    
-                    This can be a false positive, the node may be stopped even if 
-                    this file exists, but normally it should be accurate.
-                */
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.currentNodeState = FNNodeStateRunning;
-                    [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeStateRunningNotification object:nil];
-                });
-            }
-            else {
-                /* 
-                    Otherwise we send a FNNodeStateNotRunningNotification event and
-                    save the node state here.
-                 
-                    This should be 100% accurate, the node won't run without that 
-                    anchor file being present
-                */
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.currentNodeState = FNNodeStateNotRunning;
-                    [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeStateNotRunningNotification object:nil];
                 });
             }
         }
@@ -301,6 +270,8 @@
 
 -(void)didDisconnect {
     dispatch_async(dispatch_get_main_queue(), ^{
+        self.currentNodeState = FNNodeStateNotRunning;
+        [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeStateNotRunningNotification object:nil];
         [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeFCPDisconnectedNotification object:nil];
     });
 
@@ -314,6 +285,8 @@
 
 -(void)didReceiveNodeStats:(NSDictionary *)nodeStats {
     dispatch_async(dispatch_get_main_queue(), ^{
+        self.currentNodeState = FNNodeStateRunning;
+        [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeStateRunningNotification object:nil];
         [[NSNotificationCenter defaultCenter] postNotificationName:FNNodeStatsReceivedNotification object:nodeStats];
     });
 }

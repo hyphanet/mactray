@@ -18,7 +18,6 @@
 
 - (void)startFreenet;
 - (void)stopFreenet;
-- (void)checkNodeStatus;
 
 @property NSDictionary *wrapperConfig;
 @property NSDictionary *freenetConfig;
