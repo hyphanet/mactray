@@ -173,7 +173,8 @@
 
 - (void)checkNodeStatus {
 
-    // start a continuous loop to set the status indicator, this whole method (checkNodeStatus) should be started from a separate thread so it doesn't block main app
+    // start a continuous loop to set the status indicator
+    // this method should be started on a separate thread so it doesn't block the main thread
     while (1) {
         @autoreleasepool {
             
