@@ -216,11 +216,7 @@
 }
 
 - (void)startFreenet {
-    NSString *storedNodePath = [[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath];
-    NSURL *nodeLocation;
-    if (storedNodePath != nil) {
-        nodeLocation = [NSURL fileURLWithPath:storedNodePath];
-    }
+    NSURL *nodeLocation = self.nodeLocation;
     if ([FNHelpers validateNodeInstallationAtURL:nodeLocation]) {
         NSURL *runScript = [nodeLocation URLByAppendingPathComponent:FNNodeRunscriptPathname];
         [NSTask launchedTaskWithLaunchPath:runScript.path arguments:@[@"start"]];       
@@ -231,11 +227,7 @@
 }
 
 - (void)stopFreenet {
-    NSString *storedNodePath = [[[NSUserDefaults standardUserDefaults] objectForKey:FNNodeInstallationDirectoryKey] stringByStandardizingPath];
-    NSURL *nodeLocation;
-    if (storedNodePath != nil) {
-        nodeLocation = [NSURL fileURLWithPath:storedNodePath];
-    }
+    NSURL *nodeLocation = self.nodeLocation;
     if ([FNHelpers validateNodeInstallationAtURL:nodeLocation]) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSURL *runScript = [nodeLocation URLByAppendingPathComponent:FNNodeRunscriptPathname];
