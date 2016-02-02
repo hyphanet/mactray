@@ -237,8 +237,10 @@
         nodeLocation = [NSURL fileURLWithPath:storedNodePath];
     }
     if ([FNHelpers validateNodeInstallationAtURL:nodeLocation]) {
-        NSURL *runScript = [nodeLocation URLByAppendingPathComponent:FNNodeRunscriptPathname];
-        [NSTask launchedTaskWithLaunchPath:runScript.path arguments:@[@"stop"]];       
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSURL *runScript = [nodeLocation URLByAppendingPathComponent:FNNodeRunscriptPathname];
+            NSTask *task = [NSTask launchedTaskWithLaunchPath:runScript.path arguments:@[@"stop"]];
+        });
     }
     else {
         [FNHelpers displayNodeMissingAlert];
