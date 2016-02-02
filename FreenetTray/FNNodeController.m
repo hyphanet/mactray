@@ -245,7 +245,7 @@
             // this fixes issues where Freenet.anchor is still around but the wrapper crashed, so the node
             // isn't actually running but the tray app thinks it is, preventing users from using start/stop
             // in the dropdown menu until things go back to a sane state
-            [self cleanupAfterShutdown];
+            [self cleanupAfterShutdown:nodeLocation];
         });
     }
     else {
@@ -255,11 +255,11 @@
 
 #pragma mark - Shutdown cleanup
 
--(void)cleanupAfterShutdown {
-    NSURL *anchorFile = [self.nodeLocation URLByAppendingPathComponent:FNNodeAnchorFilePathname];
+-(void)cleanupAfterShutdown:(NSURL *)nodeLocation {
+    NSURL *anchorFile = [nodeLocation URLByAppendingPathComponent:FNNodeAnchorFilePathname];
     [[NSFileManager defaultManager] removeItemAtURL:anchorFile error:nil];
      
-    NSURL *pidFile = [self.nodeLocation URLByAppendingPathComponent:FNNodePIDFilePathname];
+    NSURL *pidFile = [nodeLocation URLByAppendingPathComponent:FNNodePIDFilePathname];
     [[NSFileManager defaultManager] removeItemAtURL:pidFile error:nil];
 }
 
