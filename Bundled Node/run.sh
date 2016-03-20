@@ -186,13 +186,6 @@ set +f; unset IFS
 # and get java implementation too, Sun JDK or Kaffe
 JAVA_IMPL=`$JAVA_REAL_IMPL -version 2>&1 | head -n 1 | cut -f1 -d' '`
 
-
-if test ! -s freenet.ini
-then
-	exec ./bin/1run.sh
-	exit
-fi
-
 # If the PIDDIR is relative, set its value relative to the full REALPATH to avoid problems if
 #  the working directory is later changed.
 FIRST_CHAR="`echo $PIDDIR | cut -c1,1`"
