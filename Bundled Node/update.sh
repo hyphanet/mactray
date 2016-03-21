@@ -13,7 +13,7 @@ fi
 WHEREAMI="`pwd`"
 CAFILE="startssl.pem"
 JOPTS="-Djava.net.preferIPv4Stack=true"
-SHA1_Sha1Test="a179ad6985302b4f4f4ebed008a4f81b76d3f819"
+SHA1_Sha1Test="ec6877a2551065d954e44dc6e78502bfe1fe6015"
 echo "Updating freenet"
 
 # Set working directory to Freenet install directory so that the script can
