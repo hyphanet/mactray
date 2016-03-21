@@ -1,0 +1,114 @@
+/* String informing the user that no Freenet installation could be found */
+"A Freenet installation could not be found." = "No se pudo encontrar una instalación de Freenet.";
+
+/* String asking the user if they want to cancel the installation */
+"Are you sure you want to cancel?" = "¿Está seguro de que quiere cancelar?";
+
+/* Button title */
+"Cancel" = "Cancelar";
+
+/* String informing the user that they do not have permission to write to the selected directory */
+"Cannot install to this directory, write permission denied" = "No se puede instalar en este directorio, permiso de escritura denegado";
+
+/* String informing the user that the selected directory is not empty */
+"Directory is not empty" = "El directorio no está vacío";
+
+/* Button title */
+"Find Installation" = "Buscar instalación";
+
+/* Title of window */
+"Find your Freenet installation" = "Buscar su instalación de Freenet";
+
+/* Application Name */
+"Freenet" = "Freenet";
+
+/* Title of window */
+"Freenet Uninstalled" = "Freenet desinstalado";
+
+/* String informing the user that Freenet uninstallation succeeded */
+"Freenet has been completely uninstalled" = "Freenet ha sido desinstalado completamente";
+
+/* String informing the user that the selected location is an existing Freenet installation */
+"Freenet is already installed here" = "Freenet ya está instalado aquí";
+
+/* String asking the user if they would like to install Java */
+"Freenet requires Java, would you like to install it now?" = "Freenet requiere Java, ¿desea instalarlo ahora?";
+
+/* Button title */
+"Install Freenet" = "Instalar Freenet";
+
+/* Button title */
+"Install Java" = "Instalar Java";
+
+/* Button title */
+"Install here" = "Instalar aquí";
+
+/* String informing the user that the installation failed */
+"Installation failed" = "Instalación fallida";
+
+/* String informing the user that an installation is in progress */
+"Installation in progress" = "Instalación en marcha";
+
+/* String informing the user that Java was not found */
+"Java not found" = "Java no encontrado";
+
+/* Button title */
+"No" = "No";
+
+/* String informing the user that no Freenet installation was found and that they must delete the files manually if needed */
+"No Freenet installation was found, please delete the files manually if needed" = "No se encontró ninguna instalación de Freenet, por favor borre los ficheros manualmente si es necesario";
+
+/* String informing the user that the selected location is not a Freenet installation */
+"Not a valid Freenet installation" = "No es una instalación de Freenet válida";
+
+/* Button title */
+"OK" = "Aceptar";
+
+/* No comment provided by engineer. */
+"Quit" = "Salir";
+
+/* Button title */
+"Select Freenet installation" = "Seleccionar instalación de Freenet";
+
+/* Title of window */
+"Select a location to install Freenet" = "Seleccionar una ubicación para instalar Freenet";
+
+/* Button title */
+"Start Freenet" = "Iniciar Freenet";
+
+/* Button title */
+"Stop Freenet" = "Detener Freenet";
+
+/* String asking the user to provide the Gist link to the Freenet developers */
+"The installation log can be automatically uploaded to GitHub. Please report this failure to the Freenet developers and provide the GitHub link to them." = "El registro (log) de instalación se puede subir automáticamente a GitHub. Por favor, informe de este fallo a los desarrolladores de Freenet y proporcióneles el enlace de GitHub.";
+
+/* String informing the user that the log upload failed */
+"The installation log could not be uploaded to GitHub, it has been placed on your desktop instead. Please report this failure to the Freenet developers and provide the file to them." = "El registro (log) de instalación no se pudo subir a GitHub, en su lugar se ha situado en su escritorio. Por favor, informe de este fallo a los desarrolladores de Freenet y proporcióneles el fichero.";
+
+/* Button title */
+"Uninstall Freenet" = "Desinstalar Freenet";
+
+/* Title of window */
+"Uninstall Freenet now?" = "¿Desinstalar Freenet ahora?";
+
+/* Title of window */
+"Uninstalling Freenet failed" = "No se pudo desinstalar Freenet";
+
+/* String asking the user whether they would like to uninstall freenet */
+"Uninstalling Freenet is immediate and irreversible, are you sure you want to uninstall Freenet now?" = "La desinstalación de Freenet es inmediata e irreversible, ¿está segurio de que quiere desinstalar Freenet ahora?";
+
+/* Button title */
+"Upload" = "Subir";
+
+/* String informing the user that the upload failed */
+"Upload failed" = "Fallo al subir";
+
+/* Button title */
+"Visit the Freenet Website" = "Visitar el sitio web de Freenet";
+
+/* String asking the user whether they would like to install freenet or locate an existing installation */
+"Would you like to install Freenet now, or locate an existing Freenet installation?" = "¿Le gustaría instalar Freenet ahora, o encontrar una instalación de Freenet existente?";
+
+/* Button title */
+"Yes" = "Sí";
+

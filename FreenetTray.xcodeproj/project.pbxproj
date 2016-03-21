@@ -179,6 +179,14 @@
 		AABF7F5E1C9FA92D006F1F40 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/FNInstallerWindow.strings; sourceTree = "<group>"; };
 		AABF7F5F1C9FA92D006F1F40 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AABF7F601C9FA92D006F1F40 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AABF7F611C9FA958006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/FNDropdownMenu.strings; sourceTree = "<group>"; };
+		AABF7F621C9FA958006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/FNInstallerDestinationView.strings; sourceTree = "<group>"; };
+		AABF7F631C9FA958006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/FNInstallerProgressView.strings; sourceTree = "<group>"; };
+		AABF7F641C9FA958006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AABF7F651C9FA958006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/FNInstallerWindow.strings; sourceTree = "<group>"; };
+		AABF7F661C9FA958006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/FNSettingsWindow.strings; sourceTree = "<group>"; };
+		AABF7F671C9FA958006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AABF7F681C9FA959006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AAD6891C1BD17CF500942738 /* Bundled Node */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Bundled Node"; sourceTree = "<group>"; };
 		AAE306EE1BF6DEC900C4EC1D /* Acknowledgments.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Acknowledgments.rtf; sourceTree = "<group>"; };
 		AAE306EF1BF6DEC900C4EC1D /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
@@ -557,6 +565,7 @@
 				AABF7F4D1C9FA8D5006F1F40 /* id-ID */,
 				AABF7F551C9FA8F9006F1F40 /* hr */,
 				AABF7F5D1C9FA92C006F1F40 /* fr */,
+				AABF7F641C9FA958006F1F40 /* es */,
 			);
 			name = InfoPlist.strings;
 			path = FreenetTray;
@@ -573,6 +582,7 @@
 				AABF7F4F1C9FA8D5006F1F40 /* id-ID */,
 				AABF7F571C9FA8F9006F1F40 /* hr */,
 				AABF7F5F1C9FA92D006F1F40 /* fr */,
+				AABF7F671C9FA958006F1F40 /* es */,
 			);
 			name = Localizable.strings;
 			path = FreenetTray;
@@ -589,6 +599,7 @@
 				AABF7F501C9FA8D6006F1F40 /* id-ID */,
 				AABF7F581C9FA8FA006F1F40 /* hr */,
 				AABF7F601C9FA92D006F1F40 /* fr */,
+				AABF7F681C9FA959006F1F40 /* es */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -605,6 +616,7 @@
 				AABF7F491C9FA8D4006F1F40 /* id-ID */,
 				AABF7F511C9FA8F8006F1F40 /* hr */,
 				AABF7F591C9FA92C006F1F40 /* fr */,
+				AABF7F611C9FA958006F1F40 /* es */,
 			);
 			name = FNDropdownMenu.xib;
 			path = FreenetTray;
@@ -622,6 +634,7 @@
 				AABF7F4A1C9FA8D5006F1F40 /* id-ID */,
 				AABF7F531C9FA8F9006F1F40 /* hr */,
 				AABF7F5B1C9FA92C006F1F40 /* fr */,
+				AABF7F621C9FA958006F1F40 /* es */,
 			);
 			name = FNInstallerDestinationView.xib;
 			path = FreenetTray;
@@ -639,6 +652,7 @@
 				AABF7F4B1C9FA8D5006F1F40 /* id-ID */,
 				AABF7F521C9FA8F8006F1F40 /* hr */,
 				AABF7F5A1C9FA92C006F1F40 /* fr */,
+				AABF7F631C9FA958006F1F40 /* es */,
 			);
 			name = FNInstallerProgressView.xib;
 			path = FreenetTray;
@@ -656,6 +670,7 @@
 				AABF7F4E1C9FA8D5006F1F40 /* id-ID */,
 				AABF7F561C9FA8F9006F1F40 /* hr */,
 				AABF7F5E1C9FA92D006F1F40 /* fr */,
+				AABF7F651C9FA958006F1F40 /* es */,
 			);
 			name = FNInstallerWindow.xib;
 			path = FreenetTray;
@@ -673,6 +688,7 @@
 				AABF7F4C1C9FA8D5006F1F40 /* id-ID */,
 				AABF7F541C9FA8F9006F1F40 /* hr */,
 				AABF7F5C1C9FA92C006F1F40 /* fr */,
+				AABF7F661C9FA958006F1F40 /* es */,
 			);
 			name = FNSettingsWindow.xib;
 			path = FreenetTray;
