@@ -23,7 +23,7 @@
 
 #import "FNInstallerWindowController.h"
 
-#import <PFMoveApplication.h>
+#import "PFMoveApplication.h"
 #import <DCOAboutWindow/DCOAboutWindowController.h>
 @interface FNAppDelegate ()
     
