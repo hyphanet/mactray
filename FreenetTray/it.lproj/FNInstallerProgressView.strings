@@ -1,0 +1,18 @@
+/* Class = "NSTextFieldCell"; title = "Installing Freenet"; ObjectID = "95e-76-m1K"; Note = "Window title"; */
+"95e-76-m1K.title" = "Installare Freenet";
+
+/* Class = "NSTextFieldCell"; title = "Installing Java"; ObjectID = "Hga-mV-cuv"; */
+"Hga-mV-cuv.title" = "Installare Java";
+
+/* Class = "NSTextFieldCell"; title = "Finished, please click Continue"; ObjectID = "RGl-Cl-cH4"; */
+"RGl-Cl-cH4.title" = "Completato, fai click su Continua";
+
+/* Class = "NSTextFieldCell"; title = "Starting Node..."; ObjectID = "ToQ-oU-rUc"; */
+"ToQ-oU-rUc.title" = "Avvio del nodo in corso...";
+
+/* Class = "NSTextFieldCell"; title = "Setting Up Ports"; ObjectID = "cov-1I-ShA"; */
+"cov-1I-ShA.title" = "Impostando le porte";
+
+/* Class = "NSTextFieldCell"; title = "Copying Files"; ObjectID = "pT7-X7-u4Z"; */
+"pT7-X7-u4Z.title" = "Copia dei file in corso";
+

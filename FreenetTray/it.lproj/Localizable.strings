@@ -1,0 +1,108 @@
+/* String informing the user that no Freenet installation could be found */
+"A Freenet installation could not be found." = "Non è stata trovata un installazione di Freenet";
+
+/* String asking the user if they want to cancel the installation */
+"Are you sure you want to cancel?" = "Sei sicuro di voler annullare?";
+
+/* Button title */
+"Cancel" = "Annulla";
+
+/* String informing the user that they do not have permission to write to the selected directory */
+"Cannot install to this directory, write permission denied" = "Impossibile installare in questa cartella, permesso di scrittura negato";
+
+/* String informing the user that the selected directory is not empty */
+"Directory is not empty" = "La cartella non è vuota";
+
+/* Button title */
+"Find Installation" = "Trova installazione";
+
+/* Title of window */
+"Find your Freenet installation" = "Trova la tua installazione Freenet";
+
+/* Application Name */
+"Freenet" = "Freenet";
+
+/* Title of window */
+"Freenet Uninstalled" = "Freenet disinstallato";
+
+/* String informing the user that Freenet uninstallation succeeded */
+"Freenet has been completely uninstalled" = "Freenet è stato disinstallato";
+
+/* String informing the user that the selected location is an existing Freenet installation */
+"Freenet is already installed here" = "Freenet è già stato installato qui";
+
+/* String asking the user if they would like to install Java */
+"Freenet requires Java, would you like to install it now?" = "Freenet necessita di Java, vorresti installarlo adesso?";
+
+/* Button title */
+"Install Freenet" = "Installa Freenet";
+
+/* Button title */
+"Install Java" = "Installa Java";
+
+/* Button title */
+"Install here" = "Installa qui";
+
+/* String informing the user that the installation failed */
+"Installation failed" = "Installazione fallita";
+
+/* String informing the user that an installation is in progress */
+"Installation in progress" = "installazione in corso";
+
+/* String informing the user that Java was not found */
+"Java not found" = "Java non trovato";
+
+/* Button title */
+"No" = "No";
+
+/* String informing the user that no Freenet installation was found and that they must delete the files manually if needed */
+"No Freenet installation was found, please delete the files manually if needed" = "Non è stata trovata nessuna installazione di Freenet, per piacere, cancella manualmente i file se necessario";
+
+/* String informing the user that the selected location is not a Freenet installation */
+"Not a valid Freenet installation" = "Non è un'installazione Freenet valida";
+
+/* Button title */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Quit" = "Esci";
+
+/* Button title */
+"Select Freenet installation" = "Seleziona l'installazione Freenet";
+
+/* Title of window */
+"Select a location to install Freenet" = "Seleziona dove vuoi installare Freenet";
+
+/* Button title */
+"Start Freenet" = "Avvia Freenet";
+
+/* Button title */
+"Stop Freenet" = "Ferma Freenet";
+
+/* Button title */
+"Uninstall Freenet" = "Disinstalla Freenet";
+
+/* Title of window */
+"Uninstall Freenet now?" = "Vuoi disinstallare Freenet?";
+
+/* Title of window */
+"Uninstalling Freenet failed" = "Disinstallazione di Freenet fallita";
+
+/* String asking the user whether they would like to uninstall freenet */
+"Uninstalling Freenet is immediate and irreversible, are you sure you want to uninstall Freenet now?" = "Disinstallare Freenet è immediato ed irreversibile, sei sicuro di voler disintallare Freenet adesso?";
+
+/* Button title */
+"Upload" = "Upload";
+
+/* String informing the user that the upload failed */
+"Upload failed" = "Upload fallito";
+
+/* Button title */
+"Visit the Freenet Website" = "Visita il sito web di Freenet";
+
+/* String asking the user whether they would like to install freenet or locate an existing installation */
+"Would you like to install Freenet now, or locate an existing Freenet installation?" = "Vorresti installare Freenet adesso, oppure indicare un'installazione già esistente di Freenet?";
+
+/* Button title */
+"Yes" = "Si";
+
