@@ -1,0 +1,99 @@
+/* String informing the user that no Freenet installation could be found */
+"A Freenet installation could not be found." = "Pemasangan Freenet tidak dapat ditemukan.";
+
+/* String asking the user if they want to cancel the installation */
+"Are you sure you want to cancel?" = "Apakah anda yakin anda ingin batal?";
+
+/* Button title */
+"Cancel" = "Batal";
+
+/* String informing the user that they do not have permission to write to the selected directory */
+"Cannot install to this directory, write permission denied" = "Tidak dapat memasang direktori ini, izin pertulisan ditolak";
+
+/* String informing the user that the selected directory is not empty */
+"Directory is not empty" = "Direktori tidak kosong";
+
+/* Button title */
+"Find Installation" = "Temukan Pemasangan";
+
+/* Title of window */
+"Find your Freenet installation" = "Temukan pemasangan Freenet anda";
+
+/* Application Name */
+"Freenet" = "Freenet";
+
+/* Title of window */
+"Freenet Uninstalled" = "Freenet Dilepas";
+
+/* String informing the user that Freenet uninstallation succeeded */
+"Freenet has been completely uninstalled" = "Freenet telah lengkap dilepas";
+
+/* String informing the user that the selected location is an existing Freenet installation */
+"Freenet is already installed here" = "Freenet sudah dipasang disini";
+
+/* String asking the user if they would like to install Java */
+"Freenet requires Java, would you like to install it now?" = "Freenet membutuhkan Java, apakah anda ingin memasangnya sekarang?";
+
+/* Button title */
+"Install Freenet" = "Pasang Freenet";
+
+/* Button title */
+"Install Java" = "Pasang Java";
+
+/* Button title */
+"Install here" = "Pasang disini";
+
+/* String informing the user that the installation failed */
+"Installation failed" = "Pemasangan gagal";
+
+/* String informing the user that an installation is in progress */
+"Installation in progress" = "Pemasangan sedang kemajuan";
+
+/* String informing the user that Java was not found */
+"Java not found" = "Java tidak ditemukan";
+
+/* Button title */
+"No" = "Tidak";
+
+/* String informing the user that no Freenet installation was found and that they must delete the files manually if needed */
+"No Freenet installation was found, please delete the files manually if needed" = "Tidak ada pemasangan Freenet ditemukan, silahkan hapus berkas manual jika dibutuhkan";
+
+/* String informing the user that the selected location is not a Freenet installation */
+"Not a valid Freenet installation" = "Tidak sah pemasangan Freenet";
+
+/* Button title */
+"OK" = "OKE";
+
+/* No comment provided by engineer. */
+"Quit" = "Berhenti";
+
+/* Button title */
+"Select Freenet installation" = "Pilih pemasangan Freenet";
+
+/* Title of window */
+"Select a location to install Freenet" = "Pilih tempat untuk memasang Freenet";
+
+/* Button title */
+"Start Freenet" = "Mulai Freenet";
+
+/* Button title */
+"Stop Freenet" = "Hentikan Freenet";
+
+/* Button title */
+"Uninstall Freenet" = "Melepas Freenet";
+
+/* Title of window */
+"Uninstalling Freenet failed" = "Melepas Freenet gagal";
+
+/* String asking the user whether they would like to uninstall freenet */
+"Uninstalling Freenet is immediate and irreversible, are you sure you want to uninstall Freenet now?" = "Melepas Freenet segera dan tidak dapat diubah, apakah anda yakin anda ingin melepas Freenet sekarang?";
+
+/* Button title */
+"Visit the Freenet Website" = "Kunjungi situs jaringan Freenet";
+
+/* String asking the user whether they would like to install freenet or locate an existing installation */
+"Would you like to install Freenet now, or locate an existing Freenet installation?" = "Apakah anda ingin memasang Freenet sekarang, atau menempatkan pemasangan Freenet yang ada?";
+
+/* Button title */
+"Yes" = "Ya";
+

@@ -1,0 +1,18 @@
+/* Class = "NSButtonCell"; title = "Find Installation"; ObjectID = "8M7-Tl-FUW"; Note = "Button title"; */
+"8M7-Tl-FUW.title" = "Temukan Pemasangan";
+
+/* Class = "NSButtonCell"; title = "Start Freenet automatically"; ObjectID = "9kj-pP-3mQ"; Note = "Option title"; */
+"9kj-pP-3mQ.title" = "Mulai Freenet otomatis";
+
+/* Class = "NSWindow"; title = "Freenet Settings"; ObjectID = "F0z-JX-Cv5"; Note = "Window title"; */
+"F0z-JX-Cv5.title" = "Pengaturan Freenet";
+
+/* Class = "NSTextFieldCell"; title = "Build:"; ObjectID = "mb8-58-B4t"; Note = "Status title"; */
+"mb8-58-B4t.title" = "Bangun:";
+
+/* Class = "NSTextFieldCell"; title = "Installation Not Found"; ObjectID = "s3Z-Gq-qbd"; Note = "Warning message"; */
+"s3Z-Gq-qbd.title" = "Pemasangan Tidak Ditemukan";
+
+/* Class = "NSTextFieldCell"; placeholderString = "N/A"; ObjectID = "yYV-ge-5yY"; Note = "Abbreviated string meaning not available"; */
+"yYV-ge-5yY.placeholderString" = "Tidak/Tersedia";
+
