@@ -1,0 +1,33 @@
+/* Class = "NSButtonCell"; title = "Find Installation"; ObjectID = "8M7-Tl-FUW"; Note = "Button title"; */
+"8M7-Tl-FUW.title" = "Pronađi instalaciju";
+
+/* Class = "NSButtonCell"; title = "Start Freenet automatically"; ObjectID = "9kj-pP-3mQ"; Note = "Option title"; */
+"9kj-pP-3mQ.title" = "Pokreni Freenet automatski";
+
+/* Class = "NSTextFieldCell"; title = "FCP Available:"; ObjectID = "ERq-8v-P2V"; Note = "Status title"; */
+"ERq-8v-P2V.title" = "FCP dostupan:";
+
+/* Class = "NSWindow"; title = "Freenet Settings"; ObjectID = "F0z-JX-Cv5"; Note = "Window title"; */
+"F0z-JX-Cv5.title" = "Freenet postavke";
+
+/* Class = "NSButtonCell"; title = "Start tray app when I log in"; ObjectID = "LpL-CZ-4IY"; Note = "Option title"; */
+"LpL-CZ-4IY.title" = "Pokreni aplikaciju kad se prijavim";
+
+/* Class = "NSTextFieldCell"; title = "Node Running:"; ObjectID = "cBb-Zz-MzQ"; Note = "Status title"; */
+"cBb-Zz-MzQ.title" = "Čvor pokrenut:";
+
+/* Class = "NSTextFieldCell"; title = "Build:"; ObjectID = "mb8-58-B4t"; Note = "Status title"; */
+"mb8-58-B4t.title" = "Verzija";
+
+/* Class = "NSBox"; title = "Freenet Node Status"; ObjectID = "ob6-zL-REv"; Note = "Box title"; */
+"ob6-zL-REv.title" = "Stanje Freenet čvora";
+
+/* Class = "NSTextFieldCell"; title = "Installation Not Found"; ObjectID = "s3Z-Gq-qbd"; Note = "Warning message"; */
+"s3Z-Gq-qbd.title" = "Instalacija nije pronađena";
+
+/* Class = "NSButtonCell"; title = "Uninstall"; ObjectID = "y1F-Ro-TAn"; Note = "Button title"; */
+"y1F-Ro-TAn.title" = "Deinstaliraj";
+
+/* Class = "NSTextFieldCell"; placeholderString = "N/A"; ObjectID = "yYV-ge-5yY"; Note = "Abbreviated string meaning not available"; */
+"yYV-ge-5yY.placeholderString" = "Nije dostupno";
+

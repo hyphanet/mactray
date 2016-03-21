@@ -1,0 +1,39 @@
+/* String informing the user that no Freenet installation could be found */
+"A Freenet installation could not be found." = "Freenet instalacija nije mogla biti pronađena.";
+
+/* String asking the user if they want to cancel the installation */
+"Are you sure you want to cancel?" = "Jeste li sigurni da želite odustati?";
+
+/* Button title */
+"Cancel" = "Odustani";
+
+/* String informing the user that they do not have permission to write to the selected directory */
+"Cannot install to this directory, write permission denied" = "Nije moguće instalirati u ovaj direktorij, dozvola za pisanje odbijena";
+
+/* String informing the user that the selected directory is not empty */
+"Directory is not empty" = "Direktorij nije prazan";
+
+/* Button title */
+"Find Installation" = "Pronađi instalaciju";
+
+/* Title of window */
+"Find your Freenet installation" = "Pronađite svoju Freenet instalaciju";
+
+/* Application Name */
+"Freenet" = "Freenet";
+
+/* Title of window */
+"Freenet Uninstalled" = "Freenet deinstaliran";
+
+/* String informing the user that Freenet uninstallation succeeded */
+"Freenet has been completely uninstalled" = "Freenet je u potpunosti deinstaliran";
+
+/* Button title */
+"Install Freenet" = "Instaliraj Freenet";
+
+/* No comment provided by engineer. */
+"Quit" = "Izlaz";
+
+/* Button title */
+"Start Freenet" = "Pokreni Freenet";
+
