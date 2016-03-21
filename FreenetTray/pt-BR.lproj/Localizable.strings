@@ -65,9 +65,6 @@
 /* Button title */
 "OK" = "OK";
 
-/* Button title */
-"Open pastebin.com" = "Abrir o pastebin.com";
-
 /* No comment provided by engineer. */
 "Quit" = "Sair";
 
@@ -82,9 +79,6 @@
 
 /* Button title */
 "Stop Freenet" = "Parar Freenet";
-
-/* String informing the user that the installation log is in their clipboard */
-"The installation log has been copied to your clipboard" = "O log da instalação foi copiado para a área de transferência";
 
 /* Button title */
 "Uninstall Freenet" = "Desinstalar Freenet";

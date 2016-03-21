@@ -10,9 +10,6 @@
 /* Class = "NSMenuItem"; title = "Settings"; ObjectID = "Ppa-6x-BP2"; Note = "Menu item title"; */
 "Ppa-6x-BP2.title" = "Configurações";
 
-/* Class = "NSMenuItem"; title = "Uninstall Freenet"; ObjectID = "Qjd-CJ-2Gt"; Note = "Menu item title"; */
-"Qjd-CJ-2Gt.title" = "Desinstalar Freenet";
-
 /* Class = "NSMenuItem"; title = "Start Freenet"; ObjectID = "UpL-Lb-jBl"; Note = "Menu item title"; */
 "UpL-Lb-jBl.title" = "Iniciar Freenet";
 

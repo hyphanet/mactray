@@ -4,8 +4,8 @@
 /* Class = "NSTextFieldCell"; title = "Installing Java"; ObjectID = "Hga-mV-cuv"; */
 "Hga-mV-cuv.title" = "Instalando o Java";
 
-/* Class = "NSTextFieldCell"; title = "Finished, please click continue"; ObjectID = "RGl-Cl-cH4"; */
-"RGl-Cl-cH4.title" = "Finalizado, por favor, clique em continuar";
+/* Class = "NSTextFieldCell"; title = "Finished, please click Continue"; ObjectID = "RGl-Cl-cH4"; */
+"RGl-Cl-cH4.title" = "Finalizado, por favor, clique em Continuar";
 
 /* Class = "NSTextFieldCell"; title = "Starting Node..."; ObjectID = "ToQ-oU-rUc"; */
 "ToQ-oU-rUc.title" = "Inicializando o nó...";
