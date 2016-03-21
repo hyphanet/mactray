@@ -1,0 +1,114 @@
+/* String informing the user that no Freenet installation could be found */
+"A Freenet installation could not be found." = "Kunne ikke finne noen Freenet-installasjon";
+
+/* String asking the user if they want to cancel the installation */
+"Are you sure you want to cancel?" = "Bekreft avbryting.";
+
+/* Button title */
+"Cancel" = "Avbryt";
+
+/* String informing the user that they do not have permission to write to the selected directory */
+"Cannot install to this directory, write permission denied" = "Kan ikke installere i denne mappen, skriverettigheter nektet";
+
+/* String informing the user that the selected directory is not empty */
+"Directory is not empty" = "Mappen er ikke tom";
+
+/* Button title */
+"Find Installation" = "Finn installasjon";
+
+/* Title of window */
+"Find your Freenet installation" = "Finn din Freenet-installasjon";
+
+/* Application Name */
+"Freenet" = "Freenet";
+
+/* Title of window */
+"Freenet Uninstalled" = "Freenet avinstallert";
+
+/* String informing the user that Freenet uninstallation succeeded */
+"Freenet has been completely uninstalled" = "Freenet har blitt fullstending avinstallert";
+
+/* String informing the user that the selected location is an existing Freenet installation */
+"Freenet is already installed here" = "Freenet er allerede installert her";
+
+/* String asking the user if they would like to install Java */
+"Freenet requires Java, would you like to install it now?" = "Freenet krever Java, ønsker du å installere det nå?";
+
+/* Button title */
+"Install Freenet" = "Installer Freenet";
+
+/* Button title */
+"Install Java" = "Installer Java";
+
+/* Button title */
+"Install here" = "Installer her";
+
+/* String informing the user that the installation failed */
+"Installation failed" = "Installasjon feilet";
+
+/* String informing the user that an installation is in progress */
+"Installation in progress" = "Installasjon underveis";
+
+/* String informing the user that Java was not found */
+"Java not found" = "Fant ikke Java";
+
+/* Button title */
+"No" = "Nei";
+
+/* String informing the user that no Freenet installation was found and that they must delete the files manually if needed */
+"No Freenet installation was found, please delete the files manually if needed" = "Ingen Freenet-installasjon funnet, slett filene manuelt ved behov";
+
+/* String informing the user that the selected location is not a Freenet installation */
+"Not a valid Freenet installation" = "Ikke en gyldig Freenet-installasjon";
+
+/* Button title */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Quit" = "Avslutt";
+
+/* Button title */
+"Select Freenet installation" = "Velg Freenet-installasjon";
+
+/* Title of window */
+"Select a location to install Freenet" = "Velg en mappe å installere Freenet i";
+
+/* Button title */
+"Start Freenet" = "Start Freenet";
+
+/* Button title */
+"Stop Freenet" = "Stopp Freenet";
+
+/* String asking the user to provide the Gist link to the Freenet developers */
+"The installation log can be automatically uploaded to GitHub. Please report this failure to the Freenet developers and provide the GitHub link to them." = "Installasjonsloggen kan lastes opp automatisk til GItHub. Rapporter denne feilen til Freenet-utviklerne og gi dem GitHub-lenken.";
+
+/* String informing the user that the log upload failed */
+"The installation log could not be uploaded to GitHub, it has been placed on your desktop instead. Please report this failure to the Freenet developers and provide the file to them." = "Innstallasjonsloggen kunne ikke lastes opp til GItHub. Den har blitt plassert på skrivebordet i steden for. Rapporter denne feilen til Freenet-utviklerne, og gi dem fila.";
+
+/* Button title */
+"Uninstall Freenet" = "Avinstaller Freenet";
+
+/* Title of window */
+"Uninstall Freenet now?" = "Avinstaller Freenet nå?";
+
+/* Title of window */
+"Uninstalling Freenet failed" = "Avinstallering av Freenet feilet";
+
+/* String asking the user whether they would like to uninstall freenet */
+"Uninstalling Freenet is immediate and irreversible, are you sure you want to uninstall Freenet now?" = "Avinstallasjon av Freenet skjer umiddelbart og kan ikke angres, bekreft avinstallering av Freenet nå.";
+
+/* Button title */
+"Upload" = "Last opp";
+
+/* String informing the user that the upload failed */
+"Upload failed" = "Opplasting feilet";
+
+/* Button title */
+"Visit the Freenet Website" = "Besøk Freenet-nettsiden";
+
+/* String asking the user whether they would like to install freenet or locate an existing installation */
+"Would you like to install Freenet now, or locate an existing Freenet installation?" = "Ønsker du å installere Freenet nå, eller å finne en eksisterende Freenet-installasjon?";
+
+/* Button title */
+"Yes" = "Ja";
+

@@ -1,0 +1,9 @@
+/* Class = "NSTextFieldCell"; title = "The default location is recommended for most users"; ObjectID = "AJD-SM-aWC"; */
+"AJD-SM-aWC.title" = "Forvalgt plassering er anbefalt for de fleste brukere";
+
+/* Class = "NSButtonCell"; title = "Change Install Location"; ObjectID = "Yd7-Xj-YrX"; Note = "Button title"; */
+"Yd7-Xj-YrX.title" = "Endre installasjonsmappe";
+
+/* Class = "NSTextFieldCell"; title = "Where do you want to install Freenet?"; ObjectID = "voQ-z0-pMI"; Note = "Window title"; */
+"voQ-z0-pMI.title" = "Hvor ønsker du å installere Freenet?";
+
