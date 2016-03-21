@@ -1,0 +1,18 @@
+/* Class = "NSTextFieldCell"; title = "Installing Freenet"; ObjectID = "95e-76-m1K"; Note = "Window title"; */
+"95e-76-m1K.title" = "安裝Freenet";
+
+/* Class = "NSTextFieldCell"; title = "Installing Java"; ObjectID = "Hga-mV-cuv"; */
+"Hga-mV-cuv.title" = "安裝Java";
+
+/* Class = "NSTextFieldCell"; title = "Finished, please click Continue"; ObjectID = "RGl-Cl-cH4"; */
+"RGl-Cl-cH4.title" = "完成,請點擊繼續鍵";
+
+/* Class = "NSTextFieldCell"; title = "Starting Node..."; ObjectID = "ToQ-oU-rUc"; */
+"ToQ-oU-rUc.title" = "開啟節點";
+
+/* Class = "NSTextFieldCell"; title = "Setting Up Ports"; ObjectID = "cov-1I-ShA"; */
+"cov-1I-ShA.title" = "設定埠號";
+
+/* Class = "NSTextFieldCell"; title = "Copying Files"; ObjectID = "pT7-X7-u4Z"; */
+"pT7-X7-u4Z.title" = "複製檔案";
+
