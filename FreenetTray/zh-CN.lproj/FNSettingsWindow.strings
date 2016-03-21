@@ -25,6 +25,9 @@
 /* Class = "NSTextFieldCell"; title = "Installation Not Found"; ObjectID = "s3Z-Gq-qbd"; Note = "Warning message"; */
 "s3Z-Gq-qbd.title" = "安装位置未发现";
 
-/* Class = "NSTextFieldCell"; placeholderString = "N/A"; ObjectID = "yYV-ge-5yY"; Note = "Abbreviated string meaning \"not available\""; */
+/* Class = "NSButtonCell"; title = "Uninstall"; ObjectID = "y1F-Ro-TAn"; Note = "Button title"; */
+"y1F-Ro-TAn.title" = "卸载";
+
+/* Class = "NSTextFieldCell"; placeholderString = "N/A"; ObjectID = "yYV-ge-5yY"; Note = "Abbreviated string meaning not available"; */
 "yYV-ge-5yY.placeholderString" = "不可用";
 

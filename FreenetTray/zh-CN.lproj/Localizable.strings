@@ -64,9 +64,6 @@
 /* Button title */
 "OK" = "确定";
 
-/* Button title */
-"Open pastebin.com" = "打开 pastebin.com";
-
 /* No comment provided by engineer. */
 "Quit" = "退出";
 
@@ -82,8 +79,11 @@
 /* Button title */
 "Stop Freenet" = "停止 Freenet";
 
-/* String informing the user that the installation log is in their clipboard */
-"The installation log has been copied to your clipboard" = "安装日志已复制到您的剪贴板";
+/* String asking the user to provide the Gist link to the Freenet developers */
+"The installation log can be automatically uploaded to GitHub. Please report this failure to the Freenet developers and provide the GitHub link to them." = "可以自动报告安装日志到 GitHub。请将此次失败报告给 Freenet 开发组，并提供该 GitHub 链接。";
+
+/* String informing the user that the log upload failed */
+"The installation log could not be uploaded to GitHub, it has been placed on your desktop instead. Please report this failure to the Freenet developers and provide the file to them." = "安装日志未能上传到 GitHub，它已转为放置在您的桌面。请将此次失败报告给 Freenet 开发组，并提供该文件。";
 
 /* Button title */
 "Uninstall Freenet" = "卸载 Freenet";
@@ -96,6 +96,12 @@
 
 /* String asking the user whether they would like to uninstall freenet */
 "Uninstalling Freenet is immediate and irreversible, are you sure you want to uninstall Freenet now?" = "卸载 Freenet 是即时并且不可逆的，您确定要继续卸载 Freenet？";
+
+/* Button title */
+"Upload" = "上传";
+
+/* String informing the user that the upload failed */
+"Upload failed" = "上传失败";
 
 /* Button title */
 "Visit the Freenet Website" = "访问 Freenet 网站";
