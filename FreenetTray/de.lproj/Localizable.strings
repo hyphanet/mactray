@@ -1,0 +1,99 @@
+/* String informing the user that no Freenet installation could be found */
+"A Freenet installation could not be found." = "Es konnte keine Freenetinstallation gefunden werden.";
+
+/* String asking the user if they want to cancel the installation */
+"Are you sure you want to cancel?" = "Sind Sie sich sicher, dass Sie abbrechen wollen?";
+
+/* Button title */
+"Cancel" = "Abbrechen";
+
+/* String informing the user that they do not have permission to write to the selected directory */
+"Cannot install to this directory, write permission denied" = "Installation in diesem Verzeichniss nicht möglich, die Schreibberechtigung wurde verwehrt";
+
+/* String informing the user that the selected directory is not empty */
+"Directory is not empty" = "Verzeichniss ist nicht leer";
+
+/* Button title */
+"Find Installation" = "Finde Installation";
+
+/* Title of window */
+"Find your Freenet installation" = "Finde deine Freenet Installation";
+
+/* Application Name */
+"Freenet" = "Freenet";
+
+/* Title of window */
+"Freenet Uninstalled" = "Freenet deinstalliert";
+
+/* String informing the user that Freenet uninstallation succeeded */
+"Freenet has been completely uninstalled" = "Freenet wurde vollständig deinstalliert";
+
+/* String informing the user that the selected location is an existing Freenet installation */
+"Freenet is already installed here" = "Freenet ist hier bereits installiert";
+
+/* String asking the user if they would like to install Java */
+"Freenet requires Java, would you like to install it now?" = "Freenet benötigt Java, soll es jetzt installiert werden?";
+
+/* Button title */
+"Install Freenet" = "Freenet installieren";
+
+/* Button title */
+"Install Java" = "Java installieren";
+
+/* Button title */
+"Install here" = "Hier installieren";
+
+/* String informing the user that the installation failed */
+"Installation failed" = "Installation fehlgeschlagen";
+
+/* String informing the user that an installation is in progress */
+"Installation in progress" = "Installation wird durchgeführt";
+
+/* String informing the user that Java was not found */
+"Java not found" = "Java wurde nicht gefunden";
+
+/* Button title */
+"No" = "Nein";
+
+/* String informing the user that no Freenet installation was found and that they must delete the files manually if needed */
+"No Freenet installation was found, please delete the files manually if needed" = "Es wurde keine Freenetinstallation gefunden, bitte löschen Sie wenn nötig die Dateien manuell";
+
+/* String informing the user that the selected location is not a Freenet installation */
+"Not a valid Freenet installation" = "Keine gültige Freenet-Installation";
+
+/* Button title */
+"OK" = "OK";
+
+/* No comment provided by engineer. */
+"Quit" = "Beenden";
+
+/* Button title */
+"Select Freenet installation" = "Freenet-Installation auswählen";
+
+/* Title of window */
+"Select a location to install Freenet" = "Ein Installationsverzeichniss für Freenet wählen";
+
+/* Button title */
+"Start Freenet" = "Starte Freenet";
+
+/* Button title */
+"Stop Freenet" = "Halte Freenet an";
+
+/* Button title */
+"Uninstall Freenet" = "Freenet deinstallieren";
+
+/* Title of window */
+"Uninstalling Freenet failed" = "Deinstallation von Freenet fehlgeschlagen";
+
+/* String asking the user whether they would like to uninstall freenet */
+"Uninstalling Freenet is immediate and irreversible, are you sure you want to uninstall Freenet now?" = "Die Deinstallation von Freenet ist unumkehrbar, sind Sie sich sicher, dass Sie Freenet jetzt deinstallieren wollen?";
+
+/* Button title */
+"Visit the Freenet Website" = "Die Freenet Webseite besuchen";
+
+/* String asking the user whether they would like to install freenet or locate an existing installation */
+"Would you like to install Freenet now, or locate an existing Freenet installation?" = "Wollen Sie Freenet jetzt installieren, oder wollen Sie eine vorhandene Installation finden?";
+
+/* Button title */
+"Yes" = "Ja";
+
