@@ -1,0 +1,33 @@
+/* Class = "NSButtonCell"; title = "Find Installation"; ObjectID = "8M7-Tl-FUW"; Note = "Button title"; */
+"8M7-Tl-FUW.title" = "Trouver l'installation";
+
+/* Class = "NSButtonCell"; title = "Start Freenet automatically"; ObjectID = "9kj-pP-3mQ"; Note = "Option title"; */
+"9kj-pP-3mQ.title" = "Démarrer Freenet automatiquement";
+
+/* Class = "NSTextFieldCell"; title = "FCP Available:"; ObjectID = "ERq-8v-P2V"; Note = "Status title"; */
+"ERq-8v-P2V.title" = "FCP proposé :";
+
+/* Class = "NSWindow"; title = "Freenet Settings"; ObjectID = "F0z-JX-Cv5"; Note = "Window title"; */
+"F0z-JX-Cv5.title" = "Paramètres Freenet";
+
+/* Class = "NSButtonCell"; title = "Start tray app when I log in"; ObjectID = "LpL-CZ-4IY"; Note = "Option title"; */
+"LpL-CZ-4IY.title" = "Démarrer l'appli de la zone de notification lorsque je me connecte";
+
+/* Class = "NSTextFieldCell"; title = "Node Running:"; ObjectID = "cBb-Zz-MzQ"; Note = "Status title"; */
+"cBb-Zz-MzQ.title" = "Nœud actif :";
+
+/* Class = "NSTextFieldCell"; title = "Build:"; ObjectID = "mb8-58-B4t"; Note = "Status title"; */
+"mb8-58-B4t.title" = "Version :";
+
+/* Class = "NSBox"; title = "Freenet Node Status"; ObjectID = "ob6-zL-REv"; Note = "Box title"; */
+"ob6-zL-REv.title" = "État des nœuds Freenet";
+
+/* Class = "NSTextFieldCell"; title = "Installation Not Found"; ObjectID = "s3Z-Gq-qbd"; Note = "Warning message"; */
+"s3Z-Gq-qbd.title" = "Installation introuvable";
+
+/* Class = "NSButtonCell"; title = "Uninstall"; ObjectID = "y1F-Ro-TAn"; Note = "Button title"; */
+"y1F-Ro-TAn.title" = "Désinstaller";
+
+/* Class = "NSTextFieldCell"; placeholderString = "N/A"; ObjectID = "yYV-ge-5yY"; Note = "Abbreviated string meaning not available"; */
+"yYV-ge-5yY.placeholderString" = "ND";
+

@@ -1,0 +1,9 @@
+/* Class = "NSButtonCell"; title = "Continue"; ObjectID = "28s-Ha-tdi"; Note = "Button title"; */
+"28s-Ha-tdi.title" = "Continuer";
+
+/* Class = "NSWindow"; title = "Install Freenet"; ObjectID = "F0z-JX-Cv5"; Note = "Window title"; */
+"F0z-JX-Cv5.title" = "Installer Freenet";
+
+/* Class = "NSButtonCell"; title = "Go Back"; ObjectID = "RQg-ip-faV"; Note = "Button title"; */
+"RQg-ip-faV.title" = "Retour";
+
