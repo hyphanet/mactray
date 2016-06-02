@@ -118,31 +118,6 @@ rm -f sha1test.jar
 fi
 cat >$CAFILE << EOF
 -----BEGIN CERTIFICATE-----
-MIIELzCCAxegAwIBAgILBAAAAAABL07hNwIwDQYJKoZIhvcNAQEFBQAwVzELMAkG
-A1UEBhMCQkUxGTAXBgNVBAoTEEdsb2JhbFNpZ24gbnYtc2ExEDAOBgNVBAsTB1Jv
-b3QgQ0ExGzAZBgNVBAMTEkdsb2JhbFNpZ24gUm9vdCBDQTAeFw0xMTA0MTMxMDAw
-MDBaFw0yMjA0MTMxMDAwMDBaMC4xETAPBgNVBAoTCEFscGhhU1NMMRkwFwYDVQQD
-ExBBbHBoYVNTTCBDQSAtIEcyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKC
-AQEAw/BliN8b3caChy/JC7pUxmM/RnWsSxQfmHKLHBD/CalSbi9l32WEP1+Bstjx
-T9fwWrvJr9Ax3SZGKpme2KmjtrgHxMlx95WE79LqH1Sg5b7kQSFWMRBkfR5jjpxx
-XDygLt5n3MiaIPB1yLC2J4Hrlw3uIkWlwi80J+zgWRJRsx4F5Tgg0mlZelkXvhpL
-OQgSeTObZGj+WIHdiAxqulm0ryRPYeDK/Bda0jxyq6dMt7nqLeP0P5miTcgdWPh/
-UzWO1yKIt2F2CBMTaWawV1kTMQpwgiuT1/biQBXQHQFyxxNYalrsGYkWPODIjYYq
-+jfwNTLd7OX+gI73BWe0i0J1NQIDAQABo4IBIzCCAR8wDgYDVR0PAQH/BAQDAgEG
-MBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFBTqGVXwDg0yxh90M7eOZhpM
-EjEeMEUGA1UdIAQ+MDwwOgYEVR0gADAyMDAGCCsGAQUFBwIBFiRodHRwczovL3d3
-dy5hbHBoYXNzbC5jb20vcmVwb3NpdG9yeS8wMwYDVR0fBCwwKjAooCagJIYiaHR0
-cDovL2NybC5nbG9iYWxzaWduLm5ldC9yb290LmNybDA9BggrBgEFBQcBAQQxMC8w
-LQYIKwYBBQUHMAGGIWh0dHA6Ly9vY3NwLmdsb2JhbHNpZ24uY29tL3Jvb3RyMTAf
-BgNVHSMEGDAWgBRge2YaRQ2XyolQL30EzTSo//z9SzANBgkqhkiG9w0BAQUFAAOC
-AQEABjBCm89JAn6J6fWDWj0C87yyRt5KUO65mpBz2qBcJsqCrA6ts5T6KC6y5kk/
-UHcOlS9o82U8nxTyaGCStvwEDfakGKFpYA3jnWhbvJ4LOFmNIdoj+pmKCbkfpy61
-VWxH50Hs5uJ/r1VEOeCsdO5l0/qrUUgw8T53be3kD0CY7kd/jbZYJ82Sb2AjzAKb
-WSh4olGd0Eqc5ZNemI/L7z/K/uCvpMlbbkBYpZItvV1lVcW/fARB2aS1gOmUYAIQ
-OGoICNdTHC2Tr8kTe9RsxDrE+4CsuzpOVHrNTrM+7fH8EU6f9fMUvLmxMc72qi+l
-+MPpZqmyIJ3E+LgDYqeF0RhjWw==
------END CERTIFICATE-----
------BEGIN CERTIFICATE-----
 MIIDdTCCAl2gAwIBAgILBAAAAAABFUtaw5QwDQYJKoZIhvcNAQEFBQAwVzELMAkG
 A1UEBhMCQkUxGTAXBgNVBAoTEEdsb2JhbFNpZ24gbnYtc2ExEDAOBgNVBAsTB1Jv
 b3QgQ0ExGzAZBgNVBAMTEkdsb2JhbFNpZ24gUm9vdCBDQTAeFw05ODA5MDExMjAw
@@ -170,7 +145,7 @@ then
 	# Pin the certificate file.
 	# Curl will use the system --capath if we don't specify one.
 	# FIXME --capath / is safe (there shouldn't be any certs in it, regular users can't write to it, etc), /var/empty would be more obvious but might break if some future curl checks existence?
-	DOWNLOADER="curl --cacert $CAFILE -q -f -L -O "
+	DOWNLOADER="curl --capath / --cacert $CAFILE -q -f -L -O "
 else
 	DOWNLOADER="wget -o /dev/null --ca-certificate $CAFILE -N "
 fi
@@ -295,11 +270,11 @@ else
 		cat wrapper.conf | sed "/bcprov-jdk15on-151/d" > wrapper.conf.new
 		mv wrapper.conf.new wrapper.conf
 	fi
-    if grep bcprov-jdk15on-152.jar wrapper.conf > /dev/null; then
-        echo wrapper.conf contains both bouncycastle 152 and 154, deleting 152
-        cat wrapper.conf | sed "/bcprov-jdk15on-152/d" > wrapper.conf.new
-        mv wrapper.conf.new wrapper.conf
-    fi
+	if grep bcprov-jdk15on-152.jar wrapper.conf > /dev/null; then
+		echo wrapper.conf contains both bouncycastle 152 and 154, deleting 152
+		cat wrapper.conf | sed "/bcprov-jdk15on-152/d" > wrapper.conf.new
+		mv wrapper.conf.new wrapper.conf
+	fi
 fi
 
 if ! grep wrapper.jar wrapper.conf > /dev/null
