@@ -9,7 +9,7 @@ chmod u+x bin/* lib/*
 chmod a+rx update.sh
 
 # Create symlink for freenet.jar
-ln -s freenet-testing-latest.jar freenet.jar
+ln -s freenet-stable-latest.jar freenet.jar
 
 # set localization automatically
 echo "node.l10n=$LANG_SHORTCODE" >> freenet.ini
