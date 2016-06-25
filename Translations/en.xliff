@@ -163,7 +163,7 @@
         <source>FreenetTray</source>
       </trans-unit>
       <trans-unit id="CFBundleShortVersionString">
-        <source>2.0.5</source>
+        <source>2.0.6</source>
       </trans-unit>
       <trans-unit id="NSHumanReadableCopyright">
         <source>See the Acknowledgements file included with this app for license and copyright information</source>
@@ -338,7 +338,7 @@
         <source>$(PRODUCT_NAME)</source>
       </trans-unit>
       <trans-unit id="CFBundleShortVersionString">
-        <source>2.0.5</source>
+        <source>2.0.6</source>
       </trans-unit>
     </body>
   </file>
