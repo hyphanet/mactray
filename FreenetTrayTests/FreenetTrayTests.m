@@ -67,6 +67,7 @@
 }
 
 -(void)test_createGist {
+    // NOTE: This test sometimes fails on CI servers, Github returns a 403 error.
     XCTestExpectation *expectation = [self expectationWithDescription:@"test_createPaste"];
 
     [FNHelpers createGist:@"test" withTitle:@"test" success:^(NSURL *url) {
