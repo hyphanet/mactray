@@ -3,7 +3,7 @@ platform :osx, '10.8'
 target 'FreenetTray' do
     use_frameworks!
     pod 'IYLoginItem', '0.1'
-    pod 'CocoaAsyncSocket', '7.4.3'
+    pod 'CocoaAsyncSocket', '7.5.0'
     pod 'RegexKitLite', '4.0'
     pod 'DCOAboutWindow', '0.2.0'
     pod 'MHWDirectoryWatcher', '0.0.6'
