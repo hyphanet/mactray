@@ -29,7 +29,6 @@ typedef NS_ENUM(NSInteger, FCPConnectionState) {
 
 @interface FNFCPWrapper ()
 @property GCDAsyncSocket *nodeSocket;
-@property dispatch_queue_t nodeQueue;
 @property enum FCPConnectionState connectionState;
 
 -(void)sendFCPMessage:(NSString *)message withTag:(long)tag;
@@ -43,8 +42,7 @@ typedef NS_ENUM(NSInteger, FCPConnectionState) {
     self = [super init];
     if (self) {
         self.connectionState = FCPConnectionStateDisconnected;
-        self.nodeQueue = dispatch_queue_create("com.freenet.tray.fcpqueue", DISPATCH_QUEUE_SERIAL);
-        self.nodeSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:self.nodeQueue];
+        self.nodeSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     }
     return self;
 }
