@@ -291,6 +291,29 @@
     });
 }
 
+-(void)didReceiveUserAlert:(NSDictionary *)nodeUserAlert {
+
+    NSUserNotification *notification = [[NSUserNotification alloc] init];
+    
+    NSString *command = nodeUserAlert[@"Command"];
+    // N2N messages are handled differently, we want to grab the substring of the response that contains the
+    // actual message since display space is limited in the notification popups
+    if ([command isEqualToString:@"TextFeed"]) {
+        notification.title = nodeUserAlert[@"ShortText"];
+        NSInteger textLength = [nodeUserAlert[@"TextLength"] integerValue];
+        NSInteger messageLength = [nodeUserAlert[@"MessageTextLength"] integerValue];
+        NSString *message = [nodeUserAlert[@"Data"] substringWithRange:NSMakeRange(textLength - messageLength - 1, messageLength +1)];
+        notification.informativeText = message;
+    }
+    else {
+        notification.title = nodeUserAlert[@"Header"];
+        notification.informativeText = nodeUserAlert[@"Data"];
+    }
+    notification.soundName = NSUserNotificationDefaultSoundName;
+
+    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
+}
+
 #pragma mark - FNFCPWrapperDataSource methods
 
 -(NSURL *)nodeFCPURL {
