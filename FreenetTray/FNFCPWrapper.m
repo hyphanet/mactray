@@ -122,7 +122,6 @@ typedef NS_ENUM(NSInteger, FCPResponseState) {
     [clientHello appendString:@"EndMessage"];
     [clientHello appendString:lf];
     [self sendFCPMessage:clientHello];
-    NSLog(@"Sent ClientHello");
 }
 
 -(void)getNode {
@@ -135,7 +134,6 @@ typedef NS_ENUM(NSInteger, FCPResponseState) {
     [getNode appendString:@"EndMessage"];
     [getNode appendString:lf];
     [self sendFCPMessage:getNode];
-    NSLog(@"Sent GetNode");
 }
 
 -(void)watchFeeds:(BOOL)enabled {
@@ -148,7 +146,6 @@ typedef NS_ENUM(NSInteger, FCPResponseState) {
     [watchFeeds appendString:@"EndMessage"];
     [watchFeeds appendString:lf];
     [self sendFCPMessage:watchFeeds];
-    NSLog(@"Sent WatchFeeds");
 }
 
 #pragma mark - Message and response handling
