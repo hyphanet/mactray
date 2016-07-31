@@ -14,11 +14,6 @@
 
 #import <dispatch/dispatch.h>
 
-static const long FCPCommandClientHelloTag = 0;
-static const long FCPCommandGetNodeTag = 1;
-
-static NSString *FCPResponseTerminationString = @"EndMessage\n";
-
 #pragma mark - Node state
 
 typedef NS_ENUM(NSInteger, FCPConnectionState) {
@@ -27,12 +22,26 @@ typedef NS_ENUM(NSInteger, FCPConnectionState) {
     FCPConnectionStateReady           =  2
 };
 
+
+typedef NS_ENUM(NSInteger, FCPResponseState) {
+    FCPResponseStateUnknown         =  0,
+    FCPResponseStateReady           =  1,
+    FCPResponseStateHeader          =  2,
+    FCPResponseStateData            =  3
+
+};
+
 @interface FNFCPWrapper ()
 @property GCDAsyncSocket *nodeSocket;
 @property enum FCPConnectionState connectionState;
+@property enum FCPResponseState responseState;
+@property NSMutableDictionary *response;
+@property BOOL commandExecuting;
+@property BOOL isWatchingFeeds;
 
--(void)sendFCPMessage:(NSString *)message withTag:(long)tag;
+-(void)sendFCPMessage:(NSString *)message;
 -(NSDictionary *)parseFCPResponse:(NSData *)data;
+-(NSString *)parseFCPHeader:(NSData *)data;
 
 @end
 
@@ -42,6 +51,10 @@ typedef NS_ENUM(NSInteger, FCPConnectionState) {
     self = [super init];
     if (self) {
         self.connectionState = FCPConnectionStateDisconnected;
+        self.responseState = FCPResponseStateReady;
+        self.response = [NSMutableDictionary new];
+        self.isWatchingFeeds = NO;
+        self.commandExecuting = NO;
         self.nodeSocket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:dispatch_get_main_queue()];
     }
     return self;
@@ -65,29 +78,26 @@ typedef NS_ENUM(NSInteger, FCPConnectionState) {
                     break;
                 }
                 case FCPConnectionStateConnected: {
-                    NSString *lf = [[NSString alloc] initWithData:[GCDAsyncSocket LFData] encoding:NSUTF8StringEncoding];
-                    NSMutableString *clientHello = [NSMutableString new];
-                    [clientHello appendString:@"ClientHello"];
-                    [clientHello appendString:lf];
-                    [clientHello appendString:@"Name=FreenetTray"];
-                    [clientHello appendString:lf];
-                    [clientHello appendString:@"ExpectedVersion=2.0"];
-                    [clientHello appendString:lf];
-                    [clientHello appendString:@"EndMessage"];
-                    [clientHello appendString:lf];  
-                    [self sendFCPMessage:clientHello withTag:FCPCommandClientHelloTag];
+                    if (!self.commandExecuting) {
+                        [self clientHello];
+                        self.commandExecuting = NO;
+                    }
+
                     break;
                 }
                 case FCPConnectionStateReady: {
-                    NSString *lf = [[NSString alloc] initWithData:[GCDAsyncSocket LFData] encoding:NSUTF8StringEncoding];
-                    NSMutableString *getNode = [NSMutableString new];
-                    [getNode appendString:@"GetNode"];
-                    [getNode appendString:lf];
-                    [getNode appendString:@"WithVolatile=true"];
-                    [getNode appendString:lf];
-                    [getNode appendString:@"EndMessage"];
-                    [getNode appendString:lf];  
-                    [self sendFCPMessage:getNode withTag:FCPCommandGetNodeTag];  
+                    if (!self.commandExecuting) {
+                        if (!self.isWatchingFeeds) {
+                            [self watchFeeds:YES];
+                            self.isWatchingFeeds = YES;
+                            self.commandExecuting = NO;
+
+                        }
+                        else {
+                            [self getNode];
+                            self.commandExecuting = NO;
+                        }
+                    }
                     break;
                 }
                 default: {
@@ -100,11 +110,52 @@ typedef NS_ENUM(NSInteger, FCPConnectionState) {
     });
 }
 
+-(void)clientHello {
+    NSString *lf = [[NSString alloc] initWithData:[GCDAsyncSocket LFData] encoding:NSUTF8StringEncoding];
+    NSMutableString *clientHello = [NSMutableString new];
+    [clientHello appendString:@"ClientHello"];
+    [clientHello appendString:lf];
+    [clientHello appendString:@"Name=FreenetTray"];
+    [clientHello appendString:lf];
+    [clientHello appendString:@"ExpectedVersion=2.0"];
+    [clientHello appendString:lf];
+    [clientHello appendString:@"EndMessage"];
+    [clientHello appendString:lf];
+    [self sendFCPMessage:clientHello];
+    NSLog(@"Sent ClientHello");
+}
+
+-(void)getNode {
+    NSString *lf = [[NSString alloc] initWithData:[GCDAsyncSocket LFData] encoding:NSUTF8StringEncoding];
+    NSMutableString *getNode = [NSMutableString new];
+    [getNode appendString:@"GetNode"];
+    [getNode appendString:lf];
+    [getNode appendString:@"WithVolatile=true"];
+    [getNode appendString:lf];
+    [getNode appendString:@"EndMessage"];
+    [getNode appendString:lf];
+    [self sendFCPMessage:getNode];
+    NSLog(@"Sent GetNode");
+}
+
+-(void)watchFeeds:(BOOL)enabled {
+    NSString *lf = [[NSString alloc] initWithData:[GCDAsyncSocket LFData] encoding:NSUTF8StringEncoding];
+    NSMutableString *watchFeeds = [NSMutableString new];
+    [watchFeeds appendString:@"WatchFeeds"];
+    [watchFeeds appendString:lf];
+    [watchFeeds appendString:@"Enabled=true"];
+    [watchFeeds appendString:lf];
+    [watchFeeds appendString:@"EndMessage"];
+    [watchFeeds appendString:lf];
+    [self sendFCPMessage:watchFeeds];
+    NSLog(@"Sent WatchFeeds");
+}
+
 #pragma mark - Message and response handling
 
--(void)sendFCPMessage:(NSString *)message withTag:(long)tag {   
-    [self.nodeSocket writeData:[message dataUsingEncoding:NSUTF8StringEncoding] withTimeout:5 tag:tag];
-    [self.nodeSocket readDataToData:[FCPResponseTerminationString dataUsingEncoding:NSUTF8StringEncoding] withTimeout:5 tag:tag];
+-(void)sendFCPMessage:(NSString *)message {
+    [self.nodeSocket writeData:[message dataUsingEncoding:NSUTF8StringEncoding] withTimeout:5 tag:-1];
+    [self.nodeSocket readDataToData:[GCDAsyncSocket LFData] withTimeout:5 tag:-1];
 }
 
 -(NSDictionary *)parseFCPResponse:(NSData *)data {
@@ -126,6 +177,13 @@ typedef NS_ENUM(NSInteger, FCPConnectionState) {
     return nodeResponse;
 }
 
+-(NSString *)parseFCPHeader:(NSData *)data {
+    NSString *rawResponse = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    
+    return [rawResponse stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+}
+
+
 #pragma mark - GCDAsyncSocketDelegate methods
 
 -(void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port {
@@ -134,34 +192,85 @@ typedef NS_ENUM(NSInteger, FCPConnectionState) {
 
 -(void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
     self.connectionState = FCPConnectionStateDisconnected;
+    self.responseState = FCPResponseStateReady;
     [self.delegate didDisconnect];
+    self.response = [NSMutableDictionary new];
+    self.isWatchingFeeds = NO;
+    self.commandExecuting = NO;
 }
 
 -(void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
-    switch (tag) {
-        case FCPCommandClientHelloTag: {
-            NSDictionary *nodeHello = [self parseFCPResponse:data];
-            self.connectionState = FCPConnectionStateReady;
-            if (self.delegate != nil) {
-                [self.delegate didReceiveNodeHello:nodeHello];
+    switch (self.responseState) {
+        case FCPResponseStateReady: {
+            self.response = [NSMutableDictionary new];
+
+            self.response[@"Command"] = [self parseFCPHeader:data];
+            self.responseState = FCPResponseStateHeader;
+            [self.nodeSocket readDataToData:[GCDAsyncSocket LFData] withTimeout:5 tag:-1];
+            break;
+        }
+        case FCPResponseStateHeader: {
+            NSDictionary *resp = [self parseFCPResponse:data];
+            [self.response addEntriesFromDictionary:resp];
+            if ([resp.allKeys.firstObject isEqualToString:@"Data"]) {
+                NSString *length = self.response[@"DataLength"];
+                self.responseState = FCPResponseStateData;
+                [self.nodeSocket readDataToLength:length.integerValue withTimeout:5 tag:-1];
+            }
+            else if ([resp.allKeys.firstObject isEqualToString:@"EndMessage"]) {
+                self.responseState = FCPResponseStateReady;
+                [self processFCPResponse];
+            }
+            else {
+                [self.nodeSocket readDataToData:[GCDAsyncSocket LFData] withTimeout:5 tag:-1];
             }
             break;
         }
-        case FCPCommandGetNodeTag: {
-            NSDictionary *nodeStats = [self parseFCPResponse:data];
-            if (self.delegate != nil) {
-                [self.delegate didReceiveNodeStats:nodeStats];
-            }
+        case FCPResponseStateData: {
+            NSString *message = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            self.response[@"Data"] = message;
+            [self processFCPResponse];
+            self.responseState = FCPResponseStateReady;
             break;
         }
-        default: {
+        default:
+            NSLog(@"############## WARNING ##################");
+            NSLog(@"UNPROCESSED PACKET RECEIVED:");
+            NSString *message = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            NSLog(@"%@", message);
+            NSLog(@"############## WARNING ##################");
+
+            self.responseState = FCPResponseStateReady;
             break;
-        }
     }
 }
 
--(void)socket:(GCDAsyncSocket *)sock didReadPartialDataOfLength:(NSUInteger)partialLength tag:(long)tag {
-
+-(void)processFCPResponse {
+    if ([self.response[@"Command"] isEqualToString:@"NodeHello"]) {
+        self.connectionState = FCPConnectionStateReady;
+        if (self.delegate != nil) {
+            [self.delegate didReceiveNodeHello:self.response];
+        }
+    }
+    else  if ([self.response[@"Command"] isEqualToString:@"NodeData"]) {
+        if (self.delegate != nil) {
+            [self.delegate didReceiveNodeStats:self.response];
+        }
+    }
+    else  if ([self.response[@"Command"] isEqualToString:@"Feed"]) {
+        if (self.delegate != nil) {
+            [self.delegate didReceiveUserAlert:self.response];
+        }
+    }
+    else  if ([self.response[@"Command"] isEqualToString:@"TextFeed"]) {
+        if (self.delegate != nil) {
+            [self.delegate didReceiveUserAlert:self.response];
+        }
+    }
+    else {
+        NSLog(@"Unknown: %@", self.response);
+    }
+    self.commandExecuting = NO;
 }
 
 -(void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag  {
