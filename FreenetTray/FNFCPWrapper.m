@@ -115,6 +115,10 @@ typedef NS_ENUM(NSInteger, FCPConnectionState) {
     for (NSString *keyValuePair in [rawResponse componentsSeparatedByString:@"\n"]) {
         NSArray *pair = [keyValuePair componentsSeparatedByString:@"="];
         if ([pair count] != 2) {
+            // handle keys with no value by adding empty one
+            if ([pair[0] length] > 0) {
+                nodeResponse[pair[0]] = @"";
+            }
             continue;
         }
         nodeResponse[pair[0]] = pair[1];
