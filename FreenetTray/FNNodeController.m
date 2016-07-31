@@ -44,6 +44,7 @@
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(installStartNode:) name:FNInstallStartNodeNotification object:nil];
                 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(uninstallFreenet:) name:FNNodeUninstall object:nil]; 
+        [[NSUserNotificationCenter defaultUserNotificationCenter] setDelegate:self];
     }
     return self;
 }
@@ -320,4 +321,9 @@
     return self.fcpLocation;
 }
 
+#pragma mark - NSUserNotificationCenterDelegate methods
+
+-(BOOL) userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
+    return YES;
+}
 @end

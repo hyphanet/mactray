@@ -12,7 +12,7 @@
 
 @import Cocoa;
 
-@interface FNNodeController : NSObject <FNFCPWrapperDelegate, FNFCPWrapperDataSource>
+@interface FNNodeController : NSObject <FNFCPWrapperDelegate, FNFCPWrapperDataSource, NSUserNotificationCenterDelegate>
 
 @property enum FNNodeState currentNodeState;
 
