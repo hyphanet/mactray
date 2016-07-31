@@ -31,6 +31,7 @@
 -(void)didDisconnect;
 -(void)didReceiveNodeHello:(NSDictionary *)nodeHello;
 -(void)didReceiveNodeStats:(NSDictionary *)nodeStats;
+-(void)didReceiveUserAlert:(NSDictionary *)nodeUserAlert;
 @end
 
 @protocol FNFCPWrapperDataSource <NSObject>
