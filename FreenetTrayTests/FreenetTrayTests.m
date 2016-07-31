@@ -77,7 +77,7 @@
         XCTFail(@"Error: %@", error.localizedDescription);
     }];
     
-    [self waitForExpectationsWithTimeout:30.0 handler:^(NSError *error) {
+    [self waitForExpectationsWithTimeout:60.0 handler:^(NSError *error) {
         if(error) {
             XCTFail(@"test_createPaste failed with error: %@", error);
         }
