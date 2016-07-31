@@ -326,4 +326,15 @@
 -(BOOL) userNotificationCenter:(NSUserNotificationCenter *)center shouldPresentNotification:(NSUserNotification *)notification {
     return YES;
 }
+
+- (void) userNotificationCenter:(NSUserNotificationCenter *)center didActivateNotification:(NSUserNotification *)notification {
+    NSURL *fproxyLocation = self.fproxyLocation;
+    if (fproxyLocation) {
+        // Open the alerts page in users default browser
+        NSURL *alertsPage = [fproxyLocation URLByAppendingPathComponent:@"alerts"];
+        [[NSWorkspace sharedWorkspace] openURL:alertsPage];
+    }
+    [center removeAllDeliveredNotifications];
+}
+
 @end
