@@ -51,6 +51,8 @@ FOUNDATION_EXPORT NSString *const FNNodeFirstLaunchKey;
 
 FOUNDATION_EXPORT NSString *const FNBrowserPreferenceKey;
 
+FOUNDATION_EXPORT NSString *const FNEnableNotificationsKey;
+
 
 #pragma mark - Custom NSNotifications
 

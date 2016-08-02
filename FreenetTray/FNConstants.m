@@ -51,6 +51,8 @@ NSString *const FNNodeFirstLaunchKey = @"firstlaunch";
 
 NSString *const FNBrowserPreferenceKey = @"FNBrowserPreferenceKey";
 
+NSString *const FNEnableNotificationsKey = @"FNEnableNotificationsKey";
+
 #pragma mark - Custom NSNotifications
 
 NSString *const FNNodeStateUnknownNotification = @"FNNodeStateUnknownNotification";

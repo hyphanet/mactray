@@ -293,7 +293,9 @@
 }
 
 -(void)didReceiveUserAlert:(NSDictionary *)nodeUserAlert {
-
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:FNEnableNotificationsKey]) {
+        return;
+    }
     NSUserNotification *notification = [[NSUserNotification alloc] init];
     
     NSString *command = nodeUserAlert[@"Command"];
