@@ -403,6 +403,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0710;
 				TargetAttributes = {
 					AAF73D831C174ABF0006D1E1 = {
@@ -792,7 +793,7 @@
 				INFOPLIST_FILE = FreenetTray/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "${inherited} @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = org.freenetproject.mactray;
 				PRODUCT_NAME = FreenetTray;
 				SDKROOT = macosx;
@@ -822,7 +823,7 @@
 				INFOPLIST_FILE = FreenetTray/Info.plist;
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "${inherited} @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = org.freenetproject.mactray;
 				PRODUCT_NAME = FreenetTray;
 				SDKROOT = macosx;
