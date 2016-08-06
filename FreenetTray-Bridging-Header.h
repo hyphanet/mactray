@@ -8,9 +8,6 @@
 
 #import "FNNodeController.h"
 
-#import "FNSettingsWindowController.h"
-
-
 #import "FNInstallerWindowController.h"
 
 @import DCOAboutWindow;

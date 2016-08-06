@@ -18,7 +18,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     private var nodeController: FNNodeController!
     private var dropdownMenuController: Dropdown!
-    private var settingsWindowController: FNSettingsWindowController!
+    private var settingsWindowController: SettingsWindowController!
     private var installerWindowController: FNInstallerWindowController!
 
     
@@ -72,8 +72,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         dropdownMenuController = Dropdown(nodeController: nodeController, aboutWindow: aboutWindow)
         
-        settingsWindowController = FNSettingsWindowController(windowNibName: "FNSettingsWindow")
-        settingsWindowController.nodeController = nodeController
+        settingsWindowController = SettingsWindowController(nodeController: nodeController)
         let _ = settingsWindowController.window!
         
         installerWindowController = FNInstallerWindowController(windowNibName: "FNInstallerWindow")
