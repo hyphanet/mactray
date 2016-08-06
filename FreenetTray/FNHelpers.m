@@ -15,6 +15,7 @@
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
 #import <AFNetworking/AFURLRequestSerialization.h>
 #import <AFNetworking/AFURLResponseSerialization.h>
+#import "NSBundle+LoginItem.h"
 
 
 @implementation FNHelpers
@@ -84,6 +85,20 @@
             [NSApp terminate:self];
         }
     }); 
+}
+
++(BOOL)isLoginItem {
+    return [[NSBundle mainBundle] isLoginItem];
+}
+
++(void)enableLoginItem:(BOOL)state {
+    if (state) {
+        [[NSBundle mainBundle] addToLoginItems];
+    }
+    else {
+        [[NSBundle mainBundle] removeFromLoginItems];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:FNStartAtLaunchKey];
+    }
 }
 
 +(void)displayUninstallAlert {

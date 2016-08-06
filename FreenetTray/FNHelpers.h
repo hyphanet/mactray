@@ -22,6 +22,10 @@ typedef void (^FNGistFailureBlock)(NSError *error);
 +(NSURL *)findNodeInstallation;
 +(BOOL)validateNodeInstallationAtURL:(NSURL *)nodeURL;
 +(void)displayNodeMissingAlert;
+
++(BOOL)isLoginItem;
++(void)enableLoginItem:(BOOL)state;
+
 +(void)displayUninstallAlert;
 +(NSArray<FNBrowser *> *)installedWebBrowsers;
 
