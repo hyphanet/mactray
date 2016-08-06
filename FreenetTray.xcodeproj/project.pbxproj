@@ -129,6 +129,7 @@
 		AA621D451C1CFB5B00A1C4A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FNInstallerProgressView.xib; sourceTree = "<group>"; };
 		AA621D461C1CFB5B00A1C4A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FNInstallerWindow.xib; sourceTree = "<group>"; };
 		AA621D471C1CFB5B00A1C4A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FNSettingsWindow.xib; sourceTree = "<group>"; };
+		AA93DBA81D558C6B00BE256F /* FreenetTray-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FreenetTray-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA9BE2ED1C1B774000345C77 /* verify.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = verify.py; sourceTree = "<group>"; };
 		AABF7F311C9FA69C006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/FNDropdownMenu.strings"; sourceTree = "<group>"; };
 		AABF7F321C9FA69C006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/FNInstallerProgressView.strings"; sourceTree = "<group>"; };
@@ -229,6 +230,7 @@
 			children = (
 				AA621C781C1CF0DA00A1C4A5 /* FNAppDelegate.h */,
 				AA621C791C1CF0DA00A1C4A5 /* FNAppDelegate.m */,
+				AA93DBA81D558C6B00BE256F /* FreenetTray-Bridging-Header.h */,
 				AA621C7A1C1CF0DA00A1C4A5 /* FNBrowser.h */,
 				AA621C7B1C1CF0DA00A1C4A5 /* FNBrowser.m */,
 				AA621C7C1C1CF0DA00A1C4A5 /* FNConfigParser.h */,
@@ -797,6 +799,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.freenetproject.mactray;
 				PRODUCT_NAME = FreenetTray;
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "FreenetTray-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -827,6 +831,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.freenetproject.mactray;
 				PRODUCT_NAME = FreenetTray;
 				SDKROOT = macosx;
+				SWIFT_OBJC_BRIDGING_HEADER = "FreenetTray-Bridging-Header.h";
 			};
 			name = Release;
 		};
