@@ -17,7 +17,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
     
     private var nodeController: FNNodeController!
-    private var dropdownMenuController: FNDropdownMenuController!
+    private var dropdownMenuController: Dropdown!
     private var settingsWindowController: FNSettingsWindowController!
     private var installerWindowController: FNInstallerWindowController!
 
@@ -70,9 +70,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         nodeController = FNNodeController()
         
-        dropdownMenuController = FNDropdownMenuController()
-        dropdownMenuController.nodeController = nodeController
-        dropdownMenuController.aboutWindow = aboutWindow
+        dropdownMenuController = Dropdown(nodeController: nodeController, aboutWindow: aboutWindow)
         
         settingsWindowController = FNSettingsWindowController(windowNibName: "FNSettingsWindow")
         settingsWindowController.nodeController = nodeController

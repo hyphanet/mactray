@@ -7,7 +7,7 @@
 #import "FNHelpers.h"
 
 #import "FNNodeController.h"
-#import "FNDropdownMenuController.h"
+
 #import "FNSettingsWindowController.h"
 
 
@@ -16,3 +16,5 @@
 @import DCOAboutWindow;
 
 @import LetsMove;
+
+#import "TrayIcon.h"
