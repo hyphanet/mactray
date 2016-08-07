@@ -8,10 +8,12 @@
 
 #import "FNNodeController.h"
 
-#import "FNInstallerProgressViewController.h"
-
 @import DCOAboutWindow;
 
 @import LetsMove;
 
 #import "TrayIcon.h"
+
+#import <CocoaAsyncSocket/GCDAsyncSocket.h>
+
+#import <FontAwesomeIconFactory/FontAwesomeIconFactory.h>

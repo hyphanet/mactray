@@ -47,7 +47,7 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
         self.window!.delegate = self
         self.pageController.delegate = self
         
-        let pageIdentifiers = ["InstallerDestinationViewController", "FNInstallerProgressViewController"]
+        let pageIdentifiers = ["InstallerDestinationViewController", "InstallerProgressViewController"]
         
         self.pageController.arrangedObjects = pageIdentifiers
         
@@ -190,8 +190,8 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
             vc.stateDelegate = self
             return vc
         }
-        else if (identifier == "FNInstallerProgressViewController") {
-            let vc: FNInstallerProgressViewController! = FNInstallerProgressViewController(nibName: "FNInstallerProgressView", bundle: nil)
+        else if (identifier == "InstallerProgressViewController") {
+            let vc: InstallerProgressViewController! = InstallerProgressViewController(nibName: "InstallerProgressView", bundle: nil)
             vc.stateDelegate = self
             return vc
         }
@@ -209,7 +209,7 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
     func pageControllerDidEndLiveTransition(pageController: NSPageController) {
         self.pageController.completeTransition()
         if self.pageController.selectedIndex == FNInstallerPage.Progress.rawValue {
-            if let vc: FNInstallerProgressViewController = self.pageController.selectedViewController as? FNInstallerProgressViewController {
+            if let vc: InstallerProgressViewController = self.pageController.selectedViewController as? InstallerProgressViewController {
                 vc.installNodeAtFileURL(self.selectedInstallLocation)
             }
             self.installationInProgress = true
