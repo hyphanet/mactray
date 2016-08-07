@@ -19,7 +19,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var nodeController: FNNodeController!
     private var dropdownMenuController: Dropdown!
     private var settingsWindowController: SettingsWindowController!
-    private var installerWindowController: FNInstallerWindowController!
+    private var installerWindowController: InstallerWindowController!
 
     
     var CFBundleVersion = (NSBundle.mainBundle().infoDictionary?["CFBundleVersion"]) as! String
@@ -75,8 +75,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         settingsWindowController = SettingsWindowController(nodeController: nodeController)
         let _ = settingsWindowController.window!
         
-        installerWindowController = FNInstallerWindowController(windowNibName: "FNInstallerWindow")
-        installerWindowController.nodeController = nodeController
+        installerWindowController = InstallerWindowController(nodeController: nodeController)
         let _ = installerWindowController.window!
         
         
