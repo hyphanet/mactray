@@ -47,7 +47,7 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
         self.window!.delegate = self
         self.pageController.delegate = self
         
-        let pageIdentifiers = ["FNInstallerDestinationViewController", "FNInstallerProgressViewController"]
+        let pageIdentifiers = ["InstallerDestinationViewController", "FNInstallerProgressViewController"]
         
         self.pageController.arrangedObjects = pageIdentifiers
         
@@ -185,8 +185,8 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
     }
 
     func pageController(pageController: NSPageController, viewControllerForIdentifier identifier: String) -> NSViewController {
-        if (identifier == "FNInstallerDestinationViewController") {
-            let vc: FNInstallerDestinationViewController! = FNInstallerDestinationViewController(nibName: "FNInstallerDestinationView", bundle: nil)
+        if (identifier == "InstallerDestinationViewController") {
+            let vc: InstallerDestinationViewController! = InstallerDestinationViewController(nibName: "InstallerDestinationView", bundle: nil)
             vc.stateDelegate = self
             return vc
         }

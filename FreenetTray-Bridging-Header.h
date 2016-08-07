@@ -8,7 +8,6 @@
 
 #import "FNNodeController.h"
 
-#import "FNInstallerDestinationViewController.h"
 #import "FNInstallerProgressViewController.h"
 
 @import DCOAboutWindow;

@@ -16,7 +16,6 @@
 		AA621C951C1CF0DA00A1C4A5 /* FNConfigParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C7D1C1CF0DA00A1C4A5 /* FNConfigParser.m */; };
 		AA621C981C1CF0DA00A1C4A5 /* FNFCPWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C821C1CF0DA00A1C4A5 /* FNFCPWrapper.m */; };
 		AA621C991C1CF0DA00A1C4A5 /* FNHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C841C1CF0DA00A1C4A5 /* FNHelpers.m */; };
-		AA621C9B1C1CF0DA00A1C4A5 /* FNInstallerDestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C871C1CF0DA00A1C4A5 /* FNInstallerDestinationViewController.m */; };
 		AA621C9D1C1CF0DA00A1C4A5 /* FNInstallerProgressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C8A1C1CF0DA00A1C4A5 /* FNInstallerProgressViewController.m */; };
 		AA621CA01C1CF0DA00A1C4A5 /* FNNodeController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C8F1C1CF0DA00A1C4A5 /* FNNodeController.m */; };
 		AA621CAA1C1CF10800A1C4A5 /* FNConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621CA41C1CF10800A1C4A5 /* FNConstants.m */; };
@@ -25,7 +24,7 @@
 		AA621CB21C1CF13900A1C4A5 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA621CB11C1CF13900A1C4A5 /* defaults.plist */; };
 		AA621CB41C1CF14500A1C4A5 /* main.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621CB31C1CF14500A1C4A5 /* main.xib */; };
 		AA621D341C1CFB4200A1C4A5 /* Dropdown.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621D361C1CFB4200A1C4A5 /* Dropdown.xib */; };
-		AA621D371C1CFB4500A1C4A5 /* FNInstallerDestinationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621D391C1CFB4500A1C4A5 /* FNInstallerDestinationView.xib */; };
+		AA621D371C1CFB4500A1C4A5 /* InstallerDestinationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621D391C1CFB4500A1C4A5 /* InstallerDestinationView.xib */; };
 		AA621D3A1C1CFB4700A1C4A5 /* FNInstallerProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621D3C1C1CFB4700A1C4A5 /* FNInstallerProgressView.xib */; };
 		AA621D3D1C1CFB4900A1C4A5 /* InstallerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621D3F1C1CFB4900A1C4A5 /* InstallerWindow.xib */; };
 		AA621D401C1CFB4B00A1C4A5 /* SettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621D421C1CFB4B00A1C4A5 /* SettingsWindow.xib */; };
@@ -33,6 +32,7 @@
 		AA93DBAC1D55A62D00BE256F /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBAB1D55A62D00BE256F /* Dropdown.swift */; };
 		AA93DBAE1D55B97400BE256F /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBAD1D55B97400BE256F /* SettingsWindowController.swift */; };
 		AA93DBB01D57B1F200BE256F /* InstallerWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBAF1D57B1F200BE256F /* InstallerWindowController.swift */; };
+		AA93DBB21D57DA3900BE256F /* InstallerDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBB11D57DA3900BE256F /* InstallerDestinationViewController.swift */; };
 		AA9BE2EE1C1B774000345C77 /* verify.py in Resources */ = {isa = PBXBuildFile; fileRef = AA9BE2ED1C1B774000345C77 /* verify.py */; };
 		AAD6891D1BD17CF500942738 /* Bundled Node in Resources */ = {isa = PBXBuildFile; fileRef = AAD6891C1BD17CF500942738 /* Bundled Node */; };
 		AAE306F01BF6DEC900C4EC1D /* Acknowledgments.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AAE306EE1BF6DEC900C4EC1D /* Acknowledgments.rtf */; };
@@ -74,7 +74,7 @@
 		AA433BCF109CD2B400EDBB73 /* gpl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gpl.txt; sourceTree = "<group>"; };
 		AA55DB941C25CDDE00581EEB /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = "zh-CN.lproj/Dropdown.strings"; sourceTree = "<group>"; };
 		AA55DB951C25CDDE00581EEB /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = "zh-CN.lproj/FNInstallerProgressView.strings"; sourceTree = "<group>"; };
-		AA55DB961C25CDDF00581EEB /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = "zh-CN.lproj/FNInstallerDestinationView.strings"; sourceTree = "<group>"; };
+		AA55DB961C25CDDF00581EEB /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = "zh-CN.lproj/InstallerDestinationView.strings"; sourceTree = "<group>"; };
 		AA55DB971C25CDDF00581EEB /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = "zh-CN.lproj/SettingsWindow.strings"; sourceTree = "<group>"; };
 		AA55DB9B1C25CDDF00581EEB /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = "zh-CN.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		AA55DB9D1C25CDE000581EEB /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = "zh-CN.lproj/InstallerWindow.strings"; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		AA55DBA61C25CDE100581EEB /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = "zh-CN.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		AA55DBA81C25E6CE00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Dropdown.strings"; sourceTree = "<group>"; };
 		AA55DBA91C25E6CE00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/FNInstallerProgressView.strings"; sourceTree = "<group>"; };
-		AA55DBAA1C25E6CE00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/FNInstallerDestinationView.strings"; sourceTree = "<group>"; };
+		AA55DBAA1C25E6CE00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InstallerDestinationView.strings"; sourceTree = "<group>"; };
 		AA55DBAB1C25E6CE00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/SettingsWindow.strings"; sourceTree = "<group>"; };
 		AA55DBAC1C25E6CE00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		AA55DBAD1C25E6CE00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InstallerWindow.strings"; sourceTree = "<group>"; };
@@ -98,8 +98,6 @@
 		AA621C821C1CF0DA00A1C4A5 /* FNFCPWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNFCPWrapper.m; path = FreenetTray/FNFCPWrapper.m; sourceTree = "<group>"; };
 		AA621C831C1CF0DA00A1C4A5 /* FNHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNHelpers.h; path = FreenetTray/FNHelpers.h; sourceTree = "<group>"; };
 		AA621C841C1CF0DA00A1C4A5 /* FNHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNHelpers.m; path = FreenetTray/FNHelpers.m; sourceTree = "<group>"; };
-		AA621C861C1CF0DA00A1C4A5 /* FNInstallerDestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNInstallerDestinationViewController.h; path = FreenetTray/FNInstallerDestinationViewController.h; sourceTree = "<group>"; };
-		AA621C871C1CF0DA00A1C4A5 /* FNInstallerDestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNInstallerDestinationViewController.m; path = FreenetTray/FNInstallerDestinationViewController.m; sourceTree = "<group>"; };
 		AA621C891C1CF0DA00A1C4A5 /* FNInstallerProgressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNInstallerProgressViewController.h; path = FreenetTray/FNInstallerProgressViewController.h; sourceTree = "<group>"; };
 		AA621C8A1C1CF0DA00A1C4A5 /* FNInstallerProgressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNInstallerProgressViewController.m; path = FreenetTray/FNInstallerProgressViewController.m; sourceTree = "<group>"; };
 		AA621C8E1C1CF0DA00A1C4A5 /* FNNodeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNNodeController.h; path = FreenetTray/FNNodeController.h; sourceTree = "<group>"; };
@@ -115,7 +113,7 @@
 		AA621CB31C1CF14500A1C4A5 /* main.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = main.xib; path = FreenetTray/main.xib; sourceTree = "<group>"; };
 		AA621CB71C1CF28900A1C4A5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = FreenetTray/Info.plist; sourceTree = "<group>"; };
 		AA621D431C1CFB5A00A1C4A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/Dropdown.xib; sourceTree = "<group>"; };
-		AA621D441C1CFB5B00A1C4A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FNInstallerDestinationView.xib; sourceTree = "<group>"; };
+		AA621D441C1CFB5B00A1C4A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InstallerDestinationView.xib; sourceTree = "<group>"; };
 		AA621D451C1CFB5B00A1C4A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FNInstallerProgressView.xib; sourceTree = "<group>"; };
 		AA621D461C1CFB5B00A1C4A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/InstallerWindow.xib; sourceTree = "<group>"; };
 		AA621D471C1CFB5B00A1C4A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SettingsWindow.xib; sourceTree = "<group>"; };
@@ -124,17 +122,18 @@
 		AA93DBAB1D55A62D00BE256F /* Dropdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dropdown.swift; sourceTree = "<group>"; };
 		AA93DBAD1D55B97400BE256F /* SettingsWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsWindowController.swift; sourceTree = "<group>"; };
 		AA93DBAF1D57B1F200BE256F /* InstallerWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstallerWindowController.swift; path = FreenetTray/InstallerWindowController.swift; sourceTree = "<group>"; };
+		AA93DBB11D57DA3900BE256F /* InstallerDestinationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InstallerDestinationViewController.swift; path = FreenetTray/InstallerDestinationViewController.swift; sourceTree = "<group>"; };
 		AA9BE2ED1C1B774000345C77 /* verify.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = verify.py; sourceTree = "<group>"; };
 		AABF7F311C9FA69C006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/Dropdown.strings"; sourceTree = "<group>"; };
 		AABF7F321C9FA69C006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/FNInstallerProgressView.strings"; sourceTree = "<group>"; };
-		AABF7F331C9FA69C006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/FNInstallerDestinationView.strings"; sourceTree = "<group>"; };
+		AABF7F331C9FA69C006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/InstallerDestinationView.strings"; sourceTree = "<group>"; };
 		AABF7F341C9FA69C006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/SettingsWindow.strings"; sourceTree = "<group>"; };
 		AABF7F351C9FA69D006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		AABF7F361C9FA69D006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/InstallerWindow.strings"; sourceTree = "<group>"; };
 		AABF7F371C9FA69D006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		AABF7F381C9FA69D006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		AABF7F391C9FA845006F1F40 /* nb-NO */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nb-NO"; path = "nb-NO.lproj/Dropdown.strings"; sourceTree = "<group>"; };
-		AABF7F3A1C9FA845006F1F40 /* nb-NO */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nb-NO"; path = "nb-NO.lproj/FNInstallerDestinationView.strings"; sourceTree = "<group>"; };
+		AABF7F3A1C9FA845006F1F40 /* nb-NO */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nb-NO"; path = "nb-NO.lproj/InstallerDestinationView.strings"; sourceTree = "<group>"; };
 		AABF7F3B1C9FA845006F1F40 /* nb-NO */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nb-NO"; path = "nb-NO.lproj/FNInstallerProgressView.strings"; sourceTree = "<group>"; };
 		AABF7F3C1C9FA846006F1F40 /* nb-NO */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nb-NO"; path = "nb-NO.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		AABF7F3D1C9FA846006F1F40 /* nb-NO */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nb-NO"; path = "nb-NO.lproj/InstallerWindow.strings"; sourceTree = "<group>"; };
@@ -142,7 +141,7 @@
 		AABF7F3F1C9FA847006F1F40 /* nb-NO */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nb-NO"; path = "nb-NO.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		AABF7F401C9FA847006F1F40 /* nb-NO */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "nb-NO"; path = "nb-NO.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		AABF7F411C9FA8A1006F1F40 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Dropdown.strings; sourceTree = "<group>"; };
-		AABF7F421C9FA8A1006F1F40 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/FNInstallerDestinationView.strings; sourceTree = "<group>"; };
+		AABF7F421C9FA8A1006F1F40 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InstallerDestinationView.strings; sourceTree = "<group>"; };
 		AABF7F431C9FA8A1006F1F40 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/FNInstallerProgressView.strings; sourceTree = "<group>"; };
 		AABF7F441C9FA8A1006F1F40 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AABF7F451C9FA8A1006F1F40 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/SettingsWindow.strings; sourceTree = "<group>"; };
@@ -150,7 +149,7 @@
 		AABF7F471C9FA8A2006F1F40 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AABF7F481C9FA8A2006F1F40 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AABF7F491C9FA8D4006F1F40 /* id-ID */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "id-ID"; path = "id-ID.lproj/Dropdown.strings"; sourceTree = "<group>"; };
-		AABF7F4A1C9FA8D5006F1F40 /* id-ID */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "id-ID"; path = "id-ID.lproj/FNInstallerDestinationView.strings"; sourceTree = "<group>"; };
+		AABF7F4A1C9FA8D5006F1F40 /* id-ID */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "id-ID"; path = "id-ID.lproj/InstallerDestinationView.strings"; sourceTree = "<group>"; };
 		AABF7F4B1C9FA8D5006F1F40 /* id-ID */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "id-ID"; path = "id-ID.lproj/FNInstallerProgressView.strings"; sourceTree = "<group>"; };
 		AABF7F4C1C9FA8D5006F1F40 /* id-ID */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "id-ID"; path = "id-ID.lproj/SettingsWindow.strings"; sourceTree = "<group>"; };
 		AABF7F4D1C9FA8D5006F1F40 /* id-ID */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "id-ID"; path = "id-ID.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -159,7 +158,7 @@
 		AABF7F501C9FA8D6006F1F40 /* id-ID */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "id-ID"; path = "id-ID.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		AABF7F511C9FA8F8006F1F40 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/Dropdown.strings; sourceTree = "<group>"; };
 		AABF7F521C9FA8F8006F1F40 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/FNInstallerProgressView.strings; sourceTree = "<group>"; };
-		AABF7F531C9FA8F9006F1F40 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/FNInstallerDestinationView.strings; sourceTree = "<group>"; };
+		AABF7F531C9FA8F9006F1F40 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/InstallerDestinationView.strings; sourceTree = "<group>"; };
 		AABF7F541C9FA8F9006F1F40 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/SettingsWindow.strings; sourceTree = "<group>"; };
 		AABF7F551C9FA8F9006F1F40 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AABF7F561C9FA8F9006F1F40 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/InstallerWindow.strings; sourceTree = "<group>"; };
@@ -167,14 +166,14 @@
 		AABF7F581C9FA8FA006F1F40 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AABF7F591C9FA92C006F1F40 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Dropdown.strings; sourceTree = "<group>"; };
 		AABF7F5A1C9FA92C006F1F40 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/FNInstallerProgressView.strings; sourceTree = "<group>"; };
-		AABF7F5B1C9FA92C006F1F40 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/FNInstallerDestinationView.strings; sourceTree = "<group>"; };
+		AABF7F5B1C9FA92C006F1F40 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InstallerDestinationView.strings; sourceTree = "<group>"; };
 		AABF7F5C1C9FA92C006F1F40 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/SettingsWindow.strings; sourceTree = "<group>"; };
 		AABF7F5D1C9FA92C006F1F40 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AABF7F5E1C9FA92D006F1F40 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InstallerWindow.strings; sourceTree = "<group>"; };
 		AABF7F5F1C9FA92D006F1F40 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AABF7F601C9FA92D006F1F40 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AABF7F611C9FA958006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Dropdown.strings; sourceTree = "<group>"; };
-		AABF7F621C9FA958006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/FNInstallerDestinationView.strings; sourceTree = "<group>"; };
+		AABF7F621C9FA958006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InstallerDestinationView.strings; sourceTree = "<group>"; };
 		AABF7F631C9FA958006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/FNInstallerProgressView.strings; sourceTree = "<group>"; };
 		AABF7F641C9FA958006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AABF7F651C9FA958006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InstallerWindow.strings; sourceTree = "<group>"; };
@@ -182,7 +181,7 @@
 		AABF7F671C9FA958006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AABF7F681C9FA959006F1F40 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AABF7F691C9FA977006F1F40 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Dropdown.strings; sourceTree = "<group>"; };
-		AABF7F6A1C9FA977006F1F40 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/FNInstallerDestinationView.strings; sourceTree = "<group>"; };
+		AABF7F6A1C9FA977006F1F40 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InstallerDestinationView.strings; sourceTree = "<group>"; };
 		AABF7F6B1C9FA977006F1F40 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/FNInstallerProgressView.strings; sourceTree = "<group>"; };
 		AABF7F6C1C9FA977006F1F40 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/SettingsWindow.strings; sourceTree = "<group>"; };
 		AABF7F6D1C9FA978006F1F40 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -234,9 +233,8 @@
 				AA621C821C1CF0DA00A1C4A5 /* FNFCPWrapper.m */,
 				AA621C831C1CF0DA00A1C4A5 /* FNHelpers.h */,
 				AA621C841C1CF0DA00A1C4A5 /* FNHelpers.m */,
-				AA621D391C1CFB4500A1C4A5 /* FNInstallerDestinationView.xib */,
-				AA621C861C1CF0DA00A1C4A5 /* FNInstallerDestinationViewController.h */,
-				AA621C871C1CF0DA00A1C4A5 /* FNInstallerDestinationViewController.m */,
+				AA621D391C1CFB4500A1C4A5 /* InstallerDestinationView.xib */,
+				AA93DBB11D57DA3900BE256F /* InstallerDestinationViewController.swift */,
 				AA621D3C1C1CFB4700A1C4A5 /* FNInstallerProgressView.xib */,
 				AA621C891C1CF0DA00A1C4A5 /* FNInstallerProgressViewController.h */,
 				AA621C8A1C1CF0DA00A1C4A5 /* FNInstallerProgressViewController.m */,
@@ -433,7 +431,7 @@
 				AAE306F31BF920EE00C4EC1D /* Images.xcassets in Resources */,
 				AA55DB9A1C25CDDF00581EEB /* InfoPlist.strings in Resources */,
 				AA621CB41C1CF14500A1C4A5 /* main.xib in Resources */,
-				AA621D371C1CFB4500A1C4A5 /* FNInstallerDestinationView.xib in Resources */,
+				AA621D371C1CFB4500A1C4A5 /* InstallerDestinationView.xib in Resources */,
 				AA621D3A1C1CFB4700A1C4A5 /* FNInstallerProgressView.xib in Resources */,
 				AA621CB01C1CF12B00A1C4A5 /* installer_background.png in Resources */,
 				AA5E172C1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg in Resources */,
@@ -511,7 +509,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA93DBB01D57B1F200BE256F /* InstallerWindowController.swift in Sources */,
-				AA621C9B1C1CF0DA00A1C4A5 /* FNInstallerDestinationViewController.m in Sources */,
 				AA621C951C1CF0DA00A1C4A5 /* FNConfigParser.m in Sources */,
 				AA93DBAA1D558C6B00BE256F /* AppDelegate.swift in Sources */,
 				AA621CAC1C1CF10800A1C4A5 /* TrayIcon.m in Sources */,
@@ -520,6 +517,7 @@
 				AA93DBAE1D55B97400BE256F /* SettingsWindowController.swift in Sources */,
 				AA621CAA1C1CF10800A1C4A5 /* FNConstants.m in Sources */,
 				AA621C9D1C1CF0DA00A1C4A5 /* FNInstallerProgressViewController.m in Sources */,
+				AA93DBB21D57DA3900BE256F /* InstallerDestinationViewController.swift in Sources */,
 				AA621CA01C1CF0DA00A1C4A5 /* FNNodeController.m in Sources */,
 				AA621C991C1CF0DA00A1C4A5 /* FNHelpers.m in Sources */,
 				AA621C981C1CF0DA00A1C4A5 /* FNFCPWrapper.m in Sources */,
@@ -625,7 +623,7 @@
 			path = FreenetTray;
 			sourceTree = "<group>";
 		};
-		AA621D391C1CFB4500A1C4A5 /* FNInstallerDestinationView.xib */ = {
+		AA621D391C1CFB4500A1C4A5 /* InstallerDestinationView.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AA621D441C1CFB5B00A1C4A5 /* Base */,
@@ -640,7 +638,7 @@
 				AABF7F621C9FA958006F1F40 /* es */,
 				AABF7F6A1C9FA977006F1F40 /* de */,
 			);
-			name = FNInstallerDestinationView.xib;
+			name = InstallerDestinationView.xib;
 			path = FreenetTray;
 			sourceTree = "<group>";
 		};
