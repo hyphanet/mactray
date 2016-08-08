@@ -26,7 +26,7 @@
 -(void)didReceiveNodeStats:(NSNotification*)notification;
 @end
 
-@protocol FNFCPWrapperDelegate <NSObject>
+@protocol FCPDelegate <NSObject>
 @required
 -(void)didDisconnect;
 -(void)didReceiveNodeHello:(NSDictionary *)nodeHello;
@@ -34,7 +34,7 @@
 -(void)didReceiveUserAlert:(NSDictionary *)nodeUserAlert;
 @end
 
-@protocol FNFCPWrapperDataSource <NSObject>
+@protocol FCPDataSource <NSObject>
 @required
 -(NSURL *)nodeFCPURL;
 @end

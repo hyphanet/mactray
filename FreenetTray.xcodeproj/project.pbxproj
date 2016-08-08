@@ -12,7 +12,6 @@
 		AA55DBA01C25CDE000581EEB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA55DBA21C25CDE000581EEB /* Localizable.strings */; };
 		AA55DBA51C25CDE100581EEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA55DBA71C25CDE100581EEB /* InfoPlist.strings */; };
 		AA5E172C1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg in Resources */ = {isa = PBXBuildFile; fileRef = AA5E172B1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg */; };
-		AA621C981C1CF0DA00A1C4A5 /* FNFCPWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C821C1CF0DA00A1C4A5 /* FNFCPWrapper.m */; };
 		AA621C991C1CF0DA00A1C4A5 /* FNHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C841C1CF0DA00A1C4A5 /* FNHelpers.m */; };
 		AA621CAA1C1CF10800A1C4A5 /* FNConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621CA41C1CF10800A1C4A5 /* FNConstants.m */; };
 		AA621CAC1C1CF10800A1C4A5 /* TrayIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621CA91C1CF10800A1C4A5 /* TrayIcon.m */; };
@@ -34,6 +33,7 @@
 		AA93DBB71D5804C600BE256F /* Browser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBB51D57FF1100BE256F /* Browser.swift */; };
 		AA93DBB91D5808B900BE256F /* NodeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBB81D5808B900BE256F /* NodeConfig.swift */; };
 		AA93DBBB1D58464200BE256F /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBBA1D58464200BE256F /* Node.swift */; };
+		AA93DBBD1D59072A00BE256F /* FCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBBC1D59072A00BE256F /* FCP.swift */; };
 		AA93DBBF1D59107000BE256F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBBE1D59107000BE256F /* Helpers.swift */; };
 		AA9BE2EE1C1B774000345C77 /* verify.py in Resources */ = {isa = PBXBuildFile; fileRef = AA9BE2ED1C1B774000345C77 /* verify.py */; };
 		AAD6891D1BD17CF500942738 /* Bundled Node in Resources */ = {isa = PBXBuildFile; fileRef = AAD6891C1BD17CF500942738 /* Bundled Node */; };
@@ -92,8 +92,6 @@
 		AA55DBAF1C25E6CF00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		AA5E172B1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jre-8u66-macosx-x64.dmg"; sourceTree = "<group>"; };
 		AA621C391C1BC46E00A1C4A5 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
-		AA621C811C1CF0DA00A1C4A5 /* FNFCPWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNFCPWrapper.h; path = FreenetTray/FNFCPWrapper.h; sourceTree = "<group>"; };
-		AA621C821C1CF0DA00A1C4A5 /* FNFCPWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNFCPWrapper.m; path = FreenetTray/FNFCPWrapper.m; sourceTree = "<group>"; };
 		AA621C831C1CF0DA00A1C4A5 /* FNHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNHelpers.h; path = FreenetTray/FNHelpers.h; sourceTree = "<group>"; };
 		AA621C841C1CF0DA00A1C4A5 /* FNHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNHelpers.m; path = FreenetTray/FNHelpers.m; sourceTree = "<group>"; };
 		AA621CA31C1CF10800A1C4A5 /* FNConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNConstants.h; path = FreenetTray/FNConstants.h; sourceTree = "<group>"; };
@@ -121,6 +119,7 @@
 		AA93DBB51D57FF1100BE256F /* Browser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Browser.swift; path = FreenetTray/Browser.swift; sourceTree = "<group>"; };
 		AA93DBB81D5808B900BE256F /* NodeConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NodeConfig.swift; path = FreenetTray/NodeConfig.swift; sourceTree = "<group>"; };
 		AA93DBBA1D58464200BE256F /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Node.swift; path = FreenetTray/Node.swift; sourceTree = "<group>"; };
+		AA93DBBC1D59072A00BE256F /* FCP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FCP.swift; path = FreenetTray/FCP.swift; sourceTree = "<group>"; };
 		AA93DBBE1D59107000BE256F /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = FreenetTray/Helpers.swift; sourceTree = "<group>"; };
 		AA9BE2ED1C1B774000345C77 /* verify.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = verify.py; sourceTree = "<group>"; };
 		AABF7F311C9FA69C006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/Dropdown.strings"; sourceTree = "<group>"; };
@@ -226,8 +225,7 @@
 				AA93DBB81D5808B900BE256F /* NodeConfig.swift */,
 				AA621D361C1CFB4200A1C4A5 /* Dropdown.xib */,
 				AA93DBAB1D55A62D00BE256F /* Dropdown.swift */,
-				AA621C811C1CF0DA00A1C4A5 /* FNFCPWrapper.h */,
-				AA621C821C1CF0DA00A1C4A5 /* FNFCPWrapper.m */,
+				AA93DBBC1D59072A00BE256F /* FCP.swift */,
 				AA93DBBE1D59107000BE256F /* Helpers.swift */,
 				AA621C831C1CF0DA00A1C4A5 /* FNHelpers.h */,
 				AA621C841C1CF0DA00A1C4A5 /* FNHelpers.m */,
@@ -512,12 +510,12 @@
 				AA621CAC1C1CF10800A1C4A5 /* TrayIcon.m in Sources */,
 				AA93DBAC1D55A62D00BE256F /* Dropdown.swift in Sources */,
 				AA93DBB61D57FF1100BE256F /* Browser.swift in Sources */,
+				AA93DBBD1D59072A00BE256F /* FCP.swift in Sources */,
 				AA93DBAE1D55B97400BE256F /* SettingsWindowController.swift in Sources */,
 				AA621CAA1C1CF10800A1C4A5 /* FNConstants.m in Sources */,
 				AA93DBB41D57E70A00BE256F /* InstallerProgressViewController.swift in Sources */,
 				AA93DBB21D57DA3900BE256F /* InstallerDestinationViewController.swift in Sources */,
 				AA621C991C1CF0DA00A1C4A5 /* FNHelpers.m in Sources */,
-				AA621C981C1CF0DA00A1C4A5 /* FNFCPWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

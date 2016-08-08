@@ -12,7 +12,7 @@
 
 import Foundation
 
-class Node: NSObject, FNFCPWrapperDelegate, FNFCPWrapperDataSource, NSUserNotificationCenterDelegate {
+class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelegate {
 
     var state: FNNodeState = .Unknown
     
@@ -26,16 +26,15 @@ class Node: NSObject, FNFCPWrapperDelegate, FNFCPWrapperDataSource, NSUserNotifi
     
     var downloadsFolder: NSURL!
     
-    private var fcpWrapper: FNFCPWrapper!
+    private var fcp = FCP()
     
     private var configWatcher: MHWDirectoryWatcher!
 
     override init() {
         super.init()
-        self.fcpWrapper = FNFCPWrapper()
-        self.fcpWrapper.delegate = self
-        self.fcpWrapper.dataSource = self
-        self.fcpWrapper.nodeStateLoop()
+        self.fcp.delegate = self
+        self.fcp.dataSource = self
+        self.fcp.nodeStateLoop()
         // spawn a thread to monitor node installation. The method called here cannot be run again while this thread is running
         NSThread.detachNewThreadSelector(#selector(checkNodeInstallation), toTarget:self, withObject:nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(installFinished), name:FNInstallFinishedNotification, object:nil)

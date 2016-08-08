@@ -19,5 +19,3 @@
 @import RegexKitLite;
 
 @import MHWDirectoryWatcher;
-
-#import "FNFCPWrapper.h"
