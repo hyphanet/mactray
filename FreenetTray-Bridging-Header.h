@@ -6,8 +6,6 @@
 #import "FNProtocols.h"
 #import "FNHelpers.h"
 
-#import "FNNodeController.h"
-
 @import DCOAboutWindow;
 
 @import LetsMove;
@@ -19,3 +17,7 @@
 #import <FontAwesomeIconFactory/FontAwesomeIconFactory.h>
 
 @import RegexKitLite;
+
+@import MHWDirectoryWatcher;
+
+#import "FNFCPWrapper.h"

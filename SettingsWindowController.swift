@@ -19,11 +19,11 @@ class SettingsWindowController: NSWindowController,  NSOpenSavePanelDelegate, NS
         
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     }
-    var nodeController: FNNodeController!
+    var node: Node!
     
     var validNodeFound: Bool {
         get {
-            return FNHelpers.validateNodeInstallationAtURL(self.nodeController.nodeLocation)
+            return FNHelpers.validateNodeInstallationAtURL(self.node.location)
         }
     }
 
@@ -52,10 +52,9 @@ class SettingsWindowController: NSWindowController,  NSOpenSavePanelDelegate, NS
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init (nodeController: FNNodeController) {
+    convenience init (node: Node) {
         self.init(windowNibName: "SettingsWindow")
-        self.nodeController = nodeController
-
+        self.node = node
     }
     
     override func awakeFromNib() {
@@ -97,7 +96,7 @@ class SettingsWindowController: NSWindowController,  NSOpenSavePanelDelegate, NS
         openpanel.prompt = promptString
         openpanel.beginWithCompletionHandler({(result: Int) -> Void in
             if result == NSFileHandlingPanelOKButton {
-                self.nodeController.nodeLocation = openpanel.URL
+                self.node.location = openpanel.URL
                 self.nodePathDisplay.URL = openpanel.URL
                 self.showWindow(nil)
             }

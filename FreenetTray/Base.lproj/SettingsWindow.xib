@@ -198,12 +198,12 @@
                             </attributedString>
                         </pathCell>
                         <connections>
-                            <binding destination="-2" name="value" keyPath="self.nodeController.nodeLocation" id="XIR-O8-PU2"/>
                             <binding destination="-2" name="hidden" keyPath="self.validNodeFound" id="ddR-bA-a60">
                                 <dictionary key="options">
                                     <string key="NSValueTransformerName">NSNegateBoolean</string>
                                 </dictionary>
                             </binding>
+                            <binding destination="-2" name="value" keyPath="self.node.location" id="Q7Q-2Y-WHf"/>
                         </connections>
                     </pathControl>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mxV-EL-AaY">

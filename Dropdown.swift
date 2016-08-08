@@ -12,7 +12,7 @@
 import Cocoa
 
 class Dropdown: NSObject, FNNodeStateProtocol, FNNodeStatsProtocol {
-    private var nodeController: FNNodeController!
+    private var node: Node!
     private var statusItem: NSStatusItem!
     private var aboutWindow: DCOAboutWindowController!
     private var dropdownMenu: NSMenu!
@@ -30,9 +30,9 @@ class Dropdown: NSObject, FNNodeStateProtocol, FNNodeStatsProtocol {
         }
     }
 
-    convenience init(nodeController: FNNodeController, aboutWindow: DCOAboutWindowController) {
+    convenience init(node: Node, aboutWindow: DCOAboutWindowController) {
         self.init()
-        self.nodeController = nodeController
+        self.node = node
         self.aboutWindow = aboutWindow
     }
     
@@ -64,21 +64,21 @@ class Dropdown: NSObject, FNNodeStateProtocol, FNNodeStatsProtocol {
     
     
     @IBAction func toggleNodeState(sender: AnyObject) {
-        switch self.nodeController.currentNodeState {
+        switch self.node.state {
         case .Running:
-            self.nodeController.stopFreenet()
+            self.node.stopFreenet()
             
         case .NotRunning:
-            self.nodeController.startFreenet()
+            self.node.startFreenet()
             
         case .Unknown:
-            self.nodeController.startFreenet()
+            self.node.startFreenet()
         }
     }
     
     
     func openWebInterface(sender: AnyObject) {
-        if let fproxyLocation = self.nodeController.fproxyLocation {
+        if let fproxyLocation = self.node.fproxyLocation {
             // Open the fproxy page in users default browser
             NSWorkspace.sharedWorkspace().openURL(fproxyLocation)
         }
@@ -96,7 +96,7 @@ class Dropdown: NSObject, FNNodeStateProtocol, FNNodeStatsProtocol {
     }
     
     func showDownlodsFolder(sender: AnyObject) {
-        NSWorkspace.sharedWorkspace().selectFile(nil, inFileViewerRootedAtPath: self.nodeController.downloadsFolder.path!)
+        NSWorkspace.sharedWorkspace().selectFile(nil, inFileViewerRootedAtPath: self.node.downloadsFolder.path!)
     }
     
     func uninstallFreenet(sender: AnyObject) {

@@ -1,4 +1,4 @@
-/* 
+/*
     Copyright (C) 2016 Stephen Oliver <steve@infincia.com>
 
     This code is distributed under the GNU General Public License, version 2 
@@ -16,7 +16,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     
-    private var nodeController: FNNodeController!
+    private var node: Node!
     private var dropdownMenuController: Dropdown!
     private var settingsWindowController: SettingsWindowController!
     private var installerWindowController: InstallerWindowController!
@@ -68,14 +68,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             visitWebsiteButton.title = NSLocalizedString("Visit the Freenet Website", comment: "Button title")
         }
         
-        nodeController = FNNodeController()
+        node = Node()
         
-        dropdownMenuController = Dropdown(nodeController: nodeController, aboutWindow: aboutWindow)
+        dropdownMenuController = Dropdown(node: node, aboutWindow: aboutWindow)
         
-        settingsWindowController = SettingsWindowController(nodeController: nodeController)
+        settingsWindowController = SettingsWindowController(node: node)
         let _ = settingsWindowController.window!
         
-        installerWindowController = InstallerWindowController(nodeController: nodeController)
+        installerWindowController = InstallerWindowController(node: node)
         let _ = installerWindowController.window!
         
         
@@ -83,9 +83,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                standardized = nodeURL.URLByStandardizingPath,
                nodePath = standardized.path {
             defaults.setValue(nodePath, forKey: FNNodeInstallationDirectoryKey)
-            nodeController.nodeLocation = nodeURL
+            node.location = nodeURL
             if defaults.boolForKey(FNStartAtLaunchKey) {
-                nodeController.startFreenet()
+                node.startFreenet()
             }
         }
         else {

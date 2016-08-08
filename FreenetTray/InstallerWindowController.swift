@@ -25,7 +25,7 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
     private var installationInProgress: Bool = false
     private var installationFinished: Bool = false
     
-    private var nodeController: FNNodeController!
+    private var node: Node!
 
     
     override init(window: NSWindow?) {
@@ -36,10 +36,9 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
         fatalError("init(coder:) has not been implemented")
     }
     
-    convenience init (nodeController: FNNodeController) {
+    convenience init (node: Node) {
         self.init(windowNibName: "InstallerWindow")
-        self.nodeController = nodeController
-
+        self.node = node
     }
     
     override func windowDidLoad() {
@@ -70,7 +69,7 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
     func next(sender: AnyObject) {
         assert(NSThread.currentThread() == NSThread.mainThread(), "NOT MAIN THREAD")
         if self.installationFinished {
-            if let fproxyLocation = self.nodeController.fproxyLocation {
+            if let fproxyLocation = self.node.fproxyLocation {
                 NSWorkspace.sharedWorkspace().openURL(fproxyLocation)
                 self.window!.close()
             }
