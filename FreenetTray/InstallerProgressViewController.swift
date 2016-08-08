@@ -14,16 +14,6 @@ import Cocoa
 import FontAwesomeIconFactory
 import CocoaAsyncSocket
 
-extension Dictionary {    
-    func merge(dict: Dictionary<Key,Value>) -> Dictionary<Key,Value> {
-        var c = self
-        for (key, value) in dict {
-            c[key] = value
-        }        
-        return c
-    }    
-}
-
 class InstallerProgressViewController: NSViewController {
 
     private var javaInstallationTitle: NSTextField!
