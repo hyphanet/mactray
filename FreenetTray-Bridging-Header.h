@@ -17,3 +17,5 @@
 #import <CocoaAsyncSocket/GCDAsyncSocket.h>
 
 #import <FontAwesomeIconFactory/FontAwesomeIconFactory.h>
+
+@import RegexKitLite;

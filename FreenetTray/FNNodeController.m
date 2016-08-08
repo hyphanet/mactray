@@ -17,7 +17,7 @@
 
 #import "FNHelpers.h"
 
-#import "FNConfigParser.h"
+#import "FreenetTray-Swift.h"
 
 #import "MHWDirectoryWatcher.h"
 
@@ -231,10 +231,10 @@
 -(void)readFreenetConfig {
     if ([FNHelpers validateNodeInstallationAtURL:self.nodeLocation]) {
         NSURL *wrapperConfigFile = [self.nodeLocation URLByAppendingPathComponent:FNNodeWrapperConfigFilePathname];
-        self.wrapperConfig = [FNConfigParser dictionaryFromConfigFile:wrapperConfigFile];
+        self.wrapperConfig = [NodeConfig fromFile:wrapperConfigFile];
         
         NSURL *freenetConfigFile = [self.nodeLocation URLByAppendingPathComponent:FNNodeFreenetConfigFilePathname];    
-        self.freenetConfig = [FNConfigParser dictionaryFromConfigFile:freenetConfigFile];
+        self.freenetConfig = [NodeConfig fromFile:freenetConfigFile];
         
         NSArray *fcpBindings = [self.freenetConfig[FNNodeFreenetConfigFCPBindAddressesKey] componentsSeparatedByString:@","];
         if (fcpBindings.count > 0) {
