@@ -11,7 +11,7 @@
 */
 
 #import "FNHelpers.h"
-#import "FNBrowser.h"
+#import "FreenetTray-Swift.h"
 #import <AFNetworking/AFHTTPRequestOperationManager.h>
 #import <AFNetworking/AFURLRequestSerialization.h>
 #import <AFNetworking/AFURLResponseSerialization.h>
@@ -121,7 +121,7 @@
     }); 
 }
 
-+(NSArray<FNBrowser *> *)installedWebBrowsers {
++(NSArray<Browser *> *)installedWebBrowsers {
     NSURL *url = [NSURL URLWithString:@"https://"];
     LSRolesMask roles = kLSRolesViewer;
     CFArrayRef urls = LSCopyApplicationURLsForURL((__bridge CFURLRef)url, roles);
@@ -131,7 +131,7 @@
     NSMutableArray *appNames = [NSMutableArray arrayWithCapacity: appUrls.count];
 
     for (NSURL *url in appUrls) {
-        FNBrowser *browser = [FNBrowser browserWithFileURL:url];
+        Browser *browser = [Browser browserWithFileURL:url];
         [appNames addObject: browser];
     }
     //[appNames sortUsingSelector: @selector(compare:)];

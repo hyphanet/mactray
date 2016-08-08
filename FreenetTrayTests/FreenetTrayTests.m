@@ -14,7 +14,6 @@
 
 #import "FNConstants.h"
 #import "FNHelpers.h"
-#import "FNBrowser.h"
 
 @interface FreenetTrayTests : XCTestCase
 
@@ -40,23 +39,6 @@
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
-}
-
-
-- (void)test_enumerateInstalledWebBrowsers {
-    NSArray<FNBrowser *> *browsers = [FNHelpers installedWebBrowsers];
-    
-    XCTAssertNotNil(browsers);
-    for (FNBrowser *browser in browsers) {
-        XCTAssertNotNil(browser);
-        XCTAssertTrue(browser.class == FNBrowser.class);
-        XCTAssertNotNil(browser.name);
-        XCTAssertNotNil(browser.icon);
-        XCTAssertNotNil(browser.url);
-        XCTAssertNotNil(browser.executablePath);
-        NSLog(@"Found: %@", [browser debugDescription]);
-    }
-
 }
 
 -(void)test_userSelectedBrowser {

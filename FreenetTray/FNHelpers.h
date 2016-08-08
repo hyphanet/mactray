@@ -14,7 +14,7 @@ typedef void (^FNGistSuccessBlock)(NSURL *url);
 typedef void (^FNGistFailureBlock)(NSError *error);
 
 @import Foundation;
-@class FNBrowser;
+@class Browser;
 
 
 @interface FNHelpers : NSObject
@@ -27,7 +27,7 @@ typedef void (^FNGistFailureBlock)(NSError *error);
 +(void)enableLoginItem:(BOOL)state;
 
 +(void)displayUninstallAlert;
-+(NSArray<FNBrowser *> *)installedWebBrowsers;
++(NSArray<Browser *> *)installedWebBrowsers;
 
 +(BOOL)migrateLaunchAgent:(NSError **)error;
 
