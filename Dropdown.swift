@@ -96,7 +96,10 @@ class Dropdown: NSObject, FNNodeStateProtocol, FNNodeStatsProtocol {
     }
     
     func showDownlodsFolder(sender: AnyObject) {
-        NSWorkspace.sharedWorkspace().selectFile(nil, inFileViewerRootedAtPath: self.node.downloadsFolder.path!)
+        guard let path = self.node.downloadsFolder?.path else {
+            return
+        }
+        NSWorkspace.sharedWorkspace().selectFile(nil, inFileViewerRootedAtPath: path)
     }
     
     func uninstallFreenet(sender: AnyObject) {
