@@ -54,7 +54,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
              Since this is the first launch, we add a login item for the user. If
              they delete that login item it wont be added again.
              */
-            FNHelpers.enableLoginItem(true)
+            Helpers.enableLoginItem(true)
         }
         
         let aboutWindow: DCOAboutWindowController = DCOAboutWindowController()
