@@ -37,7 +37,7 @@ class InstallerDestinationViewController: NSViewController, NSOpenSavePanelDeleg
 
     func selectInstallLocation(sender: AnyObject) {
 
-        let panel:NSOpenPanel! = NSOpenPanel()
+        let panel = NSOpenPanel()
 
         panel.delegate = self
         panel.canChooseFiles = false
