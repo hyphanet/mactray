@@ -61,7 +61,7 @@ class InstallerDestinationViewController: NSViewController, NSOpenSavePanelDeleg
     // MARK: - NSOpenPanelDelegate
 
     func panel(sender: AnyObject, validateURL url: NSURL) throws {
-        let existingInstallation = FNHelpers.validateNodeInstallationAtURL(url)
+        let existingInstallation = Helpers.validateNodeInstallationAtURL(url)
        
         if existingInstallation {
             let errorInfo = [NSLocalizedDescriptionKey: NSLocalizedString("Freenet is already installed here", comment: "String informing the user that the selected location is an existing Freenet installation") ]

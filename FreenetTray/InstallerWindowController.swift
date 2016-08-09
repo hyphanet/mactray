@@ -146,7 +146,7 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
         
         
         if button == NSAlertFirstButtonReturn {
-            FNHelpers.createGist(log, withTitle: "Installation Log", success: { (url) in
+            Helpers.createGist(log, withTitle: "Installation Log", success: { (url) in
                 let pasteBoard = NSPasteboard.generalPasteboard()
                 pasteBoard.declareTypes([NSPasteboardTypeString], owner: nil)
                 pasteBoard.setString(url.path!, forType: NSStringPboardType)

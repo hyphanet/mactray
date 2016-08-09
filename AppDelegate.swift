@@ -32,7 +32,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
 
         do {
-            try FNHelpers.migrateLaunchAgent()
+            try Helpers.migrateLaunchAgent()
         }
         catch let error as NSError {
             print("Error during migration: \(error)")
@@ -79,7 +79,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let _ = installerWindowController.window!
         
         
-        if let nodeURL = FNHelpers.findNodeInstallation(),
+        if let nodeURL = Helpers.findNodeInstallation(),
                standardized = nodeURL.URLByStandardizingPath,
                nodePath = standardized.path {
             defaults.setValue(nodePath, forKey: FNNodeInstallationDirectoryKey)
@@ -90,7 +90,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         else {
             // no freenet installation found, ask the user what to do
-            FNHelpers.displayNodeMissingAlert()
+            Helpers.displayNodeMissingAlert()
         }
         
         

@@ -103,7 +103,7 @@ class Dropdown: NSObject, FNNodeStateProtocol, FNNodeStatsProtocol {
     }
     
     func uninstallFreenet(sender: AnyObject) {
-        FNHelpers.displayUninstallAlert()
+        Helpers.displayUninstallAlert()
     }
     
     

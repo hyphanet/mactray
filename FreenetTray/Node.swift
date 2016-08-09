@@ -51,7 +51,7 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
     func uninstallFreenet(notification:NSNotification!) {
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { 
 
-            if !FNHelpers.validateNodeInstallationAtURL(self.location) {
+            if !Helpers.validateNodeInstallationAtURL(self.location) {
                 // warn user that the configured node path is not valid and refuse to delete anything
                 dispatch_async(dispatch_get_main_queue(), {         
                     let alert = NSAlert()
@@ -188,7 +188,7 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
         // start a continuous loop to monitor installation directory
         while true {
             autoreleasepool { 
-                if !FNHelpers.validateNodeInstallationAtURL(self.location) {
+                if !Helpers.validateNodeInstallationAtURL(self.location) {
                     dispatch_async(dispatch_get_main_queue(), { 
                         self.state = .Unknown
                         NSNotificationCenter.defaultCenter().postNotificationName(FNNodeStateUnknownNotification, object: nil)
@@ -201,18 +201,18 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
 
     func startFreenet() {
         let nodeLocation = self.location
-        if FNHelpers.validateNodeInstallationAtURL(nodeLocation) {
+        if Helpers.validateNodeInstallationAtURL(nodeLocation) {
             let runScript = nodeLocation!.URLByAppendingPathComponent(FNNodeRunscriptPathname)
             NSTask.launchedTaskWithLaunchPath(runScript.path!, arguments:["start"])
         }
         else {
-            FNHelpers.displayNodeMissingAlert()
+            Helpers.displayNodeMissingAlert()
         }
     }
 
     func stopFreenet() {
         let nodeLocation = self.location
-        if FNHelpers.validateNodeInstallationAtURL(nodeLocation) {
+        if Helpers.validateNodeInstallationAtURL(nodeLocation) {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { 
                 let runScript:NSURL! = nodeLocation!.URLByAppendingPathComponent(FNNodeRunscriptPathname)
                 let task:NSTask! = NSTask.launchedTaskWithLaunchPath(runScript.path!, arguments: ["stop"])
@@ -225,7 +225,7 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
             })
         }
         else {
-            FNHelpers.displayNodeMissingAlert()
+            Helpers.displayNodeMissingAlert()
         }
     }
 
@@ -256,7 +256,7 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
         guard let nodeLocation = self.location else {
             return
         }
-        if FNHelpers.validateNodeInstallationAtURL(self.location) {
+        if Helpers.validateNodeInstallationAtURL(self.location) {
             let wrapperConfigFile = nodeLocation.URLByAppendingPathComponent(FNNodeWrapperConfigFilePathname)
             let freenetConfigFile = nodeLocation.URLByAppendingPathComponent(FNNodeFreenetConfigFilePathname)
 

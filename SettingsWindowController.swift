@@ -23,7 +23,7 @@ class SettingsWindowController: NSWindowController,  NSOpenSavePanelDelegate, NS
     
     var validNodeFound: Bool {
         get {
-            return FNHelpers.validateNodeInstallationAtURL(self.node.location)
+            return Helpers.validateNodeInstallationAtURL(self.node.location)
         }
     }
 
@@ -104,7 +104,7 @@ class SettingsWindowController: NSWindowController,  NSOpenSavePanelDelegate, NS
     }
     
     func uninstallFreenet(sender: AnyObject) {
-        FNHelpers.displayUninstallAlert()
+        Helpers.displayUninstallAlert()
     }
     
     
@@ -112,7 +112,7 @@ class SettingsWindowController: NSWindowController,  NSOpenSavePanelDelegate, NS
     
     
     func panel(sender: AnyObject, validateURL url: NSURL) throws {
-        if !FNHelpers.validateNodeInstallationAtURL(url) {
+        if !Helpers.validateNodeInstallationAtURL(url) {
             let errorInfo = [NSLocalizedDescriptionKey: NSLocalizedString("Not a valid Freenet installation", comment: "String informing the user that the selected location is not a Freenet installation")]
             throw NSError(domain: "org.freenetproject", code: 0x1000, userInfo: errorInfo)
         }

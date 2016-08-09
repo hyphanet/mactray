@@ -12,7 +12,6 @@
 		AA55DBA01C25CDE000581EEB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA55DBA21C25CDE000581EEB /* Localizable.strings */; };
 		AA55DBA51C25CDE100581EEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA55DBA71C25CDE100581EEB /* InfoPlist.strings */; };
 		AA5E172C1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg in Resources */ = {isa = PBXBuildFile; fileRef = AA5E172B1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg */; };
-		AA621C991C1CF0DA00A1C4A5 /* FNHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C841C1CF0DA00A1C4A5 /* FNHelpers.m */; };
 		AA621CAC1C1CF10800A1C4A5 /* TrayIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621CA91C1CF10800A1C4A5 /* TrayIcon.m */; };
 		AA621CB01C1CF12B00A1C4A5 /* installer_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AA621CAE1C1CF12B00A1C4A5 /* installer_background.png */; };
 		AA621CB21C1CF13900A1C4A5 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA621CB11C1CF13900A1C4A5 /* defaults.plist */; };
@@ -107,8 +106,6 @@
 		AA55DBAF1C25E6CF00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		AA5E172B1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jre-8u66-macosx-x64.dmg"; sourceTree = "<group>"; };
 		AA621C391C1BC46E00A1C4A5 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
-		AA621C831C1CF0DA00A1C4A5 /* FNHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNHelpers.h; path = FreenetTray/FNHelpers.h; sourceTree = "<group>"; };
-		AA621C841C1CF0DA00A1C4A5 /* FNHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNHelpers.m; path = FreenetTray/FNHelpers.m; sourceTree = "<group>"; };
 		AA621CA61C1CF10800A1C4A5 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = FreenetTray/Prefix.pch; sourceTree = "<group>"; };
 		AA621CA81C1CF10800A1C4A5 /* TrayIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrayIcon.h; path = FreenetTray/TrayIcon.h; sourceTree = "<group>"; };
 		AA621CA91C1CF10800A1C4A5 /* TrayIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrayIcon.m; path = FreenetTray/TrayIcon.m; sourceTree = "<group>"; };
@@ -253,8 +250,6 @@
 				AA93DBAB1D55A62D00BE256F /* Dropdown.swift */,
 				AA93DBBC1D59072A00BE256F /* FCP.swift */,
 				AA93DBBE1D59107000BE256F /* Helpers.swift */,
-				AA621C831C1CF0DA00A1C4A5 /* FNHelpers.h */,
-				AA621C841C1CF0DA00A1C4A5 /* FNHelpers.m */,
 				AA621D391C1CFB4500A1C4A5 /* InstallerDestinationView.xib */,
 				AA93DBB11D57DA3900BE256F /* InstallerDestinationViewController.swift */,
 				AA621D3C1C1CFB4700A1C4A5 /* InstallerProgressView.xib */,
@@ -584,7 +579,6 @@
 				AA93DBAE1D55B97400BE256F /* SettingsWindowController.swift in Sources */,
 				AA93DBB41D57E70A00BE256F /* InstallerProgressViewController.swift in Sources */,
 				AA93DBB21D57DA3900BE256F /* InstallerDestinationViewController.swift in Sources */,
-				AA621C991C1CF0DA00A1C4A5 /* FNHelpers.m in Sources */,
 				AA93DBC31D596CBE00BE256F /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
