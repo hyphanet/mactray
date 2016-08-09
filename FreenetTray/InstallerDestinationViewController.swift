@@ -52,7 +52,7 @@ class InstallerDestinationViewController: NSViewController, NSOpenSavePanelDeleg
         panel.beginWithCompletionHandler({ (result:Int) in 
             if result == NSFileHandlingPanelOKButton {
                 self.installPathIndicator.URL = panel.URL
-                self.stateDelegate.userDidSelectInstallLocation(panel.URL)
+                self.stateDelegate.userDidSelectInstallLocation(panel.URL!)
             }
         })
     }
