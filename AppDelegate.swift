@@ -25,7 +25,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var CFBundleVersion = (NSBundle.mainBundle().infoDictionary?["CFBundleVersion"]) as! String
     
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        NSUserDefaults.standardUserDefaults().registerDefaults(["NSApplicationCrashOnExceptions": true])
         print("FreenetTray build \(CFBundleVersion)")
         PFMoveToApplicationsFolderIfNecessary()
         // migrations should go here if at all possible
