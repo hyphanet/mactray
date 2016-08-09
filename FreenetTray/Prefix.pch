@@ -12,6 +12,4 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
-    #import "FNConstants.h"
-    #import "FNProtocols.h"
 #endif

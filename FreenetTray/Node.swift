@@ -361,7 +361,7 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
 
     // MARK: - FNFCPWrapperDataSource methods
 
-    func nodeFCPURL() -> NSURL! {
+    func nodeFCPURL() -> NSURL? {
         return self.fcpLocation
     }
 

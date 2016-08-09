@@ -13,7 +13,6 @@
 		AA55DBA51C25CDE100581EEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA55DBA71C25CDE100581EEB /* InfoPlist.strings */; };
 		AA5E172C1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg in Resources */ = {isa = PBXBuildFile; fileRef = AA5E172B1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg */; };
 		AA621C991C1CF0DA00A1C4A5 /* FNHelpers.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C841C1CF0DA00A1C4A5 /* FNHelpers.m */; };
-		AA621CAA1C1CF10800A1C4A5 /* FNConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621CA41C1CF10800A1C4A5 /* FNConstants.m */; };
 		AA621CAC1C1CF10800A1C4A5 /* TrayIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621CA91C1CF10800A1C4A5 /* TrayIcon.m */; };
 		AA621CB01C1CF12B00A1C4A5 /* installer_background.png in Resources */ = {isa = PBXBuildFile; fileRef = AA621CAE1C1CF12B00A1C4A5 /* installer_background.png */; };
 		AA621CB21C1CF13900A1C4A5 /* defaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA621CB11C1CF13900A1C4A5 /* defaults.plist */; };
@@ -35,6 +34,8 @@
 		AA93DBBB1D58464200BE256F /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBBA1D58464200BE256F /* Node.swift */; };
 		AA93DBBD1D59072A00BE256F /* FCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBBC1D59072A00BE256F /* FCP.swift */; };
 		AA93DBBF1D59107000BE256F /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBBE1D59107000BE256F /* Helpers.swift */; };
+		AA93DBC11D596B8800BE256F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBC01D596B8800BE256F /* Constants.swift */; };
+		AA93DBC31D596CBE00BE256F /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBC21D596CBE00BE256F /* Protocols.swift */; };
 		AA93DBCB1D5A5C1600BE256F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBCA1D5A5C1600BE256F /* AppDelegate.swift */; };
 		AA93DBCD1D5A5C1600BE256F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA93DBCC1D5A5C1600BE256F /* Assets.xcassets */; };
 		AA93DBD01D5A5C1600BE256F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA93DBCE1D5A5C1600BE256F /* MainMenu.xib */; };
@@ -108,9 +109,6 @@
 		AA621C391C1BC46E00A1C4A5 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		AA621C831C1CF0DA00A1C4A5 /* FNHelpers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNHelpers.h; path = FreenetTray/FNHelpers.h; sourceTree = "<group>"; };
 		AA621C841C1CF0DA00A1C4A5 /* FNHelpers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNHelpers.m; path = FreenetTray/FNHelpers.m; sourceTree = "<group>"; };
-		AA621CA31C1CF10800A1C4A5 /* FNConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNConstants.h; path = FreenetTray/FNConstants.h; sourceTree = "<group>"; };
-		AA621CA41C1CF10800A1C4A5 /* FNConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNConstants.m; path = FreenetTray/FNConstants.m; sourceTree = "<group>"; };
-		AA621CA51C1CF10800A1C4A5 /* FNProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNProtocols.h; path = FreenetTray/FNProtocols.h; sourceTree = "<group>"; };
 		AA621CA61C1CF10800A1C4A5 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = FreenetTray/Prefix.pch; sourceTree = "<group>"; };
 		AA621CA81C1CF10800A1C4A5 /* TrayIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TrayIcon.h; path = FreenetTray/TrayIcon.h; sourceTree = "<group>"; };
 		AA621CA91C1CF10800A1C4A5 /* TrayIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TrayIcon.m; path = FreenetTray/TrayIcon.m; sourceTree = "<group>"; };
@@ -135,6 +133,8 @@
 		AA93DBBA1D58464200BE256F /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Node.swift; path = FreenetTray/Node.swift; sourceTree = "<group>"; };
 		AA93DBBC1D59072A00BE256F /* FCP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FCP.swift; path = FreenetTray/FCP.swift; sourceTree = "<group>"; };
 		AA93DBBE1D59107000BE256F /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helpers.swift; path = FreenetTray/Helpers.swift; sourceTree = "<group>"; };
+		AA93DBC01D596B8800BE256F /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = FreenetTray/Constants.swift; sourceTree = "<group>"; };
+		AA93DBC21D596CBE00BE256F /* Protocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Protocols.swift; path = FreenetTray/Protocols.swift; sourceTree = "<group>"; };
 		AA93DBC81D5A5C1600BE256F /* FreenetTray Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FreenetTray Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA93DBCA1D5A5C1600BE256F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AA93DBCC1D5A5C1600BE256F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -264,6 +264,8 @@
 				AA93DBBA1D58464200BE256F /* Node.swift */,
 				AA621D421C1CFB4B00A1C4A5 /* SettingsWindow.xib */,
 				AA93DBAD1D55B97400BE256F /* SettingsWindowController.swift */,
+				AA93DBC01D596B8800BE256F /* Constants.swift */,
+				AA93DBC21D596CBE00BE256F /* Protocols.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -300,9 +302,6 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				AA621CA31C1CF10800A1C4A5 /* FNConstants.h */,
-				AA621CA41C1CF10800A1C4A5 /* FNConstants.m */,
-				AA621CA51C1CF10800A1C4A5 /* FNProtocols.h */,
 				AA621CB31C1CF14500A1C4A5 /* main.xib */,
 				AA621CA61C1CF10800A1C4A5 /* Prefix.pch */,
 				AA621CA81C1CF10800A1C4A5 /* TrayIcon.h */,
@@ -577,15 +576,16 @@
 				AA93DBBB1D58464200BE256F /* Node.swift in Sources */,
 				AA93DBAA1D558C6B00BE256F /* AppDelegate.swift in Sources */,
 				AA93DBB91D5808B900BE256F /* NodeConfig.swift in Sources */,
+				AA93DBC11D596B8800BE256F /* Constants.swift in Sources */,
 				AA621CAC1C1CF10800A1C4A5 /* TrayIcon.m in Sources */,
 				AA93DBAC1D55A62D00BE256F /* Dropdown.swift in Sources */,
 				AA93DBB61D57FF1100BE256F /* Browser.swift in Sources */,
 				AA93DBBD1D59072A00BE256F /* FCP.swift in Sources */,
 				AA93DBAE1D55B97400BE256F /* SettingsWindowController.swift in Sources */,
-				AA621CAA1C1CF10800A1C4A5 /* FNConstants.m in Sources */,
 				AA93DBB41D57E70A00BE256F /* InstallerProgressViewController.swift in Sources */,
 				AA93DBB21D57DA3900BE256F /* InstallerDestinationViewController.swift in Sources */,
 				AA621C991C1CF0DA00A1C4A5 /* FNHelpers.m in Sources */,
+				AA93DBC31D596CBE00BE256F /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
