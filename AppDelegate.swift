@@ -57,9 +57,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             Helpers.enableLoginItem(true)
         }
         
-        let aboutWindow: DCOAboutWindowController = DCOAboutWindowController()
+        let aboutWindow = DCOAboutWindowController()
         aboutWindow.useTextViewForAcknowledgments = true
-        let websiteURLPath: String = "https://\(FNWebDomain)"
+        let websiteURLPath = "https://\(FNWebDomain)"
         aboutWindow.appWebsiteURL = NSURL(string: websiteURLPath)!
         
         let _ = aboutWindow.window!
