@@ -11,7 +11,7 @@
 */
 
 import Foundation
-import AFNetworking
+import Alamofire
 import ServiceManagement
 
 public extension Dictionary {
@@ -165,10 +165,8 @@ class Helpers : NSObject {
     }
 
     class func createGist(string: String, withTitle title: String, success: FNGistSuccessBlock, failure: FNGistFailureBlock) {
-        let githubAPI = String(format:"https://%@", FNGithubAPI)
-        let url = NSURL(fileURLWithPath: githubAPI)
         let fileName = "FreenetTray - \(title).txt"
-        let params = [
+        let params: [String: AnyObject] = [
             "description": title,
             "public": true,
             "files": [
@@ -178,27 +176,33 @@ class Helpers : NSObject {
             ]
         ]
         
-        let manager = AFHTTPRequestOperationManager(baseURL:url)
+        let headers: [String: String] = [
+            "Content-Type": "application/vnd.github.v3+json",
+            "Accept": "application/json",
+            "User-Agent": "FreenetTray for OS X"
+        ]
         
-        manager.requestSerializer = AFJSONRequestSerializer()
-        
-        manager.requestSerializer.setValue("application/json", forHTTPHeaderField:"Content-Type")
-        
-        manager.requestSerializer.setValue("application/vnd.github.v3+json", forHTTPHeaderField:"Accept")
-        
-        manager.requestSerializer.setValue("FreenetTray for OS X", forHTTPHeaderField:"User-Agent")
+        Alamofire.request(.POST, "https://\(FNGithubAPI)/gists", parameters: params, headers: headers, encoding: .JSON)
+            .validate()
+            .responseJSON { response in                
+            switch response.result {
+            case .Success(let data):
+                let response = data as! [String: AnyObject]
+                let html_url = response["html_url"] as! String
+                let gist = NSURL(fileURLWithPath: html_url)
+                success(gist)
+            case .Failure(let error):
+                let body = response.request!.HTTPBody
+                let headers = response.request!.allHTTPHeaderFields!
+                let string = String(data: body!, encoding: NSUTF8StringEncoding)!
+                print(headers)
+                print(string)
 
-        manager.responseSerializer = AFJSONResponseSerializer()
-        
-        manager.POST("/gists", parameters: params, success: { (operation, responseObject) in
-            let response = responseObject as! [String: String]
-            let html_url = response["html_url"]
-            let gist = NSURL(fileURLWithPath: html_url!)
-            success(gist)
-        }, failure: { (operation, error) in
-            failure(error)
-        })
-
+                print(response.response!)
+                
+                failure(error)
+            }
+        }
     }
     
     class func enableLoginItem(state: Bool) -> Bool {

@@ -1,4 +1,4 @@
-platform :osx, '10.8'
+platform :osx, '10.9'
 
 target 'FreenetTray' do
     use_frameworks!
@@ -9,5 +9,8 @@ target 'FreenetTray' do
     pod 'LetsMove', '~> 1.20'
     pod 'FontAwesomeIconFactory', '~> 2.1.1'
     pod 'Sparkle', '1.14.0'
-    pod 'AFNetworking', '~> 2.0'
+    pod 'Alamofire'
+    target 'FreenetTray Tests' do
+        inherit! :search_paths
+    end
 end
