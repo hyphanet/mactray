@@ -33,6 +33,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         do {
             try Helpers.migrateLaunchAgent()
+            Helpers.migrateLaunchAtStart()
         }
         catch let error as NSError {
             print("Error during migration: \(error)")

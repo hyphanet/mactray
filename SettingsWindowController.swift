@@ -29,11 +29,11 @@ class SettingsWindowController: NSWindowController,  NSOpenSavePanelDelegate, NS
 
     var loginItem: Bool {
         set(state) {
-            FNHelpers.enableLoginItem(state)
+            Helpers.enableLoginItem(state)
             NSUserDefaults.standardUserDefaults().setBool(state, forKey: FNStartAtLaunchKey)
         }
         get {
-            return FNHelpers.isLoginItem()
+            return NSUserDefaults.standardUserDefaults().boolForKey(FNStartAtLaunchKey)
         }
     }
 

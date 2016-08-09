@@ -12,6 +12,7 @@
 
 import Foundation
 import AFNetworking
+import ServiceManagement
 
 public extension Dictionary {
     func merge(dict: Dictionary<Key,Value>) -> Dictionary<Key,Value> {
@@ -158,6 +159,10 @@ class Helpers : NSObject {
         }
     }
     
+    class func migrateLaunchAtStart() {
+        let startAtLaunch = NSUserDefaults.standardUserDefaults().boolForKey(FNStartAtLaunchKey)
+        Helpers.enableLoginItem(startAtLaunch)
+    }
 
     class func createGist(string: String, withTitle title: String, success: FNGistSuccessBlock, failure: FNGistFailureBlock) {
         let githubAPI = String(format:"https://%@", FNGithubAPI)
@@ -196,4 +201,20 @@ class Helpers : NSObject {
 
     }
     
+    class func enableLoginItem(state: Bool) -> Bool {
+
+        let helper = NSBundle.mainBundle().bundleURL.URLByAppendingPathComponent("Contents/Library/LoginItems/FreenetTray Helper.app", isDirectory: true)
+
+        if LSRegisterURL(helper, state) != noErr {
+            print("Failed to LSRegisterURL \(helper)")
+        }
+
+        if (SMLoginItemSetEnabled(("org.freenetproject.FreenetTray-Helper" as CFStringRef), true)) {
+            return true
+        }
+        else {
+            print("Failed to SMLoginItemSetEnabled \(helper)")
+            return false
+        }
+    }
 }
