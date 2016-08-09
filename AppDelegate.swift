@@ -39,9 +39,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         }
         
-        // load factory defaults for node location variables, sourced from defaults.plist
-        let defaults: NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        defaults.registerDefaults(["NSApplicationCrashOnExceptions": true])
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.registerDefaults(["NSApplicationCrashOnExceptions": true, FNEnableNotificationsKey: true, FNBrowserPreferenceKey: "Safari", FNStartAtLaunchKey: true, FNNodeFirstLaunchKey: true])
         
         /*
          Check for first launch key, if it isn't there this is first launch and
