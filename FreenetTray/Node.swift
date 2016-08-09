@@ -16,15 +16,15 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
 
     var state: FNNodeState = .Unknown
     
-    var wrapperConfig: NSDictionary!
+    var wrapperConfig: NSDictionary?
     
-    var freenetConfig: NSDictionary!
+    var freenetConfig: NSDictionary?
     
-    var fcpLocation: NSURL!
+    var fcpLocation: NSURL?
     
-    var fproxyLocation: NSURL!
+    var fproxyLocation: NSURL?
     
-    var downloadsFolder: NSURL!
+    var downloadsFolder: NSURL?
     
     private var fcp = FCP()
     
