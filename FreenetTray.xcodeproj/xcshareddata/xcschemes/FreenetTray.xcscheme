@@ -43,6 +43,16 @@
                referenceType = "1">
             </LocationScenarioReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AA93DBDA1D5A784E00BE256F"
+               BuildableName = "FreenetTray Tests.xctest"
+               BlueprintName = "FreenetTray Tests"
+               ReferencedContainer = "container:FreenetTray.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference

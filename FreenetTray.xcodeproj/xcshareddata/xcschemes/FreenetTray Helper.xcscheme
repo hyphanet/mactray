@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0710"
+   LastUpgradeVersion = "0730"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -9,14 +9,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AAF73D831C174ABF0006D1E1"
-               BuildableName = "FreenetTrayTests.xctest"
-               BlueprintName = "FreenetTrayTests"
+               BlueprintIdentifier = "AA93DBC71D5A5C1600BE256F"
+               BuildableName = "FreenetTray Helper.app"
+               BlueprintName = "FreenetTray Helper"
                ReferencedContainer = "container:FreenetTray.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -24,27 +24,17 @@
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = ""
-      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AAF73D831C174ABF0006D1E1"
-               BuildableName = "FreenetTrayTests.xctest"
-               BlueprintName = "FreenetTrayTests"
-               ReferencedContainer = "container:FreenetTray.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAF73D831C174ABF0006D1E1"
-            BuildableName = "FreenetTrayTests.xctest"
-            BlueprintName = "FreenetTrayTests"
+            BlueprintIdentifier = "AA93DBC71D5A5C1600BE256F"
+            BuildableName = "FreenetTray Helper.app"
+            BlueprintName = "FreenetTray Helper"
             ReferencedContainer = "container:FreenetTray.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -61,15 +51,16 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAF73D831C174ABF0006D1E1"
-            BuildableName = "FreenetTrayTests.xctest"
-            BlueprintName = "FreenetTrayTests"
+            BlueprintIdentifier = "AA93DBC71D5A5C1600BE256F"
+            BuildableName = "FreenetTray Helper.app"
+            BlueprintName = "FreenetTray Helper"
             ReferencedContainer = "container:FreenetTray.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -79,15 +70,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "AAF73D831C174ABF0006D1E1"
-            BuildableName = "FreenetTrayTests.xctest"
-            BlueprintName = "FreenetTrayTests"
+            BlueprintIdentifier = "AA93DBC71D5A5C1600BE256F"
+            BuildableName = "FreenetTray Helper.app"
+            BlueprintName = "FreenetTray Helper"
             ReferencedContainer = "container:FreenetTray.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
