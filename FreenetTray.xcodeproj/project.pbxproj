@@ -940,7 +940,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.freenetproject.mactray;
 				PRODUCT_NAME = FreenetTray;
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "FreenetTray-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FreenetTray/FreenetTray-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -972,7 +972,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = org.freenetproject.mactray;
 				PRODUCT_NAME = FreenetTray;
 				SDKROOT = macosx;
-				SWIFT_OBJC_BRIDGING_HEADER = "FreenetTray-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FreenetTray/FreenetTray-Bridging-Header.h";
 			};
 			name = Release;
 		};
