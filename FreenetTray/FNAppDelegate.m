@@ -25,6 +25,8 @@
 
 #import "PFMoveApplication.h"
 #import <DCOAboutWindow/DCOAboutWindowController.h>
+#import <TSMarkdownParser/TSMarkdownParser.h>
+
 @interface FNAppDelegate ()
     
 @end
@@ -60,8 +62,21 @@
         */
         [[NSBundle mainBundle] addToLoginItems];
     }
-            
+    
     DCOAboutWindowController *aboutWindow = [[DCOAboutWindowController alloc] init];
+
+
+    NSURL *markdownURL = [[NSBundle mainBundle] URLForResource:@"Changelog.md" withExtension:nil];
+    
+    NSError *mdError = nil;
+    
+    NSString *markdown = [NSString stringWithContentsOfURL:markdownURL encoding:NSUTF8StringEncoding error:&mdError];
+    
+    if (!mdError) {
+        aboutWindow.appCredits = [[TSMarkdownParser standardParser] attributedStringFromMarkdown:markdown];
+    }
+    
+    
     aboutWindow.useTextViewForAcknowledgments = YES;
     NSString *websiteURLPath = [NSString stringWithFormat:@"https://%@", FNWebDomain];
     aboutWindow.appWebsiteURL = [NSURL URLWithString:websiteURLPath];
