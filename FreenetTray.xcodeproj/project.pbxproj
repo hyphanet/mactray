@@ -236,16 +236,13 @@
 		080E96DDFE201D6D7F000001 /* FreenetTray */ = {
 			isa = PBXGroup;
 			children = (
-				AA93DBE91D5AAF0F00BE256F /* TrayIcon.swift */,
-				AA621CB31C1CF14500A1C4A5 /* main.xib */,
-				AA621CA61C1CF10800A1C4A5 /* Prefix.pch */,
-				AA93DBED1D5ADA4800BE256F /* FreenetTray-Bridging-Header.h */,
 				AA93DBEB1D5ADA4800BE256F /* AppDelegate.swift */,
 				AA93DBB51D57FF1100BE256F /* Browser.swift */,
-				AA93DBB81D5808B900BE256F /* NodeConfig.swift */,
-				AA621D361C1CFB4200A1C4A5 /* Dropdown.xib */,
+				AA93DBC01D596B8800BE256F /* Constants.swift */,
 				AA93DBEC1D5ADA4800BE256F /* Dropdown.swift */,
+				AA621D361C1CFB4200A1C4A5 /* Dropdown.xib */,
 				AA93DBBC1D59072A00BE256F /* FCP.swift */,
+				AA93DBED1D5ADA4800BE256F /* FreenetTray-Bridging-Header.h */,
 				AA93DBBE1D59107000BE256F /* Helpers.swift */,
 				AA621D391C1CFB4500A1C4A5 /* InstallerDestinationView.xib */,
 				AA93DBB11D57DA3900BE256F /* InstallerDestinationViewController.swift */,
@@ -253,11 +250,14 @@
 				AA93DBB31D57E70A00BE256F /* InstallerProgressViewController.swift */,
 				AA621D3F1C1CFB4900A1C4A5 /* InstallerWindow.xib */,
 				AA93DBAF1D57B1F200BE256F /* InstallerWindowController.swift */,
+				AA621CB31C1CF14500A1C4A5 /* main.xib */,
 				AA93DBBA1D58464200BE256F /* Node.swift */,
+				AA93DBB81D5808B900BE256F /* NodeConfig.swift */,
+				AA621CA61C1CF10800A1C4A5 /* Prefix.pch */,
+				AA93DBC21D596CBE00BE256F /* Protocols.swift */,
 				AA621D421C1CFB4B00A1C4A5 /* SettingsWindow.xib */,
 				AA93DBEE1D5ADA4800BE256F /* SettingsWindowController.swift */,
-				AA93DBC01D596B8800BE256F /* Constants.swift */,
-				AA93DBC21D596CBE00BE256F /* Protocols.swift */,
+				AA93DBE91D5AAF0F00BE256F /* TrayIcon.swift */,
 			);
 			name = FreenetTray;
 			sourceTree = "<group>";
@@ -293,15 +293,15 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				AA55DBA21C25CDE000581EEB /* Localizable.strings */,
-				AA55DB9C1C25CDDF00581EEB /* InfoPlist.strings */,
 				AAE306EE1BF6DEC900C4EC1D /* Acknowledgments.rtf */,
 				AAE306EF1BF6DEC900C4EC1D /* Credits.rtf */,
 				AA433BCF109CD2B400EDBB73 /* gpl.txt */,
 				AAE306F21BF920EE00C4EC1D /* Images.xcassets */,
 				AA621CB71C1CF28900A1C4A5 /* Info.plist */,
+				AA55DB9C1C25CDDF00581EEB /* InfoPlist.strings */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				AA621CAE1C1CF12B00A1C4A5 /* installer_background.png */,
+				AA55DBA21C25CDE000581EEB /* Localizable.strings */,
 				AAEF3AED1AD6313800A4B475 /* README.md */,
 				AA9BE2ED1C1B774000345C77 /* verify.py */,
 			);
@@ -313,8 +313,8 @@
 			children = (
 				AA93DBCA1D5A5C1600BE256F /* AppDelegate.swift */,
 				AA93DBCC1D5A5C1600BE256F /* Assets.xcassets */,
-				AA93DBCE1D5A5C1600BE256F /* MainMenu.xib */,
 				AA93DBD11D5A5C1600BE256F /* Info.plist */,
+				AA93DBCE1D5A5C1600BE256F /* MainMenu.xib */,
 			);
 			path = "FreenetTray Helper";
 			sourceTree = "<group>";
