@@ -11,4 +11,5 @@ target 'FreenetTray' do
     pod 'FontAwesomeIconFactory', '~> 2.1.1'
     pod 'Sparkle', '1.14.0'
     pod 'AFNetworking', '~> 2.0'
+    pod 'TSMarkdownParser'
 end
