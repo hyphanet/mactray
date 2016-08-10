@@ -3,6 +3,7 @@
 * 3.0.0-git
 
     * Rewritten in Swift
+    * Show warning if run on OS X < 10.9
     
 * 2.0.6
 
