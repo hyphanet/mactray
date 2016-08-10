@@ -10,6 +10,7 @@ target 'FreenetTray' do
     pod 'FontAwesomeIconFactory', '~> 2.1.1'
     pod 'Sparkle', '1.14.0'
     pod 'Alamofire'
+    pod 'TSMarkdownParser'
     target 'FreenetTray Tests' do
         inherit! :search_paths
     end

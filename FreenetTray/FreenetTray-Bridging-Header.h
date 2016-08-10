@@ -13,3 +13,5 @@
 @import RegexKitLite;
 
 @import MHWDirectoryWatcher;
+
+@import TSMarkdownParser;

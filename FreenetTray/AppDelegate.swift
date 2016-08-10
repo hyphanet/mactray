@@ -57,6 +57,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         let aboutWindow = DCOAboutWindowController()
+        
+        let markdownURL = NSBundle.mainBundle().URLForResource("Changelog.md", withExtension: nil)
+        
+        let data = NSFileManager.defaultManager().contentsAtPath(markdownURL!.path!)
+        
+        let markdown = String(data: data!, encoding: NSUTF8StringEncoding)!
+        
+        aboutWindow.appCredits = TSMarkdownParser.standardParser().attributedStringFromMarkdown(markdown)
+        
         aboutWindow.useTextViewForAcknowledgments = true
         let websiteURLPath = "https://\(FNWebDomain)"
         aboutWindow.appWebsiteURL = NSURL(string: websiteURLPath)!
