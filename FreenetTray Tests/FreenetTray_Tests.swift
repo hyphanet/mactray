@@ -31,6 +31,28 @@ class FreenetTray_Tests: XCTestCase {
         XCTAssertTrue((userSelectedBrowser == "Safari"))
 
     }
+    
+    func test_browserList() {
+        // using an expectation here because it can explicitly pass the test rather than looking for failures
+        let expectation = self.expectationWithDescription("test_browserList")
+
+        guard let browsers = Helpers.installedWebBrowsers() else {
+            XCTFail("Browsers returned nil")
+            return
+        }
+        for browser in browsers {
+            // one of them should always be Safari, so we can test for it
+            if browser.name == "Safari" {
+                expectation.fulfill()
+            }
+        }
+        self.waitForExpectationsWithTimeout(5, handler:{ (error) in
+            if error != nil {
+                XCTFail("test_browserList failed with error: \(error)")
+            }
+        })
+        
+    }
 
     func test_createGist() {
         // NOTE: This test sometimes fails on CI servers, Github returns a 403 error.
