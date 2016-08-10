@@ -124,15 +124,17 @@ class Helpers : NSObject {
         }) 
     }
 
-    class func installedWebBrowsers() -> [Browser] {
-        let url = NSURL(string: "https://")
+    class func installedWebBrowsers() -> [Browser]? {
+        let url = NSURL(string: "https://")!
         
         let roles = LSRolesMask.Viewer
         
-        if let appUrls = LSCopyApplicationURLsForURL((url as! CFURLRef), roles)?.takeUnretainedValue() as? [NSURL] {
-        
+        if let appUrls = LSCopyApplicationURLsForURL(url, roles)?.takeRetainedValue() {
             // Extract the app names and sort them for prettiness.
             var appNames = [Browser]()
+            guard let appUrls = appUrls as NSArray as? [NSURL] else {
+                return nil
+            }
 
             for url in appUrls {
                 appNames.append(Browser.browserWithFileURL(url))
@@ -140,7 +142,7 @@ class Helpers : NSObject {
 
             return appNames
         }
-        return [Browser]()
+        return nil
     }
 
     // MARK: -
