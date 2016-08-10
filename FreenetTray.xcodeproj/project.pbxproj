@@ -233,9 +233,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Classes */ = {
+		080E96DDFE201D6D7F000001 /* FreenetTray */ = {
 			isa = PBXGroup;
 			children = (
+				AA93DBE91D5AAF0F00BE256F /* TrayIcon.swift */,
+				AA621CB31C1CF14500A1C4A5 /* main.xib */,
+				AA621CA61C1CF10800A1C4A5 /* Prefix.pch */,
 				AA93DBED1D5ADA4800BE256F /* FreenetTray-Bridging-Header.h */,
 				AA93DBEB1D5ADA4800BE256F /* AppDelegate.swift */,
 				AA93DBB51D57FF1100BE256F /* Browser.swift */,
@@ -256,7 +259,7 @@
 				AA93DBC01D596B8800BE256F /* Constants.swift */,
 				AA93DBC21D596CBE00BE256F /* Protocols.swift */,
 			);
-			name = Classes;
+			name = FreenetTray;
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -276,8 +279,7 @@
 				AA621C391C1BC46E00A1C4A5 /* .travis.yml */,
 				AAD6891C1BD17CF500942738 /* Bundled Node */,
 				AAF723EB1BD0D14E003BA438 /* Bundled Packages */,
-				080E96DDFE201D6D7F000001 /* Classes */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				080E96DDFE201D6D7F000001 /* FreenetTray */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				AA93DBC91D5A5C1600BE256F /* FreenetTray Helper */,
 				AA93DBDC1D5A784E00BE256F /* FreenetTray Tests */,
@@ -286,16 +288,6 @@
 				BAE331AAA011C13AEBBCEB1A /* Frameworks */,
 			);
 			name = "Freenet Controller";
-			sourceTree = "<group>";
-		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				AA621CB31C1CF14500A1C4A5 /* main.xib */,
-				AA621CA61C1CF10800A1C4A5 /* Prefix.pch */,
-				AA93DBE91D5AAF0F00BE256F /* TrayIcon.swift */,
-			);
-			name = "Other Sources";
 			sourceTree = "<group>";
 		};
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
