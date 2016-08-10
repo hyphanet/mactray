@@ -42,10 +42,10 @@
 		AA93DBEF1D5ADA4800BE256F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBEB1D5ADA4800BE256F /* AppDelegate.swift */; };
 		AA93DBF01D5ADA4800BE256F /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBEC1D5ADA4800BE256F /* Dropdown.swift */; };
 		AA93DBF11D5ADA4800BE256F /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBEE1D5ADA4800BE256F /* SettingsWindowController.swift */; };
+		AA93DBF61D5BC33800BE256F /* Changelog.md in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBF51D5BC33800BE256F /* Changelog.md */; };
 		AA9BE2EE1C1B774000345C77 /* verify.py in Resources */ = {isa = PBXBuildFile; fileRef = AA9BE2ED1C1B774000345C77 /* verify.py */; };
 		AAD6891D1BD17CF500942738 /* Bundled Node in Resources */ = {isa = PBXBuildFile; fileRef = AAD6891C1BD17CF500942738 /* Bundled Node */; };
 		AAE306F01BF6DEC900C4EC1D /* Acknowledgments.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AAE306EE1BF6DEC900C4EC1D /* Acknowledgments.rtf */; };
-		AAE306F11BF6DEC900C4EC1D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AAE306EF1BF6DEC900C4EC1D /* Credits.rtf */; };
 		AAE306F31BF920EE00C4EC1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE306F21BF920EE00C4EC1D /* Images.xcassets */; };
 		AAEF3AEE1AD6313800A4B475 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AAEF3AED1AD6313800A4B475 /* README.md */; };
 		D9B8FCFAAAB12F74C90F8247 /* Pods_FreenetTray.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F0BF6618371FB2144F9AC5C /* Pods_FreenetTray.framework */; };
@@ -141,6 +141,7 @@
 		AA93DBEC1D5ADA4800BE256F /* Dropdown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dropdown.swift; path = FreenetTray/Dropdown.swift; sourceTree = "<group>"; };
 		AA93DBED1D5ADA4800BE256F /* FreenetTray-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FreenetTray-Bridging-Header.h"; path = "FreenetTray/FreenetTray-Bridging-Header.h"; sourceTree = "<group>"; };
 		AA93DBEE1D5ADA4800BE256F /* SettingsWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsWindowController.swift; path = FreenetTray/SettingsWindowController.swift; sourceTree = "<group>"; };
+		AA93DBF51D5BC33800BE256F /* Changelog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Changelog.md; sourceTree = "<group>"; };
 		AA9BE2ED1C1B774000345C77 /* verify.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = verify.py; sourceTree = "<group>"; };
 		AABF7F311C9FA69C006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/Dropdown.strings"; sourceTree = "<group>"; };
 		AABF7F321C9FA69C006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/InstallerProgressView.strings"; sourceTree = "<group>"; };
@@ -200,7 +201,6 @@
 		AABF7F6F1C9FA978006F1F40 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AAD6891C1BD17CF500942738 /* Bundled Node */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Bundled Node"; sourceTree = "<group>"; };
 		AAE306EE1BF6DEC900C4EC1D /* Acknowledgments.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Acknowledgments.rtf; sourceTree = "<group>"; };
-		AAE306EF1BF6DEC900C4EC1D /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		AAE306F21BF920EE00C4EC1D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FreenetTray/Images.xcassets; sourceTree = "<group>"; };
 		AAEF3AED1AD6313800A4B475 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BBB6E6DCE1E04E2EBBEC6442 /* Pods-FreenetTray.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreenetTray.release.xcconfig"; path = "Pods/Target Support Files/Pods-FreenetTray/Pods-FreenetTray.release.xcconfig"; sourceTree = "<group>"; };
@@ -294,7 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				AAE306EE1BF6DEC900C4EC1D /* Acknowledgments.rtf */,
-				AAE306EF1BF6DEC900C4EC1D /* Credits.rtf */,
+				AA93DBF51D5BC33800BE256F /* Changelog.md */,
 				AA433BCF109CD2B400EDBB73 /* gpl.txt */,
 				AAE306F21BF920EE00C4EC1D /* Images.xcassets */,
 				AA621CB71C1CF28900A1C4A5 /* Info.plist */,
@@ -463,7 +463,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA621D3D1C1CFB4900A1C4A5 /* InstallerWindow.xib in Resources */,
-				AAE306F11BF6DEC900C4EC1D /* Credits.rtf in Resources */,
 				AA9BE2EE1C1B774000345C77 /* verify.py in Resources */,
 				AAE306F31BF920EE00C4EC1D /* Images.xcassets in Resources */,
 				AA55DB9A1C25CDDF00581EEB /* InfoPlist.strings in Resources */,
@@ -612,6 +611,7 @@
 				AA93DBB41D57E70A00BE256F /* InstallerProgressViewController.swift in Sources */,
 				AA93DBB21D57DA3900BE256F /* InstallerDestinationViewController.swift in Sources */,
 				AA93DBC31D596CBE00BE256F /* Protocols.swift in Sources */,
+				AA93DBF61D5BC33800BE256F /* Changelog.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
