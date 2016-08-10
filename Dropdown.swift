@@ -44,11 +44,11 @@ class Dropdown: NSObject, FNNodeStateProtocol, FNNodeStatsProtocol {
     
     override func awakeFromNib() {
         self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
-        self.statusItem.alternateImage = TrayIcon.imageOfHighlightedIcon()
+        self.statusItem.alternateImage = TrayIcon.imageOfHighlightedIcon
         self.statusItem.menu = self.dropdownMenu
         self.statusItem.toolTip = NSLocalizedString("Freenet", comment: "Application Name")
         
-        self.menuBarImage = TrayIcon.imageOfNotRunningIcon()
+        self.menuBarImage = TrayIcon.imageOfNotRunningIcon
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Dropdown.nodeStateRunning), name: FNNodeStateRunningNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Dropdown.nodeStateNotRunning), name: FNNodeStateNotRunningNotification, object: nil)
@@ -116,13 +116,13 @@ class Dropdown: NSObject, FNNodeStateProtocol, FNNodeStatsProtocol {
     
     func nodeStateRunning(notification: NSNotification) {
         self.toggleNodeStateMenuItem.title = NSLocalizedString("Stop Freenet", comment: "Button title")
-        self.menuBarImage = TrayIcon.imageOfRunningIcon()
+        self.menuBarImage = TrayIcon.imageOfRunningIcon
         self.enableMenuItems(true)
     }
     
     func nodeStateNotRunning(notification: NSNotification) {
         self.toggleNodeStateMenuItem.title = NSLocalizedString("Start Freenet", comment: "Button title")
-        self.menuBarImage = TrayIcon.imageOfNotRunningIcon()
+        self.menuBarImage = TrayIcon.imageOfNotRunningIcon
         self.enableMenuItems(true)
     }
     

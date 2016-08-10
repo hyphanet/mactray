@@ -6,8 +6,6 @@
 
 @import LetsMove;
 
-#import "TrayIcon.h"
-
 #import <CocoaAsyncSocket/GCDAsyncSocket.h>
 
 #import <FontAwesomeIconFactory/FontAwesomeIconFactory.h>
