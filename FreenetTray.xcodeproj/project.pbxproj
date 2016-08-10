@@ -34,10 +34,11 @@
 		AA621D3A1C1CFB4700A1C4A5 /* FNInstallerProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621D3C1C1CFB4700A1C4A5 /* FNInstallerProgressView.xib */; };
 		AA621D3D1C1CFB4900A1C4A5 /* FNInstallerWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621D3F1C1CFB4900A1C4A5 /* FNInstallerWindow.xib */; };
 		AA621D401C1CFB4B00A1C4A5 /* FNSettingsWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA621D421C1CFB4B00A1C4A5 /* FNSettingsWindow.xib */; };
+		AA93DBF31D5BC02400BE256F /* Changelog.md in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBF21D5BC02400BE256F /* Changelog.md */; };
+		AA93DBF41D5BC18900BE256F /* Changelog.md in Resources */ = {isa = PBXBuildFile; fileRef = AA93DBF21D5BC02400BE256F /* Changelog.md */; };
 		AA9BE2EE1C1B774000345C77 /* verify.py in Resources */ = {isa = PBXBuildFile; fileRef = AA9BE2ED1C1B774000345C77 /* verify.py */; };
 		AAD6891D1BD17CF500942738 /* Bundled Node in Resources */ = {isa = PBXBuildFile; fileRef = AAD6891C1BD17CF500942738 /* Bundled Node */; };
 		AAE306F01BF6DEC900C4EC1D /* Acknowledgments.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AAE306EE1BF6DEC900C4EC1D /* Acknowledgments.rtf */; };
-		AAE306F11BF6DEC900C4EC1D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AAE306EF1BF6DEC900C4EC1D /* Credits.rtf */; };
 		AAE306F31BF920EE00C4EC1D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE306F21BF920EE00C4EC1D /* Images.xcassets */; };
 		AAEF3AEE1AD6313800A4B475 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AAEF3AED1AD6313800A4B475 /* README.md */; };
 		AAF73D871C174ABF0006D1E1 /* FreenetTrayTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF73D861C174ABF0006D1E1 /* FreenetTrayTests.m */; };
@@ -129,6 +130,7 @@
 		AA621D451C1CFB5B00A1C4A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FNInstallerProgressView.xib; sourceTree = "<group>"; };
 		AA621D461C1CFB5B00A1C4A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FNInstallerWindow.xib; sourceTree = "<group>"; };
 		AA621D471C1CFB5B00A1C4A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/FNSettingsWindow.xib; sourceTree = "<group>"; };
+		AA93DBF21D5BC02400BE256F /* Changelog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Changelog.md; sourceTree = "<group>"; };
 		AA9BE2ED1C1B774000345C77 /* verify.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = verify.py; sourceTree = "<group>"; };
 		AABF7F311C9FA69C006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/FNDropdownMenu.strings"; sourceTree = "<group>"; };
 		AABF7F321C9FA69C006F1F40 /* zh-TW */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-TW"; path = "zh-TW.lproj/FNInstallerProgressView.strings"; sourceTree = "<group>"; };
@@ -196,7 +198,6 @@
 		AABF7F701C9FA978006F1F40 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AAD6891C1BD17CF500942738 /* Bundled Node */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Bundled Node"; sourceTree = "<group>"; };
 		AAE306EE1BF6DEC900C4EC1D /* Acknowledgments.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Acknowledgments.rtf; sourceTree = "<group>"; };
-		AAE306EF1BF6DEC900C4EC1D /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		AAE306F21BF920EE00C4EC1D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = FreenetTray/Images.xcassets; sourceTree = "<group>"; };
 		AAEF3AED1AD6313800A4B475 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AAF73D841C174ABF0006D1E1 /* FreenetTrayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreenetTrayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -306,7 +307,6 @@
 				AA55DBA21C25CDE000581EEB /* Localizable.strings */,
 				AA55DB9C1C25CDDF00581EEB /* InfoPlist.strings */,
 				AAE306EE1BF6DEC900C4EC1D /* Acknowledgments.rtf */,
-				AAE306EF1BF6DEC900C4EC1D /* Credits.rtf */,
 				AA621CB11C1CF13900A1C4A5 /* defaults.plist */,
 				AA433BCF109CD2B400EDBB73 /* gpl.txt */,
 				AAE306F21BF920EE00C4EC1D /* Images.xcassets */,
@@ -315,6 +315,7 @@
 				AA621CAE1C1CF12B00A1C4A5 /* installer_background.png */,
 				AAEF3AED1AD6313800A4B475 /* README.md */,
 				AA9BE2ED1C1B774000345C77 /* verify.py */,
+				AA93DBF21D5BC02400BE256F /* Changelog.md */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -434,8 +435,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA93DBF41D5BC18900BE256F /* Changelog.md in Resources */,
 				AA621D3D1C1CFB4900A1C4A5 /* FNInstallerWindow.xib in Resources */,
-				AAE306F11BF6DEC900C4EC1D /* Credits.rtf in Resources */,
 				AA9BE2EE1C1B774000345C77 /* verify.py in Resources */,
 				AA621CB21C1CF13900A1C4A5 /* defaults.plist in Resources */,
 				AAE306F31BF920EE00C4EC1D /* Images.xcassets in Resources */,
@@ -532,6 +533,7 @@
 				AA621CA01C1CF0DA00A1C4A5 /* FNNodeController.m in Sources */,
 				AA621C991C1CF0DA00A1C4A5 /* FNHelpers.m in Sources */,
 				AA621C981C1CF0DA00A1C4A5 /* FNFCPWrapper.m in Sources */,
+				AA93DBF31D5BC02400BE256F /* Changelog.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
