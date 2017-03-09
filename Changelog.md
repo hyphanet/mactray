@@ -1,5 +1,10 @@
 ### Changelog
 
+* 2.1.0
+
+    * Update fred to 1477
+    * Add user notifications, can be disabled in settings window
+    
 * 2.0.6
 
     * Update fred to 1475
