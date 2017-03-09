@@ -15,3 +15,9 @@
     #import "FNConstants.h"
     #import "FNProtocols.h"
 #endif
+
+#ifdef DEBUG
+#define DebugLog(f, ...) NSLog(f, ## __VA_ARGS__)
+#else
+#define DebugLog(f, ...)
+#endif

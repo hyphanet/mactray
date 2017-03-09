@@ -231,11 +231,11 @@ typedef NS_ENUM(NSInteger, FCPResponseState) {
             break;
         }
         default:
-            NSLog(@"############## WARNING ##################");
-            NSLog(@"UNPROCESSED PACKET RECEIVED:");
+            DebugLog(@"############## WARNING ##################");
+            DebugLog(@"UNPROCESSED PACKET RECEIVED:");
             NSString *message = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            NSLog(@"%@", message);
-            NSLog(@"############## WARNING ##################");
+            DebugLog(@"%@", message);
+            DebugLog(@"############## WARNING ##################");
 
             self.responseState = FCPResponseStateReady;
             break;
@@ -265,7 +265,7 @@ typedef NS_ENUM(NSInteger, FCPResponseState) {
         }
     }
     else {
-        NSLog(@"Unknown: %@", self.response);
+        DebugLog(@"Unknown: %@", self.response);
     }
     self.commandExecuting = NO;
 }

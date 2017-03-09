@@ -77,7 +77,7 @@
         NSFileManager *fileManager = [NSFileManager defaultManager];
         NSError *nodeRemovalError;
         if (![fileManager removeItemAtURL:self.nodeLocation error:&nodeRemovalError]) {
-            NSLog(@"Uninstall error: %@", nodeRemovalError);
+            DebugLog(@"Uninstall error: %@", nodeRemovalError);
             // warn user that uninstall did not go smoothly
             dispatch_async(dispatch_get_main_queue(), ^{        
                 NSAlert *alert = [[NSAlert alloc] init];
@@ -95,7 +95,7 @@
         }
         NSError *appRemovalError;
         if (![fileManager removeItemAtURL:[[NSBundle mainBundle] bundleURL] error:&appRemovalError]) {
-            NSLog(@"App uninstall error: %@", appRemovalError);
+            DebugLog(@"App uninstall error: %@", appRemovalError);
             // warn user that uninstall did not go smoothly
             dispatch_async(dispatch_get_main_queue(), ^{        
                 NSAlert *alert = [[NSAlert alloc] init];

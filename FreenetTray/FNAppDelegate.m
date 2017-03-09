@@ -39,7 +39,7 @@
     // migrations should go here if at all possible
     NSError *migrationError;
     if (![FNHelpers migrateLaunchAgent:&migrationError]) {
-        NSLog(@"Error during migration: %@", migrationError.localizedDescription);
+        DebugLog(@"Error during migration: %@", migrationError.localizedDescription);
     }
     
     // load factory defaults for node location variables, sourced from defaults.plist
