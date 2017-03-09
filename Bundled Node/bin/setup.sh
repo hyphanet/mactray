@@ -19,7 +19,7 @@ echo "node.updater.enabled=true" >> freenet.ini
 echo "node.updater.autoupdate=true" >> freenet.ini
 
 # Register pre-installed plugins
-echo "pluginmanager.loadplugin=JSTUN;KeyUtils;ThawIndexBrowser;UPnP;Library;Sharesite" >> freenet.ini
+echo "pluginmanager.loadplugin=Freereader;JSTUN;KeyUtils;Library;Sharesite;ThawIndexBrowser;UPnP" >> freenet.ini
 
 # Set up fproxy port
 echo "fproxy.enabled=true" >> freenet.ini
