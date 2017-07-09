@@ -2,7 +2,7 @@ platform :osx, '10.9'
 
 target 'FreenetTray' do
     use_frameworks!
-    pod 'CocoaAsyncSocket', '7.5.0'
+    pod 'CocoaAsyncSocket', '7.6.1'
     pod 'DCOAboutWindow', '0.2.0'
     pod 'MHWDirectoryWatcher', '0.0.6'
     pod 'LetsMove', '~> 1.20'
