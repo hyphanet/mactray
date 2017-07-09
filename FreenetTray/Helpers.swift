@@ -10,7 +10,7 @@
     
 */
 
-import Foundation
+import Cocoa
 import ServiceManagement
 
 public extension Dictionary {
