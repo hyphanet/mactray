@@ -47,7 +47,7 @@ class FreenetTray_Tests: XCTestCase {
             }
         }
         self.waitForExpectations(timeout: 5, handler:{ (error) in
-            if error != nil {
+            if let error = error {
                 XCTFail("test_browserList failed with error: \(error)")
             }
         })
@@ -60,14 +60,14 @@ class FreenetTray_Tests: XCTestCase {
 
         Helpers.createGist("test", withTitle:"test", success:{ (url) in
             XCTAssertNotNil(url)
-            NSLog("URL: %@", url)
+            print("URL: \(url)")
             expectation.fulfill()
-        }, failure:{ (error:NSError!) in 
+        }, failure:{ (error) in
             XCTFail("Error: \(error.localizedDescription)")
         })
 
         self.waitForExpectations(timeout: 60.0, handler:{ (error) in
-            if error != nil {
+            if let error = error {
                 XCTFail("test_createPaste failed with error: \(error)")
             }
         })
