@@ -30,10 +30,10 @@ class SettingsWindowController: NSWindowController,  NSOpenSavePanelDelegate, NS
     var loginItem: Bool {
         set(state) {
             Helpers.enableLoginItem(state)
-            NSUserDefaults.standardUserDefaults().setBool(state, forKey: FNStartAtLaunchKey)
+            UserDefaults.standard.set(state, forKey: FNStartAtLaunchKey)
         }
         get {
-            return NSUserDefaults.standardUserDefaults().boolForKey(FNStartAtLaunchKey)
+            return UserDefaults.standard.bool(forKey: FNStartAtLaunchKey)
         }
     }
 
@@ -58,14 +58,14 @@ class SettingsWindowController: NSWindowController,  NSOpenSavePanelDelegate, NS
     }
     
     override func awakeFromNib() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingsWindowController.showSettingsWindow), name: FNNodeShowSettingsWindow, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingsWindowController.nodeStateUnknown), name: FNNodeStateUnknownNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingsWindowController.nodeStateRunning), name: FNNodeStateRunningNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingsWindowController.nodeStateNotRunning), name: FNNodeStateNotRunningNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingsWindowController.didReceiveNodeHello), name: FNNodeHelloReceivedNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingsWindowController.didReceiveNodeStats), name: FNNodeStatsReceivedNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingsWindowController.didDisconnect), name: FNNodeFCPDisconnectedNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(SettingsWindowController.showNodeFinderPanel), name: FNNodeShowNodeFinderInSettingsWindow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingsWindowController.showSettingsWindow), name: Notification.Name.FNNodeShowSettingsWindow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingsWindowController.nodeStateUnknown), name: Notification.Name.FNNodeStateUnknownNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingsWindowController.nodeStateRunning), name: Notification.Name.FNNodeStateRunningNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingsWindowController.nodeStateNotRunning), name: Notification.Name.FNNodeStateNotRunningNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingsWindowController.didReceiveNodeHello), name: Notification.Name.FNNodeHelloReceivedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingsWindowController.didReceiveNodeStats), name: Notification.Name.FNNodeStatsReceivedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingsWindowController.didDisconnect), name: Notification.Name.FNNodeFCPDisconnectedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SettingsWindowController.showNodeFinderPanel), name: Notification.Name.FNNodeShowNodeFinderInSettingsWindow, object: nil)
         
     }
     
@@ -73,18 +73,18 @@ class SettingsWindowController: NSWindowController,  NSOpenSavePanelDelegate, NS
     // MARK: - Notification handlers
     
     
-    func showNodeFinderPanel(notification: NSNotification) {
+    func showNodeFinderPanel(_ notification: Notification) {
         self.selectNodeLocation(self)
     }
     
-    func showSettingsWindow(notification: NSNotification) {
+    func showSettingsWindow(_ notification: Notification) {
         self.showWindow(nil)
     }
     
     // MARK: - Interface actions
     
     
-    func selectNodeLocation(sender: AnyObject) {
+    func selectNodeLocation(_ sender: AnyObject) {
         let openpanel: NSOpenPanel = NSOpenPanel()
         openpanel.delegate = self
         openpanel.canChooseFiles = false
@@ -94,16 +94,16 @@ class SettingsWindowController: NSWindowController,  NSOpenSavePanelDelegate, NS
         openpanel.title = panelTitle
         let promptString: String = NSLocalizedString("Select Freenet installation", comment: "Button title")
         openpanel.prompt = promptString
-        openpanel.beginWithCompletionHandler({(result: Int) -> Void in
+        openpanel.begin(completionHandler: {(result: Int) -> Void in
             if result == NSFileHandlingPanelOKButton {
-                self.node.location = openpanel.URL
-                self.nodePathDisplay.URL = openpanel.URL
+                self.node.location = openpanel.url
+                self.nodePathDisplay.url = openpanel.url
                 self.showWindow(nil)
             }
         })
     }
     
-    func uninstallFreenet(sender: AnyObject) {
+    func uninstallFreenet(_ sender: AnyObject) {
         Helpers.displayUninstallAlert()
     }
     
@@ -111,7 +111,7 @@ class SettingsWindowController: NSWindowController,  NSOpenSavePanelDelegate, NS
     // MARK: - NSOpenPanelDelegate
     
     
-    func panel(sender: AnyObject, validateURL url: NSURL) throws {
+    func panel(_ sender: Any, validate url: URL) throws {
         if !Helpers.validateNodeInstallationAtURL(url) {
             let errorInfo = [NSLocalizedDescriptionKey: NSLocalizedString("Not a valid Freenet installation", comment: "String informing the user that the selected location is not a Freenet installation")]
             throw NSError(domain: "org.freenetproject", code: 0x1000, userInfo: errorInfo)
@@ -121,31 +121,31 @@ class SettingsWindowController: NSWindowController,  NSOpenSavePanelDelegate, NS
     // MARK: - FNNodeStateProtocol methods
     
     
-    func nodeStateUnknown(notification: NSNotification) {
-        assert(NSThread.currentThread() == NSThread.mainThread(), "NOT RUNNING ON MAIN THREAD")
-        self.willChangeValueForKey("validNodeFound")
-        self.didChangeValueForKey("validNodeFound")
+    func nodeStateUnknown(_ notification: Notification) {
+        assert(Thread.current == Thread.main, "NOT RUNNING ON MAIN THREAD")
+        self.willChangeValue(forKey: "validNodeFound")
+        self.didChangeValue(forKey: "validNodeFound")
         self.nodeRunningStatusView.image = NSImage(named: NSImageNameStatusPartiallyAvailable)
     }
     
-    func nodeStateRunning(notification: NSNotification) {
-        assert(NSThread.currentThread() == NSThread.mainThread(), "NOT RUNNING ON MAIN THREAD")
-        self.willChangeValueForKey("validNodeFound")
-        self.didChangeValueForKey("validNodeFound")
+    func nodeStateRunning(_ notification: Notification) {
+        assert(Thread.current == Thread.main, "NOT RUNNING ON MAIN THREAD")
+        self.willChangeValue(forKey: "validNodeFound")
+        self.didChangeValue(forKey: "validNodeFound")
         self.nodeRunningStatusView.image = NSImage(named: NSImageNameStatusAvailable)
     }
     
-    func nodeStateNotRunning(notification: NSNotification) {
-        assert(NSThread.currentThread() == NSThread.mainThread(), "NOT RUNNING ON MAIN THREAD")
-        self.willChangeValueForKey("validNodeFound")
-        self.didChangeValueForKey("validNodeFound")
+    func nodeStateNotRunning(_ notification: Notification) {
+        assert(Thread.current == Thread.main, "NOT RUNNING ON MAIN THREAD")
+        self.willChangeValue(forKey: "validNodeFound")
+        self.didChangeValue(forKey: "validNodeFound")
         self.nodeRunningStatusView.image = NSImage(named: NSImageNameStatusUnavailable)
     }
     
     // MARK: - FNNodeStatsProtocol methods
     
     
-    func didReceiveNodeHello(notification: NSNotification) {
+    func didReceiveNodeHello(_ notification: Notification) {
         guard let nodeHello = notification.object as? [String : AnyObject] else {
             return
         }
@@ -155,8 +155,8 @@ class SettingsWindowController: NSWindowController,  NSOpenSavePanelDelegate, NS
         self.fcpStatusView.image = NSImage(named: NSImageNameStatusPartiallyAvailable)
     }
     
-    func didReceiveNodeStats(notification: NSNotification) {
-        assert(NSThread.currentThread() == NSThread.mainThread(), "NOT RUNNING ON MAIN THREAD")
+    func didReceiveNodeStats(_ notification: Notification) {
+        assert(Thread.current == Thread.main, "NOT RUNNING ON MAIN THREAD")
         self.fcpStatusView.image = NSImage(named: NSImageNameStatusAvailable)
     }
     
@@ -164,7 +164,7 @@ class SettingsWindowController: NSWindowController,  NSOpenSavePanelDelegate, NS
     
     
     func didDisconnect() {
-        assert(NSThread.currentThread() == NSThread.mainThread(), "NOT RUNNING ON MAIN THREAD")
+        assert(Thread.current == Thread.main, "NOT RUNNING ON MAIN THREAD")
         self.fcpStatusView.image = NSImage(named: NSImageNameStatusUnavailable)
         self.nodeBuildField.stringValue = ""
     }

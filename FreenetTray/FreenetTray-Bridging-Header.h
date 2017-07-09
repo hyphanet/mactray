@@ -10,8 +10,6 @@
 
 #import <FontAwesomeIconFactory/FontAwesomeIconFactory.h>
 
-@import RegexKitLite;
-
 @import MHWDirectoryWatcher;
 
 @import TSMarkdownParser;

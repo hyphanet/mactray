@@ -16,63 +16,63 @@ import CocoaAsyncSocket
 
 class InstallerProgressViewController: NSViewController {
 
-    private var javaInstallationTitle: NSTextField!
+    fileprivate var javaInstallationTitle: NSTextField!
 
-    private var javaInstallationStatus: NIKFontAwesomeImageView!
+    fileprivate var javaInstallationStatus: NIKFontAwesomeImageView!
 
-    private var fileCopyTitle: NSTextField!
+    fileprivate var fileCopyTitle: NSTextField!
 
-    private var fileCopyStatus: NIKFontAwesomeImageView!
+    fileprivate var fileCopyStatus: NIKFontAwesomeImageView!
 
-    private var portsTitle: NSTextField!
+    fileprivate var portsTitle: NSTextField!
 
-    private var portsStatus: NIKFontAwesomeImageView!
+    fileprivate var portsStatus: NIKFontAwesomeImageView!
 
-    private var startNodeTitle: NSTextField!
+    fileprivate var startNodeTitle: NSTextField!
 
-    private var startNodeStatus: NIKFontAwesomeImageView!
+    fileprivate var startNodeStatus: NIKFontAwesomeImageView!
 
-    private var finishedTitle: NSTextField!
+    fileprivate var finishedTitle: NSTextField!
 
-    private var finishedStatus: NIKFontAwesomeImageView!
+    fileprivate var finishedStatus: NIKFontAwesomeImageView!
 
-    private var installLog: NSMutableAttributedString!
+    fileprivate var installLog: NSMutableAttributedString!
     
     var stateDelegate:FNInstallerDelegate!
     
-    private var javaPromptShown: Bool = false
+    fileprivate var javaPromptShown: Bool = false
  
     
     
     
     
     override func awakeFromNib() {
-        self.updateProgress(FNInstallerProgress.Unknown)
+        self.updateProgress(FNInstallerProgress.unknown)
         self.installLog = NSMutableAttributedString()
         self.javaPromptShown = false
     }
     
     // MARK: - Step 1: Entry point
 
-    func installNodeAtFileURL(installLocation:NSURL!) {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(nodeConfigured), name:FNNodeConfiguredNotification, object:nil)
+    func installNodeAtFileURL(_ installLocation:URL!) {
+        NotificationCenter.default.addObserver(self, selector: #selector(nodeConfigured), name: Notification.Name.FNNodeConfiguredNotification, object:nil)
 
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { 
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async(execute: { 
             // wait until java is properly installed before continuing, but
             // don't repeatedly prompt the user to install it
             while !self.javaInstalled {
                 if !self.javaPromptShown {
                     self.javaPromptShown = true
                     self.promptForJavaInstallation()
-                    self.updateProgress(FNInstallerProgress.JavaInstalling)
+                    self.updateProgress(FNInstallerProgress.javaInstalling)
                 }
-                NSThread.sleepForTimeInterval(1)
+                Thread.sleep(forTimeInterval: 1)
                 continue
             }
             // Java is now installed, continue installation
-            self.updateProgress(FNInstallerProgress.JavaFound)
-            let t = dispatch_time(DISPATCH_TIME_NOW, (1 * Int64(NSEC_PER_SEC)))
-            dispatch_after(t, dispatch_get_main_queue(), {
+            self.updateProgress(FNInstallerProgress.javaFound)
+            let t = DispatchTime.now() + Double((1 * Int64(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+            DispatchQueue.main.asyncAfter(deadline: t, execute: {
                 self.copyNodeToFileURL(installLocation)
                 self.setupNodeAtFileURL(installLocation)
             })
@@ -81,15 +81,15 @@ class InstallerProgressViewController: NSViewController {
 
     // MARK: - Step 2: Copy files
 
-    func copyNodeToFileURL(installLocation:NSURL!) {
-        self.updateProgress(FNInstallerProgress.CopyingFiles)
+    func copyNodeToFileURL(_ installLocation:URL!) {
+        self.updateProgress(FNInstallerProgress.copyingFiles)
         self.appendToInstallLog("Starting installation")
-        let bundledNode:NSURL! = NSBundle.mainBundle().URLForResource("Bundled Node", withExtension:nil)
-        let fileManager:NSFileManager! = NSFileManager()  
-        if fileManager.fileExistsAtPath(installLocation.path!, isDirectory:nil) {
+        let bundledNode:URL! = Bundle.main.url(forResource: "Bundled Node", withExtension:nil)
+        let fileManager:FileManager! = FileManager()  
+        if fileManager.fileExists(atPath: installLocation.path, isDirectory:nil) {
             self.appendToInstallLog("Removing existing files at: \(installLocation.path)")
             do {
-                try fileManager.removeItemAtURL(installLocation)
+                try fileManager.removeItem(at: installLocation)
             }
             catch let removeError as NSError {
                 self.appendToInstallLog("Error removing existing files \(removeError.code): \(removeError.localizedDescription)")
@@ -100,7 +100,7 @@ class InstallerProgressViewController: NSViewController {
         self.appendToInstallLog("Copying files to \(installLocation.path)")
 
         do {
-            try fileManager.copyItemAtURL(bundledNode, toURL:installLocation)
+            try fileManager.copyItem(at: bundledNode, to:installLocation)
         }
         catch let copyError as NSError {
             self.appendToInstallLog("File copy error \(copyError.code): \(copyError.localizedDescription)")
@@ -108,40 +108,40 @@ class InstallerProgressViewController: NSViewController {
             return
         }
         self.appendToInstallLog("Copy finished")
-        self.updateProgress(FNInstallerProgress.CopiedFiles)
+        self.updateProgress(FNInstallerProgress.copiedFiles)
     }
 
     // MARK: - Step 3: Set up node and find available ports
 
-    func setupNodeAtFileURL(installLocation:NSURL!) {
-        self.updateProgress(FNInstallerProgress.SetupPorts)
+    func setupNodeAtFileURL(_ installLocation:URL!) {
+        self.updateProgress(FNInstallerProgress.setupPorts)
         self.appendToInstallLog("Running setup script")
-        let t = dispatch_time(DISPATCH_TIME_NOW, (1 * Int64(NSEC_PER_SEC)))
-        dispatch_after(t, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), {
+        let t = DispatchTime.now() + Double((1 * Int64(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).asyncAfter(deadline: t, execute: {
 
-            let pipe:NSPipe! = NSPipe()
-            let stdOutHandle:NSFileHandle! = pipe.fileHandleForReading
-            stdOutHandle.readabilityHandler = { (fileHandle:NSFileHandle!) in 
-                let data:NSData! = fileHandle.readDataToEndOfFile()
-                let str:String! = String(data:data, encoding:NSUTF8StringEncoding)
+            let pipe:Pipe! = Pipe()
+            let stdOutHandle:FileHandle! = pipe.fileHandleForReading
+            stdOutHandle.readabilityHandler = { (fileHandle:FileHandle!) in 
+                let data:Data! = fileHandle.readDataToEndOfFile()
+                let str:String! = String(data:data, encoding:String.Encoding.utf8)
                 self.appendToInstallLog(str)
             }
 
-            let scriptTask:NSTask! = NSTask()
-            scriptTask.currentDirectoryPath = installLocation.path!
-            scriptTask.launchPath = installLocation.URLByAppendingPathComponent("bin/setup.sh").path
+            let scriptTask:Process! = Process()
+            scriptTask.currentDirectoryPath = installLocation.path
+            scriptTask.launchPath = installLocation.appendingPathComponent("bin/setup.sh").path
             scriptTask.standardOutput = pipe
 
-            var env = [String: String]()
-            env.merge(NSProcessInfo.processInfo().environment)
+            var env = ProcessInfo.processInfo.environment
             
             env["INSTALL_PATH"] = installLocation.path
-            env["LANG_SHORTCODE"] = NSLocale.currentLocale().objectForKey(NSLocaleLanguageCode) as? String
+            env["LANG_SHORTCODE"] = (Locale.current as NSLocale).object(forKey: NSLocale.Key.languageCode) as? String
             
             self.appendToInstallLog("Checking for available ports")
             
-            env.merge(self.availablePorts())
-            
+            env["FPROXY_PORT"] = self.availableFProxyPort()
+            env["FCP_PORT"] = self.availableFCPPort()
+
             scriptTask.environment = env
 
             scriptTask.launch()
@@ -149,14 +149,14 @@ class InstallerProgressViewController: NSViewController {
 
             let exitStatus = scriptTask.terminationStatus
             
-            let t = dispatch_time(DISPATCH_TIME_NOW, Int64(1 * NSEC_PER_SEC))
+            let t = DispatchTime.now() + Double(Int64(1 * NSEC_PER_SEC)) / Double(NSEC_PER_SEC)
             
-            dispatch_after(t, dispatch_get_main_queue(), {
+            DispatchQueue.main.asyncAfter(deadline: t, execute: {
                 if exitStatus != 0 {
                     self.stateDelegate.installerDidFailWithLog(self.installLog.string)
                     return
                 }
-                self.updateProgress(FNInstallerProgress.StartingNode)
+                self.updateProgress(FNInstallerProgress.startingNode)
                 self.appendToInstallLog("Installer environment: \(env.description)")
                 self.stateDelegate.installerDidCopyFiles()
             })
@@ -166,10 +166,10 @@ class InstallerProgressViewController: NSViewController {
 
     // MARK: - Java helpers
     
-    private var javaInstalled: Bool {
+    fileprivate var javaInstalled: Bool {
         get {
-            let oraclePipe:NSPipe! = NSPipe()
-            let oracleJRETask:NSTask! = NSTask()
+            let oraclePipe:Pipe! = Pipe()
+            let oracleJRETask:Process! = Process()
             
             oracleJRETask.launchPath = "/usr/sbin/pkgutil"
             oracleJRETask.arguments = ["--pkgs=com.oracle.jre"]
@@ -186,14 +186,14 @@ class InstallerProgressViewController: NSViewController {
     }
 
     func promptForJavaInstallation() {
-        dispatch_async(dispatch_get_main_queue(), { 
+        DispatchQueue.main.async(execute: { 
             let installJavaAlert = NSAlert()
 
             installJavaAlert.messageText = NSLocalizedString("Java not found", comment: "String informing the user that Java was not found")
             installJavaAlert.informativeText = NSLocalizedString("Freenet requires Java, would you like to install it now?", comment: "String asking the user if they would like to install Java")
 
-            installJavaAlert.addButtonWithTitle(NSLocalizedString("Install Java", comment: "Button title"))
-            installJavaAlert.addButtonWithTitle(NSLocalizedString("Quit", comment: ""))
+            installJavaAlert.addButton(withTitle: NSLocalizedString("Install Java", comment: "Button title"))
+            installJavaAlert.addButton(withTitle: NSLocalizedString("Quit", comment: ""))
 
             let button:Int = installJavaAlert.runModal()
 
@@ -207,36 +207,35 @@ class InstallerProgressViewController: NSViewController {
     }
 
     func installOracleJRE() {
-        let oracleJREPath:String! = NSBundle.mainBundle().pathForResource("jre-8u66-macosx-x64", ofType:"dmg")
-        NSWorkspace.sharedWorkspace().openFile(oracleJREPath)
+        let oracleJREPath:String! = Bundle.main.path(forResource: "jre-8u66-macosx-x64", ofType:"dmg")
+        NSWorkspace.shared().openFile(oracleJREPath)
     }
 
     // MARK: - Port test helpers
-
-    func availablePorts() -> [String: String] {
-        var availablePorts = [String: String]()
-        // fproxy ports
-        for port in FNInstallDefaultFProxyPort  ... (FNInstallDefaultFProxyPort + 256)  {
-            if self.testListenPort(port) {
-                availablePorts["FPROXY_PORT"] = String(port)
-                break
-            }
-         }
-        // fcp ports
+    
+    func availableFCPPort() -> String? {
         for port in FNInstallDefaultFCPPort  ... (FNInstallDefaultFCPPort + 256)  {
             if self.testListenPort(port) {
-                availablePorts["FCP_PORT"] = String(port)
-                break
+                return String(port)
             }
-         }
-        return availablePorts
+        }
+        return nil
     }
 
-    func testListenPort(port: Int) -> Bool {
-        let listenSocket = GCDAsyncSocket(delegate: self, delegateQueue:dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0))
+    func availableFProxyPort() -> String? {
+        for port in FNInstallDefaultFProxyPort  ... (FNInstallDefaultFProxyPort + 256)  {
+            if self.testListenPort(port) {
+                return String(port)
+            }
+         }
+        return nil
+    }
+
+    func testListenPort(_ port: Int) -> Bool {
+        let listenSocket = GCDAsyncSocket(delegate: self, delegateQueue:DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default))
 
         do {
-            try listenSocket.acceptOnInterface("localhost", port: UInt16(port))
+            try listenSocket.accept(onInterface: "localhost", port: UInt16(port))
         }
         catch let error as NSError {
             self.appendToInstallLog("Port \(port) unavailable: \(error.localizedDescription)")
@@ -250,91 +249,91 @@ class InstallerProgressViewController: NSViewController {
 
     // MARK: - Logging
     
-    func appendToInstallLog(line: String, _ arguments: CVarArgType...) -> Void {
+    func appendToInstallLog(_ line: String, _ arguments: CVarArg...) -> Void {
         return withVaList(arguments) { args in
             let st:String! = String(format: line, arguments: arguments)
             let attr: NSMutableAttributedString! = NSMutableAttributedString(string: st)
-            attr.appendAttributedString(NSAttributedString(string:"\n"))
-            self.installLog.appendAttributedString(attr)
+            attr.append(NSAttributedString(string:"\n"))
+            self.installLog.append(attr)
         }
     }
 
     // MARK: - Internal state
 
-    func updateProgress(progress:FNInstallerProgress) {
-        dispatch_async(dispatch_get_main_queue(), {
+    func updateProgress(_ progress:FNInstallerProgress) {
+        DispatchQueue.main.async(execute: {
             let factory = NIKFontAwesomeIconFactory()
-            if progress.rawValue >= FNInstallerProgress.Finished.rawValue {
-                self.finishedStatus.image = factory.createImageForIcon(.CheckCircle)
-                self.finishedStatus.hidden = false
-                self.finishedTitle.hidden = false        
+            if progress.rawValue >= FNInstallerProgress.finished.rawValue {
+                self.finishedStatus.image = factory.createImage(for: .checkCircle)
+                self.finishedStatus.isHidden = false
+                self.finishedTitle.isHidden = false        
             }
 
-            if progress.rawValue >= FNInstallerProgress.StartingNode.rawValue {
-                self.startNodeStatus.image = factory.createImageForIcon(.ClockO)
-                self.startNodeStatus.hidden = false
-                self.startNodeTitle.hidden = false        
+            if progress.rawValue >= FNInstallerProgress.startingNode.rawValue {
+                self.startNodeStatus.image = factory.createImage(for: .clockO)
+                self.startNodeStatus.isHidden = false
+                self.startNodeTitle.isHidden = false        
             }
 
-            if progress.rawValue >= FNInstallerProgress.StartedNode.rawValue {
-                self.startNodeStatus.image = factory.createImageForIcon(.CheckCircle)
-                self.startNodeStatus.hidden = false
-                self.startNodeTitle.hidden = false        
+            if progress.rawValue >= FNInstallerProgress.startedNode.rawValue {
+                self.startNodeStatus.image = factory.createImage(for: .checkCircle)
+                self.startNodeStatus.isHidden = false
+                self.startNodeTitle.isHidden = false        
             }
 
-            if progress.rawValue >= FNInstallerProgress.SetupPorts.rawValue {
-                self.portsStatus.image = factory.createImageForIcon(.CheckCircle)
-                self.portsStatus.hidden = false
-                self.portsTitle.hidden = false      
+            if progress.rawValue >= FNInstallerProgress.setupPorts.rawValue {
+                self.portsStatus.image = factory.createImage(for: .checkCircle)
+                self.portsStatus.isHidden = false
+                self.portsTitle.isHidden = false      
             }
 
-            if progress.rawValue >= FNInstallerProgress.CopyingFiles.rawValue {
-                self.fileCopyStatus.image = factory.createImageForIcon(.ClockO)
-                self.fileCopyStatus.hidden = false
-                self.fileCopyTitle.hidden = false     
+            if progress.rawValue >= FNInstallerProgress.copyingFiles.rawValue {
+                self.fileCopyStatus.image = factory.createImage(for: .clockO)
+                self.fileCopyStatus.isHidden = false
+                self.fileCopyTitle.isHidden = false     
             }
 
-            if progress.rawValue >= FNInstallerProgress.CopiedFiles.rawValue {
-                self.fileCopyStatus.image = factory.createImageForIcon(.CheckCircle)
-                self.fileCopyStatus.hidden = false
-                self.fileCopyTitle.hidden = false     
+            if progress.rawValue >= FNInstallerProgress.copiedFiles.rawValue {
+                self.fileCopyStatus.image = factory.createImage(for: .checkCircle)
+                self.fileCopyStatus.isHidden = false
+                self.fileCopyTitle.isHidden = false     
             }
 
-            if progress.rawValue >= FNInstallerProgress.JavaInstalling.rawValue {
-                self.javaInstallationStatus.image = factory.createImageForIcon(.ClockO)
-                self.javaInstallationStatus.hidden = false
-                self.javaInstallationTitle.hidden = false   
+            if progress.rawValue >= FNInstallerProgress.javaInstalling.rawValue {
+                self.javaInstallationStatus.image = factory.createImage(for: .clockO)
+                self.javaInstallationStatus.isHidden = false
+                self.javaInstallationTitle.isHidden = false   
             }
-            if progress.rawValue >= FNInstallerProgress.JavaFound.rawValue {
-                self.javaInstallationStatus.image = factory.createImageForIcon(.CheckCircle)
-                self.javaInstallationStatus.hidden = false
-                self.javaInstallationTitle.hidden = false    
+            if progress.rawValue >= FNInstallerProgress.javaFound.rawValue {
+                self.javaInstallationStatus.image = factory.createImage(for: .checkCircle)
+                self.javaInstallationStatus.isHidden = false
+                self.javaInstallationTitle.isHidden = false    
             }
         })
     }
 
     // MARK: - FNNodeStateProtocol methods
 
-    func nodeStateUnknown(notification:NSNotification!) {
+    func nodeStateUnknown(_ notification:Notification!) {
 
     }
 
-    func nodeStateRunning(notification:NSNotification!) {
-        assert(NSThread.currentThread() == NSThread.mainThread(), "NOT RUNNING ON MAIN THREAD")
+    func nodeStateRunning(_ notification:Notification!) {
+        assert(Thread.current == Thread.main, "NOT RUNNING ON MAIN THREAD")
 
     }
 
-    func nodeStateNotRunning(notification:NSNotification!) {
+    func nodeStateNotRunning(_ notification:Notification!) {
 
     }
 
-    func nodeConfigured(notification:NSNotification!) {
-        assert(NSThread.currentThread() == NSThread.mainThread(), "NOT RUNNING ON MAIN THREAD")
-        self.updateProgress(FNInstallerProgress.StartedNode)
-        self.updateProgress(FNInstallerProgress.Finished)
+    func nodeConfigured(_ notification:Notification!) {
+        assert(Thread.current == Thread.main, "NOT RUNNING ON MAIN THREAD")
+        self.updateProgress(FNInstallerProgress.startedNode)
+        self.updateProgress(FNInstallerProgress.finished)
         self.appendToInstallLog("Installation finished")
         self.stateDelegate.installerDidFinish()
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
 }
 

@@ -1,4 +1,4 @@
-/* 
+/*
     Copyright (C) 2016 Stephen Oliver <steve@infincia.com>
 
     This code is distributed under the GNU General Public License, version 2 
@@ -11,11 +11,10 @@
 */
 
 import Foundation
-import Alamofire
 import ServiceManagement
 
 public extension Dictionary {
-    func merge(dict: Dictionary<Key,Value>) -> Dictionary<Key,Value> {
+    func merge(_ dict: Dictionary<Key,Value>) -> Dictionary<Key,Value> {
         var c = self
         for (key, value) in dict {
             c[key] = value
@@ -26,25 +25,25 @@ public extension Dictionary {
 
 class Helpers : NSObject {
 
-    class func findNodeInstallation() -> NSURL? {
+    class func findNodeInstallation() -> URL? {
     
-        let fileManager = NSFileManager.defaultManager()
+        let fileManager = FileManager.default
         
-        let applicationSupportURL = fileManager.URLsForDirectory(.ApplicationSupportDirectory, inDomains: .UserDomainMask).first!
+        let applicationSupportURL = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
         
-        let applicationsURL = fileManager.URLsForDirectory(.AllApplicationsDirectory, inDomains:.SystemDomainMask).first!
+        let applicationsURL = fileManager.urls(for: .allApplicationsDirectory, in:.systemDomainMask).first!
 
         // existing or user-defined location
-        var customInstallationURL: NSURL? = nil
-        if let customPath = NSUserDefaults.standardUserDefaults().objectForKey(FNNodeInstallationDirectoryKey) as? String {
-            customInstallationURL = NSURL.fileURLWithPath(customPath).URLByStandardizingPath
+        var customInstallationURL: URL? = nil
+        if let customPath = UserDefaults.standard.object(forKey: FNNodeInstallationDirectoryKey) as? String {
+            customInstallationURL = URL(fileURLWithPath: customPath).standardizedFileURL
         }
         
         // new default ~/Library/Application Support/Freenet
-        let defaultInstallationURL = applicationSupportURL.URLByAppendingPathComponent(FNNodeInstallationPathname, isDirectory:true)
+        let defaultInstallationURL = applicationSupportURL.appendingPathComponent(FNNodeInstallationPathname, isDirectory:true)
 
         // old default /Applications/Freenet
-        let deprecatedInstallationURL = applicationsURL.URLByAppendingPathComponent(FNNodeInstallationPathname, isDirectory:true)
+        let deprecatedInstallationURL = applicationsURL.appendingPathComponent(FNNodeInstallationPathname, isDirectory:true)
 
         if self.validateNodeInstallationAtURL(customInstallationURL) {
             return customInstallationURL
@@ -58,19 +57,19 @@ class Helpers : NSObject {
         return nil
     }
 
-    class func validateNodeInstallationAtURL(nodeURL: NSURL?) -> Bool {
+    class func validateNodeInstallationAtURL(_ nodeURL: URL?) -> Bool {
         guard let nodeURL = nodeURL else {
             return false
         }
         
         
-        let fileURL = nodeURL.URLByAppendingPathComponent(FNNodeRunscriptPathname)
+        let fileURL = nodeURL.appendingPathComponent(FNNodeRunscriptPathname)
         
-        let path = fileURL.path!
+        let path = fileURL.path
         
-        let fileManager = NSFileManager.defaultManager()
+        let fileManager = FileManager.default
         
-        if fileManager.fileExistsAtPath(path, isDirectory:nil) {
+        if fileManager.fileExists(atPath: path, isDirectory:nil) {
             return true
         }
         return false
@@ -78,24 +77,24 @@ class Helpers : NSObject {
 
     class func displayNodeMissingAlert() {
         // no installation found, tell the user to pick a location or start the installer
-        dispatch_async(dispatch_get_main_queue(), {         
+        DispatchQueue.main.async(execute: {         
             let alert = NSAlert()
             alert.messageText = NSLocalizedString("A Freenet installation could not be found.", comment: "String informing the user that no Freenet installation could be found")
             alert.informativeText = NSLocalizedString("Would you like to install Freenet now, or locate an existing Freenet installation?", comment: "String asking the user whether they would like to install freenet or locate an existing installation")
-            alert.addButtonWithTitle(NSLocalizedString("Install Freenet", comment: "Button title"))
+            alert.addButton(withTitle: NSLocalizedString("Install Freenet", comment: "Button title"))
 
-            alert.addButtonWithTitle(NSLocalizedString("Find Installation", comment: "Button title"))
-            alert.addButtonWithTitle(NSLocalizedString("Quit", comment: ""))
+            alert.addButton(withTitle: NSLocalizedString("Find Installation", comment: "Button title"))
+            alert.addButton(withTitle: NSLocalizedString("Quit", comment: ""))
 
             let button = alert.runModal()
             
             if button == NSAlertFirstButtonReturn {
                 // display installer
-                NSNotificationCenter.defaultCenter().postNotificationName(FNNodeShowInstallerWindow, object:nil)
+                NotificationCenter.default.post(name: Notification.Name.FNNodeShowInstallerWindow, object:nil)
             }
             else if button == NSAlertSecondButtonReturn {
                 // display node finder panel
-                NSNotificationCenter.defaultCenter().postNotificationName(FNNodeShowNodeFinderInSettingsWindow, object:nil)
+                NotificationCenter.default.post(name: Notification.Name.FNNodeShowNodeFinderInSettingsWindow, object:nil)
             }
             else if button == NSAlertThirdButtonReturn {
                 // display node finder panel
@@ -106,17 +105,17 @@ class Helpers : NSObject {
 
     class func displayUninstallAlert() {
         // ask the user if they really do want to uninstall Freenet
-        dispatch_async(dispatch_get_main_queue(), {         
+        DispatchQueue.main.async(execute: {         
             let alert:NSAlert! = NSAlert()
             alert.messageText = NSLocalizedString("Uninstall Freenet now?", comment: "Title of window")
             alert.informativeText = NSLocalizedString("Uninstalling Freenet is immediate and irreversible, are you sure you want to uninstall Freenet now?", comment: "String asking the user whether they would like to uninstall freenet")
-            alert.addButtonWithTitle(NSLocalizedString("Uninstall Freenet", comment: "Button title"))
-            alert.addButtonWithTitle(NSLocalizedString("Cancel", comment: "Button title"))
+            alert.addButton(withTitle: NSLocalizedString("Uninstall Freenet", comment: "Button title"))
+            alert.addButton(withTitle: NSLocalizedString("Cancel", comment: "Button title"))
 
             let button:Int = alert.runModal()
             if button == NSAlertFirstButtonReturn {
                 // start uninstallation
-                NSNotificationCenter.defaultCenter().postNotificationName(FNNodeUninstall, object:nil)
+                NotificationCenter.default.post(name: Notification.Name.FNNodeUninstall, object:nil)
             }
             else if button == NSAlertSecondButtonReturn {
                 // user canceled, don't do anything
@@ -125,14 +124,14 @@ class Helpers : NSObject {
     }
 
     class func installedWebBrowsers() -> [Browser]? {
-        let url = NSURL(string: "https://")!
+        let url = URL(string: "https://")!
         
-        let roles = LSRolesMask.Viewer
+        let roles = LSRolesMask.viewer
         
-        if let appUrls = LSCopyApplicationURLsForURL(url, roles)?.takeRetainedValue() {
+        if let appUrls = LSCopyApplicationURLsForURL(url as CFURL, roles)?.takeRetainedValue() {
             // Extract the app names and sort them for prettiness.
             var appNames = [Browser]()
-            guard let appUrls = appUrls as NSArray as? [NSURL] else {
+            guard let appUrls = appUrls as NSArray as? [URL] else {
                 return nil
             }
 
@@ -149,26 +148,26 @@ class Helpers : NSObject {
     // MARK: - Migrations
 
     class func migrateLaunchAgent() throws {
-        let fileManager = NSFileManager.defaultManager()
+        let fileManager = FileManager.default
     
-        let libraryDirectory = fileManager.URLsForDirectory(.LibraryDirectory, inDomains: .UserDomainMask).first
+        let libraryDirectory = fileManager.urls(for: .libraryDirectory, in: .userDomainMask).first
         
-        if let launchAgentsDirectory = libraryDirectory?.URLByAppendingPathComponent("LaunchAgents", isDirectory:true) {
-            let launchAgent:NSURL! = launchAgentsDirectory.URLByAppendingPathComponent(FNNodeLaunchAgentPathname)
-            if fileManager.fileExistsAtPath(launchAgent.path!, isDirectory:nil) {
-                try fileManager.removeItemAtURL(launchAgent)
+        if let launchAgentsDirectory = libraryDirectory?.appendingPathComponent("LaunchAgents", isDirectory:true) {
+            let launchAgent = launchAgentsDirectory.appendingPathComponent(FNNodeLaunchAgentPathname)
+            if fileManager.fileExists(atPath: launchAgent.path, isDirectory:nil) {
+                try fileManager.removeItem(at: launchAgent)
             }
         }
     }
     
     class func migrateLaunchAtStart() {
-        let startAtLaunch = NSUserDefaults.standardUserDefaults().boolForKey(FNStartAtLaunchKey)
-        Helpers.enableLoginItem(startAtLaunch)
+        let startAtLaunch = UserDefaults.standard.bool(forKey: FNStartAtLaunchKey)
+        let _ = Helpers.enableLoginItem(startAtLaunch)
     }
 
-    class func createGist(string: String, withTitle title: String, success: FNGistSuccessBlock, failure: FNGistFailureBlock) {
+    class func createGist(_ string: String, withTitle title: String, success: @escaping FNGistSuccessBlock, failure: @escaping FNGistFailureBlock) {
         let fileName = "FreenetTray - \(title).txt"
-        let params: [String: AnyObject] = [
+        let params: [String : Any] = [
             "description": title,
             "public": true,
             "files": [
@@ -184,38 +183,45 @@ class Helpers : NSObject {
             "User-Agent": "FreenetTray for OS X"
         ]
         
-        Alamofire.request(.POST, "https://\(FNGithubAPI)/gists", parameters: params, headers: headers, encoding: .JSON)
-            .validate()
-            .responseJSON { response in                
-            switch response.result {
-            case .Success(let data):
-                let response = data as! [String: AnyObject]
-                let html_url = response["html_url"] as! String
-                let gist = NSURL(fileURLWithPath: html_url)
-                success(gist)
-            case .Failure(let error):
-                let body = response.request!.HTTPBody
-                let headers = response.request!.allHTTPHeaderFields!
-                let string = String(data: body!, encoding: NSUTF8StringEncoding)!
-                print(headers)
-                print(string)
-
-                print(response.response!)
+        let request = NSMutableURLRequest(url: URL(string: "https://\(FNGithubAPI)/gists")!)
+        let session = URLSession.shared
+        request.httpMethod = "POST"
+        
+        if let body = try? JSONSerialization.data(withJSONObject: params) {
+            request.httpBody = body
+        }
+        request.allHTTPHeaderFields = headers
+        
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        
+        let task = session.dataTask(with: request as URLRequest, completionHandler: {data, response, error -> Void in
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!)
                 
+                let response = json as! [String: AnyObject]
+                let html_url = response["html_url"] as! String
+                let gist = URL(fileURLWithPath: html_url)
+                success(gist)
+            
+            } catch let error {
                 failure(error)
             }
-        }
+        })
+        
+        task.resume()
     }
     
-    class func enableLoginItem(state: Bool) -> Bool {
+    class func enableLoginItem(_ state: Bool) -> Bool {
 
-        let helper = NSBundle.mainBundle().bundleURL.URLByAppendingPathComponent("Contents/Library/LoginItems/FreenetTray Helper.app", isDirectory: true)
+        let helper = Bundle.main.bundleURL.appendingPathComponent("Contents/Library/LoginItems/FreenetTray Helper.app", isDirectory: true)
 
-        if LSRegisterURL(helper, state) != noErr {
+        if LSRegisterURL(helper as CFURL, state) != noErr {
             print("Failed to LSRegisterURL \(helper)")
         }
 
-        if (SMLoginItemSetEnabled(("org.freenetproject.FreenetTray-Helper" as CFStringRef), true)) {
+        if (SMLoginItemSetEnabled(("org.freenetproject.FreenetTray-Helper" as CFString), true)) {
             return true
         }
         else {

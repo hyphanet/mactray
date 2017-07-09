@@ -14,17 +14,17 @@ import Foundation
 import CocoaAsyncSocket
 
 enum FCPConnectionState: Int {
-    case Disconnected
-    case Connected
-    case Ready
+    case disconnected
+    case connected
+    case ready
 }
 
 
 enum FCPResponseState: Int {
-    case Unknown
-    case Ready
-    case Header
-    case Data
+    case unknown
+    case ready
+    case header
+    case data
 }
 
 
@@ -33,44 +33,44 @@ class FCP: NSObject, GCDAsyncSocketDelegate {
     var delegate: FCPDelegate!
     var dataSource: FCPDataSource!
     
-    private var nodeSocket: GCDAsyncSocket!
-    private var connectionState: FCPConnectionState = .Disconnected
-    private var responseState: FCPResponseState = .Ready
-    private var response = [String: AnyObject]()
-    private var commandExecuting: Bool = false
-    private var isWatchingFeeds: Bool = false
-    private let LineFeed = String(data: GCDAsyncSocket.LFData(), encoding: NSUTF8StringEncoding)!
+    fileprivate var nodeSocket: GCDAsyncSocket!
+    fileprivate var connectionState: FCPConnectionState = .disconnected
+    fileprivate var responseState: FCPResponseState = .ready
+    fileprivate var response = [String: String]()
+    fileprivate var commandExecuting: Bool = false
+    fileprivate var isWatchingFeeds: Bool = false
+    fileprivate let LineFeed = String(data: GCDAsyncSocket.lfData(), encoding: String.Encoding.utf8)!
 
     override init() {
         super.init()
         self.isWatchingFeeds = false
         self.commandExecuting = false
-        self.nodeSocket = GCDAsyncSocket(delegate: self, delegateQueue: dispatch_get_main_queue())
+        self.nodeSocket = GCDAsyncSocket(delegate: self, delegateQueue: DispatchQueue.main)
     }
 
     func nodeStateLoop() {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { 
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async(execute: { 
             while true {
                 switch (self.connectionState) { 
-                    case FCPConnectionState.Disconnected: 
+                    case FCPConnectionState.disconnected: 
                         guard let nodeFCPURL = self.dataSource.nodeFCPURL(),
-                                  port = nodeFCPURL.port?.integerValue,
-                                  host = nodeFCPURL.host else {
-                            NSThread.sleepForTimeInterval(1)
+                                  let port = (nodeFCPURL as NSURL).port?.intValue,
+                                  let host = nodeFCPURL.host else {
+                            Thread.sleep(forTimeInterval: 1)
                             continue
                         }
                         do {
-                            try self.nodeSocket.connectToHost(host, onPort:UInt16(port), withTimeout:5)
+                            try self.nodeSocket.connect(toHost: host, onPort:UInt16(port), withTimeout:5)
                         }
                         catch _ as NSError {
                         
                         }
-                    case FCPConnectionState.Connected: 
+                    case FCPConnectionState.connected: 
                         if !self.commandExecuting {
                             self.clientHello()
                             self.commandExecuting = false
                         }
-                    case FCPConnectionState.Ready: 
+                    case FCPConnectionState.ready: 
                         if !self.commandExecuting {
                             if !self.isWatchingFeeds {
                                 self.watchFeeds(true)
@@ -84,7 +84,7 @@ class FCP: NSObject, GCDAsyncSocketDelegate {
                             }
                         }
                 }
-                NSThread.sleepForTimeInterval(1)
+                Thread.sleep(forTimeInterval: 1)
             }
 
         })
@@ -114,7 +114,7 @@ class FCP: NSObject, GCDAsyncSocketDelegate {
         self.sendFCPMessage(getNode)
     }
 
-    func watchFeeds(enabled: Bool) {
+    func watchFeeds(_ enabled: Bool) {
         var watchFeeds = String()
         watchFeeds += "WatchFeeds"
         watchFeeds += LineFeed
@@ -127,25 +127,25 @@ class FCP: NSObject, GCDAsyncSocketDelegate {
 
     // MARK: - Message and response handling
 
-    func sendFCPMessage(message: String) {
-        guard let data = message.dataUsingEncoding(NSUTF8StringEncoding) else {
+    func sendFCPMessage(_ message: String) {
+        guard let data = message.data(using: String.Encoding.utf8) else {
             return
         }
-        self.nodeSocket.writeData(data, withTimeout:5, tag:-1)
-        self.nodeSocket.readDataToData(GCDAsyncSocket.LFData(), withTimeout:5, tag:-1)
+        self.nodeSocket.write(data, withTimeout:5, tag:-1)
+        self.nodeSocket.readData(to: GCDAsyncSocket.lfData(), withTimeout:5, tag:-1)
     }
 
-    func parseFCPResponse(data:NSData) -> [String: AnyObject] {
-        var nodeResponse = [String: AnyObject]()
+    func parseFCPResponse(_ data: Data) -> [String: String] {
+        var nodeResponse = [String: String]()
 
-        guard let rawResponse = String(data: data, encoding: NSUTF8StringEncoding) else {
+        guard let rawResponse = String(data: data, encoding: String.Encoding.utf8) else {
             // failed to
             return nodeResponse
         }
 
 
-        for keyValuePair in rawResponse.componentsSeparatedByString("\n") {
-            let pair = keyValuePair.componentsSeparatedByString("=")
+        for keyValuePair in rawResponse.components(separatedBy: "\n") {
+            let pair = keyValuePair.components(separatedBy: "=")
             if pair.count != 2 {
                 // handle keys with no value by adding empty one
                 if pair[0].characters.count > 0 {
@@ -158,72 +158,72 @@ class FCP: NSObject, GCDAsyncSocketDelegate {
         return nodeResponse
     }
 
-    func parseFCPHeader(data: NSData) -> String? {
-        guard let rawResponse = String(data: data, encoding: NSUTF8StringEncoding) else {
+    func parseFCPHeader(_ data: Data) -> String? {
+        guard let rawResponse = String(data: data, encoding: String.Encoding.utf8) else {
             return nil
         }
-        return rawResponse.stringByTrimmingCharactersInSet(NSCharacterSet.newlineCharacterSet())
+        return rawResponse.trimmingCharacters(in: CharacterSet.newlines)
     }
 
 
     // MARK: - GCDAsyncSocketDelegate methods
 
-    func socket(sock: GCDAsyncSocket, didConnectToHost host: String, port: UInt16) {
-        self.connectionState = FCPConnectionState.Connected
+    func socket(_ sock: GCDAsyncSocket, didConnectToHost host: String, port: UInt16) {
+        self.connectionState = FCPConnectionState.connected
     }
 
-    func socketDidDisconnect(sock: GCDAsyncSocket, withError err: NSError?) {
-        self.connectionState = FCPConnectionState.Disconnected
-        self.responseState = FCPResponseState.Ready
+    func socketDidDisconnect(_ sock: GCDAsyncSocket, withError err: Error?) {
+        self.connectionState = FCPConnectionState.disconnected
+        self.responseState = FCPResponseState.ready
         self.delegate.didDisconnect()
-        self.response = [String: AnyObject]()
+        self.response = [String: String]()
         self.isWatchingFeeds = false
         self.commandExecuting = false
     }
 
-    func socket(sock: GCDAsyncSocket, didReadData data: NSData, withTag tag: Int) {
+    func socket(_ sock: GCDAsyncSocket, didRead data: Data, withTag tag: Int) {
         switch (self.responseState) { 
-            case .Ready:
-                self.response = [String: AnyObject]()
+            case .ready:
+                self.response = [String: String]()
 
                 self.response["Command"] = self.parseFCPHeader(data)
-                self.responseState = .Header
-                self.nodeSocket.readDataToData(GCDAsyncSocket.LFData(), withTimeout:5, tag:-1)
+                self.responseState = .header
+                self.nodeSocket.readData(to: GCDAsyncSocket.lfData(), withTimeout:5, tag:-1)
                 break
 
-            case .Header:
+            case .header:
                 let resp = self.parseFCPResponse(data)
                 self.response = self.response.merge(resp)
                 let type = resp.keys.first
                 if (type == "Data") {
-                    let length = self.response["DataLength"] as! String
-                    self.responseState = .Data
-                    self.nodeSocket.readDataToLength(UInt(length)!, withTimeout:5, tag:-1)
+                    let length = self.response["DataLength"]
+                    self.responseState = .data
+                    self.nodeSocket.readData(toLength: UInt(length!)!, withTimeout:5, tag:-1)
                 }
                 else if (type == "EndMessage") {
-                    self.responseState = .Ready
+                    self.responseState = .ready
                     self.processFCPResponse()
                 }
                 else {
-                    self.nodeSocket.readDataToData(GCDAsyncSocket.LFData(), withTimeout:5, tag:-1)
+                    self.nodeSocket.readData(to: GCDAsyncSocket.lfData(), withTimeout:5, tag:-1)
                 }
                 break
 
-            case .Data:
-                let message:String! = String(data:data, encoding:NSUTF8StringEncoding)
+            case .data:
+                let message:String! = String(data:data, encoding:String.Encoding.utf8)
                 self.response["Data"] = message
                 self.processFCPResponse()
-                self.responseState = .Ready
+                self.responseState = .ready
                 break
 
             default:
                 print("############## WARNING ##################")
                 print("UNPROCESSED PACKET RECEIVED:")
-                let message = String(data:data, encoding:NSUTF8StringEncoding)
+                let message = String(data:data, encoding:String.Encoding.utf8)!
                 print("\(message)")
                 print("############## WARNING ##################")
 
-                self.responseState = .Ready
+                self.responseState = .ready
                 break
         }
     }
@@ -232,11 +232,11 @@ class FCP: NSObject, GCDAsyncSocketDelegate {
         guard let delegate = self.delegate else {
             return
         }
-        guard let command = self.response["Command"] as? String else {
+        guard let command = self.response["Command"] else {
             return
         }
         if (command == "NodeHello") {
-            self.connectionState = .Ready
+            self.connectionState = .ready
             delegate.didReceiveNodeHello(self.response)
         }
         else if (command == "NodeData") {

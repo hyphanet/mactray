@@ -14,13 +14,13 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    func applicationDidFinishLaunching(aNotification: NSNotification) {
-        if NSWorkspace.sharedWorkspace().launchApplication("FreenetTray") {
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        if NSWorkspace.shared().launchApplication("FreenetTray") {
             NSLog("FreenetTray launched")
         } else {
             NSLog("Failed to launch FreenetTray")
         }
-        NSApplication.sharedApplication().terminate(self)
+        NSApplication.shared().terminate(self)
     }
 }
 

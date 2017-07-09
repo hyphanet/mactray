@@ -14,104 +14,106 @@ import Foundation
 
    // MARK: - General constants
 
-let FNWebDomain: String = "freenetproject.org"
-let FNNodeInstallationPathname: String = "Freenet"
-let FNNodeRunscriptPathname: String = "run.sh"
-let FNNodeAnchorFilePathname: String = "Freenet.anchor"
-let FNNodePIDFilePathname: String = "Freenet.pid"
-let FNNodeWrapperConfigFilePathname: String = "wrapper.conf"
-let FNNodeFreenetConfigFilePathname: String = "freenet.ini"
+let FNWebDomain = "freenetproject.org"
+let FNNodeInstallationPathname = "Freenet"
+let FNNodeRunscriptPathname = "run.sh"
+let FNNodeAnchorFilePathname = "Freenet.anchor"
+let FNNodePIDFilePathname = "Freenet.pid"
+let FNNodeWrapperConfigFilePathname = "wrapper.conf"
+let FNNodeFreenetConfigFilePathname = "freenet.ini"
 
-let FNNodeCheckTimeInterval: NSTimeInterval = 1
+let FNNodeCheckTimeInterval: TimeInterval = 1
 
-let FNGithubAPI: String = "api.github.com"
+let FNGithubAPI = "api.github.com"
 
     // MARK: - Deprecated functionality keys
 
-let FNNodeLaunchAgentPathname: String = "com.freenet.startup.plist"
+let FNNodeLaunchAgentPathname = "com.freenet.startup.plist"
 
     // MARK: - Node configuration keys
 
-let FNNodeFreenetConfigFCPBindAddressesKey: String = "fcp.bindTo"
-let FNNodeFreenetConfigFCPPortKey: String = "fcp.port"
-let FNNodeFreenetConfigFProxyBindAddressesKey: String = "fproxy.bindTo"
-let FNNodeFreenetConfigFProxyPortKey: String = "fproxy.port"
+let FNNodeFreenetConfigFCPBindAddressesKey = "fcp.bindTo"
+let FNNodeFreenetConfigFCPPortKey = "fcp.port"
+let FNNodeFreenetConfigFProxyBindAddressesKey = "fproxy.bindTo"
+let FNNodeFreenetConfigFProxyPortKey = "fproxy.port"
 
-let FNNodeFreenetConfigDownloadsDirKey: String = "node.downloadsDir"
+let FNNodeFreenetConfigDownloadsDirKey = "node.downloadsDir"
 
     // MARK: - NSUserDefaults keys
 
-let FNStartAtLaunchKey: String = "startatlaunch"
+let FNStartAtLaunchKey = "startatlaunch"
 
-let FNNodeFProxyURLKey: String = "nodeurl"
-let FNNodeFCPURLKey: String = "nodefcpurl"
-let FNNodeInstallationDirectoryKey: String = "nodepath"
-let FNNodeFirstLaunchKey: String = "firstlaunch"
+let FNNodeFProxyURLKey = "nodeurl"
+let FNNodeFCPURLKey = "nodefcpurl"
+let FNNodeInstallationDirectoryKey = "nodepath"
+let FNNodeFirstLaunchKey = "firstlaunch"
 
-let FNBrowserPreferenceKey: String = "FNBrowserPreferenceKey"
+let FNBrowserPreferenceKey = "FNBrowserPreferenceKey"
 
-let FNEnableNotificationsKey: String = "FNEnableNotificationsKey"
+let FNEnableNotificationsKey = "FNEnableNotificationsKey"
 
     // MARK: - Custom NSNotifications
 
-let FNNodeStateUnknownNotification: String = "FNNodeStateUnknownNotification"
-let FNNodeStateRunningNotification: String = "FNNodeStateRunningNotification"
-let FNNodeStateNotRunningNotification: String = "FNNodeStateNotRunningNotification"
-
-let FNNodeHelloReceivedNotification: String = "FNNodeHelloReceivedNotification"
-
-let FNNodeStatsReceivedNotification: String = "FNNodeStatsReceivedNotification"
-
-let FNNodeFCPDisconnectedNotification: String = "FNNodeFCPDisconnectedNotification"
-
-let FNNodeConfiguredNotification: String = "FNNodeConfiguredNotification"
-
-let FNInstallFinishedNotification: String = "FNInstallFinishedNotification"
-let FNInstallFailedNotification: String = "FNInstallFailedNotification"
-let FNInstallStartNodeNotification: String = "FNInstallStartNodeNotification"
-
+extension Notification.Name {
+    
+    static let FNNodeStateUnknownNotification = Notification.Name("FNNodeStateUnknownNotification")
+    static let FNNodeStateRunningNotification = Notification.Name("FNNodeStateRunningNotification")
+    static let FNNodeStateNotRunningNotification = Notification.Name("FNNodeStateNotRunningNotification")
+    
+    static let FNNodeHelloReceivedNotification = Notification.Name("FNNodeHelloReceivedNotification")
+    
+    static let FNNodeStatsReceivedNotification = Notification.Name("FNNodeStatsReceivedNotification")
+    
+    static let FNNodeFCPDisconnectedNotification = Notification.Name("FNNodeFCPDisconnectedNotification")
+    
+    static let FNNodeConfiguredNotification = Notification.Name("FNNodeConfiguredNotification")
+    
+    static let FNInstallFinishedNotification = Notification.Name("FNInstallFinishedNotification")
+    static let FNInstallFailedNotification = Notification.Name("FNInstallFailedNotification")
+    static let FNInstallStartNodeNotification = Notification.Name("FNInstallStartNodeNotification")
+    
     // MARK: - Global Actions
-
-let FNNodeShowSettingsWindow: String = "FNNodeShowSettingsWindow"
-let FNNodeShowNodeFinderInSettingsWindow: String = "FNNodeShowNodeFinderInSettingsWindow"
-let FNNodeShowInstallerWindow: String = "FNNodeShowInstallerWindow"
-let FNNodeUninstall: String = "FNNodeUninstall"
-
+    
+    static let FNNodeShowSettingsWindow = Notification.Name("FNNodeShowSettingsWindow")
+    static let FNNodeShowNodeFinderInSettingsWindow = Notification.Name("FNNodeShowNodeFinderInSettingsWindow")
+    static let FNNodeShowInstallerWindow = Notification.Name("FNNodeShowInstallerWindow")
+    static let FNNodeUninstall = Notification.Name("FNNodeUninstall")
+}
     // MARK: - Installer
 
-let FNInstallDefaultLocation: String = "~/Library/Application Support/Freenet"
+let FNInstallDefaultLocation = "~/Library/Application Support/Freenet"
 let FNInstallDefaultFProxyPort: Int = 8888
 let FNInstallDefaultFCPPort: Int = 9481
 
     // MARK: - Node state
 
 enum FNNodeState: Int {
-    case Unknown = -1
-    case NotRunning = 0
-    case Running = 1
+    case unknown = -1
+    case notRunning = 0
+    case running = 1
 }
 
     // MARK: - Installer page
 
 enum FNInstallerPage: Int {
-    case Unknown = -1
-    case Destination = 0
-    case Progress = 1
+    case unknown = -1
+    case destination = 0
+    case progress = 1
 }
 
 enum FNInstallerProgress: Int {
-    case Unknown
-    case JavaInstalling
-    case JavaFound
-    case CopyingFiles    
-    case CopiedFiles
-    case SetupPorts
-    case StartingNode
-    case StartedNode
-    case Finished
+    case unknown
+    case javaInstalling
+    case javaFound
+    case copyingFiles    
+    case copiedFiles
+    case setupPorts
+    case startingNode
+    case startedNode
+    case finished
 }
 
 // MARK: - Blocks
 
-typealias FNGistSuccessBlock = (NSURL!) -> Void
-typealias FNGistFailureBlock = (NSError!) -> Void
+typealias FNGistSuccessBlock = (URL) -> Void
+typealias FNGistFailureBlock = (Error) -> Void

@@ -1,4 +1,4 @@
-/* 
+/*
     Copyright (C) 2016 Stephen Oliver <steve@infincia.com>
     
     This code is distributed under the GNU General Public License, version 2 
@@ -12,23 +12,46 @@
 
 import Foundation
 
+extension String {
+    func index(from: Int) -> Index {
+        return self.index(startIndex, offsetBy: from)
+    }
+    
+    func substring(from: Int) -> String {
+        let fromIndex = index(from: from)
+        return substring(from: fromIndex)
+    }
+    
+    func substring(to: Int) -> String {
+        let toIndex = index(from: to)
+        return substring(to: toIndex)
+    }
+    
+    func substring(with r: Range<Int>) -> String {
+        let startIndex = index(from: r.lowerBound)
+        let endIndex = index(from: r.upperBound)
+        return substring(with: startIndex..<endIndex)
+    }
+}
+
+
 class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelegate {
 
-    var state: FNNodeState = .Unknown
+    var state: FNNodeState = .unknown
     
-    var wrapperConfig: NSDictionary?
+    var wrapperConfig: [String: String]?
     
-    var freenetConfig: NSDictionary?
+    var freenetConfig: [String: String]?
     
-    var fcpLocation: NSURL?
+    var fcpLocation: URL?
     
-    var fproxyLocation: NSURL?
+    var fproxyLocation: URL?
     
-    var downloadsFolder: NSURL?
+    var downloadsFolder: URL?
     
-    private var fcp = FCP()
+    fileprivate var fcp = FCP()
     
-    private var configWatcher: MHWDirectoryWatcher!
+    fileprivate var configWatcher: MHWDirectoryWatcher!
 
     override init() {
         super.init()
@@ -36,48 +59,48 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
         self.fcp.dataSource = self
         self.fcp.nodeStateLoop()
         // spawn a thread to monitor node installation. The method called here cannot be run again while this thread is running
-        NSThread.detachNewThreadSelector(#selector(checkNodeInstallation), toTarget:self, withObject:nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(installFinished), name:FNInstallFinishedNotification, object:nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(installFailed), name:FNInstallFailedNotification, object:nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(installStartNode), name:FNInstallStartNodeNotification, object:nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(uninstallFreenet), name:FNNodeUninstall, object:nil)
+        Thread.detachNewThreadSelector(#selector(checkNodeInstallation), toTarget:self, with:nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(installFinished), name: Notification.Name.FNInstallFinishedNotification, object:nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(installFailed), name: Notification.Name.FNInstallFailedNotification, object:nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(installStartNode), name: Notification.Name.FNInstallStartNodeNotification, object:nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(uninstallFreenet), name: Notification.Name.FNNodeUninstall, object:nil)
         
-        NSUserNotificationCenter.defaultUserNotificationCenter().delegate = self
+        NSUserNotificationCenter.default.delegate = self
 
     }
 
     // MARK: - Uninstaller
 
-    func uninstallFreenet(notification:NSNotification!) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { 
+    func uninstallFreenet(_ notification:Notification!) {
+        DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async(execute: { 
 
             if !Helpers.validateNodeInstallationAtURL(self.location) {
                 // warn user that the configured node path is not valid and refuse to delete anything
-                dispatch_async(dispatch_get_main_queue(), {         
+                DispatchQueue.main.async(execute: {         
                     let alert = NSAlert()
                     alert.messageText = NSLocalizedString("Uninstalling Freenet failed", comment: "Title of window")
                     alert.informativeText = NSLocalizedString("No Freenet installation was found, please delete the files manually if needed", comment: "String informing the user that no Freenet installation was found and that they must delete the files manually if needed")
-                    alert.addButtonWithTitle(NSLocalizedString("OK", comment: "Button title"))
+                    alert.addButton(withTitle: NSLocalizedString("OK", comment: "Button title"))
                     let button = alert.runModal()
                     if button == NSAlertFirstButtonReturn {
-                        NSWorkspace.sharedWorkspace().openURL(NSBundle.mainBundle().bundleURL)
+                        NSWorkspace.shared().open(Bundle.main.bundleURL)
                         NSApp.terminate(self)
                     }
                 })
                 return
             }
 
-            while self.state == .Running {
+            while self.state == .running {
                 self.stopFreenet()
-                NSThread.sleepForTimeInterval(1)
+                Thread.sleep(forTimeInterval: 1)
             }
             
             
-            let fileManager = NSFileManager.defaultManager()
+            let fileManager = FileManager.default
 
             do {
                 if let nodeLocation = self.location {
-                    try fileManager.removeItemAtURL(nodeLocation)
+                    try fileManager.removeItem(at: nodeLocation)
                 }
                 else {
                     throw NSError(domain: "org.freenetproject", code: 0x01, userInfo: nil)
@@ -86,16 +109,16 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
             catch let nodeRemovalError as NSError {
                 NSLog("Uninstall error: \(nodeRemovalError)")
                 // warn user that uninstall did not go smoothly
-                dispatch_async(dispatch_get_main_queue(), {         
+                DispatchQueue.main.async(execute: {         
                     let alert = NSAlert()
                     alert.messageText = NSLocalizedString("Uninstalling Freenet failed", comment: "Title of window")
                     alert.informativeText = nodeRemovalError.localizedDescription
-                    alert.addButtonWithTitle(NSLocalizedString("OK", comment: "Button title"))
+                    alert.addButton(withTitle: NSLocalizedString("OK", comment: "Button title"))
 
                     let button = alert.runModal()
                     if button == NSAlertFirstButtonReturn {
                         if let nodeLocation = self.location {
-                            NSWorkspace.sharedWorkspace().openURL(nodeLocation)
+                            NSWorkspace.shared().open(nodeLocation)
                         }
                         NSApp.terminate(self)
                     }
@@ -104,32 +127,32 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
             }
 
             do {
-                try fileManager.removeItemAtURL(NSBundle.mainBundle().bundleURL)
+                try fileManager.removeItem(at: Bundle.main.bundleURL)
             }
             catch let appRemovalError as NSError {
                 NSLog("App uninstall error: \(appRemovalError)")
                 // warn user that uninstall did not go smoothly
-                dispatch_async(dispatch_get_main_queue(), {         
+                DispatchQueue.main.async(execute: {         
                     let alert = NSAlert()
                     alert.messageText = NSLocalizedString("Uninstalling Freenet failed", comment: "Title of window")
                     alert.informativeText = appRemovalError.localizedDescription
-                    alert.addButtonWithTitle(NSLocalizedString("OK", comment: "Button title"))
+                    alert.addButton(withTitle: NSLocalizedString("OK", comment: "Button title"))
                     let button = alert.runModal()
                     if button == NSAlertFirstButtonReturn {
-                        NSWorkspace.sharedWorkspace().openURL(NSBundle.mainBundle().bundleURL)
+                        NSWorkspace.shared().open(Bundle.main.bundleURL)
                         NSApp.terminate(self)
                     }
                 })
                 return
             }
-            NSUserDefaults.standardUserDefaults().removePersistentDomainForName(NSBundle.mainBundle().bundleIdentifier!)
-            NSUserDefaults.standardUserDefaults().synchronize()
+            UserDefaults.standard.removePersistentDomain(forName: Bundle.main.bundleIdentifier!)
+            UserDefaults.standard.synchronize()
 
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async(execute: {
                 let alert = NSAlert()
                 alert.messageText = NSLocalizedString("Freenet Uninstalled", comment: "Title of window")
                 alert.informativeText = NSLocalizedString("Freenet has been completely uninstalled", comment: "String informing the user that Freenet uninstallation succeeded")
-                alert.addButtonWithTitle(NSLocalizedString("OK", comment: "Button title"))
+                alert.addButton(withTitle: NSLocalizedString("OK", comment: "Button title"))
                 let button = alert.runModal()
                 if button == NSAlertFirstButtonReturn {
                     NSApp.terminate(self)
@@ -140,16 +163,16 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
 
     // MARK: - Install delegate
 
-    func installFinished(notification:NSNotification!) {
+    func installFinished(_ notification:Notification!) {
 
     }
 
-    func installFailed(notification:NSNotification!) {
+    func installFailed(_ notification:Notification!) {
         self.location = nil
     }
 
-    func installStartNode(notification:NSNotification!) {
-        if let newInstallation = notification.object as? NSURL {
+    func installStartNode(_ notification:Notification!) {
+        if let newInstallation = notification.object as? URL {
             self.location = newInstallation
             self.startFreenet()
         }
@@ -157,10 +180,10 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
 
     // MARK: - Dynamic properties
 
-    var location: NSURL? {
+    var location: URL? {
         get {
-            if let storedNodePath = NSUserDefaults.standardUserDefaults().objectForKey(FNNodeInstallationDirectoryKey) as? String {
-                return NSURL(fileURLWithPath: storedNodePath).URLByStandardizingPath
+            if let storedNodePath = UserDefaults.standard.object(forKey: FNNodeInstallationDirectoryKey) as? String {
+                return URL(fileURLWithPath: storedNodePath).standardizedFileURL
             }
             return nil
         }
@@ -169,15 +192,15 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
                 configWatcher.stopWatching()
             }
             
-            if let nodePath = newNodeLocation?.URLByStandardizingPath?.path {
-                NSUserDefaults.standardUserDefaults().setObject(nodePath, forKey:FNNodeInstallationDirectoryKey)
+            if let nodePath = newNodeLocation?.standardizedFileURL.path {
+                UserDefaults.standard.set(nodePath, forKey:FNNodeInstallationDirectoryKey)
                 self.configWatcher = MHWDirectoryWatcher(atPath: nodePath, callback: {
                     self.readFreenetConfig()
                 })
                 self.configWatcher.startWatching()
             }
             else {
-                NSUserDefaults.standardUserDefaults().removeObjectForKey(FNNodeInstallationDirectoryKey)
+                UserDefaults.standard.removeObject(forKey: FNNodeInstallationDirectoryKey)
             }
             self.readFreenetConfig()
         }
@@ -189,21 +212,21 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
         while true {
             autoreleasepool { 
                 if !Helpers.validateNodeInstallationAtURL(self.location) {
-                    dispatch_async(dispatch_get_main_queue(), { 
-                        self.state = .Unknown
-                        NSNotificationCenter.defaultCenter().postNotificationName(FNNodeStateUnknownNotification, object: nil)
+                    DispatchQueue.main.async(execute: { 
+                        self.state = .unknown
+                        NotificationCenter.default.post(name: Notification.Name.FNNodeStateUnknownNotification, object: nil)
                     })
                 }
             }
-            NSThread.sleepForTimeInterval(FNNodeCheckTimeInterval) 
+            Thread.sleep(forTimeInterval: FNNodeCheckTimeInterval) 
         }
     }
 
     func startFreenet() {
         let nodeLocation = self.location
         if Helpers.validateNodeInstallationAtURL(nodeLocation) {
-            let runScript = nodeLocation!.URLByAppendingPathComponent(FNNodeRunscriptPathname)
-            NSTask.launchedTaskWithLaunchPath(runScript.path!, arguments:["start"])
+            let runScript = nodeLocation!.appendingPathComponent(FNNodeRunscriptPathname)
+            Process.launchedProcess(launchPath: runScript.path, arguments:["start"])
         }
         else {
             Helpers.displayNodeMissingAlert()
@@ -213,9 +236,9 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
     func stopFreenet() {
         let nodeLocation = self.location
         if Helpers.validateNodeInstallationAtURL(nodeLocation) {
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { 
-                let runScript:NSURL! = nodeLocation!.URLByAppendingPathComponent(FNNodeRunscriptPathname)
-                let task:NSTask! = NSTask.launchedTaskWithLaunchPath(runScript.path!, arguments: ["stop"])
+            DispatchQueue.global(priority: DispatchQueue.GlobalQueuePriority.default).async(execute: { 
+                let runScript:URL! = nodeLocation!.appendingPathComponent(FNNodeRunscriptPathname)
+                let task:Process! = Process.launchedProcess(launchPath: runScript.path, arguments: ["stop"])
                 task.waitUntilExit()
                 // once run.sh returns, we ensure the wrapper state is cleaned up
                 // this fixes issues where Freenet.anchor is still around but the wrapper crashed, so the node
@@ -231,19 +254,19 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
 
     // MARK: - Shutdown cleanup
 
-    func cleanupAfterShutdown(nodeLocation:NSURL!) {
+    func cleanupAfterShutdown(_ nodeLocation:URL!) {
         // these are best effort cleanup attempts, we don't care if they fail or why
-        let anchorFile = nodeLocation.URLByAppendingPathComponent(FNNodeAnchorFilePathname)
+        let anchorFile = nodeLocation.appendingPathComponent(FNNodeAnchorFilePathname)
         do {
-            try NSFileManager.defaultManager().removeItemAtURL(anchorFile)
+            try FileManager.default.removeItem(at: anchorFile)
         }
         catch {
         
         }
 
-        let pidFile = nodeLocation.URLByAppendingPathComponent(FNNodePIDFilePathname)
+        let pidFile = nodeLocation.appendingPathComponent(FNNodePIDFilePathname)
         do {
-            try NSFileManager.defaultManager().removeItemAtURL(pidFile)
+            try FileManager.default.removeItem(at: pidFile)
         }
         catch {
         
@@ -257,19 +280,19 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
             return
         }
         if Helpers.validateNodeInstallationAtURL(self.location) {
-            let wrapperConfigFile = nodeLocation.URLByAppendingPathComponent(FNNodeWrapperConfigFilePathname)
-            let freenetConfigFile = nodeLocation.URLByAppendingPathComponent(FNNodeFreenetConfigFilePathname)
+            let wrapperConfigFile = nodeLocation.appendingPathComponent(FNNodeWrapperConfigFilePathname)
+            let freenetConfigFile = nodeLocation.appendingPathComponent(FNNodeFreenetConfigFilePathname)
 
             self.wrapperConfig = NodeConfig.fromFile(wrapperConfigFile)
 
             guard let freenetConfig = NodeConfig.fromFile(freenetConfigFile),
-                      fcpBindings = freenetConfig[FNNodeFreenetConfigFCPBindAddressesKey]?.componentsSeparatedByString(","),
-                      fproxyBindings = freenetConfig[FNNodeFreenetConfigFProxyBindAddressesKey]?.componentsSeparatedByString(","),
-                      downloadsPath = freenetConfig[FNNodeFreenetConfigDownloadsDirKey] as? String else {
+                      let fcpBindings = freenetConfig[FNNodeFreenetConfigFCPBindAddressesKey]?.components(separatedBy: ","),
+                      let fproxyBindings = freenetConfig[FNNodeFreenetConfigFProxyBindAddressesKey]?.components(separatedBy: ","),
+                      let downloadsPath = freenetConfig[FNNodeFreenetConfigDownloadsDirKey] else {
                 let alert = NSAlert()
                 alert.messageText = NSLocalizedString("Freenet configuration invalid", comment: "Title of window")
                 alert.informativeText = NSLocalizedString("Your Freenet installation does not have a freenet.ini file", comment: "String informing the user that Freenet configuration is invalid")
-                alert.addButtonWithTitle(NSLocalizedString("OK", comment: "Button title"))
+                alert.addButton(withTitle: NSLocalizedString("OK", comment: "Button title"))
                 let button = alert.runModal()
                 if button == NSAlertFirstButtonReturn {
                     NSApp.terminate(self)
@@ -280,26 +303,31 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
             self.freenetConfig = freenetConfig
             
             if fcpBindings.count > 0 {
-                let fcpBindTo = fcpBindings[0] // first one should be ipv4
-                let fcpPort = freenetConfig[FNNodeFreenetConfigFCPPortKey] as! String
-                self.fcpLocation = NSURL(string: String(format:"tcp://%@:%@", fcpBindTo, fcpPort))
+                 // first one should be ipv4
+                let fcpBindTo = fcpBindings[0]
+                
+                if let fcpPort = freenetConfig[FNNodeFreenetConfigFCPPortKey] {
+                    self.fcpLocation = URL(string: "tcp://\(fcpBindTo):\(fcpPort)")
+
+                }
             }
             
             if fproxyBindings.count > 0 {
                 let fproxyBindTo = fproxyBindings[0] // first one should be ipv4
-                let fproxyPort = freenetConfig[FNNodeFreenetConfigFProxyPortKey] as! String
-                self.fproxyLocation = NSURL(string: String(format:"http://%@:%@", fproxyBindTo, fproxyPort))
-                NSNotificationCenter.defaultCenter().postNotificationName(FNNodeConfiguredNotification, object:nil)
+                if let fproxyPort = freenetConfig[FNNodeFreenetConfigFProxyPortKey] {
+                    self.fproxyLocation = URL(string: "http://\(fproxyBindTo):\(fproxyPort)")
+                    NotificationCenter.default.post(name: Notification.Name.FNNodeConfiguredNotification, object:nil)
+                }
             }
  
             var isDirectory = ObjCBool(false)
             
-            if NSFileManager.defaultManager().fileExistsAtPath(downloadsPath, isDirectory: &isDirectory) && isDirectory {
-                self.downloadsFolder = NSURL(fileURLWithPath: downloadsPath, isDirectory: true)
+            if FileManager.default.fileExists(atPath: downloadsPath, isDirectory: &isDirectory) && isDirectory.boolValue {
+                self.downloadsFolder = URL(fileURLWithPath: downloadsPath, isDirectory: true)
             }
             else {
                 // node.downloadsDir isn't a full path, so probably relative to the node files
-                self.downloadsFolder = nodeLocation.URLByAppendingPathComponent(downloadsPath, isDirectory:true)
+                self.downloadsFolder = nodeLocation.appendingPathComponent(downloadsPath, isDirectory:true)
             }
         }
     }
@@ -307,30 +335,30 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
     // MARK: - FNFCPWrapperDelegate methods
 
     func didDisconnect() {
-        dispatch_async(dispatch_get_main_queue(), { 
-            self.state = .NotRunning
-            NSNotificationCenter.defaultCenter().postNotificationName(FNNodeStateNotRunningNotification, object: nil)
-            NSNotificationCenter.defaultCenter().postNotificationName(FNNodeFCPDisconnectedNotification, object: nil)
+        DispatchQueue.main.async(execute: { 
+            self.state = .notRunning
+            NotificationCenter.default.post(name: Notification.Name.FNNodeStateNotRunningNotification, object: nil)
+            NotificationCenter.default.post(name: Notification.Name.FNNodeFCPDisconnectedNotification, object: nil)
         })
 
     }
 
-    func didReceiveNodeHello(nodeHello: [NSObject: AnyObject]) {
-        dispatch_async(dispatch_get_main_queue(), { 
-            NSNotificationCenter.defaultCenter().postNotificationName(FNNodeHelloReceivedNotification, object:nodeHello)
+    func didReceiveNodeHello(_ nodeHello: [AnyHashable: Any]) {
+        DispatchQueue.main.async(execute: { 
+            NotificationCenter.default.post(name: Notification.Name.FNNodeHelloReceivedNotification, object:nodeHello)
         })
     }
 
-    func didReceiveNodeStats(nodeStats: [NSObject: AnyObject]) {
-        dispatch_async(dispatch_get_main_queue(), { 
-            self.state = .Running
-            NSNotificationCenter.defaultCenter().postNotificationName(FNNodeStateRunningNotification, object:nil)
-            NSNotificationCenter.defaultCenter().postNotificationName(FNNodeStatsReceivedNotification, object:nodeStats)
+    func didReceiveNodeStats(_ nodeStats: [AnyHashable: Any]) {
+        DispatchQueue.main.async(execute: { 
+            self.state = .running
+            NotificationCenter.default.post(name: Notification.Name.FNNodeStateRunningNotification, object:nil)
+            NotificationCenter.default.post(name: Notification.Name.FNNodeStatsReceivedNotification, object:nodeStats)
         })
     }
 
-    func didReceiveUserAlert(nodeUserAlert: [NSObject: AnyObject]) {
-        if !NSUserDefaults.standardUserDefaults().boolForKey(FNEnableNotificationsKey) {
+    func didReceiveUserAlert(_ nodeUserAlert: [AnyHashable: Any]) {
+        if !UserDefaults.standard.bool(forKey: FNEnableNotificationsKey) {
             return
         }
         let notification = NSUserNotification()
@@ -345,9 +373,12 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
         
         if (command == "TextFeed") {
             notification.title = nodeUserAlert["ShortText"] as? String
-            let textLength = nodeUserAlert["TextLength"]!.integerValue
-            let messageLength = nodeUserAlert["MessageTextLength"]!.integerValue
-            let message:String! = nodeUserAlert["Data"]!.substringWithRange(NSMakeRange(textLength - messageLength - 1, messageLength + 1))
+            let textLength = nodeUserAlert["TextLength"] as! Int
+            let messageLength = nodeUserAlert["MessageTextLength"] as! Int
+            let messageData: String = nodeUserAlert["Data"] as! String
+            let message = messageData.substring(with: (textLength - messageLength - 1)..<(messageLength + 1))    // play
+
+            
             notification.informativeText = message
         }
         else {
@@ -356,26 +387,26 @@ class Node: NSObject, FCPDelegate, FCPDataSource, NSUserNotificationCenterDelega
         }
         notification.soundName = NSUserNotificationDefaultSoundName
 
-        NSUserNotificationCenter.defaultUserNotificationCenter().deliverNotification(notification)
+        NSUserNotificationCenter.default.deliver(notification)
     }
 
     // MARK: - FNFCPWrapperDataSource methods
 
-    func nodeFCPURL() -> NSURL? {
+    func nodeFCPURL() -> URL? {
         return self.fcpLocation
     }
 
     // MARK: - NSUserNotificationCenterDelegate methods
 
-    func userNotificationCenter(center:NSUserNotificationCenter, shouldPresentNotification notification: NSUserNotification) -> Bool {
+    func userNotificationCenter(_ center:NSUserNotificationCenter, shouldPresent notification: NSUserNotification) -> Bool {
         return true
     }
 
-    func userNotificationCenter(center:NSUserNotificationCenter, didActivateNotification notification: NSUserNotification) {
+    func userNotificationCenter(_ center:NSUserNotificationCenter, didActivate notification: NSUserNotification) {
         if let fproxyLocation = self.fproxyLocation {
             // Open the alerts page in users default browser
-            let alertsPage = fproxyLocation.URLByAppendingPathComponent("alerts")
-            NSWorkspace.sharedWorkspace().openURL(alertsPage)
+            let alertsPage = fproxyLocation.appendingPathComponent("alerts")
+            NSWorkspace.shared().open(alertsPage)
         }
         center.removeAllDeliveredNotifications()
     }

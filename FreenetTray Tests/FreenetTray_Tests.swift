@@ -16,8 +16,8 @@ class FreenetTray_Tests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.registerDefaults(["NSApplicationCrashOnExceptions": true, FNEnableNotificationsKey: true, FNBrowserPreferenceKey: "Safari", FNStartAtLaunchKey: true, FNNodeFirstLaunchKey: true])
+        let defaults = UserDefaults.standard
+        defaults.register(defaults: ["NSApplicationCrashOnExceptions": true, FNEnableNotificationsKey: true, FNBrowserPreferenceKey: "Safari", FNStartAtLaunchKey: true, FNNodeFirstLaunchKey: true])
     }
     
     override func tearDown() {
@@ -26,7 +26,7 @@ class FreenetTray_Tests: XCTestCase {
     }
     
     func test_userSelectedBrowser() {
-        let userSelectedBrowser = NSUserDefaults.standardUserDefaults().objectForKey(FNBrowserPreferenceKey) as! String
+        let userSelectedBrowser = UserDefaults.standard.object(forKey: FNBrowserPreferenceKey) as! String
         print("userSelectedBrowser: \(userSelectedBrowser)")
         XCTAssertTrue((userSelectedBrowser == "Safari"))
 
@@ -34,7 +34,7 @@ class FreenetTray_Tests: XCTestCase {
     
     func test_browserList() {
         // using an expectation here because it can explicitly pass the test rather than looking for failures
-        let expectation = self.expectationWithDescription("test_browserList")
+        let expectation = self.expectation(description: "test_browserList")
 
         guard let browsers = Helpers.installedWebBrowsers() else {
             XCTFail("Browsers returned nil")
@@ -46,7 +46,7 @@ class FreenetTray_Tests: XCTestCase {
                 expectation.fulfill()
             }
         }
-        self.waitForExpectationsWithTimeout(5, handler:{ (error) in
+        self.waitForExpectations(timeout: 5, handler:{ (error) in
             if error != nil {
                 XCTFail("test_browserList failed with error: \(error)")
             }
@@ -56,7 +56,7 @@ class FreenetTray_Tests: XCTestCase {
 
     func test_createGist() {
         // NOTE: This test sometimes fails on CI servers, Github returns a 403 error.
-        let expectation = self.expectationWithDescription("test_createPaste")
+        let expectation = self.expectation(description: "test_createPaste")
 
         Helpers.createGist("test", withTitle:"test", success:{ (url) in
             XCTAssertNotNil(url)
@@ -66,7 +66,7 @@ class FreenetTray_Tests: XCTestCase {
             XCTFail("Error: \(error.localizedDescription)")
         })
 
-        self.waitForExpectationsWithTimeout(60.0, handler:{ (error) in
+        self.waitForExpectations(timeout: 60.0, handler:{ (error) in
             if error != nil {
                 XCTFail("test_createPaste failed with error: \(error)")
             }

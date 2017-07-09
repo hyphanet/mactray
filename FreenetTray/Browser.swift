@@ -10,22 +10,22 @@ import Cocoa
 
 @objc 
 class Browser : NSObject {
-    var url: NSURL
+    var url: URL
     var executablePath: String
     var name: String
     var icon: NSImage
 
-    class func browserWithFileURL(fileURL: NSURL!) -> Browser {
+    class func browserWithFileURL(_ fileURL: URL!) -> Browser {
         let browser = Browser(fileURL: fileURL)
         return browser
     }
 
-    init(fileURL: NSURL) {
+    init(fileURL: URL) {
         self.url = fileURL
-        let bundle:NSBundle! = NSBundle(URL: self.url)
+        let bundle:Bundle! = Bundle(url: self.url)
         self.executablePath = bundle.executablePath!
-        self.name = bundle.objectForInfoDictionaryKey(kCFBundleNameKey as String) as! String
-        self.icon = NSWorkspace.sharedWorkspace().iconForFile(self.url.path!)
+        self.name = bundle.object(forInfoDictionaryKey: kCFBundleNameKey as String) as! String
+        self.icon = NSWorkspace.shared().icon(forFile: self.url.path)
     }
 
     override var description: String {

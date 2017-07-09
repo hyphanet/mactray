@@ -1,4 +1,4 @@
-/* 
+/*
     Copyright (C) 2016 Stephen Oliver <steve@infincia.com>
     
     This code is distributed under the GNU General Public License, version 2 
@@ -12,10 +12,10 @@
 
 import Cocoa
 
-extension NSFileManager {
-    func isEmptyDirectoryAtURL(url: NSURL!) -> Bool {
+extension FileManager {
+    func isEmptyDirectoryAtURL(_ url: URL) -> Bool {
         do {
-            return try (self.contentsOfDirectoryAtURL(url, includingPropertiesForKeys:nil, options:[]).count <= 1)
+            return try (self.contentsOfDirectory(at: url, includingPropertiesForKeys:nil, options:[]).count <= 1)
         }
         catch {
             return false
@@ -26,16 +26,16 @@ extension NSFileManager {
 class InstallerDestinationViewController: NSViewController, NSOpenSavePanelDelegate {
 
     var stateDelegate: FNInstallerDelegate!
-    private var installPathIndicator: NSPathControl!
+    fileprivate var installPathIndicator: NSPathControl!
     
     override func awakeFromNib() {
-        self.installPathIndicator.URL = NSURL.fileURLWithPath(FNInstallDefaultLocation).URLByStandardizingPath
+        self.installPathIndicator.url = URL(fileURLWithPath: FNInstallDefaultLocation).standardizedFileURL
     }
     
     
     // MARK: - Interface actions
 
-    func selectInstallLocation(sender: AnyObject) {
+    func selectInstallLocation(_ sender: AnyObject) {
 
         let panel = NSOpenPanel()
 
@@ -49,10 +49,10 @@ class InstallerDestinationViewController: NSViewController, NSOpenSavePanelDeleg
 
         let promptString:String! = NSLocalizedString("Install here", comment: "Button title")
         panel.prompt = promptString
-        panel.beginWithCompletionHandler({ (result:Int) in 
+        panel.begin(completionHandler: { (result:Int) in 
             if result == NSFileHandlingPanelOKButton {
-                self.installPathIndicator.URL = panel.URL
-                self.stateDelegate.userDidSelectInstallLocation(panel.URL!)
+                self.installPathIndicator.url = panel.url
+                self.stateDelegate.userDidSelectInstallLocation(panel.url!)
             }
         })
     }
@@ -60,7 +60,7 @@ class InstallerDestinationViewController: NSViewController, NSOpenSavePanelDeleg
     
     // MARK: - NSOpenPanelDelegate
 
-    func panel(sender: AnyObject, validateURL url: NSURL) throws {
+    func panel(_ sender: Any, validate url: URL) throws {
         let existingInstallation = Helpers.validateNodeInstallationAtURL(url)
        
         if existingInstallation {
@@ -69,10 +69,10 @@ class InstallerDestinationViewController: NSViewController, NSOpenSavePanelDeleg
             throw NSError(domain: "org.freenetproject", code:0x1000, userInfo: errorInfo)
         }
 
-        let fileManager:NSFileManager! = NSFileManager.defaultManager()
+        let fileManager = FileManager.default
 
         // check if the candidate installation path is actually writable
-        if !fileManager.isWritableFileAtPath(url.path!) {
+        if !fileManager.isWritableFile(atPath: url.path) {
             let errorInfo = [NSLocalizedDescriptionKey: NSLocalizedString("Cannot install to this directory, write permission denied", comment: "String informing the user that they do not have permission to write to the selected directory") ]
 
             throw NSError(domain: "org.freenetproject", code:0x1001, userInfo: errorInfo)

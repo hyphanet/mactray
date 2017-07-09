@@ -11,41 +11,50 @@
 */
 
 import Foundation
-import RegexKitLite
 
 class NodeConfig: NSObject {
 
-    class func fromFile(configFile: NSURL) -> NSDictionary? {
+    class func fromFile(_ configFile: URL) -> [String: String]? {
 
-        if let configContents = try? String(contentsOfFile: configFile.path!, encoding: NSUTF8StringEncoding) {
+        if let configContents = try? String(contentsOfFile: configFile.path, encoding: String.Encoding.utf8) {
             return NodeConfig.parseKeyValueString(configContents)
         }
         return nil
     }
 
-    class func parseKeyValueString(string: String) -> [String: String] {
+    class func parseKeyValueString(_ string: String) -> [String: String] {
         var config = [String: String]()
-        let regex = "\\s*(.+?)\\s*=\\s*(.+)"
-        string.enumerateLines { (line, stop) in
-            if line.isMatchedByRegex("^\\s*$") {
-                // whitespace line
-            }
-            else if line.isMatchedByRegex("^#") {
-                // comment line
-            }
-            else if line.isMatchedByRegex(regex) {
-                let captureArray = line.arrayOfCaptureComponentsMatchedByRegex(regex)
-                if captureArray.count == 1 {
-                    if let capture = captureArray[0] as? [String] {
-                        if capture.count == 3 {
-                            let key = capture[1]
-                            let value = capture[2]
-                            config[key] = value
-                        }
-                    }
+        let pattern = "^\\s*(.+?)\\s*=\\s*(.+)$"
+        
+        if let regex = try? NSRegularExpression(pattern: pattern) {
+            
+            string.enumerateLines { (line, stop) in
+                let s = line as NSString
+
+                let result: [NSTextCheckingResult] = regex.matches(in: line, range: NSRange(location: 0, length: s.length))
+                
+                if result.count == 0 {
+                    return
                 }
+                
+                if result[0].numberOfRanges < 3 {
+                    return
+                }
+                
+                let keyRange = result[0].rangeAt(1) // <-- !!
+                let valueRange = result[0].rangeAt(2) // <-- !!
+                
+                let key = s.substring(with: keyRange)
+                let value = s.substring(with: valueRange)
+
+                config[key] = value
+                
             }
+
+            
+
         }
+        
         return config
     }
 }

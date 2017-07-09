@@ -1,4 +1,4 @@
-/* 
+/*
     Copyright (C) 2016 Stephen Oliver <steve@infincia.com>
     
     This code is distributed under the GNU General Public License, version 2 
@@ -13,19 +13,19 @@
 import Cocoa
 
 class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageControllerDelegate, FNInstallerDelegate, FNInstallerDataSource {
-    private var backButton: NSButton!
-    private var nextButton: NSButton!
+    fileprivate var backButton: NSButton!
+    fileprivate var nextButton: NSButton!
     
-    private var pageController: NSPageController!
+    fileprivate var pageController: NSPageController!
 
-    private var installationProgressIndicator: NSProgressIndicator!
+    fileprivate var installationProgressIndicator: NSProgressIndicator!
     
-    private var selectedInstallLocation: NSURL?
+    fileprivate var selectedInstallLocation: URL?
 
-    private var installationInProgress: Bool = false
-    private var installationFinished: Bool = false
+    fileprivate var installationInProgress: Bool = false
+    fileprivate var installationFinished: Bool = false
     
-    private var node: Node!
+    fileprivate var node: Node!
 
     
     override init(window: NSWindow?) {
@@ -50,27 +50,27 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
         
         self.pageController.arrangedObjects = pageIdentifiers
         
-        self.pageController.selectedIndex = FNInstallerPage.Destination.rawValue
+        self.pageController.selectedIndex = FNInstallerPage.destination.rawValue
         
-        self.selectedInstallLocation = NSURL.fileURLWithPath(FNInstallDefaultLocation).URLByStandardizingPath
+        self.selectedInstallLocation = URL(fileURLWithPath: FNInstallDefaultLocation).standardizedFileURL
         
         self.configureMainWindow()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(showInstallerWindow), name: FNNodeShowInstallerWindow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showInstallerWindow), name: NSNotification.Name.FNNodeShowInstallerWindow, object: nil)
     }
 
     // MARK: FNInstallerNotification
     
-    func showInstallerWindow(notification: NSNotification) {
+    func showInstallerWindow(_ notification: Notification) {
         self.showWindow(nil)
     }
     
     // MARK: IBActions
-    func next(sender: AnyObject) {
-        assert(NSThread.currentThread() == NSThread.mainThread(), "NOT MAIN THREAD")
+    func next(_ sender: AnyObject) {
+        assert(Thread.current == Thread.main, "NOT MAIN THREAD")
         if self.installationFinished {
             if let fproxyLocation = self.node.fproxyLocation {
-                NSWorkspace.sharedWorkspace().openURL(fproxyLocation)
+                NSWorkspace.shared().open(fproxyLocation)
                 self.window!.close()
             }
         }
@@ -78,27 +78,27 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
         self.configureMainWindow()
     }
     
-    @IBAction func previous(sender: AnyObject) {
-        assert(NSThread.currentThread() == NSThread.mainThread(), "NOT MAIN THREAD")
+    @IBAction func previous(_ sender: AnyObject) {
+        assert(Thread.current == Thread.main, "NOT MAIN THREAD")
         self.pageController.navigateBack(sender)
         self.configureMainWindow()
     }
     
     func configureMainWindow() {
-        assert(NSThread.currentThread() == NSThread.mainThread(), "NOT MAIN THREAD")
-        if self.pageController.selectedIndex == FNInstallerPage.Progress.rawValue {
+        assert(Thread.current == Thread.main, "NOT MAIN THREAD")
+        if self.pageController.selectedIndex == FNInstallerPage.progress.rawValue {
             if self.installationInProgress {
-                self.nextButton.enabled = false
-                self.backButton.enabled = false
+                self.nextButton.isEnabled = false
+                self.backButton.isEnabled = false
             } else if self.installationFinished {
-                self.nextButton.enabled = true
-                self.backButton.enabled = false
+                self.nextButton.isEnabled = true
+                self.backButton.isEnabled = false
                 self.installationProgressIndicator.doubleValue = self.installationProgressIndicator.maxValue
                 return
             }
         } else {
-            self.nextButton.enabled = self.pageController.selectedIndex < self.pageController.arrangedObjects.count - 1 ? true : false
-            self.backButton.enabled = self.pageController.selectedIndex > 0 ? true : false
+            self.nextButton.isEnabled = self.pageController.selectedIndex < self.pageController.arrangedObjects.count - 1 ? true : false
+            self.backButton.isEnabled = self.pageController.selectedIndex > 0 ? true : false
         }
         self.installationProgressIndicator.minValue = 0
         self.installationProgressIndicator.maxValue = Double(self.pageController.arrangedObjects.count)
@@ -107,7 +107,7 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
     
     // MARK: FNInstallerDelegate
     
-    func userDidSelectInstallLocation(installURL: NSURL) {
+    func userDidSelectInstallLocation(_ installURL: URL) {
         self.selectedInstallLocation = installURL
         self.configureMainWindow()
     }
@@ -116,7 +116,7 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
         self.installationFinished = false
         self.installationInProgress = false
         self.configureMainWindow()
-        NSNotificationCenter.defaultCenter().postNotificationName(FNInstallStartNodeNotification, object: self.selectedInstallLocation)
+        NotificationCenter.default.post(name: Notification.Name.FNInstallStartNodeNotification, object: self.selectedInstallLocation)
     }
     
     func installerDidFinish() {
@@ -125,12 +125,12 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
         self.configureMainWindow()
     }
     
-    func installerDidFailWithLog(log: String) {
+    func installerDidFailWithLog(_ log: String) {
         self.installationFinished = false
         self.installationInProgress = false
         self.configureMainWindow()
         
-        NSNotificationCenter.defaultCenter().postNotificationName(FNInstallFailedNotification, object: nil)
+        NotificationCenter.default.post(name: Notification.Name.FNInstallFailedNotification, object: nil)
         
         let installFailedAlert = NSAlert()
         
@@ -138,27 +138,27 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
         
         installFailedAlert.informativeText = NSLocalizedString("The installation log can be automatically uploaded to GitHub. Please report this failure to the Freenet developers and provide the GitHub link to them.", comment: "String asking the user to provide the Gist link to the Freenet developers")
         
-        installFailedAlert.addButtonWithTitle(NSLocalizedString("Upload", comment: "Button title"))
+        installFailedAlert.addButton(withTitle: NSLocalizedString("Upload", comment: "Button title"))
         
-        installFailedAlert.addButtonWithTitle(NSLocalizedString("Quit", comment: ""))
+        installFailedAlert.addButton(withTitle: NSLocalizedString("Quit", comment: ""))
         
         let button = installFailedAlert.runModal()
         
         
         if button == NSAlertFirstButtonReturn {
             Helpers.createGist(log, withTitle: "Installation Log", success: { (url) in
-                let pasteBoard = NSPasteboard.generalPasteboard()
+                let pasteBoard = NSPasteboard.general()
                 pasteBoard.declareTypes([NSPasteboardTypeString], owner: nil)
-                pasteBoard.setString(url.path!, forType: NSStringPboardType)
-                NSWorkspace.sharedWorkspace().openURL(url)
+                pasteBoard.setString(url.path, forType: NSStringPboardType)
+                NSWorkspace.shared().open(url)
                 NSApp.terminate(self)
             }, failure: { (error) in
-                let desktop = NSSearchPathForDirectoriesInDomains(.DesktopDirectory, .UserDomainMask, true)[0]
-                let url = NSURL(fileURLWithPath: desktop).URLByAppendingPathComponent("FreenetTray - Installation Log.txt")
+                let desktop = NSSearchPathForDirectoriesInDomains(.desktopDirectory, .userDomainMask, true)[0]
+                let url = URL(fileURLWithPath: desktop).appendingPathComponent("FreenetTray - Installation Log.txt")
                 
-                if let logBuffer = log.dataUsingEncoding(NSUTF8StringEncoding) {
+                if let logBuffer = log.data(using: String.Encoding.utf8) {
                     do {
-                        try logBuffer.writeToURL(url, options: .AtomicWrite)
+                        try logBuffer.write(to: url, options: .atomicWrite)
                     }
                     catch {
                         // best effort, if we can't write to the log file there's nothing else we can do
@@ -179,11 +179,11 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
     
     // MARK: - NSPageControllerDelegate
 
-    func pageController(pageController: NSPageController, identifierForObject object: AnyObject) -> String {
+    func pageController(_ pageController: NSPageController, identifierFor object: Any) -> String {
         return object as! String
     }
 
-    func pageController(pageController: NSPageController, viewControllerForIdentifier identifier: String) -> NSViewController {
+    func pageController(_ pageController: NSPageController, viewControllerForIdentifier identifier: String) -> NSViewController {
         if (identifier == "InstallerDestinationViewController") {
             let vc: InstallerDestinationViewController! = InstallerDestinationViewController(nibName: "InstallerDestinationView", bundle: nil)
             vc.stateDelegate = self
@@ -197,17 +197,17 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
         return NSViewController() // should never reach this point, silencing compiler 
     }
 
-    func pageController(pageController: NSPageController, prepareViewController viewController: NSViewController, withObject object: AnyObject) {
+    func pageController(_ pageController: NSPageController, prepare viewController: NSViewController, with object: Any?) {
         viewController.representedObject = object
     }
 
-    func pageController(pageController: NSPageController, didTransitionToObject object: AnyObject) {
+    func pageController(_ pageController: NSPageController, didTransitionTo object: Any) {
         self.configureMainWindow()
     }
 
-    func pageControllerDidEndLiveTransition(pageController: NSPageController) {
+    func pageControllerDidEndLiveTransition(_ pageController: NSPageController) {
         self.pageController.completeTransition()
-        if self.pageController.selectedIndex == FNInstallerPage.Progress.rawValue {
+        if self.pageController.selectedIndex == FNInstallerPage.progress.rawValue {
             if let vc: InstallerProgressViewController = self.pageController.selectedViewController as? InstallerProgressViewController {
                 vc.installNodeAtFileURL(self.selectedInstallLocation)
             }
@@ -218,7 +218,7 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
     
     // MARK: - NSWindowDelegate
 
-    func windowShouldClose(sender: AnyObject) -> Bool {
+    func windowShouldClose(_ sender: Any) -> Bool {
         if self.installationInProgress {
             let installInProgressAlert:NSAlert! = NSAlert()
             
@@ -226,9 +226,9 @@ class InstallerWindowController: NSWindowController, NSWindowDelegate, NSPageCon
             
             installInProgressAlert.informativeText = NSLocalizedString("Are you sure you want to cancel?", comment: "String asking the user if they want to cancel the installation")
             
-            installInProgressAlert.addButtonWithTitle(NSLocalizedString("Yes", comment: "Button title"))
+            installInProgressAlert.addButton(withTitle: NSLocalizedString("Yes", comment: "Button title"))
             
-            installInProgressAlert.addButtonWithTitle(NSLocalizedString("No", comment: "Button title"))
+            installInProgressAlert.addButton(withTitle: NSLocalizedString("No", comment: "Button title"))
             
             let button:Int = installInProgressAlert.runModal()
             

@@ -1,4 +1,4 @@
-/* 
+/*
     Copyright (C) 2016 Stephen Oliver <steve@infincia.com>
     
     This code is distributed under the GNU General Public License, version 2 
@@ -12,16 +12,16 @@
 import Cocoa
 
 class Dropdown: NSObject, FNNodeStateProtocol, FNNodeStatsProtocol {
-    private var node: Node!
-    private var statusItem: NSStatusItem!
-    private var aboutWindow: DCOAboutWindowController!
-    private var dropdownMenu: NSMenu!
+    fileprivate var node: Node!
+    fileprivate var statusItem: NSStatusItem!
+    fileprivate var aboutWindow: DCOAboutWindowController!
+    fileprivate var dropdownMenu: NSMenu!
     
     @IBOutlet var toggleNodeStateMenuItem: NSMenuItem!
     @IBOutlet var openWebInterfaceMenuItem: NSMenuItem!
     @IBOutlet var openDownloadsMenuItem: NSMenuItem!
     
-    private var menuBarImage: NSImage? {
+    fileprivate var menuBarImage: NSImage? {
         set(image)  {
             self.statusItem.image = image
         }
@@ -38,71 +38,71 @@ class Dropdown: NSObject, FNNodeStateProtocol, FNNodeStatsProtocol {
     
     override init() {
         super.init()
-        NSBundle.mainBundle().loadNibNamed("Dropdown", owner: self, topLevelObjects: nil)
+        Bundle.main.loadNibNamed("Dropdown", owner: self, topLevelObjects: nil)
     }
     
     
     override func awakeFromNib() {
-        self.statusItem = NSStatusBar.systemStatusBar().statusItemWithLength(NSSquareStatusItemLength)
+        self.statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
         self.statusItem.alternateImage = TrayIcon.imageOfHighlightedIcon
         self.statusItem.menu = self.dropdownMenu
         self.statusItem.toolTip = NSLocalizedString("Freenet", comment: "Application Name")
         
         self.menuBarImage = TrayIcon.imageOfNotRunningIcon
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Dropdown.nodeStateRunning), name: FNNodeStateRunningNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Dropdown.nodeStateNotRunning), name: FNNodeStateNotRunningNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Dropdown.didReceiveNodeStats), name: FNNodeStatsReceivedNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(Dropdown.didReceiveNodeHello), name: FNNodeHelloReceivedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(Dropdown.nodeStateRunning), name: NSNotification.Name.FNNodeStateRunningNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(Dropdown.nodeStateNotRunning), name: NSNotification.Name.FNNodeStateNotRunningNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(Dropdown.didReceiveNodeStats), name: NSNotification.Name.FNNodeStatsReceivedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(Dropdown.didReceiveNodeHello), name: NSNotification.Name.FNNodeHelloReceivedNotification, object: nil)
     }
     
-    private func enableMenuItems(state: Bool) {
-        self.toggleNodeStateMenuItem.enabled = state
-        self.openDownloadsMenuItem.enabled = state
-        self.openWebInterfaceMenuItem.enabled = state
+    fileprivate func enableMenuItems(_ state: Bool) {
+        self.toggleNodeStateMenuItem.isEnabled = state
+        self.openDownloadsMenuItem.isEnabled = state
+        self.openWebInterfaceMenuItem.isEnabled = state
     }
     
     
-    @IBAction func toggleNodeState(sender: AnyObject) {
+    @IBAction func toggleNodeState(_ sender: AnyObject) {
         switch self.node.state {
-        case .Running:
+        case .running:
             self.node.stopFreenet()
             
-        case .NotRunning:
+        case .notRunning:
             self.node.startFreenet()
             
-        case .Unknown:
+        case .unknown:
             self.node.startFreenet()
         }
     }
     
     
-    func openWebInterface(sender: AnyObject) {
+    func openWebInterface(_ sender: AnyObject) {
         if let fproxyLocation = self.node.fproxyLocation {
             // Open the fproxy page in users default browser
-            NSWorkspace.sharedWorkspace().openURL(fproxyLocation)
+            NSWorkspace.shared().open(fproxyLocation)
         }
     }
 
     
-    func showAboutPanel(sender: AnyObject) {
-        NSApplication.sharedApplication().activateIgnoringOtherApps(true)
+    func showAboutPanel(_ sender: AnyObject) {
+        NSApplication.shared().activate(ignoringOtherApps: true)
         self.aboutWindow.showWindow(nil)
     }
     
-    func showSettingsWindow(sender: AnyObject) {
-        NSApplication.sharedApplication().activateIgnoringOtherApps(true)
-        NSNotificationCenter.defaultCenter().postNotificationName(FNNodeShowSettingsWindow, object: nil)
+    func showSettingsWindow(_ sender: AnyObject) {
+        NSApplication.shared().activate(ignoringOtherApps: true)
+        NotificationCenter.default.post(name: Notification.Name.FNNodeShowSettingsWindow, object: nil)
     }
     
-    func showDownlodsFolder(sender: AnyObject) {
+    func showDownlodsFolder(_ sender: AnyObject) {
         guard let path = self.node.downloadsFolder?.path else {
             return
         }
-        NSWorkspace.sharedWorkspace().selectFile(nil, inFileViewerRootedAtPath: path)
+        NSWorkspace.shared().selectFile(nil, inFileViewerRootedAtPath: path)
     }
     
-    func uninstallFreenet(sender: AnyObject) {
+    func uninstallFreenet(_ sender: AnyObject) {
         Helpers.displayUninstallAlert()
     }
     
@@ -110,17 +110,17 @@ class Dropdown: NSObject, FNNodeStateProtocol, FNNodeStatsProtocol {
     // MARK: - FNNodeStateProtocol methods
     
     
-    func nodeStateUnknown(notification: NSNotification) {
+    func nodeStateUnknown(_ notification: Notification) {
         self.enableMenuItems(false)
     }
     
-    func nodeStateRunning(notification: NSNotification) {
+    func nodeStateRunning(_ notification: Notification) {
         self.toggleNodeStateMenuItem.title = NSLocalizedString("Stop Freenet", comment: "Button title")
         self.menuBarImage = TrayIcon.imageOfRunningIcon
         self.enableMenuItems(true)
     }
     
-    func nodeStateNotRunning(notification: NSNotification) {
+    func nodeStateNotRunning(_ notification: Notification) {
         self.toggleNodeStateMenuItem.title = NSLocalizedString("Start Freenet", comment: "Button title")
         self.menuBarImage = TrayIcon.imageOfNotRunningIcon
         self.enableMenuItems(true)
@@ -129,11 +129,11 @@ class Dropdown: NSObject, FNNodeStateProtocol, FNNodeStatsProtocol {
     // MARK: - FNNodeStatsProtocol methods
     
     
-    func didReceiveNodeHello(notification: NSNotification) {
+    func didReceiveNodeHello(_ notification: Notification) {
     
     }
     
-    func didReceiveNodeStats(notification: NSNotification) {
+    func didReceiveNodeStats(_ notification: Notification) {
         //NSDictionary *nodeStats = notification.object;
         //NSDictionary *nodeStats = notification.object;
     }

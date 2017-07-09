@@ -15,40 +15,40 @@ import Foundation
 
 protocol FNNodeStateProtocol {
 
-    func nodeStateUnknown(notification: NSNotification)
-    func nodeStateRunning(notification: NSNotification)
-    func nodeStateNotRunning(notification: NSNotification)
+    func nodeStateUnknown(_ notification: Notification)
+    func nodeStateRunning(_ notification: Notification)
+    func nodeStateNotRunning(_ notification: Notification)
 }
 
 
 protocol FNNodeStatsProtocol {
 
-    func didReceiveNodeHello(notification: NSNotification)
-    func didReceiveNodeStats(notification: NSNotification)
+    func didReceiveNodeHello(_ notification: Notification)
+    func didReceiveNodeStats(_ notification: Notification)
 }
 
 
 protocol FCPDelegate {
 
     func didDisconnect()
-    func didReceiveNodeHello(nodeHello: [NSObject: AnyObject])
-    func didReceiveNodeStats(nodeStats: [NSObject: AnyObject])
-    func didReceiveUserAlert(nodeUserAlert: [NSObject: AnyObject])
+    func didReceiveNodeHello(_ nodeHello: [AnyHashable: Any])
+    func didReceiveNodeStats(_ nodeStats: [AnyHashable: Any])
+    func didReceiveUserAlert(_ nodeUserAlert: [AnyHashable: Any])
 }
 
 
 protocol FCPDataSource {
 
-    func nodeFCPURL() -> NSURL?
+    func nodeFCPURL() -> URL?
 }
 
 
 protocol FNInstallerDelegate {
 
-    func userDidSelectInstallLocation(installURL: NSURL)
+    func userDidSelectInstallLocation(_ installURL: URL)
     func installerDidCopyFiles()
     func installerDidFinish()
-    func installerDidFailWithLog(log: String)
+    func installerDidFailWithLog(_ log: String)
 }
 
 protocol FNInstallerDataSource {
