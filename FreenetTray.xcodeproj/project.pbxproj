@@ -42,7 +42,6 @@
 		AA93DBEF1D5ADA4800BE256F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBEB1D5ADA4800BE256F /* AppDelegate.swift */; };
 		AA93DBF01D5ADA4800BE256F /* Dropdown.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBEC1D5ADA4800BE256F /* Dropdown.swift */; };
 		AA93DBF11D5ADA4800BE256F /* SettingsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBEE1D5ADA4800BE256F /* SettingsWindowController.swift */; };
-		AA93DBF61D5BC33800BE256F /* Changelog.md in Sources */ = {isa = PBXBuildFile; fileRef = AA93DBF51D5BC33800BE256F /* Changelog.md */; };
 		AA93DBF71D5BC5C200BE256F /* Changelog.md in Resources */ = {isa = PBXBuildFile; fileRef = AA93DBF51D5BC33800BE256F /* Changelog.md */; };
 		AA9BE2EE1C1B774000345C77 /* verify.py in Resources */ = {isa = PBXBuildFile; fileRef = AA9BE2ED1C1B774000345C77 /* verify.py */; };
 		AAD6891D1BD17CF500942738 /* Bundled Node in Resources */ = {isa = PBXBuildFile; fileRef = AAD6891C1BD17CF500942738 /* Bundled Node */; };
@@ -619,7 +618,6 @@
 				AA93DBB41D57E70A00BE256F /* InstallerProgressViewController.swift in Sources */,
 				AA93DBB21D57DA3900BE256F /* InstallerDestinationViewController.swift in Sources */,
 				AA93DBC31D596CBE00BE256F /* Protocols.swift in Sources */,
-				AA93DBF61D5BC33800BE256F /* Changelog.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
