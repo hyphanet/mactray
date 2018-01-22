@@ -1,3 +1,0 @@
-[submodule "fcp-rs"]
-	path = fcp-rs
-	url = git@github.com:infincia/fcp-rs.git
