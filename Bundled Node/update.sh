@@ -16,7 +16,6 @@ mv "$0" "$0".old && cp -p "$0".old "$0"
 WHEREAMI="`pwd`"
 CAFILE="startssl.pem"
 JOPTS="-Djava.net.preferIPv4Stack=true"
-SHA1_Sha1Test="f5cdc75ae6eb6d2de15e26f2ea8590eeb8d9eb66"
 echo "Updating freenet"
 
 # Set working directory to Freenet install directory so that the script can
@@ -91,7 +90,9 @@ then
 	if test "$1" = "testing"
 	then
 		RELEASE="testing"
-		echo "WARNING! you're downloading an UNSTABLE snapshot version of freenet."
+		# echo "WARNING! you're downloading an UNSTABLE snapshot version of freenet."
+		echo "ERROR! downloading testing versions is currently broken."
+		exit 1
 	else
 		RELEASE="stable"
 	fi
@@ -114,11 +115,6 @@ else
 fi
 
 # Bundle the CA
-if test ! -f $CAFILE
-then
-# Delete the existing sha1test.jar: we want a new one to be downloaded
-rm -f sha1test.jar
-fi
 cat >$CAFILE << EOF
 -----BEGIN CERTIFICATE-----
 MIIDdTCCAl2gAwIBAgILBAAAAAABFUtaw5QwDQYJKoZIhvcNAQEFBQAwVzELMAkG
@@ -141,6 +137,82 @@ AbEVtQwdpf5pLGkkeB6zpxxxYu7KyJesF12KwvhHhm4qxFYxldBniYUr+WymXUad
 DKqC5JlR3XC321Y9YeRq4VzW9v493kHMB65jUr9TU/Qr6cf9tveCX4XSQRjbgbME
 HMUfpIBvFSDJ3gyICh3WZlXi/EjJKSZp4A==
 -----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIDQTCCAimgAwIBAgITBmyfz5m/jAo54vB4ikPmljZbyjANBgkqhkiG9w0BAQsF
+ADA5MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRkwFwYDVQQDExBBbWF6
+b24gUm9vdCBDQSAxMB4XDTE1MDUyNjAwMDAwMFoXDTM4MDExNzAwMDAwMFowOTEL
+MAkGA1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEZMBcGA1UEAxMQQW1hem9uIFJv
+b3QgQ0EgMTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALJ4gHHKeNXj
+ca9HgFB0fW7Y14h29Jlo91ghYPl0hAEvrAIthtOgQ3pOsqTQNroBvo3bSMgHFzZM
+9O6II8c+6zf1tRn4SWiw3te5djgdYZ6k/oI2peVKVuRF4fn9tBb6dNqcmzU5L/qw
+IFAGbHrQgLKm+a/sRxmPUDgH3KKHOVj4utWp+UhnMJbulHheb4mjUcAwhmahRWa6
+VOujw5H5SNz/0egwLX0tdHA114gk957EWW67c4cX8jJGKLhD+rcdqsq08p8kDi1L
+93FcXmn/6pUCyziKrlA4b9v7LWIbxcceVOF34GfID5yHI9Y/QCB/IIDEgEw+OyQm
+jgSubJrIqg0CAwEAAaNCMEAwDwYDVR0TAQH/BAUwAwEB/zAOBgNVHQ8BAf8EBAMC
+AYYwHQYDVR0OBBYEFIQYzIU07LwMlJQuCFmcx7IQTgoIMA0GCSqGSIb3DQEBCwUA
+A4IBAQCY8jdaQZChGsV2USggNiMOruYou6r4lK5IpDB/G/wkjUu0yKGX9rbxenDI
+U5PMCCjjmCXPI6T53iHTfIUJrU6adTrCC2qJeHZERxhlbI1Bjjt/msv0tadQ1wUs
+N+gDS63pYaACbvXy8MWy7Vu33PqUXHeeE6V/Uq2V8viTO96LXFvKWlJbYK8U90vv
+o/ufQJVtMVT8QtPHRh8jrdkPSHCa2XV4cdFyQzR1bldZwgJcJmApzyMZFo6IQ6XU
+5MsI+yMRQ+hDKXJioaldXgjUkK642M4UwtBV8ob2xJNDd2ZhwLnoQdeXeGADbkpy
+rqXRfboQnoZsG4q5WTP468SQvvG5
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIFQTCCAymgAwIBAgITBmyf0pY1hp8KD+WGePhbJruKNzANBgkqhkiG9w0BAQwF
+ADA5MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRkwFwYDVQQDExBBbWF6
+b24gUm9vdCBDQSAyMB4XDTE1MDUyNjAwMDAwMFoXDTQwMDUyNjAwMDAwMFowOTEL
+MAkGA1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEZMBcGA1UEAxMQQW1hem9uIFJv
+b3QgQ0EgMjCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBAK2Wny2cSkxK
+gXlRmeyKy2tgURO8TW0G/LAIjd0ZEGrHJgw12MBvIITplLGbhQPDW9tK6Mj4kHbZ
+W0/jTOgGNk3Mmqw9DJArktQGGWCsN0R5hYGCrVo34A3MnaZMUnbqQ523BNFQ9lXg
+1dKmSYXpN+nKfq5clU1Imj+uIFptiJXZNLhSGkOQsL9sBbm2eLfq0OQ6PBJTYv9K
+8nu+NQWpEjTj82R0Yiw9AElaKP4yRLuH3WUnAnE72kr3H9rN9yFVkE8P7K6C4Z9r
+2UXTu/Bfh+08LDmG2j/e7HJV63mjrdvdfLC6HM783k81ds8P+HgfajZRRidhW+me
+z/CiVX18JYpvL7TFz4QuK/0NURBs+18bvBt+xa47mAExkv8LV/SasrlX6avvDXbR
+8O70zoan4G7ptGmh32n2M8ZpLpcTnqWHsFcQgTfJU7O7f/aS0ZzQGPSSbtqDT6Zj
+mUyl+17vIWR6IF9sZIUVyzfpYgwLKhbcAS4y2j5L9Z469hdAlO+ekQiG+r5jqFoz
+7Mt0Q5X5bGlSNscpb/xVA1wf+5+9R+vnSUeVC06JIglJ4PVhHvG/LopyboBZ/1c6
++XUyo05f7O0oYtlNc/LMgRdg7c3r3NunysV+Ar3yVAhU/bQtCSwXVEqY0VThUWcI
+0u1ufm8/0i2BWSlmy5A5lREedCf+3euvAgMBAAGjQjBAMA8GA1UdEwEB/wQFMAMB
+Af8wDgYDVR0PAQH/BAQDAgGGMB0GA1UdDgQWBBSwDPBMMPQFWAJI/TPlUq9LhONm
+UjANBgkqhkiG9w0BAQwFAAOCAgEAqqiAjw54o+Ci1M3m9Zh6O+oAA7CXDpO8Wqj2
+LIxyh6mx/H9z/WNxeKWHWc8w4Q0QshNabYL1auaAn6AFC2jkR2vHat+2/XcycuUY
++gn0oJMsXdKMdYV2ZZAMA3m3MSNjrXiDCYZohMr/+c8mmpJ5581LxedhpxfL86kS
+k5Nrp+gvU5LEYFiwzAJRGFuFjWJZY7attN6a+yb3ACfAXVU3dJnJUH/jWS5E4ywl
+7uxMMne0nxrpS10gxdr9HIcWxkPo1LsmmkVwXqkLN1PiRnsn/eBG8om3zEK2yygm
+btmlyTrIQRNg91CMFa6ybRoVGld45pIq2WWQgj9sAq+uEjonljYE1x2igGOpm/Hl
+urR8FLBOybEfdF849lHqm/osohHUqS0nGkWxr7JOcQ3AWEbWaQbLU8uz/mtBzUF+
+fUwPfHJ5elnNXkoOrJupmHN5fLT0zLm4BwyydFy4x2+IoZCn9Kr5v2c69BoVYh63
+n749sSmvZ6ES8lgQGVMDMBu4Gon2nL2XA46jCfMdiyHxtN/kHNGfZQIG6lzWE7OE
+76KlXIx3KadowGuuQNKotOrN8I1LOJwZmhsoVLiJkO/KdYE+HvJkJMcYr07/R54H
+9jVlpNMKVv/1F2Rs76giJUmTtt8AF9pYfl3uxRuw0dFfIRDH+fO6AgonB8Xx1sfT
+4PsJYGw=
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIBtjCCAVugAwIBAgITBmyf1XSXNmY/Owua2eiedgPySjAKBggqhkjOPQQDAjA5
+MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRkwFwYDVQQDExBBbWF6b24g
+Um9vdCBDQSAzMB4XDTE1MDUyNjAwMDAwMFoXDTQwMDUyNjAwMDAwMFowOTELMAkG
+A1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEZMBcGA1UEAxMQQW1hem9uIFJvb3Qg
+Q0EgMzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABCmXp8ZBf8ANm+gBG1bG8lKl
+ui2yEujSLtf6ycXYqm0fc4E7O5hrOXwzpcVOho6AF2hiRVd9RFgdszflZwjrZt6j
+QjBAMA8GA1UdEwEB/wQFMAMBAf8wDgYDVR0PAQH/BAQDAgGGMB0GA1UdDgQWBBSr
+ttvXBp43rDCGB5Fwx5zEGbF4wDAKBggqhkjOPQQDAgNJADBGAiEA4IWSoxe3jfkr
+BqWTrBqYaGFy+uGh0PsceGCmQ5nFuMQCIQCcAu/xlJyzlvnrxir4tiz+OpAUFteM
+YyRIHN8wfdVoOw==
+-----END CERTIFICATE-----
+-----BEGIN CERTIFICATE-----
+MIIB8jCCAXigAwIBAgITBmyf18G7EEwpQ+Vxe3ssyBrBDjAKBggqhkjOPQQDAzA5
+MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRkwFwYDVQQDExBBbWF6b24g
+Um9vdCBDQSA0MB4XDTE1MDUyNjAwMDAwMFoXDTQwMDUyNjAwMDAwMFowOTELMAkG
+A1UEBhMCVVMxDzANBgNVBAoTBkFtYXpvbjEZMBcGA1UEAxMQQW1hem9uIFJvb3Qg
+Q0EgNDB2MBAGByqGSM49AgEGBSuBBAAiA2IABNKrijdPo1MN/sGKe0uoe0ZLY7Bi
+9i0b2whxIdIA6GO9mif78DluXeo9pcmBqqNbIJhFXRbb/egQbeOc4OO9X4Ri83Bk
+M6DLJC9wuoihKqB1+IGuYgbEgds5bimwHvouXKNCMEAwDwYDVR0TAQH/BAUwAwEB
+/zAOBgNVHQ8BAf8EBAMCAYYwHQYDVR0OBBYEFNPsxzplbszh2naaVvuc84ZtV+WB
+MAoGCCqGSM49BAMDA2gAMGUCMDqLIfG9fhGt0O9Yli/W651+kI0rz2ZVwyzjKKlw
+CkcO8DdZEv8tmZQoTipPNU0zWgIxAOp1AE47xDqUEpHJWEadIRNyp4iciuRMStuW
+1KyLa2tJElMzrdfkviT8tQp21KW8EA==
+-----END CERTIFICATE-----
 EOF
 
 if test -x "`which curl`"
@@ -148,91 +220,101 @@ then
 	# Pin the certificate file.
 	# Curl will use the system --capath if we don't specify one.
 	# FIXME --capath / is safe (there shouldn't be any certs in it, regular users can't write to it, etc), /var/empty would be more obvious but might break if some future curl checks existence?
-	DOWNLOADER="curl --capath / --cacert $CAFILE -q -f -L -O "
+	DOWNLOADER="curl --capath / --cacert $CAFILE -q -f -L -o "
 else
-	DOWNLOADER="wget -o /dev/null --ca-certificate $CAFILE -N "
+	DOWNLOADER="wget -o /dev/null --ca-certificate $CAFILE -N -O "
 fi
 
-# check if sha1sum.jar is up to date
-file_hash sha1test.jar
-case "$HASH" in 
-	$SHA1_Sha1Test) echo "The SHA1 of sha1test.jar matches";;
-	*) echo "sha1test.jar needs to be updated"; rm -f sha1test.jar;;
-esac
+# FIXME: re-activate updating of the update script. Currently this
+#        only works over Freenet. Needs to be implemented without
+#        relying on the lost infrastructure. Ideally go to TUF.
 
-if test ! -s sha1test.jar
-then
-	for x in 1 2 3 4 5
-	do
-		echo Downloading sha1test.jar utility jar which will download the actual update.
-		$DOWNLOADER https://downloads.freenetproject.org/latest/sha1test.jar
-		
-		if test -s sha1test.jar
-		then
-			break
-		fi
-	done
-	if test ! -s sha1test.jar
-	then
-		echo Could not download Sha1Test. The servers may be offline?
-		exit
-	fi
-fi
+# ### delicate: updating the update script itself ###
+# # emergency rescue: on erroneous EXIT recover update.sh from a tmp-file
+# # (only replaces the file if a tmp-file exists)
+# recover_update_sh () {
+# 	cp update_tmp.sh "$0"
+# }
+# trap recover_update_sh EXIT
+# # rename the current script to ensure that we do not override what we are executing
+# mv -- "$0" update_tmp.sh && cp -- update_tmp.sh "$0"
+# # update update.sh
+# # FIXME: use new downloader
+# if java $JOPTS -cp sha1test.jar Sha1Test update.sh ./ $CAFILE
+# then
+# 	echo "Downloaded update.sh"
+# 	chmod +x update.sh
+# 
+# 	touch update.sh update2.sh
+# 	if file_comp update.sh update2.sh >/dev/null
+# 	then
+# 		echo "Your update.sh is up to date"
+# 	else
+# 		cp update.sh update2.sh
+# 		exec ./update.sh $RELEASE
+# 		exit
+# 	fi
+# else
+# 	echo "Could not download new update.sh."
+# 	exit
+# fi
+# # replace the exit trap by a trap which removes the tmp-file
+# remove_update_tmp_sh () {
+# 	if test -s update.sh; then # safe to kill the tempfile
+# 		rm update_tmp.sh
+# 	fi
+# }
+# trap remove_update_tmp_sh EXIT
+# ### / updating the update script ###
 
-if java $JOPTS -cp sha1test.jar Sha1Test update.sh ./ $CAFILE
-then
-	echo "Downloaded update.sh"
-	chmod +x update.sh
+# Download a fred update
+download_fred_update () {
+    ## TODO: Replace with clean TUF setup. This is just a bandaid and can
+    ##       be broken by changes in Github at any time.
+    LATEST_RELEASE_URL="`curl -w "%{url_effective}\n" -I -L -s -S https://github.com/freenet/fred/releases/latest -o /dev/null`"
+    LATEST_TAG="`echo ${LATEST_RELEASE_URL} | sed s,.*/,,`"
+    LATEST_DOWNLOAD_URL="https://github.com/freenet/fred/releases/download/${LATEST_TAG}/freenet-${LATEST_TAG}.jar"
+    wget -N -O download-temp/freenet-$RELEASE-latest.jar.sig "${LATEST_DOWNLOAD_URL}".sig || curl -q -f -L -o download-temp/freenet-$RELEASE-latest.jar.sig "${LATEST_DOWNLOAD_URL}".sig
+    wget -N -O download-temp/freenet-$RELEASE-latest.jar "${LATEST_DOWNLOAD_URL}" || curl -q -f -L -o download-temp/freenet-$RELEASE-latest.jar "${LATEST_DOWNLOAD_URL}"
+}
 
-	touch update.sh update2.sh
-	if file_comp update.sh update2.sh >/dev/null
-	then
-		echo "Your update.sh is up to date"
-	else
-		cp update.sh update2.sh
-		exec ./update.sh $RELEASE
-		exit
-	fi
-else
-	echo "Could not download new update.sh."
-	exit
-fi
-
-if java $JOPTS -cp sha1test.jar Sha1Test freenet-$RELEASE-latest.jar download-temp $CAFILE
+# if java $JOPTS -cp sha1test.jar Sha1Test freenet-$RELEASE-latest.jar download-temp $CAFILE
+if download_fred_update
 then
 	echo Downloaded freenet-$RELEASE-latest.jar
 else
 	echo Could not download new freenet-$RELEASE-latest.jar.
-	exit
+	exit 1
 fi
 
-if java $JOPTS -cp sha1test.jar Sha1Test freenet-ext.jar download-temp $CAFILE
-then
-	echo Downloaded freenet-ext.jar
-else
-	echo Could not download new freenet-ext.jar.
-	exit
-fi
-
-if test ! -s bcprov-jdk15on-154.jar
-then
-	echo Downloading bcprov-jdk15on-154.jar
-	if ! java $JOPTS -cp sha1test.jar Sha1Test bcprov-jdk15on-154.jar . $CAFILE
-	then
-		echo Could not download bcprov-jdk15on-154.jar needed for new jar
-		exit
-	fi
-fi
-
-if test ! -s wrapper.jar
-then
-	echo Downloading wrapper.jar
-	if ! java $JOPTS -cp sha1test.jar Sha1Test wrapper.jar . $CAFILE
-	then
-		echo Could not download wrapper.jar needed for new jar
-		exit
-	fi
-fi
+# FIXME: re-implement updating of other components without the lost infrastructure
+# if java $JOPTS -cp sha1test.jar Sha1Test freenet-ext.jar download-temp $CAFILE
+# then
+# 	echo Downloaded freenet-ext.jar
+# else
+# 	echo Could not download new freenet-ext.jar.
+# 	exit 1
+# fi
+# 
+# if test ! -s bcprov-jdk15on-154.jar
+# then
+# 	echo Downloading bcprov-jdk15on-154.jar
+# 	if ! java $JOPTS -cp sha1test.jar Sha1Test bcprov-jdk15on-154.jar . $CAFILE
+# 	then
+# 		echo Could not download bcprov-jdk15on-154.jar needed for new jar
+# 		exit
+# 	fi
+# fi
+# 
+# if test ! -s wrapper.jar
+# then
+# 	echo Downloading wrapper.jar
+# 	if ! java $JOPTS -cp sha1test.jar Sha1Test wrapper.jar . $CAFILE
+# 	then
+# 		echo Could not download wrapper.jar needed for new jar
+# 		exit
+# 	fi
+# fi
 
 dos2unix wrapper.conf > /dev/null 2>&1
 
