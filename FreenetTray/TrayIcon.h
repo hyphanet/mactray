@@ -19,6 +19,7 @@
 + (void)drawRunningIcon;
 + (void)drawNotRunningIcon;
 + (void)drawHighlightedIcon;
++ (void)refreshColors;
 
 // Generated Images
 + (NSImage*)imageOfRunningIcon;

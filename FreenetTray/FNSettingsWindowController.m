@@ -18,6 +18,8 @@
 
 #import "FNNodeController.h"
 
+#import "TrayIcon.h"
+
 @interface FNSettingsWindowController ()
 
 @end
@@ -97,6 +99,7 @@
 }
 
 -(IBAction)changeTrayIconColor:(id)sender {
+    [TrayIcon refreshColors];
 }
 
 -(IBAction)uninstallFreenet:(id)sender {
