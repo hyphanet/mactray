@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G19009" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
@@ -20,14 +20,14 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Freenet Settings" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="F0z-JX-Cv5">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
-            <rect key="contentRect" x="196" y="240" width="398" height="335"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <rect key="contentRect" x="196" y="240" width="398" height="368"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
             <view key="contentView" wantsLayer="YES" id="se5-gp-TjO">
-                <rect key="frame" x="0.0" y="0.0" width="398" height="335"/>
+                <rect key="frame" x="0.0" y="0.0" width="398" height="368"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nf3-Bh-Mxb">
-                        <rect key="frame" x="44" y="299" width="336" height="18"/>
+                        <rect key="frame" x="44" y="332" width="336" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Start tray app when I log in" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="LpL-CZ-4IY">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -35,7 +35,7 @@
                             <attributedString key="userComments">
                                 <fragment content="Option title">
                                     <attributes>
-                                        <font key="NSFont" metaFont="controlContent" size="11"/>
+                                        <font key="NSFont" metaFont="smallSystem"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
@@ -62,7 +62,7 @@
                                         <attributedString key="userComments">
                                             <fragment content="Status title">
                                                 <attributes>
-                                                    <font key="NSFont" metaFont="controlContent" size="11"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -79,7 +79,7 @@
                                         <attributedString key="userComments">
                                             <fragment content="Status title">
                                                 <attributes>
-                                                    <font key="NSFont" metaFont="controlContent" size="11"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -106,7 +106,7 @@
                                         <attributedString key="userComments">
                                             <fragment content="Status title">
                                                 <attributes>
-                                                    <font key="NSFont" metaFont="controlContent" size="11"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -123,7 +123,7 @@
                                         <attributedString key="userComments">
                                             <fragment content="Abbreviated string meaning not available">
                                                 <attributes>
-                                                    <font key="NSFont" metaFont="controlContent" size="11"/>
+                                                    <font key="NSFont" metaFont="smallSystem"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
@@ -135,7 +135,7 @@
                         <attributedString key="userComments">
                             <fragment content="Box title">
                                 <attributes>
-                                    <font key="NSFont" metaFont="controlContent" size="11"/>
+                                    <font key="NSFont" metaFont="smallSystem"/>
                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                 </attributes>
                             </fragment>
@@ -159,7 +159,7 @@
                             <attributedString key="userComments">
                                 <fragment content="Warning message">
                                     <attributes>
-                                        <font key="NSFont" metaFont="controlContent" size="11"/>
+                                        <font key="NSFont" metaFont="smallSystem"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
@@ -178,7 +178,7 @@
                             <attributedString key="userComments">
                                 <fragment content="Button title">
                                     <attributes>
-                                        <font key="NSFont" metaFont="controlContent" size="11"/>
+                                        <font key="NSFont" metaFont="smallSystem"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
@@ -201,7 +201,7 @@
                             <attributedString key="userComments">
                                 <fragment content="Status title">
                                     <attributes>
-                                        <font key="NSFont" metaFont="controlContent" size="11"/>
+                                        <font key="NSFont" metaFont="smallSystem"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
@@ -217,7 +217,7 @@
                         </connections>
                     </pathControl>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mxV-EL-AaY">
-                        <rect key="frame" x="44" y="265" width="336" height="18"/>
+                        <rect key="frame" x="44" y="298" width="336" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Start Freenet automatically" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="9kj-pP-3mQ">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -225,7 +225,7 @@
                             <attributedString key="userComments">
                                 <fragment content="Option title">
                                     <attributes>
-                                        <font key="NSFont" metaFont="controlContent" size="11"/>
+                                        <font key="NSFont" metaFont="smallSystem"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
@@ -244,7 +244,7 @@
                         </connections>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l9V-G2-CJc">
-                        <rect key="frame" x="44" y="232" width="336" height="18"/>
+                        <rect key="frame" x="44" y="265" width="336" height="18"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="check" title="Enable notifications" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="tU5-0T-jon">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -252,7 +252,7 @@
                             <attributedString key="userComments">
                                 <fragment content="Option title">
                                     <attributes>
-                                        <font key="NSFont" metaFont="controlContent" size="11"/>
+                                        <font key="NSFont" metaFont="smallSystem"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
@@ -278,7 +278,7 @@
                             <attributedString key="userComments">
                                 <fragment content="Button title">
                                     <attributes>
-                                        <font key="NSFont" metaFont="controlContent" size="11"/>
+                                        <font key="NSFont" metaFont="smallSystem"/>
                                         <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                     </attributes>
                                 </fragment>
@@ -287,6 +287,33 @@
                         <connections>
                             <action selector="uninstallFreenet:" target="-2" id="3zE-zR-HTL"/>
                             <binding destination="-2" name="enabled" keyPath="self.validNodeFound" id="YHi-0F-BaS"/>
+                        </connections>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zw4-Hv-LDo">
+                        <rect key="frame" x="44" y="232" width="336" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Grayscale tray icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="FBd-ht-anc">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <attributedString key="userComments">
+                                <fragment content="Option title">
+                                    <attributes>
+                                        <font key="NSFont" metaFont="smallSystem"/>
+                                        <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                    </attributes>
+                                </fragment>
+                            </attributedString>
+                        </buttonCell>
+                        <connections>
+                            <action selector="changeTrayIconColor:" target="-2" id="VDf-gn-nZM"/>
+                            <binding destination="W3z-tc-WcL" name="value" keyPath="values.grayscaleIcon" id="nCl-lH-Hkb">
+                                <dictionary key="options">
+                                    <integer key="NSMultipleValuesPlaceholder" value="0"/>
+                                    <integer key="NSNoSelectionPlaceholder" value="0"/>
+                                    <integer key="NSNotApplicablePlaceholder" value="0"/>
+                                    <integer key="NSNullPlaceholder" value="0"/>
+                                </dictionary>
+                            </binding>
                         </connections>
                     </button>
                 </subviews>
@@ -302,7 +329,7 @@
             <connections>
                 <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
             </connections>
-            <point key="canvasLocation" x="221" y="282.5"/>
+            <point key="canvasLocation" x="124" y="132"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="W3z-tc-WcL"/>
     </objects>
