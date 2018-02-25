@@ -96,6 +96,9 @@
     
 }
 
+-(IBAction)changeTrayIconColor:(id)sender {
+}
+
 -(IBAction)uninstallFreenet:(id)sender {
     [FNHelpers displayUninstallAlert];
 }

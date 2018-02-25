@@ -15,10 +15,7 @@
 
 @interface TrayIcon : NSObject
 
-// Drawing Methods
-+ (void)drawRunningIcon;
-+ (void)drawNotRunningIcon;
-+ (void)drawHighlightedIcon;
++ (void)refreshIcon;     //*< forces redrawing of the tray icon
 
 // Generated Images
 + (NSImage*)imageOfRunningIcon;

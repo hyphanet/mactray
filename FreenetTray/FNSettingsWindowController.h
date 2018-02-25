@@ -32,4 +32,6 @@
 
 -(IBAction)uninstallFreenet:(id)sender;
 
+-(IBAction)changeTrayIconColor:(id)sender;
+
 @end
