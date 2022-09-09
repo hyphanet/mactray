@@ -11,7 +11,6 @@
 		AA55DB9A1C25CDDF00581EEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA55DB9C1C25CDDF00581EEB /* InfoPlist.strings */; };
 		AA55DBA01C25CDE000581EEB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA55DBA21C25CDE000581EEB /* Localizable.strings */; };
 		AA55DBA51C25CDE100581EEB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AA55DBA71C25CDE100581EEB /* InfoPlist.strings */; };
-		AA5E172C1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg in Resources */ = {isa = PBXBuildFile; fileRef = AA5E172B1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg */; };
 		AA621C931C1CF0DA00A1C4A5 /* FNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C791C1CF0DA00A1C4A5 /* FNAppDelegate.m */; };
 		AA621C941C1CF0DA00A1C4A5 /* FNBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C7B1C1CF0DA00A1C4A5 /* FNBrowser.m */; };
 		AA621C951C1CF0DA00A1C4A5 /* FNConfigParser.m in Sources */ = {isa = PBXBuildFile; fileRef = AA621C7D1C1CF0DA00A1C4A5 /* FNConfigParser.m */; };
@@ -72,6 +71,7 @@
 		1F0BF6618371FB2144F9AC5C /* Pods_FreenetTray.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FreenetTray.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68AEBD7D14CE0D6148BC212D /* Pods-FreenetTray.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FreenetTray.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FreenetTray/Pods-FreenetTray.debug.xcconfig"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* FreenetTray.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreenetTray.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F4CCC7E24DF2A0E007680EB /* jre-8u261-macosx-x64.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jre-8u261-macosx-x64.dmg"; sourceTree = "<group>"; };
 		AA2D60691C456B8C0006DC96 /* Translations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Translations; sourceTree = "<group>"; };
 		AA433BCF109CD2B400EDBB73 /* gpl.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = gpl.txt; sourceTree = "<group>"; };
 		AA55DB941C25CDDE00581EEB /* zh-CN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-CN"; path = "zh-CN.lproj/FNDropdownMenu.strings"; sourceTree = "<group>"; };
@@ -90,7 +90,6 @@
 		AA55DBAD1C25E6CE00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/FNInstallerWindow.strings"; sourceTree = "<group>"; };
 		AA55DBAE1C25E6CF00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		AA55DBAF1C25E6CF00581EEB /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
-		AA5E172B1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "jre-8u66-macosx-x64.dmg"; sourceTree = "<group>"; };
 		AA621C391C1BC46E00A1C4A5 /* .travis.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .travis.yml; sourceTree = "<group>"; };
 		AA621C781C1CF0DA00A1C4A5 /* FNAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FNAppDelegate.h; path = FreenetTray/FNAppDelegate.h; sourceTree = "<group>"; };
 		AA621C791C1CF0DA00A1C4A5 /* FNAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FNAppDelegate.m; path = FreenetTray/FNAppDelegate.m; sourceTree = "<group>"; };
@@ -323,7 +322,7 @@
 		AAF723EB1BD0D14E003BA438 /* Bundled Packages */ = {
 			isa = PBXGroup;
 			children = (
-				AA5E172B1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg */,
+				9F4CCC7E24DF2A0E007680EB /* jre-8u261-macosx-x64.dmg */,
 			);
 			path = "Bundled Packages";
 			sourceTree = "<group>";
@@ -407,7 +406,6 @@
 				LastUpgradeCheck = 0820;
 				TargetAttributes = {
 					8D1107260486CEB800E47090 = {
-						DevelopmentTeam = G738Z89QKM;
 						ProvisioningStyle = Automatic;
 					};
 					AAF73D831C174ABF0006D1E1 = {
@@ -421,8 +419,19 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
+				English,
 				en,
 				Base,
+				"zh-CN",
+				"pt-BR",
+				"zh-TW",
+				"nb-NO",
+				it,
+				"id-ID",
+				hr,
+				fr,
+				es,
+				de,
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* Freenet Controller */;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
@@ -450,7 +459,6 @@
 				AA621D371C1CFB4500A1C4A5 /* FNInstallerDestinationView.xib in Resources */,
 				AA621D3A1C1CFB4700A1C4A5 /* FNInstallerProgressView.xib in Resources */,
 				AA621CB01C1CF12B00A1C4A5 /* installer_background.png in Resources */,
-				AA5E172C1C0E2CA900ED53AA /* jre-8u66-macosx-x64.dmg in Resources */,
 				AAD6891D1BD17CF500942738 /* Bundled Node in Resources */,
 				AAEF3AEE1AD6313800A4B475 /* README.md in Resources */,
 				AA55DBA01C25CDE000581EEB /* Localizable.strings in Resources */,
@@ -811,12 +819,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 2.2.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = G738Z89QKM;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -844,11 +852,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 2.2.0;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = G738Z89QKM;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
