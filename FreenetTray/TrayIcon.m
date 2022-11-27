@@ -13,6 +13,17 @@
 #import "TrayIcon.h"
 
 
+@interface TrayIcon ()
+
+// color getter
++ (NSColor *)runningIconColor;
++ (NSColor *)notRunningIconColor;
++ (NSColor *)highlightedIconColor;
+
+@end
+
+
+
 @implementation TrayIcon
 
 #pragma mark Cache
@@ -21,16 +32,57 @@ static NSImage* _imageOfRunningIcon = nil;
 static NSImage* _imageOfNotRunningIcon = nil;
 static NSImage* _imageOfHighlightedIcon = nil;
 
+static NSColor* _runningColor = nil;
+static NSColor* _notRunningColor = nil;
+static NSColor* _highlightedColor = nil;
+
+
 #pragma mark Initialization
 
 + (void)initialize {
+    [TrayIcon refreshColors];
+}
+
+#pragma mark Tray colors
+
++ (void)refreshColors {
+    
+    _imageOfRunningIcon = nil;
+    _imageOfNotRunningIcon = nil;
+    _imageOfHighlightedIcon = nil;
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    _runningColor = [defaults boolForKey:@"grayscaleIcon"]
+    ? [NSColor colorWithCalibratedRed: 1. green:1. blue: 1. alpha: 1.]
+    : [NSColor colorWithCalibratedRed: 0.161 green: 0.322 blue: 0.765 alpha: 1.];
+    
+    _notRunningColor = [defaults boolForKey:@"grayscaleIcon"]
+    ? [NSColor colorWithCalibratedRed: 0.337 green: 0.337 blue: 0.337 alpha: 1]
+    : [NSColor colorWithCalibratedRed: 1. green: 0. blue: 0. alpha: 1.];
+    
+    _highlightedColor = [defaults boolForKey:@"grayscaleIcon"]
+    ? [NSColor colorWithCalibratedRed: 0.663 green: 0.663 blue: 0.663 alpha: 1]
+    : [NSColor colorWithCalibratedRed: 1 green: 1 blue: 1 alpha: 1];
+}
+
++ (NSColor *)runningIconColor {
+    return _runningColor;
+}
+
++ (NSColor *)notRunningIconColor {
+    return _notRunningColor;
+}
+
++ (NSColor *)highlightedIconColor {
+    return _highlightedColor;
 }
 
 #pragma mark Drawing Methods
 
 + (void)drawRunningIcon {
     //// Color Declarations
-    NSColor* run = [NSColor colorWithCalibratedRed: 0.161 green: 0.322 blue: 0.765 alpha: 1];
+    NSColor* run = [TrayIcon runningIconColor];
 
     //// Group
     {
@@ -64,7 +116,7 @@ static NSImage* _imageOfHighlightedIcon = nil;
 
 + (void)drawNotRunningIcon {
     //// Color Declarations
-    NSColor* stop = [NSColor colorWithCalibratedRed: 1 green: 0 blue: 0 alpha: 1];
+    NSColor* stop = [TrayIcon notRunningIconColor];
 
     //// Group
     {
@@ -98,7 +150,7 @@ static NSImage* _imageOfHighlightedIcon = nil;
 
 + (void)drawHighlightedIcon {
     //// Color Declarations
-    NSColor* highlight = [NSColor colorWithCalibratedRed: 1 green: 1 blue: 1 alpha: 1];
+    NSColor* highlight = [TrayIcon highlightedIconColor];
 
     //// Group
     {

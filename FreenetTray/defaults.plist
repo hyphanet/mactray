@@ -12,5 +12,7 @@
 	<true/>
 	<key>firstlaunch</key>
 	<true/>
+    <key>grayscaleIcon</key>
+    <false/>
 </dict>
 </plist>
